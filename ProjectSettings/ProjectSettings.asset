@@ -1,0 +1,269 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!129 &1
+PlayerSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 24
+  productGUID: 4a6e5f2a8b3c1d7e9f0a2b4c6d8e0f1a
+  AndroidProfiler: 0
+  AndroidFilterTouchesWhenObscured: 0
+  AndroidEnableSustainedPerformanceMode: 0
+  defaultScreenOrientation: 4
+  targetDevice: 2
+  useOnDemandResources: 0
+  accelerometerFrequency: 60
+  companyName: PersonaPJ
+  productName: AMANE City of Echoes
+  defaultCursor: {fileID: 0}
+  cursorHotspot: {x: 0, y: 0}
+  m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.09019608, b: 0.23921569, a: 1}
+  m_ShowUnitySplashScreen: 1
+  m_ShowUnitySplashLogo: 1
+  m_SplashScreenOverlayOpacity: 1
+  m_SplashScreenAnimation: 1
+  m_SplashScreenLogoStyle: 1
+  m_SplashScreenDrawMode: 0
+  m_SplashScreenBackgroundAnimationZoom: 1
+  m_SplashScreenLogoAnimationZoom: 1
+  m_SplashScreenBackgroundLandscapeAspect: 1
+  m_SplashScreenBackgroundPortraitAspect: 1
+  m_SplashScreenBackgroundLandscapeUvs:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  m_SplashScreenBackgroundPortraitUvs:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  m_SplashScreenLogos: []
+  m_VirtualRealitySplashScreen: {fileID: 0}
+  m_HolographicTrackingLossScreen: {fileID: 0}
+  defaultScreenWidth: 1920
+  defaultScreenHeight: 1080
+  defaultScreenWidthWeb: 960
+  defaultScreenHeightWeb: 600
+  m_StereoRenderingPath: 0
+  m_ActiveColorSpace: 1
+  m_MTRendering: 1
+  m_StackTraceTypes: 010000000100000001000000010000000100000001000000
+  iosShowActivityIndicatorOnLoading: -1
+  androidShowActivityIndicatorOnLoading: -1
+  iosAppInBackgroundBehavior: 0
+  iosExtendedBytesInUTF8: 0
+  displayResolutionDialog: 0
+  iosUseCustomAppBackgroundBehavior: 0
+  iosAllowHTTP: 0
+  framebufferDepthMemorylessMode: 0
+  marqueeLimitFPS: 0
+  mobileMTRendering:
+    iPhone: 1
+    Android: 1
+  m_BuildTargetVRSettings: []
+  openGLRequireES31: 0
+  openGLRequireES31AEP: 0
+  openGLRequireES32: 0
+  m_TemplateCustomTags: {}
+  mobileSplashScreen: {fileID: 0}
+  m_BuildTargetIcons: []
+  m_BuildTargetPlatformIcons: []
+  m_BuildTargetBatching: []
+  m_BuildTargetGraphicsJobs: []
+  m_BuildTargetGraphicsJobMode: []
+  m_BuildTargetAccelerometerFrequency: []
+  m_ResolutionDialogBanner: {fileID: 0}
+  m_BuildTargetShaderCompiler: []
+  m_BuildTargetGlesJob: []
+  m_BuildTargetEnableVulkan: []
+  m_BuildTargetVulkanEditorSupport: []
+  allowedAutorotateToPortrait: 1
+  allowedAutorotateToPortraitUpsideDown: 1
+  allowedAutorotateToLandscapeRight: 1
+  allowedAutorotateToLandscapeLeft: 1
+  useOSAutorotation: 1
+  use32BitDisplayBuffer: 1
+  preserveFramebufferAlpha: 0
+  disableDepthAndStencilBuffers: 0
+  androidStartInFullscreen: 1
+  androidRenderOutsideSafeArea: 1
+  androidUseSwappy: 1
+  androidBlitType: 0
+  androidResizableWindow: 0
+  androidDefaultWindowWidth: 1920
+  androidDefaultWindowHeight: 1080
+  androidMinimumWindowWidth: 400
+  androidMinimumWindowHeight: 300
+  androidFullscreenMode: 1
+  defaultIsNativeResolution: 1
+  macRetinaSupport: 1
+  runInBackground: 1
+  captureSingleScreen: 0
+  muteOtherAudioSources: 0
+  Prepare IOS For Recording: 0
+  Force IOS Speakers When Recording: 0
+  deferSystemGesturesMode: 0
+  hideHomeButton: 0
+  submitAnalytics: 1
+  usePlayerLog: 1
+  bakeCollisionMeshes: 0
+  forceSingleInstance: 0
+  useFlipModelSwapchain: 1
+  resizableWindow: 0
+  useMacAppStoreValidation: 0
+  macAppStoreCategory: public.app-category.games
+  gpuSkinning: 1
+  xboxPIXTextureCapture: 0
+  xboxEnableAvatar: 0
+  xboxEnableKinect: 0
+  xboxEnableKinectAutoTracking: 0
+  xboxEnableFitness: 0
+  visibleInBackground: 1
+  allowFullscreenSwitch: 1
+  fullscreenMode: 1
+  xboxSpeechDB: 0
+  xboxEnableHeadOrientation: 0
+  xboxEnableGuest: 0
+  xboxEnableIPv6: 0
+  ps4NPAgeRating: 12
+  ps4NPTitleSecret:
+  ps4NPTrophyPackPath:
+  ps4ParentalLevel: 11
+  ps4ContentID: ED1633-NPXX51362_00-0000000000000000
+  ps4Category: 0
+  ps4MasterVersion: 01.00
+  ps4AppVersion: 01.00
+  ps4AppType: 0
+  ps4ParamSfxPath:
+  ps4VideoOutPixelFormat: 0
+  ps4VideoOutInitialWidth: 1920
+  ps4VideoOutBaseModeInitialWidth: 1920
+  ps4VideoOutReprojectionRate: 60
+  ps4PronunciationXMLPath:
+  ps4PronunciationSIGPath:
+  ps4BackgroundImagePath:
+  ps4StartupImagePath:
+  ps4StartupImagesFolder:
+  ps4SaveDataImagePath:
+  ps4SdkOverride:
+  ps4ShareFilePath:
+  ps4ShareOverlayImagePath:
+  ps4PrivacyGuardImagePath:
+  ps4ExtraSceSysFile:
+  ps4PlayTogetherPlayerCount: 0
+  ps4AddUniqueIdToProjectPath: 0
+  ps4pnSessions: 1
+  ps4pnPresence: 1
+  ps4pnFriends: 1
+  ps4pnGameCustomData: 1
+  playerPrefsSupport: 0
+  enableApplicationExit: 0
+  resetResolutionOnWindowResize: 0
+  restrictedAudioUsageRights: 0
+  ps4UseResolutionFallback: 0
+  ps4ReprojectionSupport: 0
+  ps4UseAudio3dBackend: 0
+  ps4UseLowGarlicFragmentationAlgorithm: 1
+  ps4SocialScreenEnabled: 0
+  ps4ScriptOptimizationLevel: 0
+  ps4Audio3dVirtualSpeakerCount: 14
+  ps4attribCpuUsage: 0
+  ps4PatchPkgPath:
+  ps4PatchLatestPkgPath:
+  ps4PatchChangeinfoPath:
+  ps4PatchDayOne: 0
+  ps4attribUserManagement: 0
+  ps4attribMoveSupport: 0
+  ps4attrib3DSupport: 0
+  ps4attribShareSupport: 0
+  ps4attribExclusiveVR: 0
+  ps4disablePowerThrottling: 0
+  ps4enableDownloadByDefault: 1
+  ps4applicationParameter1: 0
+  ps4applicationParameter2: 0
+  ps4applicationParameter3: 0
+  ps4applicationParameter4: 0
+  ps4MonoEnv:
+  ps4blastSettings: {fileID: 0}
+  vita_touchRegisters: 0
+  vita_touchRegistersDetail: 0
+  vita_touchRegistersThumb: 0
+  vita_touchRegistersThumbDetail: 0
+  vita_touchRegistersMiddle: 0
+  vita_touchRegistersMiddleDetail: 0
+  vita_touchRegistersRightStickUp: 0
+  vita_touchRegistersRightStickRight: 0
+  vita_touchRegistersRightStickDown: 0
+  vita_touchRegistersRightStickLeft: 0
+  vita_disableAudio: 0
+  vita_totalChannels: 128
+  vita_LeaveApplicationButtonEnabled: 0
+  vita_systemTriggerEffectDisabled: 0
+  vita_systemTriggerEffectEnabled: 0
+  vita_systemButtonComboDisabled: 0
+  vita_systemButtonComboEnabled: 0
+  vita_EnterButtonAssignment: 2
+  vita_ApplicationSuspendingBehavior: 0
+  vita_ScreenWidth: 960
+  vita_ScreenHeight: 544
+  vita_TVScreenWidth: 1280
+  vita_TVScreenHeight: 720
+  vita_TVBootMode: 0
+  vita_DisableShaderOptimizer: 0
+  vita_stripReflectionData: 1
+  vita_videoMemoryBudgetMB: 0
+  n3ds_codeMB: 64
+  n3ds_stackSize: 131072
+  n3ds_targetPlatform: 2
+  n3ds_region: 7
+  n3ds_isStaticMemory: 0
+  n3ds_networkId: 0
+  n3ds_logoStyle: 3
+  n3ds_parentalLockRating: 0
+  n3ds_disableDepthBufferCompression: 0
+  n3ds_enableSharedListOpt: 1
+  n3ds_enableVSync: 0
+  n3ds_ExtraThreadStackSize: 0
+  webGLMemorySize: 32
+  webGLExceptionSupport: 1
+  webGLNameFilesAsHashes: 0
+  webGLDataCaching: 1
+  webGLDebugSymbols: 0
+  webGLEmscriptenArgs:
+  webGLModulesDirectory:
+  webGLTemplate: APPLICATION:Default
+  webGLAnalyzeBuildSize: 0
+  webGLUseEmbeddedResources: 0
+  webGLCompressionFormat: 1
+  webGLLinkerTarget: 1
+  webGLThreadsSupport: 0
+  webGLWasmStreaming: 1
+  scriptingBackend: {}
+  managedStrippingLevel: {}
+  additionalIl2CppArgs:
+  scriptingRuntimeVersion: 1
+  gcIncremental: 1
+  assemblyVersionValidation: 1
+  managedDebuggingEnabled: {}
+  allowDebugging: 0
+  waitForManagedDebugger: 0
+  managedDebuggerFixedPort: 0
+  explicitNullChecks: 0
+  explicitDivideByZeroChecks: 0
+  explicitArrayBoundsChecks: 0
+  applicationBuildNumber: 0
+  m_BuildTargetOverrideMaxTextureSize: []
+  m_BuildTargetOverrideTextureCompressionFormat: []
+  AndroidMinSdkVersion: 22
+  AndroidTargetSdkVersion: 0
+  AndroidPreferredInstallLocation: 1
+  aotOptions:
+  ApiCompatibilityLevel: 6
+  cloudProjectId:
+  frameworkVersion:
+  cloudEnabled: 0
+  enableNativePlatformBackendsForNewInputSystem: 0
+  disableOldInputManagerSupport: 0
+  legacyClampBlendShapeWeights: 0
