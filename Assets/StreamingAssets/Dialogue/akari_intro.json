@@ -1,0 +1,10 @@
+{
+  "id": "akari_intro",
+  "lines": [
+    { "speakerId": "akari", "text": "転校生くん、だよね？ こっちこっち、席ここだよ！", "emotion": "smile", "preSilence": 0.0 },
+    { "speakerId": "akari", "text": "雨音、なんもない街だけどさ。……雨だけは、よく降るんだ。", "emotion": "smile", "preSilence": 0.0 },
+    { "speakerId": "narration", "text": "——放課後。誰もいないはずの屋上から、すすり泣く声が聞こえた。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "akari", "text": "……あ。ごめん、見られちゃった。", "emotion": "broken", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "なんでもない。ほんとに、なんでもないの。", "emotion": "broken", "preSilence": 0.4 }
+  ]
+}
