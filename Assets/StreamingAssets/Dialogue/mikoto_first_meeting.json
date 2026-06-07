@@ -1,0 +1,122 @@
+{
+  "dialogueId": "mikoto_first_meeting",
+  "contextDescription": "5月初旬。蓮が放課後の音楽室に立ち寄る。みことが一人でピアノの前にいる。",
+  "relatedArcana": "HangedMan",
+  "requiredBondRank": 0,
+  "lines": [
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "放課後の音楽室。\n誰もいないはずの教室に、一人の少女が座っていた。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "腰まで届く銀がかった黒髪。\nピアノの前に座っているが、鍵盤には触れていない。\n大きなノイズキャンセリングヘッドフォンをしている。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮が入ってきても、振り向かない。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "——声をかけるべきか。",
+      "choices": [
+        {
+          "text": "あの、ここ使ってもいい？",
+          "bondPoints": 1,
+          "nextLineId": "4"
+        },
+        {
+          "text": "（静かに隣に座る）",
+          "bondPoints": 2,
+          "nextLineId": "5"
+        },
+        {
+          "text": "（何も言わず立ち去る）",
+          "bondPoints": 0,
+          "nextLineId": "6"
+        }
+      ]
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "少女は反応しない。蓮の声が聞こえていないようだ。\nしばらく待つと、少女がこちらに気づき、筆談用のノートを差し出す。",
+      "nextLineId": "7"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は何も言わず、ピアノの横の椅子に座った。\n少女はしばらくして、ゆっくりとこちらを見る。\n驚いたような、それでいて安堵したような表情。\n筆談用のノートを差し出す。",
+      "nextLineId": "7"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は立ち去った。\n……でも、ドアを閉める瞬間、\nイヤホンの奥で、とても小さな音が聞こえた。\n\n鍵盤を、一つだけ押す音。",
+      "nextLineId": "15"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "ノートには丁寧な文字で書かれている。"
+    },
+    {
+      "speakerName": "白波 みこと",
+      "expression": "neutral",
+      "text": "《聞こえません。でも、ここにいるのは好きです。振動は、感じるから》"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮はノートにペンを走らせる。",
+      "choices": [
+        {
+          "text": "《僕も静かな場所が好きです》",
+          "bondPoints": 2,
+          "nextLineId": "10"
+        },
+        {
+          "text": "《ピアノ、弾かないの？》",
+          "bondPoints": 1,
+          "nextLineId": "11"
+        }
+      ]
+    },
+    {
+      "speakerName": "白波 みこと",
+      "expression": "slight_smile",
+      "text": "《……そう。ここは、声がなくてもいられる場所》",
+      "nextLineId": "12"
+    },
+    {
+      "speakerName": "白波 みこと",
+      "expression": "pained",
+      "text": "《…………》",
+      "nextLineId": "12"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "みことはゆっくりとヘッドフォンに手を当てる。"
+    },
+    {
+      "speakerName": "白波 みこと",
+      "expression": "neutral",
+      "text": "《これ、何も流れてないの。知ってた？》"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は自分の左耳のイヤホンに触れる。\n——何も流れていない。\n同じだ。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "みことがわずかに目を見開く。\n蓮のイヤホンを見て——\n何かに気づいたように、小さく頷いた。\n\n言葉はない。でも、何かが通じた気がした。"
+    }
+  ]
+}

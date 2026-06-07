@@ -1,0 +1,117 @@
+{
+  "dialogueId": "gai_bond_rank1",
+  "contextDescription": "夜。蓮がコンビニの前で凱に会う。凱が弟のために菓子を選んでいる。",
+  "relatedArcana": "Emperor",
+  "requiredBondRank": 0,
+  "lines": [
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "夜、コンビニの前。\n凱がカゴを持って菓子コーナーを行ったり来たりしている。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "ガラの悪い外見とは裏腹に、\n真剣な顔でプリンのラベルを読んでいる。"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "startled",
+      "text": "——おい。何見てんだ。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮に気づいた凱の目が、一瞬だけ泳ぐ。",
+      "choices": [
+        {
+          "text": "プリン好きなのか。",
+          "bondPoints": 2,
+          "nextLineId": "4"
+        },
+        {
+          "text": "買い物？",
+          "bondPoints": 1,
+          "nextLineId": "5"
+        }
+      ]
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "flustered",
+      "text": "ち、違えよ！　これは……弟に頼まれただけだ。\nアイツ、プリンしか食わねえんだよ……",
+      "nextLineId": "6"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "guarded",
+      "text": "……ああ。悪いか？",
+      "nextLineId": "6"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "凱はぶっきらぼうにカゴを持ち直す。"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "reluctant",
+      "text": "……弟がいるんだよ。年、離れてて。\n足が悪くて、あんまり外出られねえから。"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "soft",
+      "text": "こいつが好きなんだ、このプリン。\n季節限定のやつ。今日までだから。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "凱の声が、少しだけ柔らかくなった。\n弟の話をしているときだけ、別人のようだ。"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "pained",
+      "text": "……あいつのこと、学校じゃ誰も知らねえ。\n言う気もねえし。\n変に同情されるのが、一番ムカつく。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "凱がこちらを見る。\n初めて、ちゃんと目を合わせた気がする。"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "testing",
+      "text": "お前……あの時、校門で見てただろ。\n何も言わなかったよな。先生にも。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は頷く。"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "grudging_respect",
+      "text": "……ふん。余計なこと言わねえ奴は嫌いじゃねえよ。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "凱はプリンを3つカゴに入れて、レジに向かう。\n去り際に——"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "flat",
+      "text": "……今日のことは誰にも言うなよ。\nプリン買ってるとか、イメージ崩れるだろ。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "凱は背を向ける。\nその背中は、学校で見るのとは違って、\nどこか——守るべきものを抱えている人の背中だった。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "九条凱——皇帝の調べ\nRANK 1"
+    }
+  ]
+}

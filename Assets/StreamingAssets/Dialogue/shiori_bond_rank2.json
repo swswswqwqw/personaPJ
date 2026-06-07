@@ -1,0 +1,152 @@
+{
+  "dialogueId": "shiori_bond_rank2",
+  "contextDescription": "放課後。詩織から「屋上の鍵を見つけた」と連絡が来る。二人で屋上へ。",
+  "relatedArcana": "Priestess",
+  "requiredBondRank": 1,
+  "lines": [
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "詩織から連絡があった。\n「放課後、ちょっと見せたいものがあるの」"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "待ち合わせ場所は——あの、屋上に続く階段の前。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "mischievous",
+      "text": "ここ、立入禁止なんだけどね。\n……鍵、見つけちゃったんだ。職員室の机の裏に。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "hesitant",
+      "text": "ダメかな。副会長がルール破るなんて。\n……でも、ずっと気になってたの。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "詩織は鍵を手に持ったまま、迷っている。",
+      "choices": [
+        {
+          "text": "行こう。",
+          "bondPoints": 3,
+          "nextLineId": "5"
+        },
+        {
+          "text": "何が気になってるの？",
+          "bondPoints": 2,
+          "nextLineId": "6"
+        }
+      ]
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "relieved",
+      "text": "……うん。",
+      "nextLineId": "7"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "distant",
+      "text": "……10年前、ここで女の子が落ちたんでしょ。\n私、その子のこと……知りたいの。理由はわからないけど。",
+      "nextLineId": "7"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "鍵が回る。錆びた音。\n\n階段を上がると——空が広がった。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "屋上。\n10年間、誰も来なかった場所。\n\nフェンスの向こうに、響ヶ崎の海が見える。\n夕陽が水面を焼いて、街全体がオレンジ色に染まっている。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "awe",
+      "text": "……きれい。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "詩織が柵に手をかけて、海を見つめる。\n風が髪を揺らす。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "pensive",
+      "text": "ねえ、朝霧くん。\n私、たまに思うの。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "vulnerable",
+      "text": "みんなが求める「鳴海詩織」って、\n本当に私なのかなって。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "sad_smile",
+      "text": "優しくて、真面目で、いつも笑ってる副会長。\n……それって、私が選んだの？\nそれとも、みんなに求められて、そうなっただけ？"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "夕陽が詩織の横顔を照らしている。\n完璧な笑顔は、今はどこにもない。",
+      "choices": [
+        {
+          "text": "本当の自分は、自分にしかわからない。",
+          "bondPoints": 3,
+          "nextLineId": "16"
+        },
+        {
+          "text": "今の詩織も、本当の詩織だよ。",
+          "bondPoints": 2,
+          "nextLineId": "17"
+        },
+        {
+          "text": "……俺もわからないよ。自分のこと。",
+          "bondPoints": 3,
+          "nextLineId": "18"
+        }
+      ]
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "tearful",
+      "text": "自分にしか……か。\n\n……困ったな。その自分の声が、聞こえないんだ。",
+      "nextLineId": "19"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "conflicted",
+      "text": "そう……かな。\n\nそうだと、いいな。\nでも、本当の私は——もっと、ずるい人間だと思う。",
+      "nextLineId": "19"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "surprised",
+      "text": "朝霧くんも……？\n\n……そっか。みんなそうなのかな。\n自分の声が聞こえない人って、多いのかな。",
+      "nextLineId": "19"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "風が吹く。\n二人とも何も言わない時間が、しばらく続く。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "quiet_smile",
+      "text": "……ありがとう。\nこんな話、誰にもしたことなかったんだ。\n\n聴いてくれて、ありがとう。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "詩織は小さく笑った。\nいつもの完璧な笑顔じゃない。\n不器用で、少し泣きそうで——\n\nでも、たぶん、これが本当の笑顔だ。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "鳴海詩織——女教皇の調べ\nRANK 2"
+    }
+  ]
+}

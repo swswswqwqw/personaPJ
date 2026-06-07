@@ -1,0 +1,88 @@
+{
+  "dialogueId": "gai_first_meeting",
+  "contextDescription": "4月末。校門前で凱が下級生を庇うシーン。蓮が目撃する。",
+  "relatedArcana": "Emperor",
+  "requiredBondRank": 0,
+  "lines": [
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "校門前。数人の上級生が、小柄な男子を囲んでいる。"
+    },
+    {
+      "speakerName": "上級生A",
+      "expression": "angry",
+      "text": "おい、お前また弁当一人で食ってたろ。キモいんだよ。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "その時——割り込むように、銀髪の大柄な影が動いた。"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "glare",
+      "text": "……おい。何人で囲んでんだ。"
+    },
+    {
+      "speakerName": "上級生A",
+      "expression": "scared",
+      "text": "く、九条……！　べ、別にふざけてただけだろ……"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "glare",
+      "text": "ふざけてたなら笑ってるはずだろ。あいつ、泣いてんじゃねえか。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "凱が一歩踏み出すと、上級生たちは蜘蛛の子を散らすように逃げていく。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "そこに教師が駆けつける。"
+    },
+    {
+      "speakerName": "教師",
+      "expression": "stern",
+      "text": "また九条か！　今度は何をした！"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "flat",
+      "text": "……別に。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "凱は弁解しない。\n教師に叱られながら、ただ黙って立っている。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "庇われていた男子が、凱の背中に向かって小さく呟く。"
+    },
+    {
+      "speakerName": "小柄な男子",
+      "expression": "tearful",
+      "text": "……ありがとう。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は——その声を、聴いた。\n凱には届いていない。教師の叱声にかき消されて。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "でも、蓮のイヤホンの奥で、\nその「ありがとう」だけが、やけに鮮明に残響していた。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "凱は何も言わず、校門を出ていく。\n左手の手首で——色褪せたミサンガが、風に揺れている。"
+    }
+  ]
+}

@@ -242,27 +242,27 @@ namespace EchoesOfArcadia.UI
 
         private void OnAttackPressed()
         {
-            // TODO: ターゲット選択 → 通常攻撃実行
+            BattleFlowController.Instance?.OnCommandAttack();
         }
 
         private void OnAbilityMenuPressed()
         {
-            // TODO: スキルリスト表示 → 選択 → ターゲット選択
+            BattleFlowController.Instance?.OnCommandAbility();
         }
 
         private void OnGuardPressed()
         {
-            BattleManager.Instance?.AdvanceTurn();
+            BattleFlowController.Instance?.OnCommandGuard();
         }
 
         private void OnItemPressed()
         {
-            // TODO: アイテムリスト表示
+            // TODO: アイテムシステム実装後に接続
         }
 
         private void OnEscapePressed()
         {
-            // TODO: 逃走処理
+            BattleFlowController.Instance?.OnCommandEscape();
         }
 
         private void SetOverlayVisible(CanvasGroup group, bool visible)

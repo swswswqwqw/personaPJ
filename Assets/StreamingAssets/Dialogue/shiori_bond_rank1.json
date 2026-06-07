@@ -1,0 +1,147 @@
+{
+  "dialogueId": "shiori_bond_rank1",
+  "contextDescription": "放課後。詩織が生徒会室で一人で書類整理をしている。蓮が手伝いを申し出る。",
+  "relatedArcana": "Priestess",
+  "requiredBondRank": 0,
+  "lines": [
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "放課後、生徒会室の前を通りかかると、\n詩織が一人で大量の書類と格闘していた。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "smile_strained",
+      "text": "あ、朝霧くん。ごめんね、今ちょっと忙しくて……\n来週の行事の準備と、先生から頼まれた集計と……"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "机の上には山のような書類。一人で全部やるつもりらしい。",
+      "choices": [
+        {
+          "text": "手伝おうか。",
+          "bondPoints": 3,
+          "nextLineId": "3"
+        },
+        {
+          "text": "他の委員は？",
+          "bondPoints": 2,
+          "nextLineId": "4"
+        },
+        {
+          "text": "大変そうだな。（見てるだけ）",
+          "bondPoints": 0,
+          "nextLineId": "5"
+        }
+      ]
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "surprised",
+      "text": "え……いいの？　ごめんね、こんなの頼んで。\n……ありがとう。本当に。",
+      "nextLineId": "6"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "smile_polite",
+      "text": "みんな忙しいから。部活とか、塾とか。\n大丈夫、慣れてるよ。一人でできるから。",
+      "nextLineId": "6"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "smile_polite",
+      "text": "あはは、大丈夫大丈夫。私がやった方が早いし。\n……ありがとね、気にかけてくれて。",
+      "nextLineId": "6"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "二人で書類を整理しながら、ぽつりぽつりと話す。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "thoughtful",
+      "text": "朝霧くんって、前の学校でも委員会とかやってた？"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は首を横に振る。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "smile_warm",
+      "text": "そっか。私はずっとやってるんだ、こういうの。\n小学校からずっと、委員長とか副会長とか。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "distant",
+      "text": "……ねえ。「頼まれたことを断れない」のって、優しさだと思う？"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "詩織の手が一瞬止まる。完璧な笑顔が、ほんの少し揺れる。",
+      "choices": [
+        {
+          "text": "優しさだと思う。",
+          "bondPoints": 1,
+          "nextLineId": "12"
+        },
+        {
+          "text": "……自分がないだけかも。",
+          "bondPoints": 3,
+          "nextLineId": "13"
+        },
+        {
+          "text": "どっちでもいいんじゃない？",
+          "bondPoints": 1,
+          "nextLineId": "14"
+        }
+      ]
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "smile_relieved",
+      "text": "……そうだよね。優しさ、だよね。うん。そう思いたいな。",
+      "nextLineId": "15"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "shocked",
+      "text": "——。\n\n……そう、かも。\nそうかもしれない。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "smile_polite",
+      "text": "あはは、そうだね。深く考えすぎちゃった。",
+      "nextLineId": "15"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "詩織は黙って書類の束を見つめている。\nその横顔から、いつもの完璧な笑顔が消えている。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "vulnerable",
+      "text": "……ごめん。変なこと聞いたね。忘れて。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "smile_polite",
+      "text": "さ、続きやろう！　朝霧くんが手伝ってくれたおかげで、\nもうすぐ終わるよ。ありがとね！"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "笑顔が戻る。\n\n——でも、「忘れて」と言ったあの声が、\n蓮の耳の奥に、ずっと残っている。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "鳴海詩織——女教皇の調べ\nRANK 1"
+    }
+  ]
+}
