@@ -1,6 +1,6 @@
 # RPG開発 引き継ぎ
 
-## 最終更新: 2026-06-07（第3夜）
+## 最終更新: 2026-06-07（第4夜）
 
 ## ゲームタイトル / エンジン
 **残響のアルカディア（Echoes of Arcadia）** / Unity 2022.3 LTS
@@ -11,57 +11,60 @@
 ---
 
 ## 現在のフェーズ
-**ゲームループ閉鎖完了 / フィールド→戦闘→報酬→社会リンクの一連フローが繋がった**
+**UIアニメーション・音声基盤完成 / 全UIにDOTween統合、AudioManager構築済み**
 
 ---
 
 ## 品質スコア（最新・ペルソナ比較）
-- キャラクター深度:      4/10（パーティ全員の初対面台詞 + 詩織Rank1-2 + 凱Rank1。みことの「空のヘッドフォン」の共鳴描写はペルソナ級）
-- 戦闘の爽快感:          3/10（コマンド→ターゲット→スキル選択→実行の完全フロー。敵AIが弱点を突く。DOTween演出は未実装）
-- 時間システムの機能性:  3/10（フィールドシステムが時間帯・天候を参照。行動ポイント消費で時間経過）
-- 社会リンクの感情密度:  4/10（詩織Rank1「断れない優しさ」、Rank2「完璧じゃない笑顔」、凱Rank1「弟のプリン」。感情の動きは十分ある）
-- UI・演出の完成度:      2/10（フィールドUI追加。DOTween演出は未実装のまま。ここが最大のボトルネック）
-- ストーリーの引力:      4/10（8本の台詞データ。凱の「届かないありがとう」、みことの「空のヘッドフォン」は残響テーマと直結）
-- 総合:                  3/10
-- 前回からの変化: 2→3。ゲームループが閉じて「遊べる」状態に一歩近づいた。台詞の質がペルソナ水準に到達し始めた。
+- キャラクター深度:      5/10（パーティ全員のRank1台詞が揃った。暁の「秒針の音」、みことの「温かい鍵盤」は記憶に残る描写）
+- 戦闘の爽快感:          4/10（弱点ヒット時の画面シェイク、ダメージポップアップ、SE連携。DOTweenでコマンドメニュースライドイン。まだBGM/SE素材はない）
+- 時間システムの機能性:  4/10（日付変更アニメーション実装。時間帯変化の背景色DOTweenトランジション追加）
+- 社会リンクの感情密度:  5/10（パーティ4人全員Rank1完備 + 詩織Rank2 + 凱Rank2。ランクアップ演出にPopIn+PunchScale追加）
+- UI・演出の完成度:      4/10（全UIにDOTweenフェード/スライド/ポップ統合。UIAnimator静的ユーティリティ完備。ダメージポップアップ。BGM/SE基盤完成。素材が入れば一気に化ける）
+- ストーリーの引力:      5/10（11本の台詞データ。凱の「溶接の跡に刻まれた声」、暁の「時計の秒針」、みことの「温かい鍵盤」。テーマとの接続が一貫して強い）
+- 総合:                  4/10
+- 前回からの変化: 3→4。UIが「動く」ようになり、音声基盤が完成。面白さの公式の「演出密度」が大幅に改善。
 
 ---
 
-## 今夜の作業サマリー（第3夜）
+## 今夜の作業サマリー（第4夜）
 
 ### やったこと
-- **戦闘操作フローの完成（C# 2ファイル新規作成）**
-  - BattleFlowController: コマンド→ターゲット→スキル選択→実行の完全パイプライン。キーボード操作対応。共鳴チャンス・全共鳴攻撃・逃走判定も統合。
-  - EnemyAI: 弱点優先攻撃→HP30%以下で回復→最弱者ターゲットの戦略的AI。
+- **DOTweenアニメーション基盤構築（C# 2ファイル新規作成）**
+  - UIAnimator: FadeIn/Out, SlideIn/Out, PopIn/Out, PunchScale, ShakePosition, ScaleIn, FlashColorの静的ユーティリティ。全UIコントローラーから共通利用。
+  - DamagePopupUI: 弱点/クリティカル/回復/ミスの状況別アニメーション付きダメージ数字。属性色対応。
 
-- **フィールドシステム構築（C# 3ファイル新規作成）**
-  - LocationData: 17エリアのenum定義、NPC配置、アクティビティ定義のScriptableObject
-  - FieldManager: 場所移動、時間帯/天候による利用制限、NPC会話トリガー、アクティビティ実行
-  - FieldUIController: ナビゲーション/NPC/アクティビティの動的パネルUI
+- **音声システム構築（C# 2ファイル新規作成）**
+  - AudioManager: シングルトン。BGMクロスフェード対応（1.5秒遷移）。SFX分類（UI系/戦闘系/会話系）。ボリューム管理。
+  - AudioLibrary: ScriptableObject。BGM14トラック + SFX23種類のenum定義。AudioClipマッピング。
 
-- **ゲームループ統合（C# 1ファイル新規作成 + 1ファイル修正）**
-  - GameFlowController: パーティ管理、戦闘開始、社会リンクイベント発火、プロローグ開始、選択肢→絆ポイント接続
-  - BattleUIController修正: ボタンをBattleFlowControllerに接続
+- **既存UIコントローラー全面DOTween統合（C# 8ファイル修正）**
+  - BattleUIController: コマンドメニューSlideIn、メッセージSlideInFromBottom、共鳴PopIn/PopOut、全共鳴PopIn+PunchScale、勝敗PopIn、弱点/クリティカルのShakePosition、ダメージポップアップ生成、全操作にSE連携
+  - DialogueUIController: 会話ウィンドウSlideInFromBottom、選択肢SlideInFromRight、終了SlideOutToLeft、SE連携
+  - TitleScreenController: DOTween Sequenceでロゴ→メニューの開幕演出、メニュー操作にFadeOut+DelayedCall
+  - SceneLoader: FadeOut/FadeInをDOTween化（Ease.InQuad/OutQuad）
+  - BondUIController: 絆マップFadeIn/Out、キャラ詳細SlideInFromRight、ランクアップPopIn+PunchScale+SE
+  - StatRankUpUI: PopIn+PunchScale+SE → DelayedCallでPopOut
+  - PauseMenuController: メニューSlideInFromRight/FadeOut、サブパネルFadeIn、全操作にSE
+  - FieldHUDController: 日付変更オーバーレイ（ScaleIn+FadeIn→FadeOut）、時間帯変化DOTween色遷移
 
-- **実台詞データ作成（JSON 5ファイル新規作成）**
-  - gai_first_meeting.json: 凱初対面 16行 — 下級生を庇い誤解される凱。「届かないありがとう」の残響
-  - mikoto_first_meeting.json: みこと初対面 16行 — 空のヘッドフォンと空のイヤホンの邂逅
-  - shiori_bond_rank1.json: 詩織Rank1 20行 — 「断れないのは優しさか、自分がないだけか」
-  - shiori_bond_rank2.json: 詩織Rank2 22行 — 屋上の夕日、完璧な仮面の下の本当の笑顔
-  - gai_bond_rank1.json: 凱Rank1 19行 — 弟のために季節限定プリンを買う姿
+- **実台詞データ作成（JSON 3ファイル新規作成）**
+  - akira_bond_rank1.json: 暁Rank1 17行 — 空を見上げる暁、「先のことを考えない」宣言、秒針の残響
+  - mikoto_bond_rank1.json: みことRank1 20行 — 鍵盤に触れる指、「聴きたくなかったから」の告白、温かい鍵盤
+  - gai_bond_rank2.json: 凱Rank2 21行 — 弟の車椅子用荷台の修理、母の失踪、「溶接の跡に刻まれた声」
 
 ### なぜそれを選んだか
-前回の課題リストで「戦闘操作フロー」「フィールド移動」「台詞拡充」が最優先3項目だった。
-この3つが揃えば「フィールド→戦闘→報酬→日常→社会リンク」のゲームループが閉じる。
-ペルソナの面白さの公式「感情移入 × システム融合 × 時間の希少性」のうち、
-「システム融合」を実現するための最小限のパイプラインを構築した。
+面白さの公式「演出密度」が最大のボトルネック（2/10）だった。ペルソナ5のUIが心を掴むのは
+「動く」からであり、静的UIでは設計がどれだけ良くても体験が伝わらない。
+DOTween統合 + AudioManager構築で「演出密度」を一気に引き上げ、同時にパーティ全員のRank1を
+揃えて「感情移入」の均等化も達成した。
 
 ### 実装してみての気づき・反省
-- みことの初対面台詞が傑出。空のヘッドフォンと空のイヤホンという「何も流れていないもので何かを塞ぐ」共通点が、蓮とみことの関係性の核を一瞬で伝える。ペルソナ3のアイギスとの出会いに匹敵する静かな衝撃がある。
-- 凱の「届かないありがとう」は残響テーマの完璧な具現化。聞こえなかった感謝の声が蓮のイヤホン越しに残響するという設計が素晴らしい。
-- 詩織のRank2「完璧な笑顔じゃない、不器用で、少し泣きそうで——でも、たぶん、これが本当の笑顔だ」はペルソナ5の杏の覚醒シーンを彷彿とさせる。
-- 戦闘はフロー接続されたが、DOTween演出がないため「爽快感」が決定的に不足。次回はここに集中すべき。
-- EnemyAIにnull参照バグがあった（battleManager==nullチェック直後にbattleManager.PartyUnitsを参照）。品質チェックで発見し修正済み。
+- UIAnimatorを静的ユーティリティにしたのは正解。全コントローラーから1行で呼べるため、アニメーション追加のコストがゼロに近い。将来的にDOTweenの設定を一箇所で変更できる。
+- 暁の「時計の秒針の音」は想像以上に良い伏線。死神アルカナの運命を暗示しつつ、蓮の残響聴取能力で「聴こえてしまう」設計が核心テーマと一致する。
+- みことのRank1で「何も書かず、ただそこにいる」が最高ポイント（3pt）になる設計は、このゲーム全体の哲学を体現している。「聴く」ことの本質は「返事をする」ことではなく「そこにいる」こと。
+- 凱のRank2「溶接の跡に刻まれた愛情」は言語化されない声の究極の表現。殴ることしかできないと嘆く凱が、実は荷台という形で「声」を出していたことに気づく構造が美しい。
+- BattleUIControllerのSetOverlayVisible→UIAnimator移行で、async void + Task.Delayパターンが全廃された。DOVirtual.DelayedCallに統一されたことで、コルーチンの管理が簡潔になった。
 
 ---
 
@@ -83,18 +86,22 @@
 - [x] SaveManager / SaveData（セーブ/ロード基盤）
 - [x] EchoRealmManager / EchoRealmData（残響界ダンジョン管理）
 - [x] ScriptableObject定義（Character, Ability, Enemy, ResonanceBody, FusionRecipe, Location）
-- [x] SceneLoader（フェード付きシーン遷移）
+- [x] SceneLoader（DOTweenフェード付きシーン遷移）
+- [x] UIAnimator（DOTween静的ユーティリティ：Fade/Slide/Pop/Shake/Scale/Flash）
 - [x] UIColors（テーマカラー定数・属性色マッピング）
-- [x] TitleScreenController（タイトル画面・波形アニメーション）
-- [x] BattleUIController（戦闘コマンド・共鳴演出・全共鳴攻撃・勝敗画面・BattleFlowController接続済み）
+- [x] TitleScreenController（DOTween Sequence開幕演出・BGM連携）
+- [x] BattleUIController（DOTweenアニメーション全面統合・ダメージポップアップ・SE連携）
+- [x] DamagePopupUI（属性色・弱点/クリティカル対応のアニメーション数字）
 - [x] PartyMemberStatusUI / EnemyStatusUI（HPSPバー表示）
-- [x] DialogueUIController（タイプライター・選択肢・波形装飾）
-- [x] FieldHUDController（日付・天候・行動力・デッドライン警告）
+- [x] DialogueUIController（DOTweenスライド/フェード・SE連携）
+- [x] FieldHUDController（DOTween日付変更演出・時間帯色遷移・デッドライン警告）
 - [x] CalendarUIController（カレンダー・デッドラインマーク）
 - [x] ActionSelectUIController（行動選択UI）
-- [x] BondUIController（絆マップ・ランクアップ演出）
-- [x] PauseMenuController（メニュー統合）
-- [x] StatRankUpUI（ステータスランクアップ演出）
+- [x] BondUIController（DOTween絆マップフェード・詳細スライド・ランクアップPopIn+PunchScale）
+- [x] PauseMenuController（DOTweenスライド/フェード・SE連携）
+- [x] StatRankUpUI（DOTween PopIn+PunchScale・SE連携）
+- [x] AudioManager（BGMクロスフェード・SFX再生・ボリューム管理）
+- [x] AudioLibrary（ScriptableObject BGM14トラック+SFX23種類定義）
 - [x] FieldManager（場所移動・NPC配置・時間/天候制限・アクティビティ）
 - [x] FieldUIController（ナビゲーション・NPC・アクティビティUI）
 - [x] GameFlowController（ゲームループ統合：パーティ→戦闘→社会リンク→プロローグ）
@@ -107,41 +114,45 @@
 - [x] 詩織Rank1台詞データ（shiori_bond_rank1.json）
 - [x] 詩織Rank2台詞データ（shiori_bond_rank2.json）
 - [x] 凱Rank1台詞データ（gai_bond_rank1.json）
-- [ ] DOTweenアニメーション実装（UIの「手触り」）
-- [ ] BGM / SE（仮素材でも）
+- [x] 凱Rank2台詞データ（gai_bond_rank2.json）
+- [x] 暁Rank1台詞データ（akira_bond_rank1.json）
+- [x] みことRank1台詞データ（mikoto_bond_rank1.json）
+- [ ] BGM / SE素材（仮素材でも）
 - [ ] 残響界ダンジョン生成・探索
 - [ ] 共鳴体フュージョンUI・ロジック
-- [ ] 暁・みことのRank1台詞
-- [ ] 残りキャラ（祐介・葵・蓮一郎・花・竜一・紗夜・陽菜・源蔵）の台詞
 - [ ] アイテムシステム
 - [ ] ショップシステム
+- [ ] 残りキャラ（祐介・葵・花・竜一・紗夜・陽菜・源蔵）の台詞
+- [ ] パーティ全員Rank3以降の台詞
+- [ ] 戦闘カットイン演出
+- [ ] 共鳴覚醒イベント
 
 ---
 
 ## 未実装・課題リスト
-- **DOTween演出**: 優先度最高。全UIにフェード/スライド/パルスアニメーション。ペルソナ5の手触りに近づける唯一の方法
-- **BGM/SE**: 優先度高。仮素材でも雰囲気は劇的に変わる。戦闘BGM・フィールドBGM・UI SE
-- **残響界ダンジョン**: 優先度高。ランダム or 固定マップの探索。ここが「もう一つのゲーム」
-- **アイテムシステム**: 優先度中。回復アイテム・素材アイテム・ショップ
-- **台詞量の拡充**: 優先度中。暁/みことのRank1、祐介・葵の初対面とRank1
+- **BGM/SE素材**: 優先度最高。AudioManagerは完成、素材が入れば即座に鳴る。仮素材でもいいので用意する
+- **残響界ダンジョン**: 優先度高。ランダム or 固定マップの探索。フロア遷移・エンカウント・ボス
+- **アイテムシステム**: 優先度高。回復アイテム・素材アイテム・ショップ。戦闘で使えるように
 - **共鳴体フュージョン**: 優先度中。ペルソナ合体相当。UIと計算ロジック
+- **台詞量の拡充**: 優先度中。パーティ全員Rank3〜5、非パーティキャラの初対面
+- **戦闘カットイン**: 優先度中。共鳴覚醒・全共鳴攻撃時のキャラカットイン
 
 ---
 
 ## 次回セッションの最優先タスク
 
-1. **最重要: DOTweenアニメーション実装**
-   全UIにアニメーションを入れる。戦闘コマンドのスライドイン、ダメージ数字のポップ、
-   画面遷移のフェード、ボタンのパルス。ペルソナ5のUIが魅力的なのは「動く」から。
-   現在の静的UIでは体験の質が根本的に異なる。
+1. **最重要: 残響界ダンジョンシステム**
+   ダンジョン生成（ランダム or 固定）、フロア探索UI、エンカウント発生、
+   ボス部屋、被害者救出イベント。ゲームの「もう一つの柱」を作る。
+   フィールド→残響界→戦闘→帰還のループを完成させる。
 
-2. **BGM/SE基盤の構築**
-   AudioManagerを作成し、シーンごとのBGM切替・戦闘BGM・UI SE・会話SE。
-   仮のSE（ビープ音でも）があるだけで戦闘の手応えが段違いになる。
+2. **アイテムシステム + ショップ**
+   ItemData ScriptableObject、インベントリ管理、戦闘中アイテム使用、
+   ショップUI。戦闘の奥行きと日常パートの経済圏を作る。
 
-3. **暁・みことのRank1台詞 + 凱Rank2**
-   パーティ4人の絆を均等に深める。暁の「痛みを感じない身体」、
-   みことの「声を失った理由」の核心に少しだけ触れるRank1を書く。
+3. **非パーティキャラクターの初対面台詞**
+   祐介（カフェマスター）、葵（担任教師）、花（図書室の少女）の初対面を書く。
+   これにより社会リンクの選択肢が広がり、時間の希少性が実感できる。
 
 ---
 
@@ -181,7 +192,25 @@
 
 - **社会リンク台詞の「最高ポイント選択肢」設計思想**
   最もポイントが高い選択肢は「相手の核心を突く」もの。
-  詩織Rank1: 「自分がないだけかも」(3pt) — 優しい嘘ではなく真実を選ぶ
-  詩織Rank2: 「本当の自分は、自分にしかわからない」(3pt) — 答えを与えず自立を促す
-  凱Rank1: 「プリン好きなのか」(2pt) — 弟の存在を知らずに自然体で接する
   ペルソナ5のコープ会話で最適解が「空気を読む」のではなく「本質を見抜く」のと同じ設計。
+
+### 2026-06-07（第4夜）
+- **UIAnimatorを静的ユーティリティクラスとして設計**
+  MonoBehaviourではなく静的クラスにした。UIアニメーションはシーン非依存で使える必要があり、
+  シングルトンのライフサイクル管理を避けたかった。DOTweenは内部的にシーン非依存で動作するため問題ない。
+
+- **AudioManagerのBGMクロスフェード方式: デュアルAudioSource**
+  bgmSourceとbgmSubSourceの2つを用意し、クロスフェード完了時にswapする。
+  ペルソナ5のBGM遷移（戦闘突入→フィールド復帰）がシームレスなのはこの方式。
+
+- **社会リンクRank1の「最高ポイント」設計パターンの深化**
+  暁Rank1: 「何も言わず隣に座る」(3pt) — 心配を口にせず寄り添う
+  みことRank1: 「ここが好きだから」(3pt) — 相手のためではなく自分の意志で来たと伝える
+  みことRank1第2選択: 「何も書かず、ただそこにいる」(3pt) — 言葉すら不要な理解
+  凱Rank2: 「一人で抱えるな」(3pt) — 直接的に孤立を否定する
+  パターン: 「相手を変えようとしない。ただ、相手の隣にいることを選ぶ」——これが本作の核心。
+
+- **async void + Task.Delay パターンの全廃**
+  DOTween統合に伴い、UI表示の待機をDOVirtual.DelayedCallに統一した。
+  async voidは例外が捕捉されにくく、オブジェクト破棄後のコールバック問題もある。
+  DOTweenのSequence/DelayedCallはKill可能で、MonoBehaviourの破棄と連動できる。

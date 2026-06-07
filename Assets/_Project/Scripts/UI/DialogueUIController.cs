@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 using EchoesOfArcadia.Core;
 using EchoesOfArcadia.Dialogue;
 
@@ -37,8 +38,13 @@ namespace EchoesOfArcadia.UI
         [SerializeField] private float waveSpeed = 2f;
         [SerializeField] private float waveAmplitude = 3f;
 
+        [Header("Animation Targets")]
+        [SerializeField] private RectTransform dialogueWindowRect;
+        [SerializeField] private RectTransform choiceRect;
+
         private bool isTyping;
         private bool skipRequested;
+        private bool windowVisible;
         private CancellationTokenSource typewriterCts;
         private readonly List<GameObject> activeChoiceButtons = new();
 
@@ -88,8 +94,14 @@ namespace EchoesOfArcadia.UI
 
         private void OnLineDisplayed(DialogueLine line)
         {
-            SetOverlayVisible(dialogueWindowGroup, true);
-            SetOverlayVisible(choiceGroup, false);
+            if (!windowVisible)
+            {
+                UIAnimator.SlideInFromBottom(dialogueWindowGroup, dialogueWindowRect, 0.3f);
+                windowVisible = true;
+            }
+            UIAnimator.SetVisible(choiceGroup, false);
+
+            AudioManager.Instance?.PlaySFX(SFXType.Dialogue_Next);
 
             if (speakerNameText != null)
             {
@@ -110,7 +122,8 @@ namespace EchoesOfArcadia.UI
         private void OnChoicesPresented(List<DialogueChoice> choices)
         {
             ClearChoiceButtons();
-            SetOverlayVisible(choiceGroup, true);
+            UIAnimator.SlideInFromRight(choiceGroup, choiceRect, 0.25f);
+            AudioManager.Instance?.PlaySFX(SFXType.Dialogue_Choice);
 
             for (int i = 0; i < choices.Count; i++)
             {
@@ -142,9 +155,13 @@ namespace EchoesOfArcadia.UI
                 var button = buttonObj.GetComponent<Button>();
                 button?.onClick.AddListener(() =>
                 {
-                    SetOverlayVisible(choiceGroup, false);
-                    ClearChoiceButtons();
-                    DialogueSystem.Instance?.SelectChoice(index);
+                    AudioManager.Instance?.PlaySFX(SFXType.UI_Confirm);
+                    UIAnimator.FadeOut(choiceGroup, 0.15f);
+                    DOVirtual.DelayedCall(0.15f, () =>
+                    {
+                        ClearChoiceButtons();
+                        DialogueSystem.Instance?.SelectChoice(index);
+                    });
                 });
 
                 if (choice.statRequirement.HasValue)
@@ -158,9 +175,10 @@ namespace EchoesOfArcadia.UI
 
         private void OnDialogueEnded()
         {
-            SetOverlayVisible(dialogueWindowGroup, false);
-            SetOverlayVisible(choiceGroup, false);
+            UIAnimator.SlideOutToLeft(dialogueWindowGroup, dialogueWindowRect, 0.3f);
+            UIAnimator.FadeOut(choiceGroup, 0.15f);
             ClearChoiceButtons();
+            windowVisible = false;
         }
 
         private async void TypeText(string fullText, CancellationToken token)
@@ -219,13 +237,5 @@ namespace EchoesOfArcadia.UI
 
         private static bool IsPunctuation(char c) =>
             c is '。' or '、' or '！' or '？' or '…' or '—' or '.' or ',' or '!' or '?';
-
-        private void SetOverlayVisible(CanvasGroup group, bool visible)
-        {
-            if (group == null) return;
-            group.alpha = visible ? 1f : 0f;
-            group.interactable = visible;
-            group.blocksRaycasts = visible;
-        }
     }
 }

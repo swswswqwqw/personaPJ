@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 using EchoesOfArcadia.Core;
 using EchoesOfArcadia.TimeSystem;
 
@@ -30,6 +31,12 @@ namespace EchoesOfArcadia.UI
         [Header("Location")]
         [SerializeField] private TextMeshProUGUI locationText;
 
+        [Header("Date Change Overlay")]
+        [SerializeField] private CanvasGroup dateChangeOverlay;
+        [SerializeField] private TextMeshProUGUI dateChangeDateText;
+        [SerializeField] private TextMeshProUGUI dateChangeDayText;
+        [SerializeField] private RectTransform dateChangeRect;
+
         [Header("Visual Settings")]
         [SerializeField] private Image hudBackground;
 
@@ -53,6 +60,8 @@ namespace EchoesOfArcadia.UI
         private void OnTimeAdvanced(TimeAdvancedEvent e)
         {
             RefreshAll();
+            if (TimeManager.Instance != null)
+                UpdateTimeOfDayVisualAnimated(TimeManager.Instance.CurrentTimeOfDay);
         }
 
         private void OnDayChanged(DayChangedEvent e)
@@ -141,8 +150,29 @@ namespace EchoesOfArcadia.UI
 
         private void PlayDateChangeAnimation()
         {
-            // TODO: DOTWeenで日付変更トランジション演出
-            // 画面がワイプし、新しい日付が大きく表示されてからフェードアウト
+            if (dateChangeOverlay == null || TimeManager.Instance == null) return;
+
+            var date = TimeManager.Instance.CurrentDate;
+            if (dateChangeDateText != null)
+                dateChangeDateText.text = $"{date.Month}月{date.Day}日";
+            if (dateChangeDayText != null)
+                dateChangeDayText.text = GetJapaneseDayOfWeek(date.DayOfWeek) + "曜日";
+
+            AudioManager.Instance?.PlaySFX(SFXType.Calendar_DateChange);
+
+            var seq = DOTween.Sequence();
+            UIAnimator.SetVisible(dateChangeOverlay, false);
+            if (dateChangeRect != null)
+                dateChangeRect.localScale = Vector3.one * 1.3f;
+
+            seq.Append(dateChangeOverlay.DOFade(1f, 0.3f).SetEase(Ease.OutQuad));
+            if (dateChangeRect != null)
+                seq.Join(dateChangeRect.DOScale(1f, 0.4f).SetEase(Ease.OutBack));
+
+            seq.AppendInterval(1.2f);
+
+            seq.Append(dateChangeOverlay.DOFade(0f, 0.4f).SetEase(Ease.InQuad));
+            seq.OnComplete(() => UIAnimator.SetVisible(dateChangeOverlay, false));
         }
 
         private static string GetTimeOfDayName(TimeOfDay time) => time switch
@@ -176,11 +206,21 @@ namespace EchoesOfArcadia.UI
             _ => ""
         };
 
-        private void SetGroupVisible(CanvasGroup group, bool visible)
+        private void UpdateTimeOfDayVisualAnimated(TimeOfDay time)
         {
-            if (group == null) return;
-            group.alpha = visible ? 1f : 0f;
-            group.blocksRaycasts = visible;
+            if (hudBackground == null) return;
+
+            Color targetColor = time switch
+            {
+                TimeOfDay.Morning => new Color(0.95f, 0.9f, 0.8f, 0.85f),
+                TimeOfDay.Class => new Color(0.9f, 0.92f, 0.95f, 0.85f),
+                TimeOfDay.Afternoon => new Color(0.95f, 0.85f, 0.7f, 0.85f),
+                TimeOfDay.Evening => new Color(0.2f, 0.15f, 0.35f, 0.9f),
+                TimeOfDay.LateNight => new Color(0.08f, 0.08f, 0.2f, 0.95f),
+                _ => new Color(0.9f, 0.9f, 0.9f, 0.85f)
+            };
+
+            hudBackground.DOColor(targetColor, 0.8f).SetEase(Ease.InOutQuad);
         }
     }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 using EchoesOfArcadia.Core;
 
 namespace EchoesOfArcadia.UI
@@ -26,17 +27,10 @@ namespace EchoesOfArcadia.UI
         [SerializeField] private float logoFadeInDuration = 2f;
         [SerializeField] private float menuFadeInDelay = 1.5f;
 
-        private float elapsedTime;
-        private bool menuVisible;
-
         private void Start()
         {
-            if (titleLogoGroup != null) titleLogoGroup.alpha = 0f;
-            if (menuGroup != null)
-            {
-                menuGroup.alpha = 0f;
-                menuGroup.interactable = false;
-            }
+            UIAnimator.SetVisible(titleLogoGroup, false);
+            UIAnimator.SetVisible(menuGroup, false);
 
             newGameButton?.onClick.AddListener(OnNewGamePressed);
             continueButton?.onClick.AddListener(OnContinuePressed);
@@ -44,36 +38,24 @@ namespace EchoesOfArcadia.UI
 
             if (continueButton != null)
                 continueButton.interactable = SaveManager.Instance != null && SaveManager.Instance.SaveExists(0);
+
+            AudioManager.Instance?.PlayBGM(BGMTrack.Title);
+
+            PlayOpeningSequence();
+        }
+
+        private void PlayOpeningSequence()
+        {
+            var seq = DOTween.Sequence();
+            seq.AppendInterval(0.3f);
+            seq.Append(UIAnimator.FadeIn(titleLogoGroup, logoFadeInDuration));
+            seq.AppendInterval(menuFadeInDelay - logoFadeInDuration);
+            seq.Append(UIAnimator.FadeIn(menuGroup, 0.8f));
         }
 
         private void Update()
         {
-            elapsedTime += Time.deltaTime;
-
-            AnimateLogoFadeIn();
-            AnimateMenuFadeIn();
             AnimateWaveEffect();
-        }
-
-        private void AnimateLogoFadeIn()
-        {
-            if (titleLogoGroup == null || titleLogoGroup.alpha >= 1f) return;
-            titleLogoGroup.alpha = Mathf.Clamp01(elapsedTime / logoFadeInDuration);
-        }
-
-        private void AnimateMenuFadeIn()
-        {
-            if (menuGroup == null || menuVisible) return;
-            if (elapsedTime < menuFadeInDelay) return;
-
-            float menuElapsed = elapsedTime - menuFadeInDelay;
-            menuGroup.alpha = Mathf.Clamp01(menuElapsed / 1f);
-
-            if (menuGroup.alpha >= 1f)
-            {
-                menuGroup.interactable = true;
-                menuVisible = true;
-            }
         }
 
         private void AnimateWaveEffect()
@@ -93,23 +75,35 @@ namespace EchoesOfArcadia.UI
 
         private void OnNewGamePressed()
         {
+            AudioManager.Instance?.PlaySFX(SFXType.UI_Confirm);
             if (SceneLoader.Instance == null) return;
-            GameEventBus.Publish(new NewGameStartedEvent());
-            SceneLoader.Instance.LoadScene(gameSceneName, GamePhase.Field);
+
+            UIAnimator.FadeOut(menuGroup, 0.3f);
+            DOVirtual.DelayedCall(0.4f, () =>
+            {
+                GameEventBus.Publish(new NewGameStartedEvent());
+                SceneLoader.Instance.LoadScene(gameSceneName, GamePhase.Field);
+            });
         }
 
         private void OnContinuePressed()
         {
+            AudioManager.Instance?.PlaySFX(SFXType.UI_Confirm);
             if (SaveManager.Instance == null) return;
             var saveData = SaveManager.Instance.Load(0);
             if (saveData == null) return;
-            GameEventBus.Publish(new GameLoadedEvent(saveData));
-            SceneLoader.Instance?.LoadScene(gameSceneName, GamePhase.Field);
+
+            UIAnimator.FadeOut(menuGroup, 0.3f);
+            DOVirtual.DelayedCall(0.4f, () =>
+            {
+                GameEventBus.Publish(new GameLoadedEvent(saveData));
+                SceneLoader.Instance?.LoadScene(gameSceneName, GamePhase.Field);
+            });
         }
 
         private void OnSettingsPressed()
         {
-            // TODO: 設定画面を開く
+            AudioManager.Instance?.PlaySFX(SFXType.UI_Select);
         }
 
         private void OnDestroy()

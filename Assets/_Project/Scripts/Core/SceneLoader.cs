@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 namespace EchoesOfArcadia.Core
 {
@@ -83,29 +84,19 @@ namespace EchoesOfArcadia.Core
             if (fadeCanvasGroup == null) return;
             fadeCanvasGroup.blocksRaycasts = true;
 
-            float elapsed = 0f;
-            while (elapsed < fadeDuration)
-            {
-                elapsed += Time.unscaledDeltaTime;
-                fadeCanvasGroup.alpha = Mathf.Clamp01(elapsed / fadeDuration);
-                await Task.Yield();
-            }
-            fadeCanvasGroup.alpha = 1f;
+            fadeCanvasGroup.DOKill();
+            fadeCanvasGroup.DOFade(1f, fadeDuration).SetEase(Ease.InQuad).SetUpdate(true);
+            await Task.Delay((int)(fadeDuration * 1000));
         }
 
         public async Task FadeIn()
         {
             if (fadeCanvasGroup == null) return;
 
-            float elapsed = 0f;
-            while (elapsed < fadeDuration)
-            {
-                elapsed += Time.unscaledDeltaTime;
-                fadeCanvasGroup.alpha = 1f - Mathf.Clamp01(elapsed / fadeDuration);
-                await Task.Yield();
-            }
-            fadeCanvasGroup.alpha = 0f;
-            fadeCanvasGroup.blocksRaycasts = false;
+            fadeCanvasGroup.DOKill();
+            fadeCanvasGroup.DOFade(0f, fadeDuration).SetEase(Ease.OutQuad).SetUpdate(true)
+                .OnComplete(() => fadeCanvasGroup.blocksRaycasts = false);
+            await Task.Delay((int)(fadeDuration * 1000));
         }
     }
 }

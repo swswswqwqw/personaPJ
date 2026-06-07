@@ -1,0 +1,113 @@
+{
+  "dialogueId": "akira_bond_rank1",
+  "contextDescription": "放課後。暁が中庭のベンチで一人、空を見上げている。蓮が通りかかる。",
+  "relatedArcana": "Death",
+  "requiredBondRank": 0,
+  "lines": [
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "放課後の中庭。\n暁がベンチに寝転がって、空を見上げている。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "いつもの騒がしさが嘘のように、静かだ。"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "surprised",
+      "text": "お、蓮じゃん。奇遇〜。\n……あはは、嘘。ここ、俺の定位置。"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "grin",
+      "text": "ここからさ、空見ると最高なんだよ。\n今日の雲、見てみ？　犬に見えない？"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "暁は笑顔で空を指差す。\nだが、蓮は気づいている。\n暁のもう片方の手が、左胸をそっと押さえていること。",
+      "choices": [
+        {
+          "text": "大丈夫か？",
+          "bondPoints": 2,
+          "nextLineId": "5"
+        },
+        {
+          "text": "（何も言わず隣に座る）",
+          "bondPoints": 3,
+          "nextLineId": "6"
+        },
+        {
+          "text": "犬には見えないな。",
+          "bondPoints": 1,
+          "nextLineId": "7"
+        }
+      ]
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "surprised",
+      "text": "え？　何が？　大丈夫大丈夫、超元気！\n……なんで？　なんか変だった？",
+      "nextLineId": "8"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は何も言わず、暁の隣に座った。\n暁は一瞬驚いた顔をして、それから——少しだけ、笑顔がやわらかくなる。",
+      "nextLineId": "8"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "laugh",
+      "text": "えー！　犬でしょどう見ても！\nセンスないな蓮は！",
+      "nextLineId": "8"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "しばらく並んで空を見る。\n暁がぽつりと言う。"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "quiet",
+      "text": "……なあ蓮。\nお前って、明日何するか決めてる？"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮が首を傾げる。"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "distant",
+      "text": "俺さ、あんまり先のこと考えないんだよね。\n来週の予定とか、来月の行事とか。"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "smile_faint",
+      "text": "今日が楽しければいいっていうか。\n……今日、ここで蓮と空を見てるのが楽しければ、\nそれでいいかなって。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "その言葉の奥に、何かがある。\n蓮のイヤホンの奥で、かすかに——\n時計の秒針のような音が聴こえた。"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "grin",
+      "text": "あっ、やべ！　飴忘れた！\n蓮、コンビニ行こうぜ！　おごるおごる！"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "暁は跳ね起きて、いつもの笑顔に戻る。\n\n——でも、さっきの静かな横顔が、\n蓮の中にずっと残っている。\n\nあの笑顔の下に、何かが隠れている。\n蓮はまだ、それが何かわからない。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "十文字暁——死神の調べ\nRANK 1"
+    }
+  ]
+}

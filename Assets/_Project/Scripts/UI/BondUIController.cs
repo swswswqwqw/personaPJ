@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 using EchoesOfArcadia.Core;
 using EchoesOfArcadia.Data;
 using EchoesOfArcadia.Social;
@@ -59,14 +60,15 @@ namespace EchoesOfArcadia.UI
         public void OpenBondMap()
         {
             RefreshBondMap();
-            SetVisible(bondMapGroup, true);
-            SetVisible(detailGroup, false);
+            UIAnimator.FadeIn(bondMapGroup, 0.3f);
+            UIAnimator.SetVisible(detailGroup, false);
+            AudioManager.Instance?.PlaySFX(SFXType.UI_Open);
         }
 
         public void CloseBondMap()
         {
-            SetVisible(bondMapGroup, false);
-            SetVisible(detailGroup, false);
+            UIAnimator.FadeOut(bondMapGroup, 0.2f);
+            UIAnimator.FadeOut(detailGroup, 0.15f);
         }
 
         public void ShowCharacterDetail(Arcana arcana)
@@ -86,7 +88,7 @@ namespace EchoesOfArcadia.UI
                 detailProgressBar.value = bond.currentPoints;
             }
 
-            SetVisible(detailGroup, true);
+            UIAnimator.SlideInFromRight(detailGroup, detailGroup.GetComponent<RectTransform>(), 0.25f);
         }
 
         private void RefreshBondMap()
@@ -101,7 +103,7 @@ namespace EchoesOfArcadia.UI
             }
         }
 
-        private async void OnBondRankUp(BondRankUpEvent e)
+        private void OnBondRankUp(BondRankUpEvent e)
         {
             if (rankUpOverlay == null) return;
 
@@ -113,9 +115,13 @@ namespace EchoesOfArcadia.UI
             if (rankUpNumberText != null) rankUpNumberText.text = $"RANK {e.NewRank}";
             if (rankUpMessageText != null) rankUpMessageText.text = "絆の調べが深まった……";
 
-            SetVisible(rankUpOverlay, true);
-            await System.Threading.Tasks.Task.Delay(3000);
-            SetVisible(rankUpOverlay, false);
+            AudioManager.Instance?.PlaySFX(SFXType.Bond_RankUp);
+
+            var rect = rankUpOverlay.GetComponent<RectTransform>();
+            UIAnimator.PopIn(rankUpOverlay, rect, 0.4f);
+            UIAnimator.PunchScale(rect, 0.1f, 0.5f);
+
+            DOVirtual.DelayedCall(3f, () => UIAnimator.PopOut(rankUpOverlay, rect, 0.3f));
         }
 
         private void AnimateNodes()
@@ -158,13 +164,6 @@ namespace EchoesOfArcadia.UI
             _ => ""
         };
 
-        private void SetVisible(CanvasGroup group, bool visible)
-        {
-            if (group == null) return;
-            group.alpha = visible ? 1f : 0f;
-            group.interactable = visible;
-            group.blocksRaycasts = visible;
-        }
     }
 
     public class BondCharacterNode : MonoBehaviour

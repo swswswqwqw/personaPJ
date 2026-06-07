@@ -1,0 +1,147 @@
+{
+  "dialogueId": "gai_bond_rank2",
+  "contextDescription": "夕方。蓮が商店街を歩いていると、凱が壊れた自転車を直している。弟の車椅子用の荷台だった。",
+  "relatedArcana": "Emperor",
+  "requiredBondRank": 1,
+  "lines": [
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "夕方の商店街。\n路地裏で凱がしゃがみ込んで、何かをいじっている。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "近づくと、古い自転車を修理していた。\n後輪の横に、溶接で取り付けたような不格好な荷台がある。"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "startled",
+      "text": "……またお前か。\nストーカーかよ。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "凱は油まみれの手でチェーンを直している。\n手首のミサンガが汚れを気にせず揺れている。",
+      "choices": [
+        {
+          "text": "手伝おうか。",
+          "bondPoints": 3,
+          "nextLineId": "4"
+        },
+        {
+          "text": "自転車、壊れたのか。",
+          "bondPoints": 1,
+          "nextLineId": "5"
+        }
+      ]
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "surprised",
+      "text": "……は？　お前、自転車直せんのかよ。\n\n……まあいい。チェーン押さえてろ。",
+      "nextLineId": "6"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "flat",
+      "text": "チェーンが外れただけだ。\n自分で直せる。",
+      "nextLineId": "6"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "二人で黙々と修理する。\n凱は口数が少ないが、手つきは丁寧だ。"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "reluctant",
+      "text": "……この荷台、俺が作ったんだ。\n弟の車椅子を載せるために。"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "pained",
+      "text": "親父は「施設に入れろ」って言う。\n母親は……3年前に出てった。\n面倒見切れないって。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "凱の手が一瞬、止まる。\nすぐに動き出すが、力の入り方が違う。"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "angry",
+      "text": "……俺が守るしかねえんだよ。\nあいつを守れるのは、俺しかいねえ。"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "pained",
+      "text": "でも、俺には金もねえし、力もねえ。\n殴ることしかできねえ。\n……守り方が、これしかわかんねえんだよ。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "凱がこちらを見る。\nいつもの鋭い目が、今は——ただ、疲れて見える。",
+      "choices": [
+        {
+          "text": "殴る以外の守り方もある。",
+          "bondPoints": 2,
+          "nextLineId": "14"
+        },
+        {
+          "text": "一人で抱えるな。",
+          "bondPoints": 3,
+          "nextLineId": "15"
+        },
+        {
+          "text": "……お前は十分強い。",
+          "bondPoints": 2,
+          "nextLineId": "16"
+        }
+      ]
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "scoff",
+      "text": "……簡単に言うなよ。\nお前にはわかんねえだろ。\n\nでも……そうだな。わかんねえけどな。",
+      "nextLineId": "17"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "shocked",
+      "text": "……は？\n\n一人でって……当たり前だろ。\n他に誰がいるんだよ。",
+      "nextLineId": "17"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "conflicted",
+      "text": "……強い、か。\n強かったら、こんなことになってねえよ。\n\nでも……まあ、ありがとな。",
+      "nextLineId": "17"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "修理が終わった。\n凱が自転車を起こす。不格好な荷台が夕日に照らされている。"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "grudging_respect",
+      "text": "……お前、今日のこと。\n弟のこととか、母親のこととか。\n\n誰にも言うなよ。"
+    },
+    {
+      "speakerName": "九条 凱",
+      "expression": "soft",
+      "text": "……でも、まあ。\nお前には、言ってもいいかもな。\nなんでかわかんねえけど。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "凱は自転車に跨がって走り出す。\n夕日の中、不格好な荷台を揺らしながら。\n\nあの荷台は——凱の「声」だ。\n言葉にできない愛情が、溶接の跡に刻まれている。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "九条凱——皇帝の調べ\nRANK 2"
+    }
+  ]
+}

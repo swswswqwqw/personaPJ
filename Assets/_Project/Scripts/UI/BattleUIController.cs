@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 using EchoesOfArcadia.Core;
 using EchoesOfArcadia.Battle;
 using EchoesOfArcadia.Data;
@@ -48,12 +49,22 @@ namespace EchoesOfArcadia.UI
 
         [Header("Result Screen")]
         [SerializeField] private CanvasGroup resultOverlay;
+        [SerializeField] private RectTransform resultPanel;
         [SerializeField] private TextMeshProUGUI resultTitleText;
         [SerializeField] private TextMeshProUGUI expGainText;
         [SerializeField] private TextMeshProUGUI moneyGainText;
 
+        [Header("Damage Popup")]
+        [SerializeField] private GameObject damagePopupPrefab;
+        [SerializeField] private RectTransform damagePopupContainer;
+
+        [Header("Animation Targets")]
+        [SerializeField] private RectTransform commandMenuRect;
+        [SerializeField] private RectTransform messageRect;
+
         private BattleUnit selectedTarget;
         private AbilityData selectedAbility;
+        private Tween activeMsgTween;
 
         private void OnEnable()
         {
@@ -93,20 +104,28 @@ namespace EchoesOfArcadia.UI
 
         private void OnBattleStarted(BattleStartedEvent e)
         {
-            SetOverlayVisible(resonanceOverlay, false);
-            SetOverlayVisible(fullResonanceOverlay, false);
-            SetOverlayVisible(resultOverlay, false);
+            UIAnimator.SetVisible(resonanceOverlay, false);
+            UIAnimator.SetVisible(fullResonanceOverlay, false);
+            UIAnimator.SetVisible(resultOverlay, false);
             RefreshPartyStatus();
             RefreshEnemyStatus();
+            AudioManager.Instance?.PlayBGM(BGMTrack.Battle_Normal);
         }
 
         private void OnBattleStateChanged(BattleState state)
         {
             bool showCommands = state == BattleState.PlayerTurn || state == BattleState.ResonanceChance;
-            SetOverlayVisible(commandMenuGroup, showCommands);
+
+            if (showCommands)
+                UIAnimator.SlideInFromLeft(commandMenuGroup, commandMenuRect, 0.25f);
+            else
+                UIAnimator.FadeOut(commandMenuGroup, 0.15f);
 
             if (state == BattleState.ResonanceChance)
+            {
                 ShowMessage("RESONANCE! もう一度行動できる！");
+                AudioManager.Instance?.PlaySFX(SFXType.Battle_Resonance);
+            }
 
             if (state == BattleState.Victory)
                 ShowVictoryResult();
@@ -121,25 +140,66 @@ namespace EchoesOfArcadia.UI
 
             string msg;
             if (e.Result.IsMiss)
+            {
                 msg = $"{e.Attacker.Name}の攻撃は外れた！";
+                AudioManager.Instance?.PlaySFX(SFXType.Battle_Miss);
+                SpawnDamagePopup(0, e.Ability.element, false, false, false, true);
+            }
             else if (e.Result.IsNulled)
+            {
                 msg = $"{e.Target.Name}には効かない！";
+                AudioManager.Instance?.PlaySFX(SFXType.Battle_Null);
+            }
             else if (e.Result.IsAbsorbed)
+            {
                 msg = $"{e.Target.Name}はダメージを吸収した！";
+                AudioManager.Instance?.PlaySFX(SFXType.Battle_Absorb);
+                SpawnDamagePopup(e.Result.Damage, e.Ability.element, false, false, true, false);
+            }
             else if (e.Result.IsReflected)
+            {
                 msg = $"攻撃が反射された！";
+                AudioManager.Instance?.PlaySFX(SFXType.Battle_Reflect);
+            }
             else
             {
                 msg = $"{e.Attacker.Name}の{e.Ability.abilityName}！ {e.Result.Damage}ダメージ！";
+
                 if (e.Result.HitWeakness)
+                {
                     msg += " 弱点！";
-                if (e.Result.IsCritical)
+                    AudioManager.Instance?.PlaySFX(SFXType.Battle_WeakHit);
+                    UIAnimator.ShakePosition(messageRect, 12f, 0.4f);
+                }
+                else if (e.Result.IsCritical)
+                {
                     msg += " クリティカル！";
+                    AudioManager.Instance?.PlaySFX(SFXType.Battle_CriticalHit);
+                    UIAnimator.ShakePosition(messageRect, 8f, 0.3f);
+                }
+                else
+                {
+                    AudioManager.Instance?.PlaySFX(SFXType.Battle_Attack);
+                }
+
                 if (e.Result.IsResisted)
                     msg = $"{e.Attacker.Name}の{e.Ability.abilityName}！ {e.Result.Damage}ダメージ…（耐性）";
+
+                bool isHeal = e.Ability.element == ElementType.Heal;
+                SpawnDamagePopup(e.Result.Damage, e.Ability.element,
+                    e.Result.HitWeakness, e.Result.IsCritical, isHeal, false);
             }
 
             ShowMessage(msg);
+        }
+
+        private void SpawnDamagePopup(int damage, ElementType element,
+            bool isWeak, bool isCritical, bool isHealed, bool isMiss)
+        {
+            if (damagePopupPrefab == null || damagePopupContainer == null) return;
+            var obj = Instantiate(damagePopupPrefab, damagePopupContainer);
+            var popup = obj.GetComponent<DamagePopupUI>();
+            popup?.Show(damage, element, isWeak, isCritical, isHealed, isMiss);
         }
 
         private void OnResonance(ResonanceEvent e)
@@ -154,7 +214,7 @@ namespace EchoesOfArcadia.UI
 
         private void OnBattleEnded(BattleEndedEvent e)
         {
-            SetOverlayVisible(commandMenuGroup, false);
+            UIAnimator.FadeOut(commandMenuGroup, 0.2f);
         }
 
         public void RefreshPartyStatus()
@@ -185,7 +245,7 @@ namespace EchoesOfArcadia.UI
             }
         }
 
-        private async void ShowResonanceEffect(ElementType element)
+        private void ShowResonanceEffect(ElementType element)
         {
             if (resonanceOverlay == null) return;
 
@@ -195,82 +255,93 @@ namespace EchoesOfArcadia.UI
             if (resonanceText != null)
                 resonanceText.text = "RESONANCE";
 
-            SetOverlayVisible(resonanceOverlay, true);
-            await System.Threading.Tasks.Task.Delay(800);
-            SetOverlayVisible(resonanceOverlay, false);
+            var rect = resonanceOverlay.GetComponent<RectTransform>();
+            UIAnimator.PopIn(resonanceOverlay, rect, 0.3f);
+            DOVirtual.DelayedCall(0.8f, () => UIAnimator.PopOut(resonanceOverlay, rect, 0.2f))
+                .SetUpdate(true);
         }
 
-        private async void ShowFullResonanceAttackEffect(int totalDamage)
+        private void ShowFullResonanceAttackEffect(int totalDamage)
         {
             if (fullResonanceOverlay == null) return;
+
+            AudioManager.Instance?.PlaySFX(SFXType.Battle_FullResonance);
 
             if (fullResonanceText != null)
                 fullResonanceText.text = "FULL RESONANCE ATTACK";
 
-            SetOverlayVisible(fullResonanceOverlay, true);
-            await System.Threading.Tasks.Task.Delay(2000);
+            var rect = fullResonanceOverlay.GetComponent<RectTransform>();
+            UIAnimator.PopIn(fullResonanceOverlay, rect, 0.4f);
 
-            if (fullResonanceText != null)
-                fullResonanceText.text = $"{totalDamage} DAMAGE!";
+            DOVirtual.DelayedCall(2f, () =>
+            {
+                if (fullResonanceText != null)
+                    fullResonanceText.text = $"{totalDamage} DAMAGE!";
+                UIAnimator.PunchScale(rect, 0.2f, 0.4f);
+            }).SetUpdate(true);
 
-            await System.Threading.Tasks.Task.Delay(1500);
-            SetOverlayVisible(fullResonanceOverlay, false);
+            DOVirtual.DelayedCall(3.5f, () => UIAnimator.PopOut(fullResonanceOverlay, rect, 0.3f))
+                .SetUpdate(true);
         }
 
-        private async void ShowMessage(string text)
+        private void ShowMessage(string text)
         {
             if (battleMessageText == null) return;
+            activeMsgTween?.Kill();
             battleMessageText.text = text;
-            SetOverlayVisible(messageGroup, true);
-            await System.Threading.Tasks.Task.Delay((int)(messageDisplayDuration * 1000));
-            SetOverlayVisible(messageGroup, false);
+
+            UIAnimator.SlideInFromBottom(messageGroup, messageRect, 0.2f);
+
+            activeMsgTween = DOVirtual.DelayedCall(messageDisplayDuration, () =>
+            {
+                UIAnimator.FadeOut(messageGroup, 0.2f);
+            }).SetUpdate(true);
         }
 
         private void ShowVictoryResult()
         {
             if (resultOverlay == null) return;
             if (resultTitleText != null) resultTitleText.text = "VICTORY";
-            SetOverlayVisible(resultOverlay, true);
+            AudioManager.Instance?.PlayBGM(BGMTrack.Victory);
+            UIAnimator.PopIn(resultOverlay, resultPanel, 0.5f);
         }
 
         private void ShowDefeatResult()
         {
             if (resultOverlay == null) return;
             if (resultTitleText != null) resultTitleText.text = "DEFEAT";
-            SetOverlayVisible(resultOverlay, true);
+            AudioManager.Instance?.PlayBGM(BGMTrack.Defeat);
+            UIAnimator.PopIn(resultOverlay, resultPanel, 0.5f);
         }
 
         private void OnAttackPressed()
         {
+            AudioManager.Instance?.PlaySFX(SFXType.UI_Confirm);
             BattleFlowController.Instance?.OnCommandAttack();
         }
 
         private void OnAbilityMenuPressed()
         {
+            AudioManager.Instance?.PlaySFX(SFXType.UI_Confirm);
             BattleFlowController.Instance?.OnCommandAbility();
         }
 
         private void OnGuardPressed()
         {
+            AudioManager.Instance?.PlaySFX(SFXType.UI_Confirm);
+            AudioManager.Instance?.PlaySFX(SFXType.Battle_Guard);
             BattleFlowController.Instance?.OnCommandGuard();
         }
 
         private void OnItemPressed()
         {
-            // TODO: アイテムシステム実装後に接続
+            AudioManager.Instance?.PlaySFX(SFXType.UI_Select);
         }
 
         private void OnEscapePressed()
         {
+            AudioManager.Instance?.PlaySFX(SFXType.UI_Confirm);
             BattleFlowController.Instance?.OnCommandEscape();
-        }
-
-        private void SetOverlayVisible(CanvasGroup group, bool visible)
-        {
-            if (group == null) return;
-            group.alpha = visible ? 1f : 0f;
-            group.interactable = visible;
-            group.blocksRaycasts = visible;
         }
     }
 }

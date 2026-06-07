@@ -1,0 +1,136 @@
+{
+  "dialogueId": "mikoto_bond_rank1",
+  "contextDescription": "放課後。蓮が再び音楽室を訪れる。みことがピアノの前にいる。今日は鍵盤に指を置いている。",
+  "relatedArcana": "HangedMan",
+  "requiredBondRank": 0,
+  "lines": [
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "放課後。音楽室。\nみことは今日も、ピアノの前にいた。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "でも前回と違う。\n今日は——鍵盤の上に、指を置いている。\n押してはいない。ただ、触れている。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮が入ると、みことは顔を上げた。\n前回のように無視はしない。\n筆談用のノートを開いて待っている。"
+    },
+    {
+      "speakerName": "白波 みこと",
+      "expression": "neutral",
+      "text": "《また来たの》"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は頷く。",
+      "choices": [
+        {
+          "text": "《弾かないの？》",
+          "bondPoints": 1,
+          "nextLineId": "5"
+        },
+        {
+          "text": "《ここが好きだから》",
+          "bondPoints": 3,
+          "nextLineId": "6"
+        }
+      ]
+    },
+    {
+      "speakerName": "白波 みこと",
+      "expression": "pained",
+      "text": "《…………》\n\nみことの指が、鍵盤から離れる。",
+      "nextLineId": "7"
+    },
+    {
+      "speakerName": "白波 みこと",
+      "expression": "slight_smile",
+      "text": "《……そう》\n\nみことがわずかに目を細める。\nそれは笑顔というには儚いが、確かに何かが灯った。",
+      "nextLineId": "7"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "しばらく沈黙が流れる。\nみことがノートにペンを走らせる。"
+    },
+    {
+      "speakerName": "白波 みこと",
+      "expression": "neutral",
+      "text": "《昔はピアノを弾いていた。コンクールにも出た》"
+    },
+    {
+      "speakerName": "白波 みこと",
+      "expression": "pained",
+      "text": "《2年前に、聴こえなくなった》"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "みことのペンが止まる。\n長い沈黙。\nそして、ゆっくりと書く。"
+    },
+    {
+      "speakerName": "白波 みこと",
+      "expression": "vulnerable",
+      "text": "《お医者さんは「原因不明」って言った。\n　でも私は知ってる。\n　私が、聴きたくなかったから》"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮のイヤホンの奥で、何かが震えた。\n遠くで——怒号のような、割れた声の残響。",
+      "choices": [
+        {
+          "text": "（何も書かず、ただそこにいる）",
+          "bondPoints": 3,
+          "nextLineId": "14"
+        },
+        {
+          "text": "《辛かったね》",
+          "bondPoints": 2,
+          "nextLineId": "15"
+        }
+      ]
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は何も書かなかった。\nペンを持ったまま、ただ——みことの隣にいた。\n\nみことは驚いたように蓮を見て、\nそれから、ノートに一行だけ書いた。",
+      "nextLineId": "16"
+    },
+    {
+      "speakerName": "白波 みこと",
+      "expression": "sad_smile",
+      "text": "《……ありがとう。\n　でも、私に同情しないで。\n　これは、私が選んだことだから》",
+      "nextLineId": "17"
+    },
+    {
+      "speakerName": "白波 みこと",
+      "expression": "neutral",
+      "text": "《あなたは、変な人。\n　同情もしない。質問もしない。\n　ただ、いる》"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "みことは立ち上がり、鞄を持つ。\nドアの前で振り返り、ノートに書く。"
+    },
+    {
+      "speakerName": "白波 みこと",
+      "expression": "slight_smile",
+      "text": "《……また来ても、いい》"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "みことが去った後、\n蓮はピアノの鍵盤を見つめる。\n\nさっきまでみことの指があった場所。\n鍵盤は——ほんのわずかに、温かかった。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "白波みこと——吊された男の調べ\nRANK 1"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 using EchoesOfArcadia.Core;
 using EchoesOfArcadia.Data;
 
@@ -34,6 +35,9 @@ namespace EchoesOfArcadia.UI
         [SerializeField] private BondUIController bondUI;
         [SerializeField] private CalendarUIController calendarUI;
 
+        [Header("Animation")]
+        [SerializeField] private RectTransform menuRect;
+
         private bool isOpen;
 
         private void Update()
@@ -52,7 +56,8 @@ namespace EchoesOfArcadia.UI
 
             isOpen = true;
             GameManager.Instance?.Pause();
-            SetVisible(menuGroup, true);
+            AudioManager.Instance?.PlaySFX(SFXType.UI_Open);
+            UIAnimator.SlideInFromRight(menuGroup, menuRect, 0.25f);
             HideAllSubPanels();
 
             statusButton?.onClick.AddListener(ShowStatus);
@@ -66,7 +71,8 @@ namespace EchoesOfArcadia.UI
         {
             isOpen = false;
             GameManager.Instance?.Resume();
-            SetVisible(menuGroup, false);
+            AudioManager.Instance?.PlaySFX(SFXType.UI_Close);
+            UIAnimator.FadeOut(menuGroup, 0.2f);
             HideAllSubPanels();
 
             statusButton?.onClick.RemoveAllListeners();
@@ -79,7 +85,8 @@ namespace EchoesOfArcadia.UI
         private void ShowStatus()
         {
             HideAllSubPanels();
-            SetVisible(statusGroup, true);
+            AudioManager.Instance?.PlaySFX(SFXType.UI_Select);
+            UIAnimator.FadeIn(statusGroup, 0.2f);
             RefreshStats();
         }
 
@@ -98,7 +105,8 @@ namespace EchoesOfArcadia.UI
         private void ShowSystem()
         {
             HideAllSubPanels();
-            SetVisible(systemGroup, true);
+            AudioManager.Instance?.PlaySFX(SFXType.UI_Select);
+            UIAnimator.FadeIn(systemGroup, 0.2f);
 
             saveButton?.onClick.RemoveAllListeners();
             loadButton?.onClick.RemoveAllListeners();
@@ -131,18 +139,10 @@ namespace EchoesOfArcadia.UI
 
         private void HideAllSubPanels()
         {
-            SetVisible(statusGroup, false);
-            SetVisible(systemGroup, false);
+            UIAnimator.SetVisible(statusGroup, false);
+            UIAnimator.SetVisible(systemGroup, false);
             bondUI?.CloseBondMap();
             calendarUI?.Close();
-        }
-
-        private void SetVisible(CanvasGroup group, bool visible)
-        {
-            if (group == null) return;
-            group.alpha = visible ? 1f : 0f;
-            group.interactable = visible;
-            group.blocksRaycasts = visible;
         }
     }
 

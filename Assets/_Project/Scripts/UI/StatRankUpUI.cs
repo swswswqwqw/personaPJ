@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 using EchoesOfArcadia.Core;
 using EchoesOfArcadia.Data;
 
@@ -8,6 +9,7 @@ namespace EchoesOfArcadia.UI
     public class StatRankUpUI : MonoBehaviour
     {
         [SerializeField] private CanvasGroup overlayGroup;
+        [SerializeField] private RectTransform overlayRect;
         [SerializeField] private TextMeshProUGUI statNameText;
         [SerializeField] private TextMeshProUGUI rankNameText;
         [SerializeField] private TextMeshProUGUI messageText;
@@ -16,7 +18,7 @@ namespace EchoesOfArcadia.UI
         private void OnEnable()
         {
             GameEventBus.Subscribe<StatRankUpEvent>(OnStatRankUp);
-            SetVisible(false);
+            UIAnimator.SetVisible(overlayGroup, false);
         }
 
         private void OnDisable()
@@ -24,7 +26,7 @@ namespace EchoesOfArcadia.UI
             GameEventBus.Unsubscribe<StatRankUpEvent>(OnStatRankUp);
         }
 
-        private async void OnStatRankUp(StatRankUpEvent e)
+        private void OnStatRankUp(StatRankUpEvent e)
         {
             string statName = e.Stat switch
             {
@@ -42,16 +44,11 @@ namespace EchoesOfArcadia.UI
             if (rankNameText != null) rankNameText.text = rankName;
             if (messageText != null) messageText.text = $"{statName}のランクが上がった！";
 
-            SetVisible(true);
-            await System.Threading.Tasks.Task.Delay(2500);
-            SetVisible(false);
-        }
+            AudioManager.Instance?.PlaySFX(SFXType.Stat_RankUp);
+            UIAnimator.PopIn(overlayGroup, overlayRect, 0.35f);
+            UIAnimator.PunchScale(overlayRect, 0.12f, 0.4f);
 
-        private void SetVisible(bool visible)
-        {
-            if (overlayGroup == null) return;
-            overlayGroup.alpha = visible ? 1f : 0f;
-            overlayGroup.blocksRaycasts = visible;
+            DOVirtual.DelayedCall(2.5f, () => UIAnimator.PopOut(overlayGroup, overlayRect, 0.25f));
         }
     }
 }
