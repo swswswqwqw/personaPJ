@@ -1,0 +1,156 @@
+{
+  "dialogueId": "akira_bond_rank2",
+  "contextDescription": "日曜日。暁に呼び出されて商店街に来る。暁がやりたいことリストを実行している。",
+  "relatedArcana": "Death",
+  "requiredBondRank": 1,
+  "lines": [
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "日曜日の商店街。\n暁からメッセージが来ていた。\n「蓮！！　今日ヒマ？？　超大事な用がある！！！」"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "excited",
+      "text": "来た来た！　待ってた！\nさあ蓮、今日は忙しいぞ！"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "暁の手には、ノートの切れ端。\n何かリストのようなものが書かれている。"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "grin",
+      "text": "じゃーん。「暁の超やりたいことリスト」！\n\n今日のミッションは——\n1. 世界一辛いカレーを食べる\n2. クレーンゲームで景品を取る\n3. 夕日を最高のポイントで見る"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "暁は満面の笑みでリストを掲げる。\nリストには、他にもたくさんの項目がある。\nいくつかには既に線が引かれている。",
+      "choices": [
+        {
+          "text": "全部やるのか？",
+          "bondPoints": 1,
+          "nextLineId": "6"
+        },
+        {
+          "text": "（リストをよく見る）",
+          "bondPoints": 3,
+          "nextLineId": "7"
+        }
+      ]
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "laugh",
+      "text": "もちろん！　時間は有限だからな！\nさっそく行くぞ！",
+      "nextLineId": "8"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮はリストに目を通す。\n「海で泳ぐ」「星を見る」「バンジージャンプ」「友達と徹夜」——\n\nそして、一番下に小さく。\n「最後まで笑っている」\n\n暁がさっとリストを隠した。",
+      "nextLineId": "8"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "——3時間後。\n二人は商店街のベンチでぐったりしている。"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "pained_laugh",
+      "text": "カレー……やばかった……。\n俺、もう舌の感覚ないかも……。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "クレーンゲームは7回失敗した。\n暁は笑っていたが、途中で一度、\n左胸を押さえて立ち止まっていた。"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "quiet",
+      "text": "……なあ蓮。\n\n今日、楽しい？"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は頷く。"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "distant",
+      "text": "よかった。\n\n……俺さ、一人でやってもよかったんだけど。\nリストのこと。\n\nでも、誰かと一緒の方が——\n「やった」って感じがするっていうか。"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "vulnerable",
+      "text": "……一人だと、やったことが消えちゃう気がするんだ。\n覚えてる人がいないと、\nそれって本当にあったことなのかわかんなくなるだろ。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "暁の声が、少しだけ震えている。\n夕日が二人の影を長く伸ばしている。",
+      "choices": [
+        {
+          "text": "俺が覚えてる。",
+          "bondPoints": 3,
+          "nextLineId": "16"
+        },
+        {
+          "text": "消えないよ。",
+          "bondPoints": 2,
+          "nextLineId": "17"
+        },
+        {
+          "text": "……何か、隠してないか？",
+          "bondPoints": 1,
+          "nextLineId": "18"
+        }
+      ]
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "shocked",
+      "text": "……っ。\n\n……ずるいな、お前。\nそういうこと、さらっと言うの。"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "sad_smile",
+      "text": "……そうだといいな。\n消えないと、いいな。",
+      "nextLineId": "19"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "forced_smile",
+      "text": "はは、何のこと？\n俺が何か隠すわけないじゃん！\n\n……さ、夕日見に行こうぜ！",
+      "nextLineId": "20"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "暁が立ち上がる。\nその目が、一瞬だけ——赤く濡れている。\n\nすぐにいつもの笑顔に戻る。\nでも蓮は見た。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "二人は丘の上から夕日を見た。\n暁がリストに線を引く。「夕日を最高のポイントで見る」——達成。"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "genuine_smile",
+      "text": "……今日は、いい日だった。\n\nありがとな、蓮。\nまた——付き合ってくれよ。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "暁のリストには、まだたくさんの未達成項目がある。\n\nそのリストが——祈りのように見えた。\n「まだ時間がある」と、自分に言い聞かせるための。\n\n蓮のイヤホンの奥で、秒針の音が——\n前より少しだけ、速くなっている気がした。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "十文字暁——死神の調べ\nRANK 2"
+    }
+  ]
+}

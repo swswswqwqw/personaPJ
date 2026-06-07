@@ -1,0 +1,154 @@
+{
+  "dialogueId": "hana_first_meeting",
+  "contextDescription": "放課後の図書室。蓮が本を探していると、隅の席に小さな女の子が座っている。蒼海学園の生徒ではない。",
+  "relatedArcana": "Sun",
+  "requiredBondRank": -1,
+  "lines": [
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "放課後の図書室。\n窓際の一番奥の席に、小さな影がある。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "ランドセルを背負った女の子が、\n大きすぎる椅子に座って、分厚い本を読んでいる。\n蒼海学園の制服ではない。小学生だ。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮が近くの棚で本を探していると、\n女の子がちらりとこちらを見た。\nすぐに本に目を戻すが、少しだけ体が強張っている。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は気にせず本を選び、少し離れた席に座った。\nしばらく静寂が流れる。",
+      "choices": [
+        {
+          "text": "（黙って本を読む）",
+          "bondPoints": 3,
+          "nextLineId": "5"
+        },
+        {
+          "text": "こんにちは。",
+          "bondPoints": 1,
+          "nextLineId": "6"
+        }
+      ]
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は静かに本を読み始めた。\n何も言わず、何も聞かず。\n\n……少しして、女の子の体から力が抜けていくのがわかった。",
+      "nextLineId": "7"
+    },
+    {
+      "speakerName": "小鳥遊 花",
+      "expression": "startled",
+      "text": "…………。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "女の子は本の向こうから、そっと蓮を観察している。\n警戒しているが、逃げようとはしない。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "30分ほどが過ぎた。\n図書室に西日が差し込む頃、女の子がぽつりと言った。"
+    },
+    {
+      "speakerName": "小鳥遊 花",
+      "expression": "quiet",
+      "text": "……お兄ちゃんも、ここが好き？"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は本から顔を上げて、頷いた。",
+      "choices": [
+        {
+          "text": "静かで、いいところだね。",
+          "bondPoints": 3,
+          "nextLineId": "11"
+        },
+        {
+          "text": "君はよくここに来るの？",
+          "bondPoints": 2,
+          "nextLineId": "12"
+        }
+      ]
+    },
+    {
+      "speakerName": "小鳥遊 花",
+      "expression": "small_smile",
+      "text": "うん。静かで、誰も怒鳴らないから。\n\n……本の中は、安全だから。",
+      "nextLineId": "13"
+    },
+    {
+      "speakerName": "小鳥遊 花",
+      "expression": "cautious",
+      "text": "……毎日。\n学校終わったら、ここに来るの。\n閉まるまでいるの。",
+      "nextLineId": "13"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "花はぱたんと本を閉じた。\n表紙は「星の王子さま」。何度も読み返したのか、角がボロボロだ。"
+    },
+    {
+      "speakerName": "小鳥遊 花",
+      "expression": "quiet",
+      "text": "お兄ちゃんは、大人？"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は少し考えてから、首を振った。",
+      "choices": [
+        {
+          "text": "まだ子供だよ。",
+          "bondPoints": 2,
+          "nextLineId": "17"
+        },
+        {
+          "text": "どっちだろうね。",
+          "bondPoints": 3,
+          "nextLineId": "18"
+        }
+      ]
+    },
+    {
+      "speakerName": "小鳥遊 花",
+      "expression": "small_smile",
+      "text": "……そっか。\nじゃあ、まだ大丈夫だね。",
+      "nextLineId": "19"
+    },
+    {
+      "speakerName": "小鳥遊 花",
+      "expression": "thoughtful",
+      "text": "……わかんないの？\n\nわかんないなら、たぶん大丈夫。\n大人は「大人だ」って、すぐ言うから。",
+      "nextLineId": "19"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "閉館のチャイムが鳴る。\n花はランドセルを背負い、ゆっくり立ち上がる。"
+    },
+    {
+      "speakerName": "小鳥遊 花",
+      "expression": "hesitant",
+      "text": "……帰りたくない。\nでも、本の中には住めないんだよね。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "花は小さな足で図書室を出ていく。\n振り返らない。\n\n蓮のイヤホンの奥で——\n遠くから、誰かが泣いているような残響が聴こえた。\nとても小さな、子供の声。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "テーブルの上に、花が忘れた栞が一枚。\n手作りの、折り紙の太陽の形をしている。"
+    }
+  ]
+}

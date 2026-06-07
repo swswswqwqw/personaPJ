@@ -1,0 +1,107 @@
+{
+  "dialogueId": "yusuke_first_meeting",
+  "contextDescription": "放課後。蓮が海沿いの道を歩いていると、カフェ「残響」を見つける。入ると、祐介が一人でカウンターにいる。",
+  "relatedArcana": "Chariot",
+  "requiredBondRank": -1,
+  "lines": [
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "放課後、海沿いの道。\n潮風に混じって、コーヒーの香りが漂ってくる。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "路地を曲がると、古びたカフェがあった。\n看板には「残響」と書かれている。\nドアは開いているが、客の姿はない。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "カウンターの中で、無精髭の男がグラスを磨いている。\n穏やかな顔だが、目の奥にどこか疲れたような影がある。"
+    },
+    {
+      "speakerName": "神楽 祐介",
+      "expression": "calm",
+      "text": "いらっしゃい。\n……ああ、蒼海学園の生徒か。珍しいな、こんな辺鄙な店に。"
+    },
+    {
+      "speakerName": "神楽 祐介",
+      "expression": "slight_smile",
+      "text": "メニューはブレンドコーヒーだけだ。\n砂糖とミルクは好きなだけ入れていい。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮はカウンターに座った。\n祐介がコーヒーを淹れる手つきは、丁寧だが——\nどこか、別のことに慣れた手つきに見える。",
+      "choices": [
+        {
+          "text": "いい店ですね。",
+          "bondPoints": 2,
+          "nextLineId": "7"
+        },
+        {
+          "text": "「残響」って、変わった名前ですね。",
+          "bondPoints": 3,
+          "nextLineId": "8"
+        }
+      ]
+    },
+    {
+      "speakerName": "神楽 祐介",
+      "expression": "slight_smile",
+      "text": "……そうか？　ありがとう。\n客がいなくて潰れそうだけどな。",
+      "nextLineId": "9"
+    },
+    {
+      "speakerName": "神楽 祐介",
+      "expression": "surprised",
+      "text": "……お、鋭いな。\n\n「残響」ってのは……まあ、\n消えずに残るもの、って意味だ。\nこの店も、そういうものでありたいと思ってさ。",
+      "nextLineId": "9"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "コーヒーが出された。\n深い苦味の中に、かすかな甘さがある。\n蓮のイヤホンの奥で——一瞬、何かが聴こえた気がした。"
+    },
+    {
+      "speakerName": "神楽 祐介",
+      "expression": "calm",
+      "text": "……お前、転校生だろ？\n朝霧、だったか。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は少し驚く。名乗った覚えはない。"
+    },
+    {
+      "speakerName": "神楽 祐介",
+      "expression": "wry_smile",
+      "text": "田舎町だからな。噂は早い。\n\n……それに、俺は元々、人の顔と名前を覚えるのが仕事だった。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "祐介はそれ以上は言わず、自分のコーヒーを飲む。\n壁にかかった時計の秒針が、やけに大きく聴こえる。"
+    },
+    {
+      "speakerName": "神楽 祐介",
+      "expression": "distant",
+      "text": "……この街は、静かだろ。\n静かすぎるくらいだ。\n\n10年前は……もう少し、騒がしかったんだけどな。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮の胸の奥で、何かが軋む。\n10年前。その言葉に、記憶の底が揺れる。\nだが——思い出せない。"
+    },
+    {
+      "speakerName": "神楽 祐介",
+      "expression": "calm",
+      "text": "まあ、気が向いたらまた来いよ。\nコーヒーくらいは出してやる。\n\n……学生は、学校が終わったらさっさと帰るもんだ。暗くなる前にな。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "祐介の最後の言葉には、\n忠告以上の何かが込められている気がした。\n\nカフェ「残響」。\nこの店には——何かがある。"
+    }
+  ]
+}

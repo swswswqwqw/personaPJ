@@ -65,6 +65,8 @@ namespace EchoesOfArcadia.Echo
             GameManager.Instance?.ChangePhase(GamePhase.Field);
         }
 
+        public void RetreatFromDungeon() => Retreat();
+
         public int GetDaysRemaining()
         {
             if (currentDungeon == null) return -1;

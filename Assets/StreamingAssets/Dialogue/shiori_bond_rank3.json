@@ -1,0 +1,142 @@
+{
+  "dialogueId": "shiori_bond_rank3",
+  "contextDescription": "放課後。生徒会室。詩織が一人で仕事をしているが、机の上に散らばった書類の量が尋常ではない。他の役員の仕事まで引き受けている。",
+  "relatedArcana": "Priestess",
+  "requiredBondRank": 2,
+  "lines": [
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "放課後。生徒会室。\n蓮がドアを開けると、詩織が一人で仕事をしていた。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "机の上には、3人分はありそうな書類の山。\n詩織のペンは止まらないが、\n目の下に薄い隈が見える。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "smile",
+      "text": "あ、蓮くん。ごめんね、少し取り込んでて。\n……すぐ終わるから、待ってて？"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "詩織のペンが一瞬止まった。\n書類の一枚を見つめて、何かを考えている。\nそれから——その書類を書き直し始めた。\n他の役員の分を、自分で修正しているのだ。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は黙って書類の一部を手に取った。",
+      "choices": [
+        {
+          "text": "手伝うよ。",
+          "bondPoints": 2,
+          "nextLineId": "6"
+        },
+        {
+          "text": "これ、全部一人でやってるの？",
+          "bondPoints": 3,
+          "nextLineId": "7"
+        }
+      ]
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "surprised",
+      "text": "え、いいよ！　自分でやるから。\n迷惑かけたくないし——",
+      "nextLineId": "8"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "caught_off_guard",
+      "text": "え……？\n\n……ううん、他の子たちも忙しいから。\n私がやった方が早いし、確実だし。",
+      "nextLineId": "8"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は何も言わず、仕分けを始めた。\n詩織は制止しようとして——やめた。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "しばらく無言で作業を続ける。\n窓の外が夕焼けに変わる頃、詩織がぽつりと言った。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "quiet",
+      "text": "……ね、蓮くん。\n私って、お節介だと思う？"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "pained",
+      "text": "母にね、昔言われたの。\n「人に頼りにされる人間になりなさい」って。\n\n……だから、頼まれたら断れない。\n断ったら、必要とされなくなるから。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "vulnerable",
+      "text": "変だよね。\n好きでやってるんじゃなくて、\n断れないからやってるなんて。\n\n……私、本当は何がしたいんだろう。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "詩織の手が止まっている。\nペンを握ったまま、机の上をじっと見つめている。",
+      "choices": [
+        {
+          "text": "わからなくてもいいと思う。",
+          "bondPoints": 3,
+          "nextLineId": "14"
+        },
+        {
+          "text": "断ってもいいんだよ。",
+          "bondPoints": 2,
+          "nextLineId": "15"
+        },
+        {
+          "text": "少なくとも、今は一人じゃない。",
+          "bondPoints": 2,
+          "nextLineId": "16"
+        }
+      ]
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "surprised",
+      "text": "……わからなくても、いい？\n\n……そんなこと、誰にも言われたことない。\nみんな、私に「答え」を求めるから。\n\n……ありがとう。少し、楽になった。",
+      "nextLineId": "17"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "sad_smile",
+      "text": "断る、か。\n……その言葉、すごく怖い。\n\nでも——うん、少しだけ、練習してみようかな。",
+      "nextLineId": "17"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "soft_smile",
+      "text": "……うん。\nそうだね。今、ここに蓮くんがいる。\n\nそれだけで——なんでだろう。\n書類が、少し軽く感じる。",
+      "nextLineId": "17"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "最後の書類を片付け終わる。\n詩織が窓を開けた。夜風が入ってくる。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "genuine_smile",
+      "text": "……ね、蓮くん。\n今度は仕事じゃなくて——\n\nただ話すだけの時間、作ってもいい？"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は頷いた。\n詩織が微笑む。初めて見る、力の抜けた笑顔だった。\n\n——「頼りにされる」のではなく、\n「ただ、いたい」と思える場所を、\n詩織はまだ知らないのかもしれない。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "鳴海詩織——女教皇の調べ\nRANK 3"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "dialogueId": "aoi_first_meeting",
+  "contextDescription": "授業後。廊下で蓮が担任の霧島葵に呼び止められる。転校手続きの確認という名目だが、葵の方が何か聞きたそうにしている。",
+  "relatedArcana": "Strength",
+  "requiredBondRank": -1,
+  "lines": [
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "放課後の廊下。\n蓮が教室を出ようとすると、声をかけられた。"
+    },
+    {
+      "speakerName": "霧島 葵",
+      "expression": "professional",
+      "text": "朝霧くん、ちょっといいかな。\n転校の書類で確認したいことがあって。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "職員室の隅。\n葵先生の机は整頓されているが、\n引き出しの奥に、古いギターのピックが見える。"
+    },
+    {
+      "speakerName": "霧島 葵",
+      "expression": "professional",
+      "text": "前の学校の成績、見たよ。優秀だね。\n……まあ、ここは前の学校より色々とのんびりしてるから、\n退屈するかもしれないけど。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "書類の確認はすぐに終わった。\nだが、葵は蓮を帰そうとしない。\n何か言いたそうに、ペンを回している。"
+    },
+    {
+      "speakerName": "霧島 葵",
+      "expression": "hesitant",
+      "text": "……あのさ、朝霧くん。\n部活、何か入る予定ある？"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮は首を振る。",
+      "choices": [
+        {
+          "text": "先生のおすすめは？",
+          "bondPoints": 2,
+          "nextLineId": "8"
+        },
+        {
+          "text": "先生は何か部活の顧問を？",
+          "bondPoints": 3,
+          "nextLineId": "9"
+        }
+      ]
+    },
+    {
+      "speakerName": "霧島 葵",
+      "expression": "slight_smile",
+      "text": "おすすめ？　そうだな……\n帰宅部。冗談だよ。\n\n好きなことをやるのが一番だ。\n……好きなこと、あるなら。",
+      "nextLineId": "10"
+    },
+    {
+      "speakerName": "霧島 葵",
+      "expression": "caught_off_guard",
+      "text": "え？　私？\n……軽音部の、一応顧問。名前だけだけど。\n\n部員が一人もいないから、実質的には——幽霊顧問かな。",
+      "nextLineId": "10"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "葵は窓の外を見る。\n夕日が職員室を橙色に染めている。"
+    },
+    {
+      "speakerName": "霧島 葵",
+      "expression": "nostalgic",
+      "text": "……大人になるって、諦めることに慣れることだよ。\n\nって、生徒に言うことじゃないね。忘れて。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "葵先生は笑うが、\nその笑顔はどこか——自分に向けられた皮肉のようだ。"
+    },
+    {
+      "speakerName": "霧島 葵",
+      "expression": "professional",
+      "text": "はい、じゃあ書類はこれでOK。\n何か困ったことがあったら、いつでも相談しに来て。\n\n……私でよければ、だけど。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "職員室を出る。\n廊下に葵先生の声が残響のように漂っている。\n\n「大人になるって、諦めることに慣れることだよ」\n\nその言葉は——本当に蓮に向けられたものだったのか。\nそれとも、自分自身に言い聞かせていたのか。"
+    }
+  ]
+}

@@ -59,5 +59,30 @@ namespace EchoesOfArcadia.Battle
         {
             return Affinities.TryGetValue(element, out var aff) ? aff : Affinity.Normal;
         }
+
+        public void TakeDamage(int damage)
+        {
+            if (!IsAlive) return;
+            CurrentHP = System.Math.Max(0, CurrentHP - damage);
+        }
+
+        public void Heal(int amount)
+        {
+            if (!IsAlive) return;
+            CurrentHP = System.Math.Min(MaxHP, CurrentHP + amount);
+        }
+
+        public void RestoreSP(int amount)
+        {
+            if (!IsAlive) return;
+            CurrentSP = System.Math.Min(MaxSP, CurrentSP + amount);
+        }
+
+        public void Revive(int hpAmount)
+        {
+            if (IsAlive) return;
+            CurrentHP = System.Math.Min(MaxHP, System.Math.Max(1, hpAmount));
+            IsDown = false;
+        }
     }
 }
