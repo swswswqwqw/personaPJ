@@ -1,0 +1,98 @@
+{
+  "dialogueId": "shiori_first_meeting",
+  "contextDescription": "4月 転校初日。教室で詩織が蓮に声をかける。学校案内。",
+  "relatedArcana": "Priestess",
+  "requiredBondRank": 0,
+  "lines": [
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "smile_polite",
+      "text": "あ、転校生の朝霧くん？　私、鳴海詩織。副会長をやってるの。よろしくね。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "（完璧な笑顔。教室中の視線が自然と彼女に集まっている。）"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "smile_polite",
+      "text": "校内、案内しようか？　この学校、ちょっと変わった構造してるから。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "詩織に案内されて校内を歩く。図書室、食堂、音楽室——",
+      "choices": [
+        {
+          "text": "ありがとう。助かる",
+          "bondPoints": 2,
+          "nextLineId": "4"
+        },
+        {
+          "text": "一人で大丈夫だけど",
+          "bondPoints": 0,
+          "nextLineId": "5"
+        },
+        {
+          "text": "（黙ってついていく）",
+          "bondPoints": 1,
+          "nextLineId": "6"
+        }
+      ]
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "smile_warm",
+      "text": "ふふ、いいの。私の仕事だから。……っていうか、こういうの好きなんだよね。",
+      "nextLineId": "7"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "smile_stiff",
+      "text": "あ……そう？　ごめんね、余計なお世話だった？",
+      "nextLineId": "7"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "smile_polite",
+      "text": "……無口なんだね。大丈夫、嫌いじゃないよ。静かな人。",
+      "nextLineId": "7"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "屋上に続く階段の前で、詩織の足が止まる。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "neutral_tense",
+      "text": "ここは——立入禁止。気にしないで。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "（一瞬だけ、完璧な笑顔が消えた。\n　まるで、聞こえてはいけない音を聞いたかのように。）"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "蓮の左耳のイヤホンの奥で——かすかな声が聞こえた気がした。"
+    },
+    {
+      "speakerName": "鳴海 詩織",
+      "expression": "smile_polite",
+      "text": "さ、次は食堂ね！　ここのカレー、意外と美味しいんだよ。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "（笑顔が戻る。完璧に。\n　でも——さっきの一瞬が、消えない。）"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "鳴海詩織との絆の調べが始まった予感がする……"
+    }
+  ]
+}

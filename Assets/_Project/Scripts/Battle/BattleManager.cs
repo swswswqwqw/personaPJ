@@ -180,9 +180,9 @@ namespace EchoesOfArcadia.Battle
 
         private int CalculateBondBonus()
         {
-            // 絆の調べのランク合計に基づくボーナス
-            // TODO: SocialLinkManagerから実際のランクを取得
-            return 0;
+            var socialManager = Social.SocialLinkManager.Instance;
+            if (socialManager == null) return 0;
+            return socialManager.GetTotalBondRanks() * 2;
         }
 
         private int CalculateFullResonanceDamage(BattleUnit target, int bondBonus)

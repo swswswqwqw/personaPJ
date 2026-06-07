@@ -1,0 +1,92 @@
+{
+  "dialogueId": "akira_first_meeting",
+  "contextDescription": "4月 転校初日。暁が蓮に声をかける。放課後、保健室でのシーン。",
+  "relatedArcana": "Death",
+  "requiredBondRank": 0,
+  "lines": [
+    {
+      "speakerName": "十文字 暁",
+      "expression": "grin",
+      "text": "よう新入り！　席こっちこっち！　あ、飴いる？"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "人懐っこい笑顔で手を振る茶髪の少年。\n制服のボタンがひとつ取れている。"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "grin",
+      "text": "俺、十文字暁！　アキラでいいよ。響ヶ崎生まれの響ヶ崎育ち。\nこの街のことなら何でも聞いて！"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "差し出された飴をどうするか——",
+      "choices": [
+        {
+          "text": "ありがとう。（受け取る）",
+          "bondPoints": 2,
+          "nextLineId": "4"
+        },
+        {
+          "text": "……いや、いい。（断る）",
+          "bondPoints": 0,
+          "nextLineId": "5"
+        }
+      ]
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "happy",
+      "text": "おっ、遠慮しない奴は好きだぜ！　イチゴ味な、俺のおすすめ。",
+      "nextLineId": "6"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "smile_forced",
+      "text": "あはは、そっか。まあ、いつでも言ってよ。ポケット常備してるから。",
+      "nextLineId": "6"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "——放課後。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "忘れ物を取りに教室へ戻る途中、保健室の前を通りかかる。\nドアが薄く開いていた。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "中で、暁が薬を飲んでいる。\nさっきまでの明るさが嘘のように、静かな横顔。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "暁がこちらに気づく。"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "smile_forced",
+      "text": "おっと、見つかっちゃった。ビタミン剤だよ！　健康第一ってね！"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "（いつもの笑顔。でも——\n　蓮のイヤホンの奥で、かすかな音が震えた。\n　笑い声の裏に、何かが軋んでいる。）"
+    },
+    {
+      "speakerName": "十文字 暁",
+      "expression": "grin",
+      "text": "そうだ、帰り道教えてやるよ！　海沿いのいい道があるんだ。行こうぜ！"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "暁は走り出す。振り返らないまま。\nその背中が、少しだけ小さく見えた。"
+    }
+  ]
+}

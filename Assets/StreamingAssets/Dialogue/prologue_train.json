@@ -1,0 +1,93 @@
+{
+  "dialogueId": "prologue_train",
+  "contextDescription": "プロローグ。蓮が電車で響ヶ崎に向かう。ゲーム最初のシーン。",
+  "relatedArcana": "Fool",
+  "requiredBondRank": 0,
+  "lines": [
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "——4月。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "電車の窓の外を、見慣れない景色が流れていく。\n左耳のイヤホンからは、何も流れていない。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "響ヶ崎——。\n父さんの転勤で、この春から暮らす街の名前。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "知らない街。知らない学校。知らない人たち。\nいつものことだ。別に、何も感じない。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "……。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "窓の外に、海が見えた。\n\n深い藍色。\n太陽の光が水面で砕けて、無数の白い粒になっている。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "その瞬間——"
+    },
+    {
+      "speakerName": "???",
+      "expression": "",
+      "text": "——お兄ちゃん。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "イヤホンを外す。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "……何も聞こえない。\n電車の走行音と、他の乗客の話し声だけ。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "気のせいだ。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "イヤホンを戻す。\n何も流れていない左耳に、それでも何かを塞ぐように。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "電車が減速する。\nアナウンスが告げる。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "『まもなく、響ヶ崎。響ヶ崎です。』"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "——立ち上がる。\n\n新しい街の匂いが、ドアの隙間から流れ込んでくる。\n潮の匂い。それと——"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "何かの、残響。"
+    },
+    {
+      "speakerName": "",
+      "expression": "",
+      "text": "\n\n\n残 響 の ア ル カ デ ィ ア\n\nEchoes of Arcadia"
+    }
+  ]
+}
