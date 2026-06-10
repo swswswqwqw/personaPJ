@@ -1,0 +1,176 @@
+{
+  "conversationId": "kaede_rank1",
+  "characterName": "氷室 楓",
+  "requiredRank": 0,
+  "nodes": [
+    {
+      "id": "start",
+      "lines": [
+        {
+          "speakerName": "楓",
+          "text": "……あ、転入生の人。ここ、屋上。放課後は誰も来ないの。",
+          "expression": "neutral",
+          "voiceKey": "",
+          "delay": 0
+        },
+        {
+          "speakerName": "楓",
+          "text": "……驚いた？ 私がこんなところにいるの。",
+          "expression": "slight_smile",
+          "voiceKey": "",
+          "delay": 0
+        },
+        {
+          "speakerName": "",
+          "text": "（氷室さんは、教室で見せる完璧な笑顔とは違う表情をしていた）",
+          "expression": "",
+          "voiceKey": "",
+          "delay": 0
+        },
+        {
+          "speakerName": "楓",
+          "text": "たまにね、一人になりたい時があるの。みんなの前だと……ちょっと疲れちゃって。",
+          "expression": "tired",
+          "voiceKey": "",
+          "delay": 0
+        }
+      ],
+      "choices": [
+        {
+          "text": "無理してない？",
+          "responseKey": "empathy_response",
+          "resonancePoints": 3,
+          "statBoost": "empathy",
+          "statAmount": 0
+        },
+        {
+          "text": "一人の時間も大事だよね",
+          "responseKey": "understanding_response",
+          "resonancePoints": 2,
+          "statBoost": "listening",
+          "statAmount": 0
+        },
+        {
+          "text": "邪魔しちゃったかな",
+          "responseKey": "polite_response",
+          "resonancePoints": 1,
+          "statBoost": "",
+          "statAmount": 0
+        }
+      ],
+      "nextNodeId": ""
+    },
+    {
+      "id": "empathy_response",
+      "lines": [
+        {
+          "speakerName": "楓",
+          "text": "……っ。",
+          "expression": "surprised",
+          "voiceKey": "",
+          "delay": 0.5
+        },
+        {
+          "speakerName": "楓",
+          "text": "……ううん。無理なんて、してないよ。",
+          "expression": "forced_smile",
+          "voiceKey": "",
+          "delay": 0
+        },
+        {
+          "speakerName": "",
+          "text": "（その笑顔が、少しだけ揺れた気がした）",
+          "expression": "",
+          "voiceKey": "",
+          "delay": 0
+        },
+        {
+          "speakerName": "楓",
+          "text": "……変なの。初めて会ったのに、なんでそんなこと訊くの。",
+          "expression": "looking_away",
+          "voiceKey": "",
+          "delay": 0
+        },
+        {
+          "speakerName": "楓",
+          "text": "……でも、ありがとう。そう訊いてくれたの、あなたが初めて。",
+          "expression": "gentle",
+          "voiceKey": "",
+          "delay": 0
+        }
+      ],
+      "choices": [],
+      "nextNodeId": "ending"
+    },
+    {
+      "id": "understanding_response",
+      "lines": [
+        {
+          "speakerName": "楓",
+          "text": "……うん。そうだね。",
+          "expression": "relieved",
+          "voiceKey": "",
+          "delay": 0
+        },
+        {
+          "speakerName": "楓",
+          "text": "ここから見る海、綺麗なの。教室からは見えないから。",
+          "expression": "gentle",
+          "voiceKey": "",
+          "delay": 0
+        },
+        {
+          "speakerName": "",
+          "text": "（楓は少しだけ肩の力を抜いたように見えた）",
+          "expression": "",
+          "voiceKey": "",
+          "delay": 0
+        }
+      ],
+      "choices": [],
+      "nextNodeId": "ending"
+    },
+    {
+      "id": "polite_response",
+      "lines": [
+        {
+          "speakerName": "楓",
+          "text": "ううん、大丈夫。別に、秘密の場所ってわけじゃないから。",
+          "expression": "polite_smile",
+          "voiceKey": "",
+          "delay": 0
+        },
+        {
+          "speakerName": "",
+          "text": "（楓はいつもの完璧な笑顔に戻った）",
+          "expression": "",
+          "voiceKey": "",
+          "delay": 0
+        }
+      ],
+      "choices": [],
+      "nextNodeId": "ending"
+    },
+    {
+      "id": "ending",
+      "lines": [
+        {
+          "speakerName": "",
+          "text": "（氷室楓との間に、微かな共鳴を感じた——）",
+          "expression": "",
+          "voiceKey": "",
+          "delay": 0
+        },
+        {
+          "speakerName": "",
+          "text": "♪ 共鳴リンク【女帝】氷室 楓 ——ランク1",
+          "expression": "",
+          "voiceKey": "resonance_rankup",
+          "delay": 0
+        }
+      ],
+      "choices": [],
+      "nextNodeId": ""
+    }
+  ]
+}
