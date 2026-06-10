@@ -1,0 +1,90 @@
+{
+  "sequenceId": "hina_heartstring_rank1",
+  "lines": [
+    {
+      "speakerName": "",
+      "speakerId": "narrator",
+      "text": "放課後の教室。最後まで残って掃除をしている瀬戸さんの姿があった。",
+      "emotion": "neutral",
+      "choices": null
+    },
+    {
+      "speakerName": "陽菜",
+      "speakerId": "hina",
+      "text": "あ、朝霧くん。まだ残ってたの？",
+      "emotion": "smile",
+      "choices": null
+    },
+    {
+      "speakerName": "",
+      "speakerId": "narrator",
+      "text": "完璧な笑顔。誰にでも向ける、ムラのない優しさ。\nだけど——また、あの音が聞こえる。",
+      "emotion": "neutral",
+      "choices": null
+    },
+    {
+      "speakerName": "",
+      "speakerId": "narrator",
+      "text": "笑顔の裏で、何かが軋んでいるような、小さな悲鳴。",
+      "emotion": "uneasy",
+      "choices": null
+    },
+    {
+      "speakerName": "陽菜",
+      "speakerId": "hina",
+      "text": "今日の当番、佐々木くんが部活で抜けちゃって。\nでも大丈夫、私がやるから！ いつものことだし。",
+      "emotion": "smile",
+      "choices": null
+    },
+    {
+      "speakerName": "",
+      "speakerId": "narrator",
+      "text": "「いつものこと」——その言葉に、わずかな疲労がにじんでいた。",
+      "emotion": "neutral",
+      "choices": [
+        {
+          "text": "手伝うよ",
+          "nextSequenceId": "hina_rank1_a",
+          "heartStringPoints": 2,
+          "requiredStat": "",
+          "requiredStatLevel": 0
+        },
+        {
+          "text": "断ってもよかったのに",
+          "nextSequenceId": "hina_rank1_b",
+          "heartStringPoints": 3,
+          "requiredStat": "",
+          "requiredStatLevel": 0
+        },
+        {
+          "text": "...無理してない？",
+          "nextSequenceId": "hina_rank1_c",
+          "heartStringPoints": 1,
+          "requiredStat": "Empathy",
+          "requiredStatLevel": 2
+        }
+      ]
+    },
+    {
+      "speakerName": "陽菜",
+      "speakerId": "hina",
+      "text": "え？ 無理なんかしてないよ。私、こういうの好きだから。",
+      "emotion": "smile_forced",
+      "choices": null
+    },
+    {
+      "speakerName": "",
+      "speakerId": "narrator",
+      "text": "彼女は笑った。完璧に。\nでも、その笑顔を支えている筋肉が、ほんの少しだけ震えているのが見えた。",
+      "emotion": "sad",
+      "choices": null
+    },
+    {
+      "speakerName": "",
+      "speakerId": "narrator",
+      "text": "瀬戸陽菜との心弦が結ばれた気がする...",
+      "emotion": "heartstring",
+      "choices": null
+    }
+  ]
+}

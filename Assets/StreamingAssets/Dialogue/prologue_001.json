@@ -1,0 +1,97 @@
+{
+  "sequenceId": "prologue_001",
+  "lines": [
+    {
+      "speakerName": "",
+      "speakerId": "narrator",
+      "text": "――四月。潮の匂いが混じった風が、駅のホームを吹き抜ける。",
+      "emotion": "neutral",
+      "choices": null
+    },
+    {
+      "speakerName": "",
+      "speakerId": "narrator",
+      "text": "見知らぬ街。見知らぬ空。\nだけど、この感覚には覚えがある。",
+      "emotion": "melancholy",
+      "choices": null
+    },
+    {
+      "speakerName": "蓮司",
+      "speakerId": "renji",
+      "text": "...また、やり直しか。",
+      "emotion": "tired",
+      "choices": null
+    },
+    {
+      "speakerName": "",
+      "speakerId": "narrator",
+      "text": "潮鳴市――人口十二万の海沿いの街。\n古い寺社と、取り残されたような商店街。\nどこにでもある、どこでもない場所。",
+      "emotion": "neutral",
+      "choices": null
+    },
+    {
+      "speakerName": "",
+      "speakerId": "narrator",
+      "text": "改札を出ると、四月にしては強い日差しが目を刺した。",
+      "emotion": "neutral",
+      "choices": null
+    },
+    {
+      "speakerName": "???",
+      "speakerId": "gai",
+      "text": "おーい！ お前、曙光の転校生だろ？",
+      "emotion": "cheerful",
+      "choices": null
+    },
+    {
+      "speakerName": "",
+      "speakerId": "narrator",
+      "text": "振り返ると、日焼けした少年が手を振っていた。\n屈託のない笑顔。初対面の相手に向ける類いの、整えられた笑顔ではない。",
+      "emotion": "neutral",
+      "choices": null
+    },
+    {
+      "speakerName": "",
+      "speakerId": "narrator",
+      "text": "だけど——その笑顔の奥に、微かな音が聞こえた。\nまるで、水面の下で何かが揺れているような。",
+      "emotion": "mysterious",
+      "choices": null
+    },
+    {
+      "speakerName": "凱",
+      "speakerId": "gai",
+      "text": "俺、嵐山凱！ 同じ二年だ。学校まで案内するぜ！",
+      "emotion": "cheerful",
+      "choices": null
+    },
+    {
+      "speakerName": "凱",
+      "speakerId": "gai",
+      "text": "つーか転校初日に一人とか寂しくね？ 飯も一緒に食おうぜ！",
+      "emotion": "cheerful",
+      "choices": [
+        {
+          "text": "...ありがとう、助かる",
+          "nextSequenceId": "prologue_002a",
+          "heartStringPoints": 1,
+          "requiredStat": "",
+          "requiredStatLevel": 0
+        },
+        {
+          "text": "一人で大丈夫だけど",
+          "nextSequenceId": "prologue_002b",
+          "heartStringPoints": 0,
+          "requiredStat": "",
+          "requiredStatLevel": 0
+        },
+        {
+          "text": "（...この声の奥の音は何だ？）",
+          "nextSequenceId": "prologue_002c",
+          "heartStringPoints": 0,
+          "requiredStat": "Insight",
+          "requiredStatLevel": 1
+        }
+      ]
+    }
+  ]
+}
