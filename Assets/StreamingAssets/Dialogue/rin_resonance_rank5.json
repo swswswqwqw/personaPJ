@@ -1,0 +1,170 @@
+{
+  "SequenceId": "rin_resonance_r5",
+  "ContextDescription": "桜庭 凛 共鳴ランク5「壁」— 病院の帰り道で偶然会う",
+  "Nodes": [
+    {
+      "NodeId": "rr5_001",
+      "SpeakerName": "",
+      "SpeakerId": "",
+      "Text": "放課後、駅前で見かけた背中。\n……凛だ。でも、様子がおかしい。",
+      "Emotion": "concern",
+      "Choices": []
+    },
+    {
+      "NodeId": "rr5_002",
+      "SpeakerName": "",
+      "SpeakerId": "",
+      "Text": "彼女は病院から出てきたところだった。\n手に持っているのは——お見舞いの花の包み紙。",
+      "Emotion": "discovery",
+      "Choices": []
+    },
+    {
+      "NodeId": "rr5_003",
+      "SpeakerName": "凛",
+      "SpeakerId": "rin",
+      "Text": "……っ。\n\n……なんで、ここに。",
+      "Emotion": "shock",
+      "Choices": []
+    },
+    {
+      "NodeId": "rr5_004",
+      "SpeakerName": "",
+      "SpeakerId": "",
+      "Text": "凛の目が、一瞬だけ揺れた。\nいつもの完璧な微笑みが、剥がれかけている。",
+      "Emotion": "tension",
+      "Choices": [
+        {
+          "ChoiceText": "……大丈夫か？",
+          "JumpToNodeId": "rr5_005a",
+          "ResonancePoints": 1,
+          "RequiredStat": "",
+          "RequiredStatRank": 0
+        },
+        {
+          "ChoiceText": "（何も言わず、隣に立つ）",
+          "JumpToNodeId": "rr5_005b",
+          "ResonancePoints": 3,
+          "RequiredStat": "",
+          "RequiredStatRank": 0
+        },
+        {
+          "ChoiceText": "見なかったことにする",
+          "JumpToNodeId": "rr5_005c",
+          "ResonancePoints": 0,
+          "RequiredStat": "",
+          "RequiredStatRank": 0
+        }
+      ]
+    },
+    {
+      "NodeId": "rr5_005a",
+      "SpeakerName": "凛",
+      "SpeakerId": "rin",
+      "Text": "大丈夫。大丈夫だよ。\n……大丈夫に、決まってるじゃない。",
+      "Emotion": "forced_smile",
+      "Choices": []
+    },
+    {
+      "NodeId": "rr5_005b",
+      "SpeakerName": "",
+      "SpeakerId": "",
+      "Text": "何も言わない。ただ、隣にいる。\n\n……長い沈黙。",
+      "Emotion": "silence",
+      "Choices": []
+    },
+    {
+      "NodeId": "rr5_005c",
+      "SpeakerName": "凛",
+      "SpeakerId": "rin",
+      "Text": "……ありがとう。\nでも、もう遅いよ。見たでしょ。",
+      "Emotion": "resignation",
+      "Choices": []
+    },
+    {
+      "NodeId": "rr5_006",
+      "SpeakerName": "凛",
+      "SpeakerId": "rin",
+      "Text": "…見たでしょ。見たんでしょ？\n\n忘れて。今すぐ忘れてよ。",
+      "Emotion": "anger_pain",
+      "Choices": []
+    },
+    {
+      "NodeId": "rr5_007",
+      "SpeakerName": "凛",
+      "SpeakerId": "rin",
+      "Text": "私が泣いたら、誰がお母さんの前で笑うの。\n\n私が弱かったら……お母さんは……\n安心して、眠れないじゃない……。",
+      "Emotion": "breaking",
+      "Choices": []
+    },
+    {
+      "NodeId": "rr5_008",
+      "SpeakerName": "",
+      "SpeakerId": "",
+      "Text": "花の包み紙が、風に揺れた。\n\n凛の肩が、小さく震えている。\nでも——涙は、流れない。",
+      "Emotion": "heartbreak",
+      "Choices": [
+        {
+          "ChoiceText": "泣いてもいいんだよ。",
+          "JumpToNodeId": "rr5_009a",
+          "ResonancePoints": 2,
+          "RequiredStat": "",
+          "RequiredStatRank": 0
+        },
+        {
+          "ChoiceText": "（そっと、肩に手を置く）",
+          "JumpToNodeId": "rr5_009b",
+          "ResonancePoints": 3,
+          "RequiredStat": "Empathy",
+          "RequiredStatRank": 3
+        },
+        {
+          "ChoiceText": "強い必要なんかない。",
+          "JumpToNodeId": "rr5_009c",
+          "ResonancePoints": 2,
+          "RequiredStat": "Courage",
+          "RequiredStatRank": 2
+        }
+      ]
+    },
+    {
+      "NodeId": "rr5_009a",
+      "SpeakerName": "凛",
+      "SpeakerId": "rin",
+      "Text": "……泣けないの。泣き方、忘れちゃったの。\n\nずっと、笑ってたから。",
+      "Emotion": "despair_quiet",
+      "Choices": []
+    },
+    {
+      "NodeId": "rr5_009b",
+      "SpeakerName": "",
+      "SpeakerId": "",
+      "Text": "言葉は要らなかった。\n\n凛の肩に触れた瞬間——\n堤防が、静かに決壊した。",
+      "Emotion": "catharsis_quiet",
+      "Choices": []
+    },
+    {
+      "NodeId": "rr5_009c",
+      "SpeakerName": "凛",
+      "SpeakerId": "rin",
+      "Text": "……え？",
+      "Emotion": "surprise",
+      "Choices": []
+    },
+    {
+      "NodeId": "rr5_010",
+      "SpeakerName": "",
+      "SpeakerId": "",
+      "Text": "夕陽が沈んでいく。\n\n二人の間に、言葉はなかった。\nでも——初めて、凛の隣にいる気がした。\n\n仮面の向こう側に。",
+      "Emotion": "warmth",
+      "Choices": []
+    },
+    {
+      "NodeId": "rr5_011",
+      "SpeakerName": "",
+      "SpeakerId": "",
+      "Text": "桜庭凛との共鳴が深まった。\n\n……しかし、凛の心にはまだ「壁」がある。\n「助けて」という言葉は、まだ——言えない。",
+      "Emotion": "bittersweet",
+      "Choices": []
+    }
+  ]
+}

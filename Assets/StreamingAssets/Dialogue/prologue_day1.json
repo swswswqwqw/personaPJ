@@ -1,0 +1,93 @@
+{
+  "SequenceId": "prologue_day1_bus",
+  "ContextDescription": "4月8日 — 転校初日、澄波市行きのバスの中",
+  "Nodes": [
+    {
+      "NodeId": "p1_001",
+      "SpeakerName": "",
+      "SpeakerId": "",
+      "Text": "バスの窓の向こうに、海が広がっている。",
+      "Emotion": "neutral",
+      "Choices": []
+    },
+    {
+      "NodeId": "p1_002",
+      "SpeakerName": "",
+      "SpeakerId": "",
+      "Text": "澄波市——「音が綺麗に響く街」。\nそんな噂を、どこかで聞いた気がする。",
+      "Emotion": "neutral",
+      "Choices": []
+    },
+    {
+      "NodeId": "p1_003",
+      "SpeakerName": "",
+      "SpeakerId": "",
+      "Text": "左耳のイヤーカフに、指が触れる。\n姉さんが残していった、唯一のもの。",
+      "Emotion": "melancholy",
+      "Choices": []
+    },
+    {
+      "NodeId": "p1_004",
+      "SpeakerName": "",
+      "SpeakerId": "",
+      "Text": "——その瞬間、ノイズが走った。",
+      "Emotion": "tension",
+      "Choices": []
+    },
+    {
+      "NodeId": "p1_005",
+      "SpeakerName": "???",
+      "SpeakerId": "echo_voice",
+      "Text": "『……ごめん……言えなかった……』",
+      "Emotion": "echo",
+      "Choices": []
+    },
+    {
+      "NodeId": "p1_006",
+      "SpeakerName": "",
+      "SpeakerId": "",
+      "Text": "誰かの声。でも、周りを見回しても——\n誰もいない。バスの乗客は皆、黙っている。",
+      "Emotion": "unease",
+      "Choices": [
+        {
+          "ChoiceText": "……気のせいか。",
+          "JumpToNodeId": "p1_007a",
+          "ResonancePoints": 0,
+          "RequiredStat": "",
+          "RequiredStatRank": 0
+        },
+        {
+          "ChoiceText": "（イヤーカフを握りしめる）",
+          "JumpToNodeId": "p1_007b",
+          "ResonancePoints": 0,
+          "RequiredStat": "",
+          "RequiredStatRank": 0
+        }
+      ]
+    },
+    {
+      "NodeId": "p1_007a",
+      "SpeakerName": "",
+      "SpeakerId": "",
+      "Text": "気のせいだ、きっと。\n……そう思うことにした。",
+      "Emotion": "denial",
+      "Choices": []
+    },
+    {
+      "NodeId": "p1_007b",
+      "SpeakerName": "",
+      "SpeakerId": "",
+      "Text": "冷たい金属の感触が、指先に伝わる。\n姉さんの声を、聞いた気がした。",
+      "Emotion": "longing",
+      "Choices": []
+    },
+    {
+      "NodeId": "p1_008",
+      "SpeakerName": "",
+      "SpeakerId": "",
+      "Text": "『次は、澄波中央。澄波中央——』\n\nバスが止まる。\n新しい街。新しい学校。\n\n……でも、何かが違う。\nこの街の空気は、妙に——重い。",
+      "Emotion": "foreboding",
+      "Choices": []
+    }
+  ]
+}
