@@ -1,0 +1,187 @@
+{
+  "scriptId": "prologue_001",
+  "title": "プロローグ — 潮鳴駅",
+  "nodes": [
+    {
+      "nodeId": "start",
+      "lines": [
+        {
+          "speakerName": "",
+          "text": "——雨の匂いがした。",
+          "expression": "",
+          "delay": 1.5,
+          "isEcho": false,
+          "choices": []
+        },
+        {
+          "speakerName": "",
+          "text": "電車が止まり、ドアが開く。\n潮風が、頬を撫でた。",
+          "expression": "",
+          "delay": 1.0,
+          "isEcho": false,
+          "choices": []
+        },
+        {
+          "speakerName": "叔母",
+          "text": "蓮くん、こっちよ。久しぶりね。",
+          "expression": "smile",
+          "delay": 0,
+          "isEcho": false,
+          "choices": []
+        },
+        {
+          "speakerName": "叔母",
+          "text": "ここでは静かに暮らしなさい。\nお母さんにはそう言われているでしょう？",
+          "expression": "serious",
+          "delay": 0,
+          "isEcho": false,
+          "choices": []
+        },
+        {
+          "speakerName": "",
+          "text": "「静かに」。その言葉が、胸の奥で反響する。",
+          "expression": "",
+          "delay": 0.5,
+          "isEcho": false,
+          "choices": []
+        }
+      ],
+      "nextNodeId": "echo_first"
+    },
+    {
+      "nodeId": "echo_first",
+      "lines": [
+        {
+          "speakerName": "",
+          "text": "駅を出ようとした、その時——",
+          "expression": "",
+          "delay": 1.0,
+          "isEcho": false,
+          "choices": []
+        },
+        {
+          "speakerName": "???",
+          "text": "……助けて",
+          "expression": "",
+          "delay": 0,
+          "isEcho": true,
+          "choices": []
+        },
+        {
+          "speakerName": "",
+          "text": "誰もいないはずのホームから、声が聞こえた。\n振り返っても、誰もいない。",
+          "expression": "",
+          "delay": 0.8,
+          "isEcho": false,
+          "choices": []
+        },
+        {
+          "speakerName": "",
+          "text": "……空耳だ。そう、思い込もうとした。",
+          "expression": "",
+          "delay": 0,
+          "isEcho": false,
+          "choices": [
+            {
+              "text": "（気のせいだ）",
+              "nextNodeId": "ignore",
+              "resonancePoints": 0,
+              "requiredStat": "",
+              "requiredStatLevel": 0
+            },
+            {
+              "text": "（……今の声は）",
+              "nextNodeId": "notice",
+              "resonancePoints": 0,
+              "requiredStat": "",
+              "requiredStatLevel": 0
+            }
+          ]
+        }
+      ],
+      "nextNodeId": ""
+    },
+    {
+      "nodeId": "ignore",
+      "lines": [
+        {
+          "speakerName": "",
+          "text": "聞こえなかったことにする。\nいつもそうしてきた。",
+          "expression": "",
+          "delay": 0.5,
+          "isEcho": false,
+          "choices": []
+        },
+        {
+          "speakerName": "",
+          "text": "でも、飲み込んだ言葉は——消えない。",
+          "expression": "",
+          "delay": 1.0,
+          "isEcho": false,
+          "choices": []
+        }
+      ],
+      "nextNodeId": "arrive"
+    },
+    {
+      "nodeId": "notice",
+      "lines": [
+        {
+          "speakerName": "",
+          "text": "確かに聞こえた。誰かの……声。\nでも、ホームには誰もいない。",
+          "expression": "",
+          "delay": 0.5,
+          "isEcho": false,
+          "choices": []
+        },
+        {
+          "speakerName": "",
+          "text": "胸の奥で、何かが共鳴している。",
+          "expression": "",
+          "delay": 1.0,
+          "isEcho": false,
+          "choices": []
+        }
+      ],
+      "nextNodeId": "arrive"
+    },
+    {
+      "nodeId": "arrive",
+      "lines": [
+        {
+          "speakerName": "叔母",
+          "text": "蓮くん？ どうかした？",
+          "expression": "worried",
+          "delay": 0,
+          "isEcho": false,
+          "choices": []
+        },
+        {
+          "speakerName": "",
+          "text": "……何でもない。行こう。",
+          "expression": "",
+          "delay": 0,
+          "isEcho": false,
+          "choices": []
+        },
+        {
+          "speakerName": "",
+          "text": "潮鳴市。\n海の見える街での、新しい日々が始まる。",
+          "expression": "",
+          "delay": 1.5,
+          "isEcho": false,
+          "choices": []
+        },
+        {
+          "speakerName": "",
+          "text": "——これは、声を失くした少年が\n再び声を取り戻すまでの物語。",
+          "expression": "",
+          "delay": 2.0,
+          "isEcho": false,
+          "choices": []
+        }
+      ],
+      "nextNodeId": ""
+    }
+  ]
+}
