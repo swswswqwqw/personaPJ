@@ -1,0 +1,70 @@
+{
+  "dialogueId": "satsuki_first_meeting",
+  "description": "皐月遥 初対面 — 転校初日、教室にて",
+  "lines": [
+    {
+      "speakerName": "",
+      "text": "教室に入ると、窓際の席に座る少女が こちらに気づいた。",
+      "emotion": "narration",
+      "pauseBefore": 0.5
+    },
+    {
+      "speakerName": "皐月 遥",
+      "speakerId": "satsuki_haruka",
+      "text": "あ、転校生だ！　隣の席だね、よろしく！",
+      "emotion": "cheerful"
+    },
+    {
+      "speakerName": "",
+      "text": "完璧な笑顔。まるで練習したかのように、一点の曇りもない。",
+      "emotion": "narration"
+    },
+    {
+      "speakerName": "",
+      "text": "……だが、一瞬だけ。逆光の中に、泣いている影が見えた気がした。",
+      "emotion": "narration",
+      "pauseBefore": 1.0
+    },
+    {
+      "speakerName": "皐月 遥",
+      "text": "どうしたの？　ぼーっとしてるけど。大丈夫？",
+      "emotion": "concerned"
+    },
+    {
+      "speakerName": "",
+      "text": "（なんと答える？）",
+      "emotion": "narration",
+      "hasChoices": true,
+      "choices": [
+        {
+          "text": "……なんでもない。よろしく。",
+          "bondCharacterId": "satsuki_haruka",
+          "bondPointsReward": 1
+        },
+        {
+          "text": "君、泣いてなかった？",
+          "bondCharacterId": "satsuki_haruka",
+          "bondPointsReward": 3,
+          "requiredStat": "Empathy",
+          "requiredStatLevel": 2
+        },
+        {
+          "text": "ちょっと眩しくて。",
+          "bondCharacterId": "satsuki_haruka",
+          "bondPointsReward": 2
+        }
+      ]
+    },
+    {
+      "speakerName": "皐月 遥",
+      "text": "あはは、変なの。……ま、仲良くしよ？",
+      "emotion": "smile_forced"
+    },
+    {
+      "speakerName": "",
+      "text": "彼女は笑った。けれど、その笑顔の裏側を、俺はもう見てしまった。",
+      "emotion": "narration",
+      "pauseBefore": 0.5
+    }
+  ]
+}
