@@ -1,24 +1,26 @@
 {
   "dependencies": {
-    "com.unity.render-pipelines.universal": "17.0.3",
-    "com.unity.inputsystem": "1.11.2",
+    "com.cysharp.unitask": "2.5.10",
+    "com.unity.addressables": "2.7.6",
+    "com.unity.ai.assistant": "2.11.0-pre.1",
+    "com.unity.ai.generators": "1.7.0-pre.1",
+    "com.unity.ai.inference": "2.6.1",
     "com.unity.cinemachine": "3.1.2",
-    "com.unity.addressables": "2.3.1",
+    "com.unity.inputsystem": "1.11.2",
+    "com.unity.render-pipelines.universal": "17.0.3",
     "com.unity.textmeshpro": "3.0.9",
     "com.unity.ugui": "2.0.0",
     "com.unity.modules.audio": "1.0.0",
     "com.unity.modules.physics": "1.0.0",
-    "com.unity.modules.ui": "1.0.0",
-    "com.cysharp.unitask": "2.5.10",
-    "com.demigiant.dotween": "1.2.765"
+    "com.unity.modules.physics2d": "1.0.0",
+    "com.unity.modules.ui": "1.0.0"
   },
   "scopedRegistries": [
     {
       "name": "OpenUPM",
       "url": "https://package.openupm.com",
       "scopes": [
-        "com.cysharp",
-        "com.demigiant"
+        "com.cysharp"
       ]
     }
   ]

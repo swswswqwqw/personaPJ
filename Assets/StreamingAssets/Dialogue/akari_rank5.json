@@ -1,0 +1,37 @@
+{
+  "id": "akari_rank5",
+  "title": "聴くということ",
+  "bondId": "akari",
+  "bondPointsOnComplete": 35,
+  "lines": [
+    { "speakerId": "narrator", "text": "——放課後の教室。灯里が、転校生の女子と話している。", "emotion": "neutral", "preSilence": 0.0 },
+    { "speakerId": "akari", "text": "うん、わかるよ。新しいクラスって不安だよね。", "emotion": "smile", "preSilence": 0.0 },
+    { "speakerId": "narrator", "text": "いつもの明るい灯里——だが、どこか違う。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "akari", "text": "あのね、無理に馴染もうとしなくていいよ。\n……しんどい時は、しんどいって言っていいから。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "あの台詞。かつて美月に言えなかった言葉を、灯里は今、目の前の誰かに言った。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "——転校生が帰った後、灯里がこちらに気づいた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "あ、見てた？ えへへ、委員長っぽかった？", "emotion": "smile", "preSilence": 0.0 },
+    { "speakerId": "akari", "text": "……ううん、違うね。委員長だからじゃない。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "私ね、気づいたの。\n美月にできなかったのは、『大丈夫』って言ったことじゃなくて——", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "akari", "text": "その後、『大丈夫じゃないでしょ？』って、もう一歩踏み込まなかったこと。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "怖かったんだ。美月の本当の気持ちを聴くのが。\n聴いたら、自分が壊れちゃう気がして。", "emotion": "broken", "preSilence": 0.6 },
+    { "speakerId": "akari", "text": "でもね——", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "あなたが私にしてくれたこと。\n黙って隣にいて、笑わなくていいって言ってくれたこと。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "akari", "text": "それが『聴く』ってことだったんだ。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "私も、そうなりたい。\n笑顔で蓋をするんじゃなくて、ちゃんと聴ける人に。", "emotion": "smile", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "灯里の笑顔は、もう貼り付けたものではなかった。\n小さくて、不格好で——けれど、初めて本物だった。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "akari", "text": "ありがとう。私に言葉をくれて。", "emotion": "smile", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "——ねえ。今度は私が聴くね。あなたの話。", "emotion": "smile", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "灯里との絆が、深まった気がする。", "emotion": "neutral", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 14,
+      "options": [
+        { "text": "お前ならなれる", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "美月も、きっとそう望んでる", "requiredStat": "Empathy", "requiredRank": 4, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "……聴いてほしいことが、ある", "requiredStat": "Composure", "requiredRank": 5, "bondBonus": 40, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

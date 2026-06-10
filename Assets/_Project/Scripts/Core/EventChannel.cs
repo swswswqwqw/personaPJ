@@ -84,4 +84,26 @@ namespace Amane.Core
         public readonly int NewRank;
         public BondRankUpEvent(string bondId, int newRank) { BondId = bondId; NewRank = newRank; }
     }
+
+    /// <summary>カレンダーイベントが発生した（月初事件・満月・テスト等）。</summary>
+    public readonly struct CalendarEventTriggered
+    {
+        public readonly string EventId;
+        public readonly string DisplayName;
+        public readonly Amane.Time.CalendarEventType Type;
+        public CalendarEventTriggered(string eventId, string displayName, Amane.Time.CalendarEventType type)
+        {
+            EventId = eventId;
+            DisplayName = displayName;
+            Type = type;
+        }
+    }
+
+    /// <summary>内面ステータスがランクアップした。</summary>
+    public readonly struct StatRankUpEvent
+    {
+        public readonly Amane.Stat.InnerStat Stat;
+        public readonly int NewRank;
+        public StatRankUpEvent(Amane.Stat.InnerStat stat, int newRank) { Stat = stat; NewRank = newRank; }
+    }
 }

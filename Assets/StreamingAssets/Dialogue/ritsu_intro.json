@@ -1,0 +1,28 @@
+{
+  "id": "ritsu_intro",
+  "title": "律との出会い",
+  "bondId": "ritsu",
+  "bondPointsOnComplete": 10,
+  "lines": [
+    { "speakerId": "narrator", "text": "——図書室の最奥。誰も来ないはずの場所に、ひとりの影があった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "イヤホンから微かに漏れる音。話しかけても、彼は一度も目を上げなかった。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ritsu", "text": "……。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "——その時、「残響」が聞こえた。彼の内側から、絶叫のような沈黙が。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ritsu", "text": "……なんだ、お前。何を聞いた。", "emotion": "cold", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "勝手に人の心を聴くな。——それは、暴力だ。", "emotion": "anger", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "律は立ち上がり、イヤホンを外してこちらを睨んだ。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ritsu", "text": "……もう来るな。ここは僕の場所だ。", "emotion": "cold", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "——けれど。彼の手は、わずかに震えていた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "律との絆「言伝」が始まった。", "emotion": "neutral", "preSilence": 0.5 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 5,
+      "options": [
+        { "text": "（黙って立ち去る）", "requiredStat": "", "requiredRank": 0, "bondBonus": 10, "jumpToDialogueId": "" },
+        { "text": "ごめん。でも、聞こえたんだ。", "requiredStat": "Courage", "requiredRank": 2, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "……暴力か。そうかもしれない。", "requiredStat": "Composure", "requiredRank": 2, "bondBonus": 15, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

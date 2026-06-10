@@ -22,17 +22,18 @@ namespace Amane.UI
 
         private const int DefaultSaveSlot = 0;
 
-        private void Awake()
+        private void Start()
         {
-            // null安全に配線（Inspector 未設定でも例外を出さない）。
+            // Start()で配線。PrototypeBootstrapがAwake()後にSetPrivateFieldでボタンをセットするため、
+            // Awake()時点ではボタンがnull。Start()なら確実にセット済み。
             _newGameButton?.onClick.AddListener(OnNewGame);
             _continueButton?.onClick.AddListener(OnContinue);
             _quitButton?.onClick.AddListener(OnQuit);
+            RefreshContinueAvailability();
         }
 
         private void OnEnable()
         {
-            RefreshContinueAvailability();
             FadeIn();
         }
 
@@ -51,6 +52,8 @@ namespace Amane.UI
 
         private void OnNewGame()
         {
+            // SE再生
+            Core.Audio.AudioManager.Instance?.PlayUIClick();
             // 「未読を開く」: 新規ゲーム開始 → フィールドへ。
             GameManager.Instance?.StartNewGame();
         }

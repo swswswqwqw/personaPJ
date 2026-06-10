@@ -1,0 +1,32 @@
+{
+  "id": "akari_rank2",
+  "title": "仮面のひび",
+  "bondId": "akari",
+  "bondPointsOnComplete": 20,
+  "lines": [
+    { "speakerId": "narrator", "text": "——放課後。灯里に誘われて、駅前のカフェに来た。", "emotion": "neutral", "preSilence": 0.0 },
+    { "speakerId": "akari", "text": "えへへ、ここのクリームソーダ、知ってる？ 雨音で一番おいしいんだよ。", "emotion": "smile", "preSilence": 0.0 },
+    { "speakerId": "akari", "text": "あ、窓側の席ね。雨がきれいに見えるから。", "emotion": "smile", "preSilence": 0.0 },
+    { "speakerId": "narrator", "text": "灯里はいつものように笑っている。完璧に。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "……ねぇ、この前のこと。屋上の。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "忘れてくれた？", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "灯里の声に、初めて怯えの色が混じった。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "akari", "text": "みんな、私のこと『明るい子』って言うの。委員長だし、しっかりしてるって。", "emotion": "smile", "preSilence": 0.0 },
+    { "speakerId": "akari", "text": "それ、期待されてるんだなって。だから笑ってないと。", "emotion": "smile", "preSilence": 0.2 },
+    { "speakerId": "akari", "text": "笑ってないと、みんな離れていくから。", "emotion": "broken", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "——クリームソーダの氷が、カランと鳴った。沈黙が広がる。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "akari", "text": "……ごめんね、こんな話。楽しくないよね。", "emotion": "broken", "preSilence": 0.4 },
+    { "speakerId": "akari", "text": "はは、なんか湿っぽくなっちゃった。次は楽しい話しよ！", "emotion": "smile", "preSilence": 0.2 },
+    { "speakerId": "narrator", "text": "灯里はまた、笑顔を貼り直した。\nだが——その笑顔の奥で、何かが軋んでいるのが聞こえた。", "emotion": "neutral", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 11,
+      "options": [
+        { "text": "楽しくない話でもいい", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "笑わなくていいって言っただろ", "requiredStat": "Courage", "requiredRank": 2, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "（クリームソーダを差し出す）", "requiredStat": "Empathy", "requiredRank": 3, "bondBonus": 30, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "akari_rank4",
+  "title": "依存",
+  "bondId": "akari",
+  "bondPointsOnComplete": 30,
+  "lines": [
+    { "speakerId": "narrator", "text": "——深夜。スマホが鳴った。灯里からだ。", "emotion": "neutral", "preSilence": 0.0 },
+    { "speakerId": "akari", "text": "ごめん、起きてた？ ……起こした？", "emotion": "broken", "preSilence": 0.3 },
+    { "speakerId": "akari", "text": "あのね、今日、美月のお母さんに会ったの。買い物で偶然。", "emotion": "broken", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "『灯里ちゃんは元気？ 美月がいつも灯里ちゃんの話してたのよ』って。", "emotion": "broken", "preSilence": 0.3 },
+    { "speakerId": "akari", "text": "笑えなかった。初めて、人の前で笑えなかった。", "emotion": "broken", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "電話の向こうで、灯里の呼吸が不規則になっている。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "akari", "text": "ねぇ、来てくれない？ 学校の裏門のところ。", "emotion": "broken", "preSilence": 0.3 },
+    { "speakerId": "akari", "text": "……一人でいたくないの。", "emotion": "broken", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "——裏門に着くと、灯里がフェンスに寄りかかって座っていた。\n目が赤い。でも泣いてはいなかった。涙を我慢することに慣れている目だった。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "akari", "text": "来てくれた。……よかった。", "emotion": "broken", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "あのね。私ね、あなたに話すの、楽なの。怖いくらい。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "akari", "text": "美月にも、こうやって頼られてたんだと思う。重かったかな。", "emotion": "broken", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "私、また同じことしてる？\nあなたに寄りかかって、あなたの言葉に蓋して——", "emotion": "broken", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "ごめん。重いよね。もう帰っ——", "emotion": "broken", "preSilence": 0.4 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 13,
+      "options": [
+        { "text": "帰らない", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "重くない。聴きたいから来た", "requiredStat": "Empathy", "requiredRank": 4, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "お前は美月じゃない。俺に言葉の蓋はさせない", "requiredStat": "Courage", "requiredRank": 4, "bondBonus": 40, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

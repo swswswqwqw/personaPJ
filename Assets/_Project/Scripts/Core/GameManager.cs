@@ -2,6 +2,7 @@ using UnityEngine;
 using Amane.Time;
 using Amane.Social;
 using Amane.Stat;
+using Amane.Battle;
 
 namespace Amane.Core
 {
@@ -22,6 +23,8 @@ namespace Amane.Core
         public BondManager Bonds { get; private set; }
         public InnerStatSet Stats { get; private set; }
         public ISaveSystem Save { get; private set; }
+        public Amane.Time.CalendarEventScheduler Calendar { get; private set; }
+        public ExperienceSystem Experience { get; private set; }
 
         public GamePhase CurrentPhase =>
             Machine?.Current is PhaseStateBase p ? p.Phase : GamePhase.Boot;
@@ -45,7 +48,16 @@ namespace Amane.Core
             Time = new TimeManager(Events);
             Bonds = new BondManager(Events);
             Bonds.SeedDesignBonds();
-            Save = new NullSaveSystem();
+            Save = new JsonSaveSystem(SerializeState, DeserializeState);
+            Calendar = new Amane.Time.CalendarEventScheduler();
+            Calendar.SeedStoryEvents();
+            Experience = new ExperienceSystem();
+
+            // パーティメンバーをEXPシステムに登録
+            Experience.Register("yomi", 1);
+            Experience.Register("akari", 1);
+            Experience.Register("ritsu", 1);
+            Experience.Register("ren", 1);
 
             SeedDeadlines();
 
@@ -83,6 +95,34 @@ namespace Amane.Core
         }
 
         public void GoToTitle() => Machine.ChangeTo<TitleState>();
+
+        public void EnterBattle() => Machine.ChangeTo<BattleState>();
+        public void ReturnToField() => Machine.ChangeTo<FieldState>();
+
+        private SaveData SerializeState()
+        {
+            var data = new SaveData
+            {
+                dayIndex = Time.Today.DayIndex,
+                currentSlot = (int)Time.CurrentSlot,
+                actionPoints = Time.ActionPoints
+            };
+            foreach (Amane.Stat.InnerStat s in System.Enum.GetValues(typeof(Amane.Stat.InnerStat)))
+                data.innerStats.Add(new StatEntry { stat = s.ToString(), points = Stats.GetPoints(s) });
+            foreach (var bond in Bonds.All)
+                data.bonds.Add(new BondEntry { id = bond.Id, rank = bond.Rank, points = bond.PointsInRank });
+            foreach (var d in Time.Deadlines)
+                if (d.Cleared) data.clearedDeadlines.Add(d.CaseId);
+            return data;
+        }
+
+        private void DeserializeState(SaveData data)
+        {
+            // Restore time/stats/bonds from save data.
+            // Full restore requires resettable setters on TimeManager etc. —
+            // placeholder until those are added.
+            Debug.Log($"[Save] Restoring day {data.dayIndex}, slot {data.currentSlot}");
+        }
 
         private void OnDestroy()
         {

@@ -1,0 +1,34 @@
+{
+  "id": "akari_rank3",
+  "title": "美月の名前",
+  "bondId": "akari",
+  "bondPointsOnComplete": 25,
+  "lines": [
+    { "speakerId": "narrator", "text": "——夕暮れの屋上。灯里が先に来ていた。", "emotion": "neutral", "preSilence": 0.0 },
+    { "speakerId": "akari", "text": "……来てくれたんだ。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "ここ、美月と一番よく来てた場所なの。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "美月——灯里の親友の名前を、初めて聞いた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "美月はね、すごく静かな子だった。いっつもノート書いてて。", "emotion": "neutral", "preSilence": 0.0 },
+    { "speakerId": "akari", "text": "でも時々、ぽつって言うの。『灯里がいるから学校来れてる』って。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "akari", "text": "私、うれしかったんだ。頼られるの。必要とされるの。", "emotion": "broken", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "……だから、あの日、美月が『もう疲れた』って言った時——", "emotion": "broken", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "私、こう言ったの。", "emotion": "broken", "preSilence": 0.6 },
+    { "speakerId": "akari", "text": "『大丈夫だよ。明日になったら元気になるよ。』", "emotion": "broken", "preSilence": 1.2 },
+    { "speakerId": "narrator", "text": "——灯里の手が、震えている。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "翌朝、美月は——", "emotion": "broken", "preSilence": 1.5 },
+    { "speakerId": "akari", "text": "……もう何も、言わなくなった。", "emotion": "broken", "preSilence": 1.0 },
+    { "speakerId": "akari", "text": "私が『大丈夫』って蓋をしたから。\n聴いてほしかっただけなのに。私は——聴かなかった。", "emotion": "broken", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "灯里の涙が、コンクリートに落ちて、雨粒と見分けがつかなくなった。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "akari", "text": "ねぇ。私のせいだよね。", "emotion": "broken", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 15,
+      "options": [
+        { "text": "お前のせいじゃない", "requiredStat": "", "requiredRank": 0, "bondBonus": 15, "jumpToDialogueId": "" },
+        { "text": "美月が言いたかったのは、そういうことじゃないと思う", "requiredStat": "Empathy", "requiredRank": 3, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "……俺にも、言えなかった言葉がある", "requiredStat": "Composure", "requiredRank": 3, "bondBonus": 35, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

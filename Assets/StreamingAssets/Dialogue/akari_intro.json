@@ -1,10 +1,32 @@
 {
   "id": "akari_intro",
+  "title": "灯里との出会い",
+  "bondId": "akari",
+  "bondPointsOnComplete": 15,
   "lines": [
     { "speakerId": "akari", "text": "転校生くん、だよね？ こっちこっち、席ここだよ！", "emotion": "smile", "preSilence": 0.0 },
     { "speakerId": "akari", "text": "雨音、なんもない街だけどさ。……雨だけは、よく降るんだ。", "emotion": "smile", "preSilence": 0.0 },
-    { "speakerId": "narration", "text": "——放課後。誰もいないはずの屋上から、すすり泣く声が聞こえた。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "akari", "text": "でもね、この街の雨ってちょっと好き。なんか……泣いてもバレない、みたいな。", "emotion": "smile", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "——放課後。誰もいないはずの屋上から、すすり泣く声が聞こえた。", "emotion": "neutral", "preSilence": 1.2 },
     { "speakerId": "akari", "text": "……あ。ごめん、見られちゃった。", "emotion": "broken", "preSilence": 0.8 },
-    { "speakerId": "akari", "text": "なんでもない。ほんとに、なんでもないの。", "emotion": "broken", "preSilence": 0.4 }
+    { "speakerId": "akari", "text": "なんでもない。ほんとに、なんでもないの。", "emotion": "broken", "preSilence": 0.4 },
+    { "speakerId": "akari", "text": "……笑ってればいいんでしょ。みんな、それを望んでるんだから。", "emotion": "broken", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "——灯里の声の奥に、何かが震えているのを感じた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "……ねえ、なんで黙ってるの？ 「大丈夫？」って聞かないの？", "emotion": "broken", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "灯里は少しだけ、不思議そうにこちらを見た。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "akari", "text": "……変な人。でも、ちょっとだけ楽かも。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "akari", "text": "ありがと。雨、やむまで……ここにいて、いい？", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "——あなたと灯里は、しばらく無言で雨音を聞いていた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "灯里との絆「言伝」が始まった。", "emotion": "neutral", "preSilence": 0.5 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 6,
+      "options": [
+        { "text": "（黙って隣に座る）", "requiredStat": "", "requiredRank": 0, "bondBonus": 15, "jumpToDialogueId": "" },
+        { "text": "泣いてたのか？", "requiredStat": "Courage", "requiredRank": 2, "bondBonus": 10, "jumpToDialogueId": "" },
+        { "text": "無理に笑わなくていい", "requiredStat": "Empathy", "requiredRank": 2, "bondBonus": 20, "jumpToDialogueId": "" }
+      ]
+    }
   ]
 }

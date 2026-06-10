@@ -1,0 +1,28 @@
+{
+  "id": "ren_intro",
+  "title": "蓮との出会い",
+  "bondId": "ren",
+  "bondPointsOnComplete": 10,
+  "lines": [
+    { "speakerId": "narrator", "text": "——校門前。制服のボタンを外した長身の男が、誰かに怒鳴っていた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "おい、しっかりしろ！ 聞いてんのか！？", "emotion": "anger", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "だが、怒鳴られている同級生は——無気力な目で、何も答えなかった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "澱に喰われた人間。言葉を奪われ、空っぽになった顔。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "……くそっ。なんなんだよ、これ。", "emotion": "frustration", "preSilence": 0.6 },
+    { "speakerId": "ren", "text": "お前、転校生だろ。見てたのかよ。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "ren", "text": "……言っとくけどな、俺は殴ろうとしたんじゃねえ。こいつが、おかしいんだよ。昨日まで普通だったのに。", "emotion": "frustration", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "蓮の拳は握り締められていた。けれどそこにあるのは暴力ではなく、行き場のない優しさだった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "……ちっ。帰るぞ。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "蓮との絆「言伝」が始まった。", "emotion": "neutral", "preSilence": 0.5 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 6,
+      "options": [
+        { "text": "……何か、心当たりがあるのか？", "requiredStat": "Courage", "requiredRank": 1, "bondBonus": 15, "jumpToDialogueId": "" },
+        { "text": "（この人も、異変に気づいている）", "requiredStat": "", "requiredRank": 0, "bondBonus": 10, "jumpToDialogueId": "" },
+        { "text": "一人で抱えるな。", "requiredStat": "Empathy", "requiredRank": 2, "bondBonus": 20, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}
