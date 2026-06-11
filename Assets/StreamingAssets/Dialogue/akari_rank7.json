@@ -2,7 +2,7 @@
   "id": "akari_rank7",
   "title": "黒板の向こう",
   "bondId": "akari",
-  "bondPointsOnComplete": 30,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——潜行前夜。灯里から呼び出された。場所は、水路沿いの遊歩道。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "akari", "text": "ねえ、聞いてほしいことがあって。", "emotion": "neutral", "preSilence": 0.3 },

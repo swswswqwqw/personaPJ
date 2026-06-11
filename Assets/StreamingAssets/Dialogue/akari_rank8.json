@@ -2,7 +2,7 @@
   "id": "akari_rank8",
   "title": "行かないで",
   "bondId": "akari",
-  "bondPointsOnComplete": 35,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——美月の心象世界から帰還した翌日。灯里が屋上にいた。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "narrator", "text": "風が強い。空は、ひどく晴れていた。", "emotion": "neutral", "preSilence": 0.8 },

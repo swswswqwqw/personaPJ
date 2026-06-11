@@ -127,6 +127,12 @@ namespace Amane.UI
             "manabe" => "真鍋 刑事",
             "suzu" => "雛森 すず",
             "narrator" => "",
+            // CalendarEventダイアログ用
+            "mother" => "……",
+            "voice" => "——",
+            "mizuki_echo" => "美月の残響",
+            "ritsu_echo" => "律の残響",
+            "ren_echo" => "蓮の残響",
             _ => id
         };
 

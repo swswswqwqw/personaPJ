@@ -2,7 +2,7 @@
   "id": "akari_rank3",
   "title": "美月の名前",
   "bondId": "akari",
-  "bondPointsOnComplete": 25,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——夕暮れの屋上。灯里が先に来ていた。", "emotion": "neutral", "preSilence": 0.0 },
     { "speakerId": "akari", "text": "……来てくれたんだ。", "emotion": "neutral", "preSilence": 0.5 },

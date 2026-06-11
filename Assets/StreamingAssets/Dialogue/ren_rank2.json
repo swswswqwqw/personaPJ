@@ -2,7 +2,7 @@
   "id": "ren_rank2",
   "title": "見んな",
   "bondId": "ren",
-  "bondPointsOnComplete": 20,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——放課後。商店街の外れで、見慣れた背中を見た。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "narrator", "text": "朝霧 蓮が、老人の荷物を拾っていた。\n段差で躓き、散らばった袋を、黙って一つひとつ集めている。", "emotion": "neutral", "preSilence": 0.8 },

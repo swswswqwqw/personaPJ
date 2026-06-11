@@ -2,7 +2,7 @@
   "id": "akari_rank4",
   "title": "依存",
   "bondId": "akari",
-  "bondPointsOnComplete": 30,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——深夜。スマホが鳴った。灯里からだ。", "emotion": "neutral", "preSilence": 0.0 },
     { "speakerId": "akari", "text": "ごめん、起きてた？ ……起こした？", "emotion": "broken", "preSilence": 0.3 },

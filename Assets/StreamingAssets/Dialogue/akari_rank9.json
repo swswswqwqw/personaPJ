@@ -2,7 +2,7 @@
   "id": "akari_rank9",
   "title": "手紙の宛名",
   "bondId": "akari",
-  "bondPointsOnComplete": 35,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——放課後。灯里が図書室の隅で、便箋に向かっていた。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "narrator", "text": "声をかけると、慌てて便箋を伏せた。", "emotion": "neutral", "preSilence": 0.5 },

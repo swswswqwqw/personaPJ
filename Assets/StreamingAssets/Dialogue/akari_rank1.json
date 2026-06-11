@@ -2,7 +2,7 @@
   "id": "akari_rank1",
   "title": "翌朝——「昨日のこと」",
   "bondId": "akari",
-  "bondPointsOnComplete": 20,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——翌朝。登校の廊下で灯里と目が合った。", "emotion": "neutral", "preSilence": 0.3 },
     { "speakerId": "akari", "text": "あっ……えと、昨日は——", "emotion": "broken", "preSilence": 0.5 },

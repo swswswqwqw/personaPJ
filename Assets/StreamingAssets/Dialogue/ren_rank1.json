@@ -2,7 +2,7 @@
   "id": "ren_rank1",
   "title": "校門前——「まだいたのか」",
   "bondId": "ren",
-  "bondPointsOnComplete": 20,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——翌朝。校門前。蓮が壁に寄りかかって空を見上げていた。", "emotion": "neutral", "preSilence": 0.3 },
     { "speakerId": "ren", "text": "……お前、まだいたんだ。転校生、すぐ帰るかと思ってた。", "emotion": "neutral", "preSilence": 0.3 },

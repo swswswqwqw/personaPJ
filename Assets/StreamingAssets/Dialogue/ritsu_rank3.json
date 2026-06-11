@@ -2,7 +2,7 @@
   "id": "ritsu_rank3",
   "title": "下書き",
   "bondId": "ritsu",
-  "bondPointsOnComplete": 25,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——放課後の廊下。律が壁に寄りかかって、スマートフォンを見ていた。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "narrator", "text": "見慣れない機種だった。画面が古く、ケースの色が褪せている。", "emotion": "neutral", "preSilence": 0.5 },

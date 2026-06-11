@@ -2,7 +2,7 @@
   "id": "ritsu_rank8",
   "title": "サーバールームへ",
   "bondId": "ritsu",
-  "bondPointsOnComplete": 35,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——放課後。律が図書室の机に設計図を広げていた。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "narrator", "text": "それは未言界の地図ではなかった。\n父の行動記録、交友関係、生前のメール履歴——データの整理だった。", "emotion": "neutral", "preSilence": 0.8 },

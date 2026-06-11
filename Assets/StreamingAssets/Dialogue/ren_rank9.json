@@ -2,7 +2,7 @@
   "id": "ren_rank9",
   "title": "形見",
   "bondId": "ren",
-  "bondPointsOnComplete": 35,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——3日後。蓮から「話がある」と連絡が来た。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "narrator", "text": "水路沿いの遊歩道。いつもの場所に、蓮が立っていた。", "emotion": "neutral", "preSilence": 0.8 },

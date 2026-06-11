@@ -2,7 +2,7 @@
   "id": "ritsu_rank6",
   "title": "送信",
   "bondId": "ritsu",
-  "bondPointsOnComplete": 30,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——夜の図書室。閉館間際、律が一人でいた。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "narrator", "text": "スマートフォンが、テーブルの上に置かれていた。\nメッセージアプリが開いている。", "emotion": "neutral", "preSilence": 0.8 },

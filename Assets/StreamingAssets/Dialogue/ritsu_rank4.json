@@ -2,7 +2,7 @@
   "id": "ritsu_rank4",
   "title": "初めての涙",
   "bondId": "ritsu",
-  "bondPointsOnComplete": 30,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——潜行の翌朝。父の心象世界「送信されなかった下書きが壁を覆うサーバールーム」を攻略した翌朝。", "emotion": "neutral", "preSilence": 0.8 },
     { "speakerId": "narrator", "text": "図書室の最奥。律がいつもの席に座っていた。\nだがイヤホンはない。パソコンも閉じている。", "emotion": "neutral", "preSilence": 0.8 },

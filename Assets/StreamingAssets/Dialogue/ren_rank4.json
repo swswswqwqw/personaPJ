@@ -2,7 +2,7 @@
   "id": "ren_rank4",
   "title": "ありがとう",
   "bondId": "ren",
-  "bondPointsOnComplete": 30,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——潜行の翌日。蓮の祖母の心象世界「拳の形に凹んだ壁だけの回廊」を攻略した翌日。", "emotion": "neutral", "preSilence": 0.8 },
     { "speakerId": "narrator", "text": "病院の入り口で、蓮が出てきた。\n目が赤かった。", "emotion": "neutral", "preSilence": 1.0 },

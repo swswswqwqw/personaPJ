@@ -2,7 +2,7 @@
   "id": "ren_rank7",
   "title": "残り少ない時間",
   "bondId": "ren",
-  "bondPointsOnComplete": 30,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——病院の廊下。蓮が待合椅子に座っていた。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "narrator", "text": "白衣の医師が去っていくのが、廊下の角に見えた。", "emotion": "neutral", "preSilence": 0.8 },

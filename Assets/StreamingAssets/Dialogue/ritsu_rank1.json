@@ -2,7 +2,7 @@
   "id": "ritsu_rank1",
   "title": "図書室——「また来た」",
   "bondId": "ritsu",
-  "bondPointsOnComplete": 20,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——翌日。図書室の最奥、同じ席。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "narrator", "text": "律はまた本を開いていた。今日はイヤホンをしていなかった。", "emotion": "neutral", "preSilence": 0.5 },

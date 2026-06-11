@@ -2,7 +2,7 @@
   "id": "ritsu_rank2",
   "title": "引き剥がし",
   "bondId": "ritsu",
-  "bondPointsOnComplete": 20,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——図書室。今日も律は最奥の席にいた。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "ritsu", "text": "……来るなと言った。", "emotion": "cold", "preSilence": 0.8 },

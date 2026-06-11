@@ -1,13 +1,13 @@
 # RPG開発 引き継ぎ
 
-## 最終更新: 2026-06-11（第4セッション）
+## 最終更新: 2026-06-11（第5セッション・夜間自動実行）
 ## 作業ブランチ: claude/sweet-fermat-znRAO
 ## ゲームタイトル / エンジン: 残響都市アマネ / AMANE: City of Echoes — Unity 6 (6000.3.2f1) + URP
 
 ---
 
 ## 現在のフェーズ
-**全3キャラ（灯里/律/蓮）絆ランク1-10 JSON完成 + ダンジョン探索ループ接続済み + 昼休み行動枠実装**
+**全3キャラ（灯里/律/蓮）絆ランク1-10 JSON完成 + 第1幕全CalendarEventダイアログ自動起動 + 昼休み/深夜行動枠実装**
 
 2026-06-10: 8本の設計ブランチを統合。DESIGN.mdにセクション9「統合拡張仕様」を追加。
 focused-shannonブランチからGameEventBus・InventoryManager・未言界ダンジョン探索（DungeonExplorer/MigenkaiManager/MigenkaiData）・ItemDataを移植。

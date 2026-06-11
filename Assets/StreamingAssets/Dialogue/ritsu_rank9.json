@@ -2,7 +2,7 @@
   "id": "ritsu_rank9",
   "title": "エラーなし",
   "bondId": "ritsu",
-  "bondPointsOnComplete": 35,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——潜行の翌日。律が図書室で、ノートPCに向かっていた。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "narrator", "text": "目が赤い。眠れなかったのか、泣いたのか——どちらもかもしれない。", "emotion": "neutral", "preSilence": 0.8 },

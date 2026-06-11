@@ -2,7 +2,7 @@
   "id": "ren_rank8",
   "title": "最後の面会",
   "bondId": "ren",
-  "bondPointsOnComplete": 35,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——病院からの呼び出しがあった日。蓮と一緒に走った。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "narrator", "text": "病室のドアの前で、蓮が立ち止まった。", "emotion": "neutral", "preSilence": 0.8 },

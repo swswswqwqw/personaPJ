@@ -2,7 +2,7 @@
   "id": "akari_rank2",
   "title": "仮面のひび",
   "bondId": "akari",
-  "bondPointsOnComplete": 20,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——放課後。灯里に誘われて、駅前のカフェに来た。", "emotion": "neutral", "preSilence": 0.0 },
     { "speakerId": "akari", "text": "えへへ、ここのクリームソーダ、知ってる？ 雨音で一番おいしいんだよ。", "emotion": "smile", "preSilence": 0.0 },

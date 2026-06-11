@@ -2,7 +2,7 @@
   "id": "ren_rank5",
   "title": "守るための拳",
   "bondId": "ren",
-  "bondPointsOnComplete": 40,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——放課後の校門前。見覚えのある背中が、人の輪の中に割って入った。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "narrator", "text": "3人の上級生が、小柄な後輩を壁際に追い詰めていた。\n後輩は何も言えずに、ただ縮こまっている。", "emotion": "neutral", "preSilence": 0.8 },

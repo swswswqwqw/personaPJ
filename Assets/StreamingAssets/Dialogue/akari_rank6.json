@@ -2,7 +2,7 @@
   "id": "akari_rank6",
   "title": "永遠に鳴り続ける鐘",
   "bondId": "akari",
-  "bondPointsOnComplete": 30,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——夜の学校。灯里が珍しく、遅くまで教室に残っていた。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "narrator", "text": "黒板に、何かが書かれては消され、また書かれている。", "emotion": "neutral", "preSilence": 0.8 },

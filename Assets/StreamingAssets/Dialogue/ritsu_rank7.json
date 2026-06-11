@@ -2,7 +2,7 @@
   "id": "ritsu_rank7",
   "title": "下書きの全文",
   "bondId": "ritsu",
-  "bondPointsOnComplete": 30,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——水路沿いの遊歩道。珍しく、律から呼び出された。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "ritsu", "text": "……読む。聞いてくれ。", "emotion": "cold", "preSilence": 0.5 },

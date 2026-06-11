@@ -2,7 +2,7 @@
   "id": "akari_rank5",
   "title": "聴くということ",
   "bondId": "akari",
-  "bondPointsOnComplete": 35,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——放課後の教室。灯里が、転校生の女子と話している。", "emotion": "neutral", "preSilence": 0.0 },
     { "speakerId": "akari", "text": "うん、わかるよ。新しいクラスって不安だよね。", "emotion": "smile", "preSilence": 0.0 },

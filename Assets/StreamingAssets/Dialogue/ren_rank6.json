@@ -2,7 +2,7 @@
   "id": "ren_rank6",
   "title": "病室の名前",
   "bondId": "ren",
-  "bondPointsOnComplete": 30,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——放課後。蓮と一緒に雨音総合病院に向かった。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "narrator", "text": "毎日来ている、と聞いていた。\n確かに、受付の人が蓮に気軽に挨拶をしていた。", "emotion": "neutral", "preSilence": 0.8 },

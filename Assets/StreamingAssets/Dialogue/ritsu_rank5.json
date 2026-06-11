@@ -2,7 +2,7 @@
   "id": "ritsu_rank5",
   "title": "届ける側に",
   "bondId": "ritsu",
-  "bondPointsOnComplete": 40,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——放課後。図書室で、律が見慣れない作業をしていた。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "narrator", "text": "スマートフォンが一台、テーブルに置かれている。律のものではない。", "emotion": "neutral", "preSilence": 0.5 },

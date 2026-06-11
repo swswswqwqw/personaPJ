@@ -2,7 +2,7 @@
   "id": "ren_rank3",
   "title": "病室の前で",
   "bondId": "ren",
-  "bondPointsOnComplete": 25,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——放課後。雨音総合病院の廊下。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "narrator", "text": "蓮が、廊下の壁に背をつけて立っていた。\n目の前の扉には「302号室」のプレートがある。", "emotion": "neutral", "preSilence": 0.8 },
