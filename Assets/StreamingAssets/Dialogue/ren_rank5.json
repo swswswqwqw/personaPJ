@@ -1,0 +1,35 @@
+{
+  "id": "ren_rank5",
+  "title": "守るための拳",
+  "bondId": "ren",
+  "bondPointsOnComplete": 40,
+  "lines": [
+    { "speakerId": "narrator", "text": "——放課後の校門前。見覚えのある背中が、人の輪の中に割って入った。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "3人の上級生が、小柄な後輩を壁際に追い詰めていた。\n後輩は何も言えずに、ただ縮こまっている。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "ちょっと待て。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "蓮が三人の前に立った。身体の大きさで、相手がひるむ。\nだが——拳は握っていなかった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "お前ら。その子に何か言いたいことがあるなら、ちゃんと言葉で言え。\n言えないなら、帰れ。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "低く、静かな声だった。以前の蓮の声とは違う。\n脅しではなく——壁だった。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "上級生たちは舌打ちをして、去っていった。\n後輩がぺこぺこと頭を下げ、駆け出していく。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "……見てたのか、また。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "蓮はこちらに気づいて、肩をすくめた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "昔の俺なら、殴ってた。\n正直、今もそっちの方が早いと思ってる。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "でも——言葉で言えるなら、言葉の方がいいだろ。\n言えなくなってから後悔するのは、もういい。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ren", "text": "拳より、言葉のほうが、ずっと怖え。\n逃げてたのは俺だ。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "蓮は自分の手のひらを見た。\n傷だらけの、大きな手。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ren", "text": "でも、この拳が役立つ時もある。\n言葉が届かない奴の前に立つときは、これが要る。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "……守るための拳、なら使える。そっちの方が、ばあちゃんも喜ぶだろ。", "emotion": "warm", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "お前と組んでると……守りてえもんが、増えてく。\n困るぜ、まったく。", "emotion": "warm", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "蓮との絆「言伝」が、最大に近づいた。\n彼の拳は今、誰かの「言えない言葉」の隣に立つためにある。", "emotion": "neutral", "preSilence": 1.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 12,
+      "options": [
+        { "text": "お前がいてくれて、よかった。", "requiredStat": "", "requiredRank": 0, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "ばあちゃんが言ってた通りだ。お前は優しい。", "requiredStat": "Empathy", "requiredRank": 4, "bondBonus": 45, "jumpToDialogueId": "" },
+        { "text": "……俺も、お前の隣に立てるように強くなる。", "requiredStat": "Courage", "requiredRank": 5, "bondBonus": 50, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

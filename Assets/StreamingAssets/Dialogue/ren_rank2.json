@@ -1,0 +1,30 @@
+{
+  "id": "ren_rank2",
+  "title": "見んな",
+  "bondId": "ren",
+  "bondPointsOnComplete": 20,
+  "lines": [
+    { "speakerId": "narrator", "text": "——放課後。商店街の外れで、見慣れた背中を見た。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "朝霧 蓮が、老人の荷物を拾っていた。\n段差で躓き、散らばった袋を、黙って一つひとつ集めている。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "老人が礼を言う。蓮は目を逸らして「別に」とだけ言った。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "……チッ。見てたのかよ。", "emotion": "frustration", "preSilence": 0.6 },
+    { "speakerId": "ren", "text": "見んな。転んだんだ、転んだだけだ。放っておけるかよ、そんくらい。", "emotion": "frustration", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "蓮の耳が、少し赤い。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "勘違いすんなよ。優しくしたとか、そういうんじゃねえから。\n気持ち悪いだろ、不良が荷物持ちとか。", "emotion": "frustration", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "……ばあちゃんに、似てたんだよ。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "蓮は、また目を逸らした。言ってしまったことに気づいて、顔が険しくなる。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "……なんでもねえ。忘れろ。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "お前も荷物持ちとか好きか？ だったら俺に絡むな。\n俺は一人でやるタイプだ。", "emotion": "frustration", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "蓮は歩き去った。\n——でも今度は「来るな」とは言わなかった。", "emotion": "neutral", "preSilence": 1.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 7,
+      "options": [
+        { "text": "……祖母さんに会いに行ってるのか？", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "おかしくないだろ、別に。", "requiredStat": "Empathy", "requiredRank": 2, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "お前、優しいな。", "requiredStat": "Courage", "requiredRank": 3, "bondBonus": 30, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

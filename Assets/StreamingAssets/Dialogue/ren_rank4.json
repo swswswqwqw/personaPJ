@@ -1,0 +1,35 @@
+{
+  "id": "ren_rank4",
+  "title": "ありがとう",
+  "bondId": "ren",
+  "bondPointsOnComplete": 30,
+  "lines": [
+    { "speakerId": "narrator", "text": "——潜行の翌日。蓮の祖母の心象世界「拳の形に凹んだ壁だけの回廊」を攻略した翌日。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "病院の入り口で、蓮が出てきた。\n目が赤かった。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ren", "text": "……あ。お前か。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "蓮は立ち止まった。逃げなかった。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "行ってきた。ばあちゃんのとこ。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "それだけ言って、蓮は空を見上げた。雨上がりの薄い光が、病院の白い壁に反射していた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ren", "text": "俺のこと、わかってたかどうかはわからない。\n手を握ったら、ちょっとだけ、握り返してくれたけど。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ren", "text": "……言えたよ。", "emotion": "neutral", "preSilence": 2.0 },
+    { "speakerId": "ren", "text": "『ばあちゃん、ありがとう』って。\n『育ててくれて、ありがとう』って。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "narrator", "text": "蓮の声が詰まった。一拍おいて、続けた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "ばあちゃんが昔、言ってたんだ。\n『蓮は不器用だけど、優しい子だ』って。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "俺、ずっと信じてなかった。\n怒鳴った後は、特に。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "でもあの心象の中で……あの空間の奥に、揺り椅子があった。\nそこで待ってた。俺が来るのを、ずっと待ってたんだ。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "蓮は目を拭いた。ごしごしと、乱暴に。\n泣いていたことを誤魔化すように。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ren", "text": "……俺、また来る。明日も来る。\n今度は言葉、もっと持ってくる。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "お前のおかげだ。ありがとな。\n……言いたくなかったけど、言わないと、また後悔するから。", "emotion": "warm", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "蓮との絆が、深まった。\n彼の拳は今、誰かを殴るためではなく、扉を叩くために存在していた。", "emotion": "neutral", "preSilence": 1.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 8,
+      "options": [
+        { "text": "よかった。", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "ばあちゃん、喜んでる。", "requiredStat": "Empathy", "requiredRank": 4, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "言えたな、蓮。", "requiredStat": "Courage", "requiredRank": 3, "bondBonus": 30, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

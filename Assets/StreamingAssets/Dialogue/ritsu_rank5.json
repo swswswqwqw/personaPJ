@@ -1,0 +1,34 @@
+{
+  "id": "ritsu_rank5",
+  "title": "届ける側に",
+  "bondId": "ritsu",
+  "bondPointsOnComplete": 40,
+  "lines": [
+    { "speakerId": "narrator", "text": "——放課後。図書室で、律が見慣れない作業をしていた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "スマートフォンが一台、テーブルに置かれている。律のものではない。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ritsu", "text": "……2年の鵜飼のだ。昨日、澱に喰われて無気力化した。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "ritsu", "text": "保健室で保護されているが、何を言おうとしていたのかわからない。\n担任も家族も、どこに手がかりがあるか見当がつかない。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "ritsu", "text": "だから僕が解析する。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "律の指がキーボードを叩く。普段の三倍のスピードで、コードが流れていく。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "コードは正直だ。エラーは必ず理由がある。\n……人の沈黙にも、理由がある。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "削除されたメッセージの履歴がある。相手は、同じクラスの生徒だ。\nずっと送ろうとして、消した痕跡が残っている。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "律は画面を見たまま言った。表情は変わらない。\nだが——声が、少しだけ柔らかかった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "……お前のその力で、この子の「言えなかった言葉」を確認できるか？\n方向性がわかれば、次の潜行で回収できる。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "律がこちらを見た。めずらしく、まっすぐに。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ritsu", "text": "お前の「残響同調」と、僕の解析を合わせれば——届けられるかもしれない。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ritsu", "text": "……父の下書きを見て、わかった。\n「届かなかった言葉」には、ちゃんと宛先がある。\n失われていいものなんか、ひとつもない。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "律は、再びキーボードに向かった。\n——今度の沈黙に、「残響」はなかった。静かな、決意だけがあった。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "ritsu", "text": "お前のその力、嫌いだった。\n今は——少しだけ、感謝してる。", "emotion": "warm", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "律との絆「言伝」が、最大に近づいた。\n彼は届かなかった言葉を、救う側に立った。", "emotion": "neutral", "preSilence": 1.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 11,
+      "options": [
+        { "text": "一緒にやろう。", "requiredStat": "", "requiredRank": 0, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "お前と組むのが、一番頼もしい。", "requiredStat": "Empathy", "requiredRank": 4, "bondBonus": 45, "jumpToDialogueId": "" },
+        { "text": "……お前の父さんも、きっと喜んでる。", "requiredStat": "Composure", "requiredRank": 5, "bondBonus": 50, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

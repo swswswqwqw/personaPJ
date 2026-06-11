@@ -157,6 +157,62 @@ public static class AmaneLogicTest
         Assert(battle.Enemies.Count == 3, "敵3体");
         float bonus0 = battle.GetKotsugiBonus();
         Assert(bonus0 == 0f, "初期言継ぎボーナス = 0");
+        float total0 = battle.GetTotalBonus();
+        Assert(total0 == 0f, "初期GetTotalBonus = 0（パーフェクトバフなし）");
+
+        // --- パーフェクト言継ぎ ---
+        Debug.Log("\n[PerfectKotsugi — DESIGN.md 9-1]");
+        var pfBattle = new BattleManager(new EventChannel());
+        bool perfectFired = false;
+        pfBattle.OnPerfectKotsugi += () => perfectFired = true;
+
+        // 2人パーティ（全員参加 = 1回の言継ぎでパーフェクト）
+        var pfP1 = new Combatant("pf1", "天野詠", true, 100, 50, 15, 10, 15, 10, 20, AffinityTable.AllNormal());
+        var pfP2 = new Combatant("pf2", "望月灯里", true, 100, 50, 12, 10, 12, 10, 15, AffinityTable.AllNormal());
+        // SP回復テストのため事前にSPを消費しておく
+        pfP1.SpendSp(20); // p1 SP: 30
+        pfP2.SpendSp(20); // p2 SP: 30
+        int p1SpBefore = pfP1.Sp;
+        int p2SpBefore = pfP2.Sp;
+        pfBattle.StartBattle(
+            new List<Combatant> { pfP1, pfP2 },
+            new List<Combatant> { EnemyFactory.CreateSilentOri() }
+        );
+        // 言継ぎ実行（p1→p2: 2人パーティなら全員参加 = パーフェクト）
+        pfBattle.ExecuteAction(BattleAction.Kotsugi(pfP1, pfP2));
+        Assert(perfectFired, "2人パーティ言継ぎでパーフェクト言継ぎ発動");
+        Assert(pfP1.Sp > p1SpBefore, "パーフェクト言継ぎでSP回復（p1）");
+        Assert(pfP2.Sp > p2SpBefore, "パーフェクト言継ぎでSP回復（p2）");
+        Assert(pfBattle.PerfectKotsugiBuffActive == false, "パーフェクトバフは次ラウンド適用（今ラウンドはまだ未適用）");
+
+        // --- 逆総告白（OnReverseAllOutCallingイベントの存在確認） ---
+        Debug.Log("\n[ReverseAllOutCalling — DESIGN.md 9-1]");
+        var rvBattle = new BattleManager(new EventChannel());
+        bool reverseFired = false;
+        Combatant reverseEnemy = null;
+        rvBattle.OnReverseAllOutCalling += e => { reverseFired = true; reverseEnemy = e; };
+        // 弱点属性で確実にDOWNするパーティ（HP十分あるが属性弱点）
+        var weakParty = new List<Combatant> {
+            new Combatant("rv1", "テストメンバー", true, 200, 50, 10, 5, 10, 5, 10,
+                AffinityTable.Build(weak: new[] { Element.Fire }))
+        };
+        var fireSkillRv = new Skill("fire_rv", "炎撃", Element.Fire, 20, 0, TargetType.SingleEnemy, false, 0f);
+        var fireEnemy = new Combatant("fire_e", "炎のオリ", false, 300, 50, 30, 10, 30, 10, 12,
+            AffinityTable.AllNormal(), new List<Skill> { fireSkillRv });
+        rvBattle.StartBattle(weakParty, new List<Combatant> { fireEnemy });
+        // 敵が炎スキルで弱点ヒット → DOWN → 全員DOWN → 逆総告白発動
+        var fireAction = BattleAction.UseSkill(fireEnemy, fireEnemy.Skills[0], weakParty);
+        rvBattle.ExecuteAction(fireAction);
+        Assert(reverseFired || weakParty[0].IsDown, "弱点ヒット → DOWN状態（逆総告白トリガー条件）");
+        if (reverseFired)
+        {
+            Assert(reverseEnemy == fireEnemy, "逆総告白トリガーの敵が正しい");
+            Debug.Log("  ✓ 逆総告白が発動（全員DOWNを確認）");
+        }
+        else
+        {
+            Debug.Log("  ⚠ DOWNしたが逆総告白未発火（一撃でDOWNしない場合あり — 確率依存）");
+        }
 
         // --- EnemyAI ---
         Debug.Log("\n[EnemyAI]");

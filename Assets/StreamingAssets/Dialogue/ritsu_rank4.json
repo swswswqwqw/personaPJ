@@ -1,0 +1,34 @@
+{
+  "id": "ritsu_rank4",
+  "title": "初めての涙",
+  "bondId": "ritsu",
+  "bondPointsOnComplete": 30,
+  "lines": [
+    { "speakerId": "narrator", "text": "——潜行の翌朝。父の心象世界「送信されなかった下書きが壁を覆うサーバールーム」を攻略した翌朝。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "図書室の最奥。律がいつもの席に座っていた。\nだがイヤホンはない。パソコンも閉じている。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "——泣いていた。", "emotion": "neutral", "preSilence": 2.0 },
+    { "speakerId": "narrator", "text": "声は出ていない。ただ、眼鏡のレンズが曇っている。\n膝の上の手が、白くなるほど握り締められている。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ritsu", "text": "……見たのか。", "emotion": "cold", "preSilence": 1.2 },
+    { "speakerId": "ritsu", "text": "エラーが出た。処理しきれない感情データが、一時的にオーバーフローしただけだ。\nすぐ収束する。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "律はそう言いながら、眼鏡を外して袖で拭いた。\n手が震えていた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ritsu", "text": "……父の心象世界で見た。\n壁一面の、未送信のメッセージ。全部、僕への下書きだった。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ritsu", "text": "毎年、誕生日に。受験の前に。……僕が葬式に来なかった日にも。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "ritsu", "text": "一度も、送信されなかった。", "emotion": "neutral", "preSilence": 2.0 },
+    { "speakerId": "narrator", "text": "律の声が、微かに震えた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "僕が『興味ない』と言ったから、送れなくなったのか。\nそれとも、元々送る気がなかったのか。\n……わからない。デバッグできない。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ritsu", "text": "ずっと、僕のせいだと思っていた。\n拒絶したのは僕の方だから。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "……でも、父も。送れなかったんだ。", "emotion": "neutral", "preSilence": 2.0 },
+    { "speakerId": "narrator", "text": "律は眼鏡を掛け直した。\nレンズは、まだ少し曇っていた。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "ritsu", "text": "……悪い。非効率な時間を取らせた。\n帰っていい。", "emotion": "cold", "preSilence": 0.6 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 12,
+      "options": [
+        { "text": "（黙って隣に座る）", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "お前のせいじゃない。", "requiredStat": "Empathy", "requiredRank": 3, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "……「ごめん」は、間に合わなかった相手にも、意味があると思う。", "requiredStat": "Composure", "requiredRank": 4, "bondBonus": 40, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

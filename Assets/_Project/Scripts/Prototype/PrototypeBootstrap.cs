@@ -226,6 +226,30 @@ namespace Amane.Prototype
                 new Vector2(0, 0), new Vector2(100, 40));
             dmgPop.gameObject.SetActive(false);
 
+            // --- Perfect Kotsugi group (DESIGN.md 9-1) ---
+            var perfectKotsugiGroup = CreateSubCanvasGroup(fxObj.transform, "PerfectKotsugiGroup");
+            perfectKotsugiGroup.alpha = 0;
+            perfectKotsugiGroup.gameObject.SetActive(false);
+            var perfectKtTitle = MakeText(perfectKotsugiGroup.transform, "", 34, TextAnchor.MiddleCenter,
+                new Vector2(0, 30), new Vector2(500, 50));
+            perfectKtTitle.color = new Color(1f, 0.243f, 0.541f);
+            perfectKtTitle.fontStyle = FontStyle.Bold;
+            var perfectKtSubtext = MakeText(perfectKotsugiGroup.transform, "", 20, TextAnchor.MiddleCenter,
+                new Vector2(0, -20), new Vector2(500, 40));
+            perfectKtSubtext.color = Color.white;
+
+            // --- Reverse All-Out Calling group (DESIGN.md 9-1) ---
+            var reverseAllOutGroup = CreateSubCanvasGroup(fxObj.transform, "ReverseAllOutGroup");
+            reverseAllOutGroup.alpha = 0;
+            reverseAllOutGroup.gameObject.SetActive(false);
+            var reverseAllOutText = MakeText(reverseAllOutGroup.transform, "", 30, TextAnchor.MiddleCenter,
+                new Vector2(0, 0), new Vector2(500, 50));
+            reverseAllOutText.color = new Color(1f, 0.3f, 0.3f);
+            reverseAllOutText.fontStyle = FontStyle.Bold;
+            // 逆総告白フラッシュ（赤）
+            var reverseFlash = MakeFullscreenImage(fxObj.transform, "ReverseFlash", new Color(0.8f, 0.1f, 0.1f, 0));
+            reverseFlash.gameObject.SetActive(false);
+
             _battleEffects = fxObj.AddComponent<BattleEffects>();
             SetPrivateField(_battleEffects, "_screenFlash", screenFlash);
             SetPrivateField(_battleEffects, "_weakBanner", weakBanner);
@@ -239,6 +263,12 @@ namespace Amane.Prototype
             SetPrivateField(_battleEffects, "_kotsugiGroup", kotsugiGroup);
             SetPrivateField(_battleEffects, "_kotsugiText", kotsugiText);
             SetPrivateField(_battleEffects, "_kotsugiBonus", kotsugiBonus);
+            SetPrivateField(_battleEffects, "_perfectKotsugiGroup", perfectKotsugiGroup);
+            SetPrivateField(_battleEffects, "_perfectKotsugiTitle", perfectKtTitle);
+            SetPrivateField(_battleEffects, "_perfectKotsugiSubtext", perfectKtSubtext);
+            SetPrivateField(_battleEffects, "_reverseAllOutGroup", reverseAllOutGroup);
+            SetPrivateField(_battleEffects, "_reverseAllOutText", reverseAllOutText);
+            SetPrivateField(_battleEffects, "_reverseFlash", reverseFlash);
             SetPrivateField(_battleEffects, "_damagePopTemplate", dmgPop);
 
             // --- Level Up Effect ---

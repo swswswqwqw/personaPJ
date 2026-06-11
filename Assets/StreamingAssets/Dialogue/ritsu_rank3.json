@@ -1,0 +1,32 @@
+{
+  "id": "ritsu_rank3",
+  "title": "下書き",
+  "bondId": "ritsu",
+  "bondPointsOnComplete": 25,
+  "lines": [
+    { "speakerId": "narrator", "text": "——放課後の廊下。律が壁に寄りかかって、スマートフォンを見ていた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "見慣れない機種だった。画面が古く、ケースの色が褪せている。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ritsu", "text": "……見るな。", "emotion": "cold", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "父の、だ。研究室から送られてきた。荷物の中に入っていた。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "律の声は、いつもより低かった。怒っているのか、それとも——", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "……ロック解除できた。パスワードが僕の誕生日だった。", "emotion": "cold", "preSilence": 1.0 },
+    { "speakerId": "ritsu", "text": "バカじゃないか。セキュリティの基本もわかっていない。\n研究者のくせに。", "emotion": "cold", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "律の言葉は辛辣だった。だが、その手は震えていた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "……メッセージアプリを開いたら、下書きがあった。", "emotion": "cold", "preSilence": 1.2 },
+    { "speakerId": "ritsu", "text": "宛名が、僕だった。\n『律へ』。それだけ書いて、送信されていなかった。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "律は画面を閉じた。表情が変わらない。\nだが——閉じる動作が、一瞬、躊躇した。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ritsu", "text": "下書き、だってさ。送信ボタン、押せなかったのは……どっちもだったんだ。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ritsu", "text": "……おかしいだろ。エラーだ。人間のコードは、バグが多すぎる。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "律は立ち去った。\nその背中に、「残響」が聞こえた。——たった一言。『会いたかった』。", "emotion": "neutral", "preSilence": 1.5 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 11,
+      "options": [
+        { "text": "……読んだのか？", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "お前も、送れなかった言葉があったんじゃないか。", "requiredStat": "Courage", "requiredRank": 3, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "エラーは、理由があるって言ってたな。", "requiredStat": "Composure", "requiredRank": 3, "bondBonus": 35, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

@@ -19,17 +19,28 @@ namespace Amane.Battle
     {
         private readonly EventChannel _events;
         private readonly TurnSystem _turns = new();
+        private readonly Random _rng = new();
+
+        // パーフェクト言継ぎ追跡
+        private readonly HashSet<string> _kotsugiChainParticipants = new();
+        private bool _perfectKotsugiBuffNextRound = false;
+        private bool _perfectKotsugiBuffThisRound = false;
 
         public List<Combatant> Party { get; } = new();
         public List<Combatant> Enemies { get; } = new();
         public BattlePhase Phase { get; private set; }
         public Combatant ActiveCombatant => _turns.Current;
         public int KotsugiChain { get; private set; }
+        public bool PerfectKotsugiBuffActive => _perfectKotsugiBuffThisRound;
 
         public event Action<BattlePhase> OnPhaseChanged;
         public event Action<HitResult> OnHit;
         public event Action OnAllOutConfession;
         public event Action<Combatant, Combatant, float> OnKotsugi;
+        // DESIGN.md 9-1: パーフェクト言継ぎ — 4人全員リレー達成時
+        public event Action OnPerfectKotsugi;
+        // DESIGN.md 9-1: 逆総告白 — 味方全員DOWN時に敵が連続行動
+        public event Action<Combatant> OnReverseAllOutCalling;
 
         public BattleManager(EventChannel events)
         {
@@ -43,6 +54,9 @@ namespace Amane.Battle
             Enemies.Clear();
             Enemies.AddRange(enemies);
             KotsugiChain = 0;
+            _kotsugiChainParticipants.Clear();
+            _perfectKotsugiBuffNextRound = false;
+            _perfectKotsugiBuffThisRound = false;
 
             foreach (var c in AllCombatants())
                 c.SetDown(false);
@@ -106,13 +120,16 @@ namespace Amane.Battle
             return 0.5f + 0.25f * (KotsugiChain - 1);
         }
 
+        // パーフェクト言継ぎバフ（+10%）を加算した合計ボーナスを返す
+        public float GetTotalBonus() => GetKotsugiBonus() + (_perfectKotsugiBuffThisRound ? 0.1f : 0f);
+
         private void ExecuteSkill(BattleAction action)
         {
             var skill = action.Skill ?? Skill.MeleeAttack;
             if (!action.Actor.SpendSp(skill.SpCost))
                 skill = Skill.MeleeAttack;
 
-            float bonus = GetKotsugiBonus();
+            float bonus = GetTotalBonus();
             bool anyOneMore = false;
 
             foreach (var target in action.Targets)
@@ -138,7 +155,12 @@ namespace Amane.Battle
             else
             {
                 KotsugiChain = 0;
+                _kotsugiChainParticipants.Clear();
             }
+
+            // 逆総告白チェック: 敵の攻撃で味方全員がDOWNになったか
+            if (!action.Actor.IsPlayer)
+                CheckReverseAllOutCalling(action.Actor);
         }
 
         private void ExecuteKotsugi(BattleAction action)
@@ -147,14 +169,68 @@ namespace Amane.Battle
             if (receiver == null || !receiver.IsAlive) return;
 
             KotsugiChain++;
-            float bonus = GetKotsugiBonus();
+            // 参加者を記録
+            _kotsugiChainParticipants.Add(action.Actor.Id);
+            _kotsugiChainParticipants.Add(receiver.Id);
+
+            float bonus = GetTotalBonus();
             OnKotsugi?.Invoke(action.Actor, receiver, bonus);
             _turns.InsertOneMore(receiver);
+
+            // パーフェクト言継ぎチェック
+            CheckPerfectKotsugi();
+
             AdvanceTurn();
+        }
+
+        // DESIGN.md 9-1: 4人全員を1ターン内でリレーしたか判定
+        private void CheckPerfectKotsugi()
+        {
+            var aliveParty = Party.Where(p => p.IsAlive).ToList();
+            // 2人以上生存 && 全員が参加した
+            if (aliveParty.Count < 2) return;
+            if (!aliveParty.All(p => _kotsugiChainParticipants.Contains(p.Id))) return;
+
+            OnPerfectKotsugi?.Invoke();
+
+            // 即時: SP全員15%回復
+            foreach (var member in aliveParty)
+                member.RestoreSp((int)(member.MaxSp * 0.15f));
+
+            // 次ラウンドバフを予約
+            _perfectKotsugiBuffNextRound = true;
+        }
+
+        // DESIGN.md 9-1: 味方全員DOWN → 敵が連続行動
+        private void CheckReverseAllOutCalling(Combatant enemy)
+        {
+            var aliveParty = Party.Where(p => p.IsAlive).ToList();
+            if (aliveParty.Count == 0) return;
+            if (!aliveParty.All(p => p.IsDown)) return;
+
+            OnReverseAllOutCalling?.Invoke(enemy);
+
+            // 2〜3回の追撃
+            int extraCount = 2 + _rng.Next(2);
+            for (int i = 0; i < extraCount; i++)
+            {
+                aliveParty = Party.Where(p => p.IsAlive).ToList();
+                if (aliveParty.Count == 0) break;
+                var target = aliveParty[_rng.Next(aliveParty.Count)];
+                var result = DamageCalculator.Calculate(enemy, target, Skill.MeleeAttack, 0f);
+                OnHit?.Invoke(result);
+            }
+
+            CheckBattleEnd();
         }
 
         private void BeginNewRound()
         {
+            // パーフェクト言継ぎバフをローテーション（次ラウンド予約→今ラウンド適用）
+            _perfectKotsugiBuffThisRound = _perfectKotsugiBuffNextRound;
+            _perfectKotsugiBuffNextRound = false;
+            _kotsugiChainParticipants.Clear();
+
             _turns.BuildOrder(AllCombatants());
             foreach (var c in AllCombatants().Where(c => c.IsAlive))
                 c.SetDown(false);

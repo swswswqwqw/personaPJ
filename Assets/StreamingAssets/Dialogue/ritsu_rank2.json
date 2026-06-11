@@ -1,0 +1,31 @@
+{
+  "id": "ritsu_rank2",
+  "title": "引き剥がし",
+  "bondId": "ritsu",
+  "bondPointsOnComplete": 20,
+  "lines": [
+    { "speakerId": "narrator", "text": "——図書室。今日も律は最奥の席にいた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ritsu", "text": "……来るなと言った。", "emotion": "cold", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "律はノートパソコンから目を上げない。指がキーボードの上で止まっている。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ritsu", "text": "用件を言え。用件がないなら去れ。", "emotion": "cold", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "律の言葉は鋭い。だが——「残響」が引っかかっている。この沈黙の奥に、何かある。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "……なんで、お前は来るんだ。", "emotion": "cold", "preSilence": 1.0 },
+    { "speakerId": "ritsu", "text": "嫌いだと言っただろう。僕の「残響」を聴いたことも。\nそれでも来る人間が、わからない。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "律の声に、怒りとは違う何かが混じっている。\n——問い、だ。本当に、わからないのかもしれない。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ritsu", "text": "……答えなくていい。どうせ的外れだ。", "emotion": "cold", "preSilence": 0.6 },
+    { "speakerId": "ritsu", "text": "人間のコードは読みにくい。変数名も統一されていない。\n非効率だ。", "emotion": "cold", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "プログラミングの話をしているのか、人間の話をしているのか。\n律は、どちらも同じ顔で言う。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "……帰れ。今日のところは。", "emotion": "cold", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "律は再びキーボードに向かった。\n——だが今度は、律が来るなと言ったのではなかった。「今日のところは」。", "emotion": "neutral", "preSilence": 1.2 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 6,
+      "options": [
+        { "text": "お前の「残響」が気になった。", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "来るなって言葉より、来いって沈黙の方が聞こえた。", "requiredStat": "Composure", "requiredRank": 3, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "……わからないなら、一緒に考えようか。", "requiredStat": "Empathy", "requiredRank": 2, "bondBonus": 25, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

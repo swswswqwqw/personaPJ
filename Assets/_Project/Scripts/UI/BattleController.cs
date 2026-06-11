@@ -66,6 +66,8 @@ namespace Amane.UI
             _battle.OnHit += OnHitResult;
             _battle.OnAllOutConfession += OnAllOutConfessionTriggered;
             _battle.OnKotsugi += OnKotsugiTriggered;
+            _battle.OnPerfectKotsugi += OnPerfectKotsugiTriggered;
+            _battle.OnReverseAllOutCalling += OnReverseAllOutCallingTriggered;
 
             StartBattle();
         }
@@ -78,6 +80,8 @@ namespace Amane.UI
                 _battle.OnHit -= OnHitResult;
                 _battle.OnAllOutConfession -= OnAllOutConfessionTriggered;
                 _battle.OnKotsugi -= OnKotsugiTriggered;
+                _battle.OnPerfectKotsugi -= OnPerfectKotsugiTriggered;
+                _battle.OnReverseAllOutCalling -= OnReverseAllOutCallingTriggered;
             }
         }
 
@@ -171,6 +175,20 @@ namespace Amane.UI
                 _effects.PlayKotsugi(from.DisplayName, to.DisplayName, bonus);
 
             _hud?.Log($"言継ぎ！ {from.DisplayName} → {to.DisplayName}（ダメージ+{bonus:P0}）");
+            _hud?.RefreshAll();
+        }
+
+        private void OnPerfectKotsugiTriggered()
+        {
+            _effects?.PlayPerfectKotsugi();
+            _hud?.Log("── パーフェクト言継ぎ ── SP回復＋次ターン攻撃力+10%！");
+            _hud?.RefreshAll();
+        }
+
+        private void OnReverseAllOutCallingTriggered(Combatant enemy)
+        {
+            _effects?.PlayReverseAllOutCalling(enemy.DisplayName);
+            _hud?.Log($"── 逆総告白 ── {enemy.DisplayName}の連続攻撃！");
             _hud?.RefreshAll();
         }
 

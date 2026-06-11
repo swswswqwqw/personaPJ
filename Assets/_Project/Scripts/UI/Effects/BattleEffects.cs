@@ -34,6 +34,16 @@ namespace Amane.UI.Effects
         [SerializeField] private Text _kotsugiText;
         [SerializeField] private Text _kotsugiBonus;
 
+        [Header("Perfect Kotsugi — DESIGN.md 9-1")]
+        [SerializeField] private CanvasGroup _perfectKotsugiGroup;
+        [SerializeField] private Text _perfectKotsugiTitle;
+        [SerializeField] private Text _perfectKotsugiSubtext;
+
+        [Header("Reverse All-Out Calling — DESIGN.md 9-1")]
+        [SerializeField] private CanvasGroup _reverseAllOutGroup;
+        [SerializeField] private Text _reverseAllOutText;
+        [SerializeField] private Image _reverseFlash;
+
         [Header("Damage Pop")]
         [SerializeField] private Text _damagePopTemplate;
 
@@ -276,6 +286,105 @@ namespace Amane.UI.Effects
                     if (_weakBanner != null) { var c = _weakBanner.color; c.a = t; _weakBanner.color = c; _weakText.color = new Color(1, 1, 1, t); }
                 }).SetOnComplete(() => _weakBanner.gameObject.SetActive(false));
             }
+        }
+
+        // ===== パーフェクト言継ぎ（PERFECT KOTSUGI）DESIGN.md 9-1 =====
+        // 4人全員がリレーを繋いだ時の達成演出。「想いは、ひとりじゃ届かない」
+        public void PlayPerfectKotsugi()
+        {
+            Core.Audio.AudioManager.Instance?.PlayLevelUp();
+
+            if (_perfectKotsugiGroup == null) return;
+            _perfectKotsugiGroup.gameObject.SetActive(true);
+            _perfectKotsugiGroup.alpha = 0;
+
+            if (_perfectKotsugiTitle != null)
+            {
+                _perfectKotsugiTitle.text = "PERFECT KOTSUGI";
+                _perfectKotsugiTitle.color = _pinkAccent;
+            }
+            if (_perfectKotsugiSubtext != null)
+            {
+                _perfectKotsugiSubtext.text = "";
+                _perfectKotsugiSubtext.color = Color.white;
+            }
+
+            // フェードイン
+            Tweener.Fade(_perfectKotsugiGroup, 0, 1, 0.2f, Easing.OutQuad).SetOnComplete(() =>
+            {
+                // タイトルをスケールイン
+                if (_perfectKotsugiTitle != null)
+                    Tweener.Scale(_perfectKotsugiTitle.rectTransform, Vector3.one * 0.5f, Vector3.one, 0.25f, Easing.OutElastic);
+
+                // 「想いは、ひとりじゃ届かない」をタイプライター表示
+                TypewriterReveal(_perfectKotsugiSubtext, "——想いは、ひとりじゃ届かない。", 0.05f, () =>
+                {
+                    // 1s待ってフェードアウト
+                    Tweener.Float(0, 1, 1.0f, _ => { }, Easing.Linear).SetOnComplete(() =>
+                    {
+                        Tweener.Fade(_perfectKotsugiGroup, 1, 0, 0.4f, Easing.InQuad)
+                            .SetOnComplete(() => _perfectKotsugiGroup.gameObject.SetActive(false));
+                    });
+                });
+            });
+        }
+
+        // ===== 逆総告白（REVERSE ALL-OUT CALLING）DESIGN.md 9-1 =====
+        // 味方全員DOWN → 敵の連続行動前の警告演出。プレイヤーの危機感を最大化する。
+        public void PlayReverseAllOutCalling(string enemyName)
+        {
+            Core.Audio.AudioManager.Instance?.PlayImpact();
+
+            // 赤いフラッシュ（3回点滅）
+            if (_reverseFlash != null)
+            {
+                _reverseFlash.gameObject.SetActive(true);
+                var dangerRed = new Color(0.8f, 0.1f, 0.1f, 0.7f);
+
+                Tweener.Float(0, 1, 0.08f, t =>
+                {
+                    if (_reverseFlash != null) _reverseFlash.color = new Color(dangerRed.r, dangerRed.g, dangerRed.b, t * 0.7f);
+                }, Easing.OutQuad).SetOnComplete(() =>
+                {
+                    Tweener.Float(0.7f, 0, 0.12f, t =>
+                    {
+                        if (_reverseFlash != null) _reverseFlash.color = new Color(dangerRed.r, dangerRed.g, dangerRed.b, t);
+                    }).SetOnComplete(() =>
+                    {
+                        Tweener.Float(0, 0.7f, 0.08f, t =>
+                        {
+                            if (_reverseFlash != null) _reverseFlash.color = new Color(dangerRed.r, dangerRed.g, dangerRed.b, t);
+                        }).SetOnComplete(() =>
+                        {
+                            Tweener.Float(0.7f, 0, 0.2f, t =>
+                            {
+                                if (_reverseFlash != null) _reverseFlash.color = new Color(dangerRed.r, dangerRed.g, dangerRed.b, t);
+                            }).SetOnComplete(() => _reverseFlash.gameObject.SetActive(false));
+                        });
+                    });
+                });
+            }
+
+            if (_reverseAllOutGroup == null) return;
+            _reverseAllOutGroup.gameObject.SetActive(true);
+            _reverseAllOutGroup.alpha = 0;
+
+            if (_reverseAllOutText != null)
+            {
+                _reverseAllOutText.text = $"── {enemyName} の逆襲 ──";
+                _reverseAllOutText.color = new Color(1f, 0.3f, 0.3f);
+            }
+
+            // ぐらつくように表示して消える
+            var rt = _reverseAllOutGroup.GetComponent<RectTransform>() ?? _reverseAllOutText?.rectTransform;
+            if (rt != null) Tweener.Shake(rt, 6f, 0.3f, 30f);
+
+            Tweener.Fade(_reverseAllOutGroup, 0, 1, 0.15f, Easing.OutQuad);
+            Tweener.Float(0, 1, 1.5f, _ => { }, Easing.Linear).SetOnComplete(() =>
+            {
+                Tweener.Fade(_reverseAllOutGroup, 1, 0, 0.3f, Easing.InQuad)
+                    .SetOnComplete(() => _reverseAllOutGroup.gameObject.SetActive(false));
+            });
         }
 
         // ===== 汎用タイプライター =====

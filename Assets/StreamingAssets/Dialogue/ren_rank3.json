@@ -1,0 +1,33 @@
+{
+  "id": "ren_rank3",
+  "title": "病室の前で",
+  "bondId": "ren",
+  "bondPointsOnComplete": 25,
+  "lines": [
+    { "speakerId": "narrator", "text": "——放課後。雨音総合病院の廊下。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "蓮が、廊下の壁に背をつけて立っていた。\n目の前の扉には「302号室」のプレートがある。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "……なんでお前がいるんだよ。", "emotion": "cold", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "蓮は驚いた顔をしたが、すぐに壁から離れた。\nまるで、見てはいけないものを見られたように。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "……ばあちゃんの部屋だよ。なんでもねえ。帰る。", "emotion": "cold", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "蓮は歩き出そうとした。だが、止まった。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ren", "text": "……一ヶ月、来てない。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "ren", "text": "最後にここに来た日、ばあちゃんが俺の名前を呼ばなかった。\n認知症が進んで、俺のこと、わからなくなってたんだ。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "だから俺、怒鳴ったんだよ。\n『ボケるな！』って。", "emotion": "frustration", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "蓮は壁を見たまま、声を絞り出すように続けた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "……そしたら、ばあちゃんが転んで。それからずっと、寝たきりだ。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ren", "text": "俺の最後の言葉が、それだぞ。\n育ててもらったのに。飯作ってもらって、怪我したら手当てしてもらって。\n最後が、あれだ。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "ren", "text": "……その顔、見せに行けるかよ。", "emotion": "cold", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "蓮の拳が、ゆっくりと壁についた。\n殴るのではなく——ただ、もたれかかるように。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ren", "text": "……わかってるよ。行かなきゃいけないのは。\nでも足が、動かねえんだ。", "emotion": "neutral", "preSilence": 1.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 12,
+      "options": [
+        { "text": "一緒に入ろう。", "requiredStat": "Courage", "requiredRank": 3, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "ばあちゃんは、わかってると思う。", "requiredStat": "Empathy", "requiredRank": 3, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "……今日は、ここまででいい。", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}
