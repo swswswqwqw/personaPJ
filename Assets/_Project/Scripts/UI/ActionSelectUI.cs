@@ -17,7 +17,8 @@ namespace Amane.UI
         GoHome,
         LunchChat,    // 昼休み: 校内キャラとの短会話
         LunchLibrary, // 昼休み: 図書室で読書
-        LunchSkip     // 昼休み: 次の時間まで待機
+        LunchSkip,    // 昼休み: 次の時間まで待機
+        MidnightDive  // 深夜強行潜行（静けさ4以上で解放・翌日疲労デバフ）
     }
 
     public sealed class ActionSelectUI : MonoBehaviour
@@ -35,6 +36,9 @@ namespace Amane.UI
         [SerializeField] private Button _lunchLibraryButton;
         [SerializeField] private Button _lunchSkipButton;
 
+        // 深夜専用ボタン（DESIGN.md 9-2: 強行潜行）
+        [SerializeField] private Button _midnightDiveButton;
+
         public event Action<FieldAction> OnActionSelected;
 
         private void Awake()
@@ -48,24 +52,27 @@ namespace Amane.UI
             Bind(_lunchChatButton, FieldAction.LunchChat);
             Bind(_lunchLibraryButton, FieldAction.LunchLibrary);
             Bind(_lunchSkipButton, FieldAction.LunchSkip);
+            Bind(_midnightDiveButton, FieldAction.MidnightDive);
         }
 
-        public void Show(TimeSlot slot, int ap, bool lunchUsed = true)
+        public void Show(TimeSlot slot, int ap, bool lunchUsed = true, bool midnightDiveUnlocked = false)
         {
             if (_panel != null) _panel.SetActive(true);
 
             bool isLunch = slot == TimeSlot.Lunch;
+            bool isLateNight = slot == TimeSlot.LateNight;
             bool canAct = ap > 0 && (slot == TimeSlot.AfterSchool || slot == TimeSlot.Evening);
             bool canDive = ap > 0 && slot != TimeSlot.Morning && slot != TimeSlot.Class && slot != TimeSlot.Lunch;
             bool canLunch = isLunch && !lunchUsed;
 
-            // 通常行動: 昼休み中は非表示
-            SetVisible(_studyButton, !isLunch);
-            SetVisible(_socializeButton, !isLunch);
-            SetVisible(_jobButton, !isLunch);
-            SetVisible(_meditateButton, !isLunch);
-            SetVisible(_diveButton, !isLunch);
-            SetVisible(_goHomeButton, !isLunch);
+            // 通常行動: 昼休みと深夜は非表示
+            bool showNormal = !isLunch && !isLateNight;
+            SetVisible(_studyButton, showNormal);
+            SetVisible(_socializeButton, showNormal);
+            SetVisible(_jobButton, showNormal);
+            SetVisible(_meditateButton, showNormal);
+            SetVisible(_diveButton, showNormal);
+            SetVisible(_goHomeButton, showNormal || isLateNight); // 深夜も「眠る」で帰宅可
 
             SetInteractable(_studyButton, canAct);
             SetInteractable(_socializeButton, canAct);
@@ -82,6 +89,10 @@ namespace Amane.UI
             SetInteractable(_lunchChatButton, canLunch);
             SetInteractable(_lunchLibraryButton, canLunch);
             SetInteractable(_lunchSkipButton, true); // スキップは常に可能
+
+            // 深夜強行潜行: LateNight かつ静けさ4以上で表示（DESIGN.md 9-2）
+            SetVisible(_midnightDiveButton, isLateNight && midnightDiveUnlocked);
+            SetInteractable(_midnightDiveButton, isLateNight && midnightDiveUnlocked);
         }
 
         public void Hide()

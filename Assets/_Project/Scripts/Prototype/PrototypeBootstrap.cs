@@ -471,12 +471,32 @@ namespace Amane.Prototype
             SetPrivateField(calUI, "_timeSlotText", slotText);
             SetPrivateField(calUI, "_apText", apText);
 
-            // ---- ActionSelectUI (hidden, used when legacy menu needed) ----
-            var actionPanel = MakeSubPanel(_fieldPanel.transform, "ActionPanel", new Vector2(0, 0),
-                new Vector2(1, 1), new Color(0, 0, 0, 0));
+            // ---- ActionSelectUI (深夜専用メニュー) ----
+            // 通常フィールド行動は3Dフィールドのインタラクトで処理。
+            // このパネルは深夜時間帯に表示される「眠る / 強行潜行」の選択肢専用。
+            var actionPanel = MakeSubPanel(_fieldPanel.transform, "ActionPanel", new Vector2(0, -80),
+                new Vector2(260, 130), new Color(0.04f, 0.02f, 0.08f, 0.95f));
             actionPanel.SetActive(false);
+
+            var lateNightLabel = MakeText(actionPanel.transform, "── 深夜 ──", 15, TextAnchor.MiddleCenter,
+                new Vector2(0, 45), new Vector2(240, 22));
+            lateNightLabel.color = new Color(0.5f, 0.4f, 0.8f);
+
+            var sleepBtn = MakeButton(actionPanel.transform, "眠る（翌朝へ）",
+                new Vector2(0, 14), new Vector2(220, 40),
+                new Color(0.106f, 0.165f, 0.29f));
+
+            // 強行潜行ボタン（静けさ4以上で有効化）
+            var midnightDiveBtn = MakeButton(actionPanel.transform, "強行潜行（翌日AP消滅）",
+                new Vector2(0, -32), new Vector2(220, 40),
+                new Color(0.25f, 0.04f, 0.12f));
+            var midnightBtnText = midnightDiveBtn.GetComponentInChildren<Text>();
+            if (midnightBtnText != null) midnightBtnText.color = new Color(1f, 0.6f, 0.6f);
+
             var actionUI = actionPanel.AddComponent<ActionSelectUI>();
             SetPrivateField(actionUI, "_panel", actionPanel);
+            SetPrivateField(actionUI, "_goHomeButton", sleepBtn);
+            SetPrivateField(actionUI, "_midnightDiveButton", midnightDiveBtn);
 
             // ---- Dialogue UI ----
             var dialoguePanel = MakeSubPanel(_fieldPanel.transform, "DialoguePanel", new Vector2(0, -160),

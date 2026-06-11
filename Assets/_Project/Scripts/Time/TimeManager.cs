@@ -12,6 +12,8 @@ namespace Amane.Time
     public sealed class TimeManager
     {
         public const int MaxActionPoints = 2;
+        // 深夜強行潜行の解放条件（静けさランク）
+        public const int MidnightDiveComposureRank = 4;
 
         private readonly EventChannel _events;
         private readonly List<Deadline> _deadlines = new();
@@ -23,6 +25,8 @@ namespace Amane.Time
         public int ActionPoints { get; private set; }
         // 昼休みは1日1回まで（true = 今日はもう使った）
         public bool LunchUsed { get; private set; }
+        // 深夜強行潜行を使った場合 true。翌日APを0にする疲労デバフ。
+        public bool MidnightDiveDebt { get; private set; }
 
         public IReadOnlyList<Deadline> Deadlines => _deadlines;
 
@@ -82,13 +86,28 @@ namespace Amane.Time
             return true;
         }
 
+        /// <summary>
+        /// 深夜強行潜行（DESIGN.md 9-2）。APを消費せず潜行するが、翌日AP=0の疲労デバフ。
+        /// 静けさランク4以上で解放。解放チェックは呼び出し側が行う。
+        /// </summary>
+        public bool ForceDive()
+        {
+            if (MidnightDiveDebt) return false; // 既に今夜使用済み
+            MidnightDiveDebt = true;
+            CurrentSlot = TimeSlot.LateNight;
+            _events.Publish(new TimeAdvancedEvent(Today.DayIndex, CurrentSlot));
+            return true;
+        }
+
         /// <summary>翌日へ。AP回復・天候更新・デッドライン判定。学年末で停止。</summary>
         public void AdvanceDay()
         {
             if (Today.IsLastDay) return; // 学年末。上位がエンディング処理へ。
             Today = Today.AddDays(1);
             CurrentSlot = TimeSlot.Morning;
-            ActionPoints = MaxActionPoints;
+            // 深夜強行潜行の疲労デバフ: 翌日AP=0（DESIGN.md 9-2）
+            ActionPoints = MidnightDiveDebt ? 0 : MaxActionPoints;
+            MidnightDiveDebt = false;
             LunchUsed = false;
             TodayWeather = _weatherResolver(Today);
             _events.Publish(new DayChangedEvent(Today.DayIndex, TodayWeather));

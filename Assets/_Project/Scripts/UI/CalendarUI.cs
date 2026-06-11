@@ -45,9 +45,11 @@ namespace Amane.UI
             SetText(_dayOfWeekText, DayNames[date.DayOfWeek % DayNames.Length]);
             SetText(_weatherText, WeatherLabel(tm.TodayWeather));
             SetText(_timeSlotText, SlotLabel(tm.CurrentSlot));
-            // 昼休みスロットでは昼休み残量を表示、それ以外はAP表示
+            // 昼休みは昼休み残量、深夜強行潜行済みは警告、それ以外はAP表示
             if (tm.CurrentSlot == TimeSlot.Lunch)
                 SetText(_apText, tm.LunchUsed ? "昼休み 使用済み" : "昼休み AP 1/1");
+            else if (tm.MidnightDiveDebt)
+                SetText(_apText, "疲労（翌日AP=0）");
             else
                 SetText(_apText, $"AP {tm.ActionPoints}/{TimeManager.MaxActionPoints}");
         }

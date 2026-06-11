@@ -24,6 +24,7 @@ namespace Amane.UI
         private DialogueRunner _dialogueRunner;
         private IDisposable _bondRankUpSub;
         private IDisposable _dayChangedSub;
+        private IDisposable _timeAdvancedSub;
         private bool _isCalendarEventDialogue;
 
         private void OnEnable()
@@ -55,12 +56,13 @@ namespace Amane.UI
             if (_actionSelect != null)
                 _actionSelect.OnActionSelected += OnAction;
 
-            // 絆ランクアップ + 日付変更イベント
+            // 絆ランクアップ + 日付変更 + 時間帯変更イベント
             var gm = GameManager.Instance;
             if (gm != null)
             {
                 _bondRankUpSub = gm.Events.Subscribe<BondRankUpEvent>(OnBondRankUp);
                 _dayChangedSub = gm.Events.Subscribe<DayChangedEvent>(OnDayChanged);
+                _timeAdvancedSub = gm.Events.Subscribe<TimeAdvancedEvent>(OnTimeAdvanced);
             }
 
             _calendar?.Refresh();
@@ -85,6 +87,8 @@ namespace Amane.UI
             _bondRankUpSub = null;
             _dayChangedSub?.Dispose();
             _dayChangedSub = null;
+            _timeAdvancedSub?.Dispose();
+            _timeAdvancedSub = null;
         }
 
         private void Update()
@@ -290,6 +294,17 @@ namespace Amane.UI
                     AdvanceTimeWithTransition(gm);
                     break;
 
+                case FieldAction.MidnightDive:
+                    // 深夜強行潜行（DESIGN.md 9-2）: AP消費なし・翌日疲労デバフ
+                    if (!gm.Stats.Meets(InnerStat.Composure, TimeManager.MidnightDiveComposureRank))
+                    {
+                        Debug.Log("[MidnightDive] 静けさが足りない（4以上必要）");
+                        break;
+                    }
+                    if (gm.Time.ForceDive())
+                        StartMidnightDiveTransition();
+                    break;
+
                 case FieldAction.LunchChat:
                     // 昼休み: 近くにいるキャラとの短会話（ランダムに選択）
                     if (gm.Time.UseLunch())
@@ -385,6 +400,29 @@ namespace Amane.UI
             }
         }
 
+        private void StartMidnightDiveTransition()
+        {
+            if (MigenkaiManager.Instance != null)
+            {
+                var dungeon = CreateDefaultDungeon();
+                MigenkaiManager.Instance.EnterDungeon(dungeon);
+
+                var transition = TransitionEffect.Instance;
+                if (transition != null)
+                    transition.PlayMidnightDiveTransition(() => GameManager.Instance?.Machine.ChangeTo<DungeonState>());
+                else
+                    GameManager.Instance?.Machine.ChangeTo<DungeonState>();
+            }
+            else
+            {
+                var transition = TransitionEffect.Instance;
+                if (transition != null)
+                    transition.PlayMidnightDiveTransition(() => GameManager.Instance?.Machine.ChangeTo<BattleState>());
+                else
+                    GameManager.Instance?.Machine.ChangeTo<BattleState>();
+            }
+        }
+
         private static MigenkaiData CreateDefaultDungeon()
         {
             var dungeon = UnityEngine.ScriptableObject.CreateInstance<MigenkaiData>();
@@ -413,6 +451,22 @@ namespace Amane.UI
         {
             _calendar?.Refresh();
             CheckCalendarEvents(GameManager.Instance);
+        }
+
+        private void OnTimeAdvanced(TimeAdvancedEvent evt)
+        {
+            _calendar?.Refresh();
+
+            // 深夜になったら「眠る / 強行潜行」メニューを表示（DESIGN.md 9-2）
+            if (evt.Slot != TimeSlot.LateNight) return;
+
+            var gm = GameManager.Instance;
+            if (gm == null) return;
+
+            bool midnightUnlocked = gm.Stats.Meets(InnerStat.Composure, TimeManager.MidnightDiveComposureRank);
+
+            _actionSelect?.Show(TimeSlot.LateNight, 0, true, midnightUnlocked);
+            Debug.Log($"[LateNight] 深夜メニュー表示。強行潜行: {(midnightUnlocked ? "解放済み" : "未解放（静けさ4以上で解放）")}");
         }
 
         private void CheckCalendarEvents(GameManager gm)

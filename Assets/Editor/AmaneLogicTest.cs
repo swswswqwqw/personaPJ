@@ -74,6 +74,27 @@ public static class AmaneLogicTest
         Assert(tm2.CurrentSlot == TimeSlot.LateNight, "潜行後 = 深夜");
         Assert(!tm2.Dive(), "AP0で潜行失敗");
 
+        // 深夜強行潜行テスト (DESIGN.md 9-2)
+        Debug.Log("\n[TimeManager: MidnightDive]");
+        var tmMid = new TimeManager(events);
+        Assert(!tmMid.MidnightDiveDebt, "初期: 疲労デバフなし");
+        Assert(tmMid.ForceDive(), "強行潜行成功");
+        Assert(tmMid.MidnightDiveDebt, "強行潜行後: 疲労フラグON");
+        Assert(tmMid.CurrentSlot == TimeSlot.LateNight, "強行潜行後 = 深夜");
+        Assert(!tmMid.ForceDive(), "2回目の強行潜行は失敗（すでにデバフあり）");
+        // 翌日へ進む: APが0になることを確認
+        tmMid.AdvanceSlot(); // LateNight → AdvanceDay
+        Assert(!tmMid.MidnightDiveDebt, "翌日: 疲労フラグリセット");
+        Assert(tmMid.ActionPoints == 0, "翌日: 疲労デバフでAP=0");
+        // 疲労なしの通常翌日: AP=2に戻ること
+        tmMid.AdvanceSlot(); // Morning → Class
+        tmMid.AdvanceSlot(); // Class → Lunch
+        tmMid.AdvanceSlot(); // Lunch → AfterSchool
+        tmMid.AdvanceSlot(); // AfterSchool → Evening
+        tmMid.AdvanceSlot(); // Evening → LateNight
+        tmMid.AdvanceSlot(); // LateNight → 翌々日 Morning (疲労なし)
+        Assert(tmMid.ActionPoints == TimeManager.MaxActionPoints, "疲労なし翌日: AP = 2に回復");
+
         // --- Deadline ---
         Debug.Log("\n[Deadline]");
         var dl = new Deadline("test", "テスト", new GameDate(10));
