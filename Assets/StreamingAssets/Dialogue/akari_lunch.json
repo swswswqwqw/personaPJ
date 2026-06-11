@@ -1,0 +1,21 @@
+{
+  "id": "akari_lunch",
+  "title": "昼休み——灯里と",
+  "bondId": "akari",
+  "bondPointsOnComplete": 15,
+  "lines": [
+    { "speakerId": "akari", "text": "あ、詠くん！ お弁当、一緒に食べない？", "emotion": "smile", "preSilence": 0.0 },
+    { "speakerId": "narrator", "text": "灯里は給食トレーを抱えて、教室の窓際の席を指さした。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "akari", "text": "窓から港が見えるんだよ。霧の日でも、なんかいいでしょ？", "emotion": "smile", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "港は確かに霧の中にあった。灯台の光が、ぼんやりと光っている。", "emotion": "neutral", "preSilence": 0.6 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 3,
+      "options": [
+        { "text": "いいな、と思った", "requiredStat": "", "requiredRank": 0, "bondBonus": 15, "jumpToDialogueId": "" },
+        { "text": "霧の日の港、か", "requiredStat": "", "requiredRank": 0, "bondBonus": 10, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

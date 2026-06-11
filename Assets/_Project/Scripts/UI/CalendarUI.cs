@@ -45,7 +45,11 @@ namespace Amane.UI
             SetText(_dayOfWeekText, DayNames[date.DayOfWeek % DayNames.Length]);
             SetText(_weatherText, WeatherLabel(tm.TodayWeather));
             SetText(_timeSlotText, SlotLabel(tm.CurrentSlot));
-            SetText(_apText, $"AP {tm.ActionPoints}/{TimeManager.MaxActionPoints}");
+            // 昼休みスロットでは昼休み残量を表示、それ以外はAP表示
+            if (tm.CurrentSlot == TimeSlot.Lunch)
+                SetText(_apText, tm.LunchUsed ? "昼休み 使用済み" : "昼休み AP 1/1");
+            else
+                SetText(_apText, $"AP {tm.ActionPoints}/{TimeManager.MaxActionPoints}");
         }
 
         private static void SetText(Text t, string v) { if (t != null) t.text = v; }
@@ -62,6 +66,7 @@ namespace Amane.UI
         {
             TimeSlot.Morning => "朝",
             TimeSlot.Class => "授業中",
+            TimeSlot.Lunch => "昼休み",
             TimeSlot.AfterSchool => "放課後",
             TimeSlot.Evening => "夜",
             TimeSlot.LateNight => "深夜",

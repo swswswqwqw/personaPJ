@@ -21,6 +21,8 @@ namespace Amane.Time
         public TimeSlot CurrentSlot { get; private set; }
         public Weather TodayWeather { get; private set; }
         public int ActionPoints { get; private set; }
+        // 昼休みは1日1回まで（true = 今日はもう使った）
+        public bool LunchUsed { get; private set; }
 
         public IReadOnlyList<Deadline> Deadlines => _deadlines;
 
@@ -62,6 +64,14 @@ namespace Amane.Time
             return true;
         }
 
+        /// <summary>昼休み行動を使用する。1日1回のみ。使用できたら true。</summary>
+        public bool UseLunch()
+        {
+            if (LunchUsed || CurrentSlot != TimeSlot.Lunch) return false;
+            LunchUsed = true;
+            return true;
+        }
+
         /// <summary>未言界へ潜行する。その日のAPを全消費し深夜まで進める。</summary>
         public bool Dive()
         {
@@ -79,6 +89,7 @@ namespace Amane.Time
             Today = Today.AddDays(1);
             CurrentSlot = TimeSlot.Morning;
             ActionPoints = MaxActionPoints;
+            LunchUsed = false;
             TodayWeather = _weatherResolver(Today);
             _events.Publish(new DayChangedEvent(Today.DayIndex, TodayWeather));
             CheckDeadlines();

@@ -45,11 +45,28 @@ public static class AmaneLogicTest
         tm.AdvanceSlot();
         Assert(tm.CurrentSlot == TimeSlot.Class, "朝→授業");
         tm.AdvanceSlot();
-        Assert(tm.CurrentSlot == TimeSlot.AfterSchool, "授業→放課後");
+        Assert(tm.CurrentSlot == TimeSlot.Lunch, "授業→昼休み");
+        Assert(!tm.LunchUsed, "昼休み未使用");
+        Assert(tm.UseLunch(), "昼休み使用成功");
+        Assert(tm.LunchUsed, "昼休み使用済み");
+        Assert(!tm.UseLunch(), "昼休み2回目は失敗");
+        tm.AdvanceSlot();
+        Assert(tm.CurrentSlot == TimeSlot.AfterSchool, "昼休み→放課後");
         Assert(tm.SpendActionPoint(), "AP消費成功");
         Assert(tm.ActionPoints == 1, "AP残1");
         tm.AdvanceSlot();
         Assert(tm.CurrentSlot == TimeSlot.Evening, "放課後→夜");
+
+        // LunchUsed翌日リセット確認
+        var tmDay = new TimeManager(events);
+        tmDay.AdvanceSlot(); // Morning→Class
+        tmDay.AdvanceSlot(); // Class→Lunch
+        Assert(tmDay.UseLunch(), "翌日テスト: 昼休み使用");
+        tmDay.AdvanceSlot(); // Lunch→AfterSchool
+        tmDay.AdvanceSlot(); // AfterSchool→Evening
+        tmDay.AdvanceSlot(); // Evening→LateNight
+        tmDay.AdvanceSlot(); // LateNight→翌日Morning (AdvanceDay呼び出し)
+        Assert(!tmDay.LunchUsed, "翌日: 昼休みリセット確認");
 
         var tm2 = new TimeManager(events);
         Assert(tm2.Dive(), "潜行成功");

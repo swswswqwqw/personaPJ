@@ -1,0 +1,22 @@
+{
+  "id": "ritsu_lunch",
+  "title": "昼休み——図書室で",
+  "bondId": "ritsu",
+  "bondPointsOnComplete": 15,
+  "lines": [
+    { "speakerId": "narrator", "text": "図書室。律は窓際の席で、ノートPCを開いていた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "昼休みの喧騒が、扉の向こうに遠い。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "ritsu", "text": "……また来た。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "律はこちらを見ずに言った。でも、PCの画面は少し閉じた。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "ritsu", "text": "うるさくしないなら、いてもいい。", "emotion": "neutral", "preSilence": 0.3 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 4,
+      "options": [
+        { "text": "（隣に座る）", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "じゃあ本を読む", "requiredStat": "", "requiredRank": 0, "bondBonus": 12, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

@@ -114,42 +114,90 @@ namespace Amane.UI
             var gm = GameManager.Instance;
             if (gm == null) return;
 
+            bool isLunch = gm.Time.CurrentSlot == TimeSlot.Lunch;
+
             switch (type)
             {
                 case LocationType.NPC:
-                    gm.Time.SpendActionPoint();
-                    StartBondDialogue(id);
+                    if (isLunch)
+                    {
+                        // 昼休みは UseLunch() で行動消費。すでに使用済みなら無視。
+                        if (!gm.Time.UseLunch()) return;
+                        StartLunchBondDialogue(id, gm);
+                    }
+                    else
+                    {
+                        gm.Time.SpendActionPoint();
+                        StartBondDialogue(id);
+                    }
                     break;
                 case LocationType.Dungeon:
+                    if (isLunch) return; // 昼休みは潜行不可（学校内）
                     gm.Time.Dive();
                     StartDiveTransition();
                     break;
                 case LocationType.Study:
-                    gm.Time.SpendActionPoint();
-                    gm.Stats.Add(InnerStat.Intellect, 5);
+                    if (isLunch)
+                    {
+                        if (!gm.Time.UseLunch()) return;
+                        gm.Stats.Add(InnerStat.Intellect, 3);
+                        Debug.Log("[Lunch] 図書室で読書した。知性+3");
+                    }
+                    else
+                    {
+                        gm.Time.SpendActionPoint();
+                        gm.Stats.Add(InnerStat.Intellect, 5);
+                    }
                     AdvanceTimeWithTransition(gm);
                     break;
                 case LocationType.Shop:
+                    if (isLunch) return; // 昼休みはバイト不可
                     gm.Time.SpendActionPoint();
                     gm.Stats.Add(InnerStat.Intellect, 3);
                     gm.Stats.Add(InnerStat.Empathy, 2);
                     AdvanceTimeWithTransition(gm);
                     break;
                 case LocationType.Job:
+                    if (isLunch) return; // 昼休みはバイト不可
                     gm.Time.SpendActionPoint();
                     gm.Stats.Add(InnerStat.Expression, 3);
                     gm.Stats.Add(InnerStat.Composure, 2);
                     AdvanceTimeWithTransition(gm);
                     break;
                 case LocationType.Meditate:
-                    gm.Time.SpendActionPoint();
-                    gm.Stats.Add(InnerStat.Composure, 5);
+                    if (isLunch)
+                    {
+                        if (!gm.Time.UseLunch()) return;
+                        gm.Stats.Add(InnerStat.Composure, 3);
+                        Debug.Log("[Lunch] 屋上で静かに過ごした。静けさ+3");
+                    }
+                    else
+                    {
+                        gm.Time.SpendActionPoint();
+                        gm.Stats.Add(InnerStat.Composure, 5);
+                    }
                     AdvanceTimeWithTransition(gm);
                     break;
                 case LocationType.Home:
                     AdvanceTimeWithTransition(gm);
                     break;
             }
+        }
+
+        // 昼休みの絆会話: ランク・ポイントは半分（短い会話のため）
+        private void StartLunchBondDialogue(string bondId, GameManager gm)
+        {
+            var data = DialogueRunner.LoadFromStreamingAssets($"{bondId}_lunch.json");
+            if (data == null)
+            {
+                // 専用JSONがなければ絆ポイント少量付与して終了
+                gm.Bonds.GivePoints(bondId, 10);
+                Debug.Log($"[Lunch] {bondId}と短く話した。絆ポイント+10");
+                AdvanceTimeWithTransition(gm);
+                return;
+            }
+            _dialogueUI?.Show();
+            _dialogueRunner.Start(data);
         }
 
         // ===== 2Dマップからのインタラクト =====
@@ -241,7 +289,47 @@ namespace Amane.UI
                 case FieldAction.GoHome:
                     AdvanceTimeWithTransition(gm);
                     break;
+
+                case FieldAction.LunchChat:
+                    // 昼休み: 近くにいるキャラとの短会話（ランダムに選択）
+                    if (gm.Time.UseLunch())
+                        StartLunchChat(gm);
+                    break;
+
+                case FieldAction.LunchLibrary:
+                    // 昼休み: 図書室で読書（知性+3）
+                    if (gm.Time.UseLunch())
+                    {
+                        gm.Stats.Add(InnerStat.Intellect, 3);
+                        Debug.Log("[Lunch] 図書室で読書した。知性+3");
+                        AdvanceTimeWithTransition(gm);
+                    }
+                    break;
+
+                case FieldAction.LunchSkip:
+                    // 昼休み: 何もしない（放課後へスキップ）
+                    AdvanceTimeWithTransition(gm);
+                    break;
             }
+        }
+
+        // 昼休み会話: ランダムに灯里/律/蓮のうちひとりを選んで短い会話を始める
+        private void StartLunchChat(GameManager gm)
+        {
+            // 日数に応じてキャラを選択（循環）
+            string[] lunchChars = { "akari", "ritsu", "ren" };
+            string bondId = lunchChars[gm.Time.Today.DayIndex % lunchChars.Length];
+
+            var data = DialogueRunner.LoadFromStreamingAssets($"{bondId}_lunch.json");
+            if (data == null)
+            {
+                // JSONなければ絆ポイント少量付与して終了
+                gm.Bonds.GivePoints(bondId, 10);
+                AdvanceTimeWithTransition(gm);
+                return;
+            }
+            _dialogueUI?.Show();
+            _dialogueRunner.Start(data);
         }
 
         private void AdvanceTimeWithTransition(GameManager gm)
@@ -252,7 +340,8 @@ namespace Amane.UI
                 string nextSlotName = gm.Time.CurrentSlot switch
                 {
                     TimeSlot.Morning => "授業",
-                    TimeSlot.Class => "放課後",
+                    TimeSlot.Class => "昼休み",
+                    TimeSlot.Lunch => "放課後",
                     TimeSlot.AfterSchool => "夜",
                     TimeSlot.Evening => "深夜",
                     TimeSlot.LateNight => "翌朝",

@@ -1,0 +1,23 @@
+{
+  "id": "ren_lunch",
+  "title": "昼休み——廊下で",
+  "bondId": "ren",
+  "bondPointsOnComplete": 15,
+  "lines": [
+    { "speakerId": "narrator", "text": "廊下の端。蓮は壁に背をもたせかけて、パンをかじっていた。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "ren", "text": "……なんだ、飯一人か。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "蓮はこちらを横目で見てから、隣の壁を軽く指先で叩いた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "べつに、邪魔じゃねえけど。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "それが蓮なりの「いていい」という意味だと、最近わかってきた。", "emotion": "neutral", "preSilence": 0.5 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 4,
+      "options": [
+        { "text": "（隣に立つ）", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "「ありがとな」", "requiredStat": "Expression", "requiredRank": 1, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "「邪魔して悪い」", "requiredStat": "", "requiredRank": 0, "bondBonus": 10, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}
