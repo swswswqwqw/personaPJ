@@ -1,0 +1,34 @@
+{
+  "id": "ren_rank10",
+  "title": "最後の言伝 — 蓮",
+  "bondId": "ren",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "——ボクシング部の道場。夕暮れ。蓮がサンドバッグを打っていた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "部員は誰もいない。\n規則正しい音だけが、体育館に響いていた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "……来たか。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "蓮は拳を止めた。\nバンデージを外しながら、こちらを見た。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "ばあちゃんの手紙を、もう一回読んだ。\n『蓮が来てくれた日から、毎日が楽しかった』って。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ren", "text": "俺が来てから、楽しかったんだって。\n……それだけで、もう十分だなって思って。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "蓮は壁に背を預けた。\n道場の光が、西日に変わっていく。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "ren", "text": "お前に、言っとかないといけないことがある。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "俺、最初はお前のことを「面倒なやつ」だと思ってた。\n人の心を勝手に聴いて回るって、どうかしてる。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "でも——お前が俺の「残響」を聴いたから、俺は動けた。\nばあちゃんに「ありがとう」も「好きだよ」も、言えた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "蓮は、バンデージを丸めた。\nゆっくりと、こちらに差し出した。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ren", "text": "これ、ばあちゃんに見せたやつ。\n……形見にはならないけど、お前に持っていてほしい。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "守る理由が、また増えたよ。\nお前と組んでると、困ったことになる。", "emotion": "warm", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "蓮は、照れたように鼻をかいた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ren", "text": "——これが俺の、最後の言伝。\n「お前と組んで、よかった」。", "emotion": "warm", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "言伝「朝霧 蓮」が、ランク10に到達した。\n彼の拳は今、守るために——そしてあなたとともに、戦うためにある。", "emotion": "neutral", "preSilence": 2.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 12,
+      "options": [
+        { "text": "俺こそ、お前と組んでよかった。", "requiredStat": "", "requiredRank": 0, "bondBonus": 0, "jumpToDialogueId": "" },
+        { "text": "ばあちゃんも、きっと喜んでる。", "requiredStat": "Empathy", "requiredRank": 7, "bondBonus": 0, "jumpToDialogueId": "" },
+        { "text": "一緒に守ろう。俺も隣にいる。", "requiredStat": "Courage", "requiredRank": 7, "bondBonus": 0, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

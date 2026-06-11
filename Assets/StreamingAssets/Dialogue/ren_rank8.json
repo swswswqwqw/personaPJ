@@ -1,0 +1,31 @@
+{
+  "id": "ren_rank8",
+  "title": "最後の面会",
+  "bondId": "ren",
+  "bondPointsOnComplete": 35,
+  "lines": [
+    { "speakerId": "narrator", "text": "——病院からの呼び出しがあった日。蓮と一緒に走った。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "病室のドアの前で、蓮が立ち止まった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "……お前も来い。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "祖母は目を開けていた。\n息が浅い。でも、蓮が入った瞬間——口元が、動いた。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "「……蓮、か」", "emotion": "neutral", "preSilence": 2.0 },
+    { "speakerId": "ren", "text": "……ばあちゃん。来たよ。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "蓮は祖母の手を握った。\nゆっくりと、両手で包んだ。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ren", "text": "ありがとう。育ててくれて、ありがとう。\nそれは、もう言ったから。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ren", "text": "今日は——別のことを言う。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "ren", "text": "……好きだよ、ばあちゃん。\nうるさくて、恥ずかしくて、ずっと言えなかった。", "emotion": "neutral", "preSilence": 2.0 },
+    { "speakerId": "narrator", "text": "祖母の目が、細くなった。\n笑っているのかもしれなかった。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ren", "text": "……聞こえたよな。聞こえた、よな。", "emotion": "broken", "preSilence": 2.0 },
+    { "speakerId": "narrator", "text": "蓮の声が、震えた。\n今度は誤魔化さなかった。", "emotion": "neutral", "preSilence": 2.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 11,
+      "options": [
+        { "text": "聞こえてる。絶対に。", "requiredStat": "", "requiredRank": 0, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "……笑ってた。確かに、笑ってた。", "requiredStat": "Empathy", "requiredRank": 6, "bondBonus": 42, "jumpToDialogueId": "" },
+        { "text": "言えた。それが全部だ。", "requiredStat": "Composure", "requiredRank": 6, "bondBonus": 45, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

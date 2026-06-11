@@ -7,6 +7,7 @@ namespace Amane.Core
         Title,   // タイトル画面
         Field,   // フィールド（日常）
         Battle,  // 戦闘（潜行）
-        Dialogue // 会話・絆イベント
+        Dialogue, // 会話・絆イベント
+        Dungeon  // 未言界探索
     }
 }

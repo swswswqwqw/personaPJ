@@ -1,0 +1,30 @@
+{
+  "id": "ren_rank7",
+  "title": "残り少ない時間",
+  "bondId": "ren",
+  "bondPointsOnComplete": 30,
+  "lines": [
+    { "speakerId": "narrator", "text": "——病院の廊下。蓮が待合椅子に座っていた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "白衣の医師が去っていくのが、廊下の角に見えた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "……先生から話があった。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "身体が、だんだん弱くなってるって。\n呑み込みが難しくなってきてるって。", "emotion": "cold", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "蓮は視線を床に落とした。\n椅子のひじ掛けを、強く握った。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "ren", "text": "……怖い。", "emotion": "broken", "preSilence": 2.0 },
+    { "speakerId": "narrator", "text": "蓮がそう言うのを、初めて聞いた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ren", "text": "ばあちゃんに怒鳴った時も、怖くなかった。\n澱の怪物と戦う時も、そんなに怖くない。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "でも——いなくなるのは、怖い。\n「蓮」って呼ぶ声が、消えるのが怖い。", "emotion": "broken", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "廊下を人が通っていく。\nふたりの間だけに、静かな時間が流れた。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ren", "text": "だから、毎日来る。\n言葉、もっと増やす。言えるうちに全部言う。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ren", "text": "……俺に怖いって言わせんのは、お前だけだからな。\n覚えとけ。", "emotion": "warm", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 9,
+      "options": [
+        { "text": "一緒に来る。俺も隣にいる。", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "怖いって言えた。それが強さだ。", "requiredStat": "Empathy", "requiredRank": 6, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "言葉が増えた分、届く。必ず届く。", "requiredStat": "Expression", "requiredRank": 5, "bondBonus": 40, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

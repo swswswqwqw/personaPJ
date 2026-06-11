@@ -3,6 +3,7 @@ using System.Linq;
 using UnityEngine;
 using Amane.Battle;
 using Amane.Core;
+using Amane.Echo;
 using Amane.UI.Effects;
 
 namespace Amane.UI
@@ -418,23 +419,29 @@ namespace Amane.UI
 
         private void OnResultContinue()
         {
-            ReturnToField();
+            if (DungeonBattleContext.IsInDungeon)
+                ReturnToDungeon();
+            else
+                ReturnToField();
         }
 
         private void ReturnToField()
         {
             var transition = TransitionEffect.Instance;
             if (transition != null)
-            {
-                transition.PlayReturnTransition(() =>
-                {
-                    GameManager.Instance?.ReturnToField();
-                });
-            }
+                transition.PlayReturnTransition(() => GameManager.Instance?.ReturnToField());
             else
-            {
                 GameManager.Instance?.ReturnToField();
-            }
+        }
+
+        private void ReturnToDungeon()
+        {
+            DungeonBattleContext.BattleWon = true;
+            var transition = TransitionEffect.Instance;
+            if (transition != null)
+                transition.PlayReturnTransition(() => GameManager.Instance?.ReturnToDungeon());
+            else
+                GameManager.Instance?.ReturnToDungeon();
         }
     }
 }

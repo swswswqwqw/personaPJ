@@ -1,0 +1,30 @@
+{
+  "id": "akari_rank9",
+  "title": "手紙の宛名",
+  "bondId": "akari",
+  "bondPointsOnComplete": 35,
+  "lines": [
+    { "speakerId": "narrator", "text": "——放課後。灯里が図書室の隅で、便箋に向かっていた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "声をかけると、慌てて便箋を伏せた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "……見た？", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "宛名だけが見えた。「長峰美月のお母さんへ」。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "akari", "text": "美月のお母さんに、手紙を書こうとしてる。\n……まだ書けてないけど。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "美月の心象から帰ってから、ずっと考えてた。\n私がお母さんに伝えなきゃいけないことがあるって。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "「美月はね、笑ってた。最後まで、ちゃんと笑ってたよ」って。\nそれだけでも、言いたくて。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "akari", "text": "でも書き出すと——怖くなって。\n「お前が来て何になる」って言われたら、って。", "emotion": "broken", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "灯里は、便箋を光にかざした。\n「美月のお母さんへ」という文字が、透けて見えた。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "akari", "text": "でも……それ以上に怖いのは、何も言わないまま時間が過ぎること。\nそれはもう、懲りてる。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "ねえ、一緒に書いてくれる？\nそっちにいてくれるだけでいい。", "emotion": "warm", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "灯里は便箋を広げ、もう一度ペンを持った。\nその手は、かすかに震えていた。", "emotion": "neutral", "preSilence": 1.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 9,
+      "options": [
+        { "text": "書こう。俺もそこにいる。", "requiredStat": "", "requiredRank": 0, "bondBonus": 28, "jumpToDialogueId": "" },
+        { "text": "美月のお母さんも、会いたいと思う。", "requiredStat": "Empathy", "requiredRank": 6, "bondBonus": 38, "jumpToDialogueId": "" },
+        { "text": "言葉にしたら、怖さより伝えたい気持ちが勝つ。", "requiredStat": "Expression", "requiredRank": 5, "bondBonus": 42, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

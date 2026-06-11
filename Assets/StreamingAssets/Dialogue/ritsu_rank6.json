@@ -1,0 +1,29 @@
+{
+  "id": "ritsu_rank6",
+  "title": "送信",
+  "bondId": "ritsu",
+  "bondPointsOnComplete": 30,
+  "lines": [
+    { "speakerId": "narrator", "text": "——夜の図書室。閉館間際、律が一人でいた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "スマートフォンが、テーブルの上に置かれていた。\nメッセージアプリが開いている。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "……見るな。", "emotion": "cold", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "宛先には「父さん」と書かれていた。\n本文は空白だった。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ritsu", "text": "何百字か書いて、全部消した。\n届かないのはわかってる。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "ritsu", "text": "でも——書かないと、なんか、こう。\nバッファが溢れる感じがして。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "律は画面を閉じた。\n小さな音を立てて、スマートフォンが暗くなった。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ritsu", "text": "父さんのスマホの下書きは、10本以上あった。\n全部「律へ」で始まってた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ritsu", "text": "……俺も、同じことしてる。\n気づいたら、笑えたかもしれない。笑えなかったけど。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "律は窓の外を見た。\n街灯に照らされた雨粒が、ガラスを伝って流れていた。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "ritsu", "text": "何を書けばいいか、まだわからない。\n……ただ、いつかは送信ボタンを押したい。", "emotion": "neutral", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 9,
+      "options": [
+        { "text": "いつか、必ず押せる。", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "お父さんも、きっと同じことを思ってた。", "requiredStat": "Empathy", "requiredRank": 5, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "一緒に書こうか。ここで。", "requiredStat": "Expression", "requiredRank": 4, "bondBonus": 40, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

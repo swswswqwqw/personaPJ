@@ -1,0 +1,34 @@
+{
+  "id": "ritsu_rank10",
+  "title": "最後の言伝 — 律",
+  "bondId": "ritsu",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "——ある放課後。律から「図書室に来い」と短いメッセージが届いた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "図書室の奥に、ノートPCが一台。\n画面には、コードが並んでいた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "完成した。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "律は画面をこちらに向けた。\n「KOTOBA——失われた言葉の記録システム」と書かれていた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ritsu", "text": "澱に奪われた言葉、送信されなかったメッセージ、声にできなかった想い。\nそういうものを、記録して、保存する。", "emotion": "cold", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "「届かなかった」で終わらせない。\n少なくとも、記録には残る。誰かが読める。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "律はもう一度画面を見た。\nシステム名の下に、テスト用のデータが一行——「律より、父さんへ」。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ritsu", "text": "……これが最初のレコード。\n父への返信。送信ボタンは——押した。", "emotion": "neutral", "preSilence": 2.0 },
+    { "speakerId": "narrator", "text": "律は目を伏せた。\nそれが「泣くまい」とするしぐさだと、もう主人公は知っていた。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ritsu", "text": "……お前に、言わないといけないことがある。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "お前がいなかったら、このシステムは生まれなかった。\n父の心象にも、行けなかった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "「暴力だ」って言った。\n今でも、少しはそう思ってる。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ritsu", "text": "でも——その「暴力」が、俺の沈黙を壊してくれた。\nそれは、感謝してる。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "律はKOTOBAのソースコードを、USBにコピーした。\nこちらに差し出した。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ritsu", "text": "これが俺の、最後の言伝。\n「お前に、届けたかった」。", "emotion": "warm", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "言伝「久遠 律」が、ランク10に到達した。\n彼の「届けられなかった言葉を記録するシステム」が、今動き始める。", "emotion": "neutral", "preSilence": 2.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 12,
+      "options": [
+        { "text": "受け取る。ありがとう。", "requiredStat": "", "requiredRank": 0, "bondBonus": 0, "jumpToDialogueId": "" },
+        { "text": "……お前も、ちゃんと届いてた。俺に。", "requiredStat": "Empathy", "requiredRank": 7, "bondBonus": 0, "jumpToDialogueId": "" },
+        { "text": "これで終わりじゃない。これから始まりだ。", "requiredStat": "Courage", "requiredRank": 7, "bondBonus": 0, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

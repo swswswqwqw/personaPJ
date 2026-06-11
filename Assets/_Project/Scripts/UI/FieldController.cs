@@ -5,6 +5,7 @@ using Amane.Stat;
 using Amane.Dialogue;
 using Amane.UI.Effects;
 using Amane.Field;
+using Amane.Echo;
 using System;
 using System.Collections.Generic;
 
@@ -265,18 +266,51 @@ namespace Amane.UI
 
         private void StartDiveTransition()
         {
-            var transition = TransitionEffect.Instance;
-            if (transition != null)
+            // MigenkaiManagerが存在する場合はダンジョン探索ループへ
+            if (MigenkaiManager.Instance != null)
             {
-                transition.PlayDiveTransition(() =>
-                {
-                    GameManager.Instance?.Machine.ChangeTo<BattleState>();
-                });
+                var dungeon = CreateDefaultDungeon();
+                MigenkaiManager.Instance.EnterDungeon(dungeon);
+
+                var transition = TransitionEffect.Instance;
+                if (transition != null)
+                    transition.PlayDiveTransition(() => GameManager.Instance?.Machine.ChangeTo<DungeonState>());
+                else
+                    GameManager.Instance?.Machine.ChangeTo<DungeonState>();
             }
             else
             {
-                GameManager.Instance?.Machine.ChangeTo<BattleState>();
+                // フォールバック: 直接バトルへ
+                var transition = TransitionEffect.Instance;
+                if (transition != null)
+                    transition.PlayDiveTransition(() => GameManager.Instance?.Machine.ChangeTo<BattleState>());
+                else
+                    GameManager.Instance?.Machine.ChangeTo<BattleState>();
             }
+        }
+
+        private static MigenkaiData CreateDefaultDungeon()
+        {
+            var dungeon = UnityEngine.ScriptableObject.CreateInstance<MigenkaiData>();
+            dungeon.dungeonName = "美月の心象";
+            dungeon.description = "鐘が止まらない教室。黒板の言葉が、少しずつ消えていく。";
+            dungeon.victimName = "長峰 美月";
+            dungeon.victimBackground = "灯里の親友。届かなかったSOSが澱になった。";
+            dungeon.suppressedEmotion = "助けを求める声";
+            dungeon.totalFloors = 3;
+            dungeon.deadlineMonth = 5;
+            dungeon.deadlineDay = 31;
+            dungeon.bossName = "沈黙の美月";
+            dungeon.bossThematicMeaning = "「行かないで」と言えなかった後悔の具現";
+            dungeon.floors = new[]
+            {
+                new MigenkaiFloorData { floorNumber = 1, floorName = "B1F — 静謐の廊下", minEnemyLevel = 1, maxEnemyLevel = 3 },
+                new MigenkaiFloorData { floorNumber = 2, floorName = "B2F — 滲む教室", minEnemyLevel = 3, maxEnemyLevel = 5, hasMiniBoss = true, miniBossName = "言葉の壁" },
+                new MigenkaiFloorData { floorNumber = 3, floorName = "言伝の間", minEnemyLevel = 5, maxEnemyLevel = 8 }
+            };
+            dungeon.dominantColor = new UnityEngine.Color(0.106f, 0.165f, 0.29f);
+            dungeon.environmentTheme = "永遠に鳴り続けるまたねの教室";
+            return dungeon;
         }
 
         private void CheckCalendarEvents(GameManager gm)

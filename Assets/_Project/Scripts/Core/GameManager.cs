@@ -67,6 +67,7 @@ namespace Amane.Core
             Machine.Register(new FieldState(this));
             Machine.Register(new BattleState(this));
             Machine.Register(new DialogueState(this));
+            Machine.Register(new DungeonState(this));
             Machine.ChangeTo<BootState>();
         }
 
@@ -98,6 +99,7 @@ namespace Amane.Core
 
         public void EnterBattle() => Machine.ChangeTo<BattleState>();
         public void ReturnToField() => Machine.ChangeTo<FieldState>();
+        public void ReturnToDungeon() => Machine.ChangeTo<DungeonState>();
 
         private SaveData SerializeState()
         {

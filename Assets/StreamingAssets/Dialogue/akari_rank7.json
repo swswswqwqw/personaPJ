@@ -1,0 +1,30 @@
+{
+  "id": "akari_rank7",
+  "title": "黒板の向こう",
+  "bondId": "akari",
+  "bondPointsOnComplete": 30,
+  "lines": [
+    { "speakerId": "narrator", "text": "——潜行前夜。灯里から呼び出された。場所は、水路沿いの遊歩道。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "ねえ、聞いてほしいことがあって。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "akari", "text": "美月の心象に入る前に、美月がどんな子だったか……ちゃんと話したい。\n誰にも話せてなかったから。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "美月はね、すごく繊細だったの。\n笑ってる時も、目だけが遠かった。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "akari", "text": "私、気づいてたんだ。ずっと。\n「大丈夫じゃないかも」って。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "でも聞けなかった。「大丈夫だよね？」って聞いて、「大丈夫じゃない」って言われたら——", "emotion": "broken", "preSilence": 1.0 },
+    { "speakerId": "akari", "text": "私が、どうすることもできなくなる気がして。\n怖くて。卑怯だった。", "emotion": "broken", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "水路の水面が、小さく揺れた。\n街灯の光が滲んで、白くなる。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "akari", "text": "……だから、明日。あの子の心の中で、ちゃんと聞く。\n「大丈夫じゃなかったよね」って。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "遅くなったけど、今更だけど——それでも言う。\n怖くても、言う。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "narrator", "text": "灯里は水路を見つめていた。\n風が来て、彼女の髪を揺らした。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "akari", "text": "……聞いてくれて、ありがとう。\n言えたら、少し楽になった気がする。", "emotion": "neutral", "preSilence": 0.5 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 9,
+      "options": [
+        { "text": "美月も、聞きたかったと思う。", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "気づいてたのに、言えなかった。それは愛情だ。", "requiredStat": "Empathy", "requiredRank": 5, "bondBonus": 38, "jumpToDialogueId": "" },
+        { "text": "……明日、絶対に届けよう。一緒に。", "requiredStat": "Courage", "requiredRank": 4, "bondBonus": 42, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

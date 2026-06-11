@@ -1,0 +1,31 @@
+{
+  "id": "akari_rank8",
+  "title": "行かないで",
+  "bondId": "akari",
+  "bondPointsOnComplete": 35,
+  "lines": [
+    { "speakerId": "narrator", "text": "——美月の心象世界から帰還した翌日。灯里が屋上にいた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "風が強い。空は、ひどく晴れていた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "……言えたよ。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "akari", "text": "美月に——「行かないで」って。\nもっと早く言えばよかったって、わかってる。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "でもあの子、笑ってくれた。\n夢の中みたいに白くて、遠い笑顔で。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "akari", "text": "「灯里が聴いてくれるなら、まだここにいられる」って——", "emotion": "broken", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "灯里の声が、途切れた。\n手の甲で目を押さえる。", "emotion": "neutral", "preSilence": 2.0 },
+    { "speakerId": "akari", "text": "……なんで。なんでもっと早く言えなかったんだろう。\nごめん、美月。ずっと気づいてたのに。", "emotion": "broken", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "灯里はしばらく、ひとりで泣いていた。\n声を上げず、静かに。はじめて、ひとりで。", "emotion": "neutral", "preSilence": 2.5 },
+    { "speakerId": "akari", "text": "……でも、届いた。\n遅くても——届いたんだ。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "akari", "text": "そっか。言葉って、ちゃんと届くんだね。\n時間がかかっても。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "灯里は、空を見上げた。\n涙が、一粒、頬を伝った。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "akari", "text": "ありがとう。連れていってくれて。\n……私、生きていく気がする。", "emotion": "warm", "preSilence": 1.5 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 8,
+      "options": [
+        { "text": "泣いていい。ここで泣いていい。", "requiredStat": "", "requiredRank": 0, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "美月は、灯里に気づいてほしかったと思う。", "requiredStat": "Empathy", "requiredRank": 5, "bondBonus": 40, "jumpToDialogueId": "" },
+        { "text": "……遅くても届いた。それが全部だ。", "requiredStat": "Composure", "requiredRank": 6, "bondBonus": 45, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

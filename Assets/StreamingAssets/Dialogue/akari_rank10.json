@@ -1,0 +1,36 @@
+{
+  "id": "akari_rank10",
+  "title": "最後の言伝 — 灯里",
+  "bondId": "akari",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "——満月の夜。灯里から「話がある」とメッセージが届いた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "場所は、屋上。あの日、彼女が泣いていた場所。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "来てくれてありがとう。\n……大事な話があって。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "美月のお母さんに、手紙を送った。\n返事が来た。「会いたい」って。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "akari", "text": "だから——もうすぐ、ちゃんと終わりにできる。\nずっと引きずってきた後悔に。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "あなたのおかげだよ。\n本当に、あなたがいなかったら——私、まだ屋上で泣いてた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "満月が、雲の間から顔を出した。\n灯里の左手首の、親友の形見のミサンガが光った。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "akari", "text": "……ねえ。あなたに、ずっと言えなかったことがある。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "akari", "text": "あなたの「残響同調」——他人の言えなかった言葉を聴く力。\n初めて使われた時、怖かった。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "でも今は——感謝してる。\nあなたが私の傷を「聴こうとしてくれた」から。\n私は逃げずに済んだ。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "akari", "text": "だから、お願いがある。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "灯里は、ミサンガを外した。\n大事そうに、両手で包んだ。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "akari", "text": "これを持っていてほしい。\n美月の形見の、ミサンガ。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "私がお母さんに会って、ちゃんと話せる日まで——\nあなたに預かっていてほしいの。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "「行かないで」って言えたけど、「ありがとう」は、まだ言えてない。\nそれを言えた日に、返してほしい。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "narrator", "text": "灯里が、こちらに向き直った。\n目が、真っ直ぐだった。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "akari", "text": "——これが私の、最後の言伝。\n「あなたがいてくれて、よかった」。", "emotion": "warm", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "言伝「望月 灯里」が、ランク10に到達した。\n彼女の「ありがとう」が届く日まで、あなたはこのミサンガを持ち続ける。", "emotion": "neutral", "preSilence": 2.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 15,
+      "options": [
+        { "text": "預かる。必ず、その日まで。", "requiredStat": "", "requiredRank": 0, "bondBonus": 0, "jumpToDialogueId": "" },
+        { "text": "……美月も、きっとそう思ってる。", "requiredStat": "Empathy", "requiredRank": 7, "bondBonus": 0, "jumpToDialogueId": "" },
+        { "text": "一緒に言いにいこう。俺も行く。", "requiredStat": "Courage", "requiredRank": 7, "bondBonus": 0, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

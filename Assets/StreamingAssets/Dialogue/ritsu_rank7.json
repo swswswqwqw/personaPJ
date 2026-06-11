@@ -1,0 +1,30 @@
+{
+  "id": "ritsu_rank7",
+  "title": "下書きの全文",
+  "bondId": "ritsu",
+  "bondPointsOnComplete": 30,
+  "lines": [
+    { "speakerId": "narrator", "text": "——水路沿いの遊歩道。珍しく、律から呼び出された。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ritsu", "text": "……読む。聞いてくれ。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "律はスマートフォンを取り出した。\n画面を開く手が、かすかに震えていた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ritsu", "text": "「律へ。お前の誕生日に送ろうとして、また送れなかった。\n誕生日おめでとう。元気か。」", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ritsu", "text": "「最後に会ったとき、お前はイヤホンをしてた。\n話しかけるタイミングを、ずっと探してた。」", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "ritsu", "text": "「お前が音楽をやめたのを知ってる。\n俺のせいだって、わかってる。ごめん。」", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "律の声が、途切れた。\n一拍。また、続ける。", "emotion": "neutral", "preSilence": 1.8 },
+    { "speakerId": "ritsu", "text": "「お前が何をしていても、俺はお前の父親だ。\nそれだけは、変わらない。」", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ritsu", "text": "「送信ボタン、また押せなかった。\n次こそ押す。——父より」", "emotion": "neutral", "preSilence": 2.0 },
+    { "speakerId": "narrator", "text": "律は画面を閉じた。\n水路の水が、ゆっくりと流れていた。", "emotion": "neutral", "preSilence": 2.0 },
+    { "speakerId": "ritsu", "text": "……お前に聞いてほしかった。\nひとりで読むのは、もう限界だった。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "律は空を見上げた。\n今夜は雨が降っていなかった。", "emotion": "neutral", "preSilence": 1.2 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 10,
+      "options": [
+        { "text": "聞かせてくれて、ありがとう。", "requiredStat": "", "requiredRank": 0, "bondBonus": 28, "jumpToDialogueId": "" },
+        { "text": "お父さん、ちゃんと伝えようとしてた。", "requiredStat": "Empathy", "requiredRank": 5, "bondBonus": 38, "jumpToDialogueId": "" },
+        { "text": "……お前も、次は押せる。", "requiredStat": "Composure", "requiredRank": 5, "bondBonus": 42, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "ren_rank6",
+  "title": "病室の名前",
+  "bondId": "ren",
+  "bondPointsOnComplete": 30,
+  "lines": [
+    { "speakerId": "narrator", "text": "——放課後。蓮と一緒に雨音総合病院に向かった。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "毎日来ている、と聞いていた。\n確かに、受付の人が蓮に気軽に挨拶をしていた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "……今日は廊下で待ってろ。俺だけ入る。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "5分もしないうちに、蓮が戻ってきた。\n顔が、少し違った。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ren", "text": "……「蓮」って。呼ばれた。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "蓮は廊下の壁に背を預けた。\n天井を仰いで、目を細めた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ren", "text": "名前を呼ばれたのは、久しぶりだ。\nほとんどの日は、わかってないことの方が多い。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "でも今日は——「蓮」って、はっきり言った。\n俺の名前だってわかってて、言った。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ren", "text": "「蓮。来てくれたの」って。\nそれだけだけど。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "蓮は手のひらを眺めた。\n大きな、傷だらけの手が、少し揺れていた。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "ren", "text": "毎日来てよかった。\n……来てよかった。", "emotion": "warm", "preSilence": 1.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 8,
+      "options": [
+        { "text": "よかったな、蓮。", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "ばあちゃん、ちゃんとわかってる。", "requiredStat": "Empathy", "requiredRank": 5, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "毎日来たのが、届いてたんだ。", "requiredStat": "Courage", "requiredRank": 4, "bondBonus": 38, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ritsu_rank9",
+  "title": "エラーなし",
+  "bondId": "ritsu",
+  "bondPointsOnComplete": 35,
+  "lines": [
+    { "speakerId": "narrator", "text": "——潜行の翌日。律が図書室で、ノートPCに向かっていた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "目が赤い。眠れなかったのか、泣いたのか——どちらもかもしれない。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "サーバールームに、入った。", "emotion": "cold", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "律はそれだけ言って、少し間を置いた。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ritsu", "text": "無数のモニターに、未送信メッセージが点滅してた。\n全部、俺への宛名だった。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ritsu", "text": "「律へ。誕生日に。」「律へ。合格おめでとう。」「律へ。お前の音楽、聴きたかった。」", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ritsu", "text": "全部、消えてなかった。\n削除されてなかった。ただ——送れなかっただけで。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "narrator", "text": "律の声が、低くなった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "……俺、全部読んだ。\n時間がかかった。でも、全部。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ritsu", "text": "バグなし。エラーなし。\n……ただ、送信できなかっただけだ。父さんも俺も。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "律は静かに、ノートPCを閉じた。\nそれだけが、今の彼にできることだった。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "ritsu", "text": "……受信した、って思った。\nちゃんと、届いてた。ずっと前から。", "emotion": "warm", "preSilence": 1.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 10,
+      "options": [
+        { "text": "よかった。届いてた。", "requiredStat": "", "requiredRank": 0, "bondBonus": 28, "jumpToDialogueId": "" },
+        { "text": "お前のことを、ずっと思ってたんだ。", "requiredStat": "Empathy", "requiredRank": 6, "bondBonus": 38, "jumpToDialogueId": "" },
+        { "text": "……俺も、受信してる。お前からの言葉を。", "requiredStat": "Expression", "requiredRank": 5, "bondBonus": 42, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

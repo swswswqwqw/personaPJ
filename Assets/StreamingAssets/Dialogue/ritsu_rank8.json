@@ -1,0 +1,29 @@
+{
+  "id": "ritsu_rank8",
+  "title": "サーバールームへ",
+  "bondId": "ritsu",
+  "bondPointsOnComplete": 35,
+  "lines": [
+    { "speakerId": "narrator", "text": "——放課後。律が図書室の机に設計図を広げていた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "それは未言界の地図ではなかった。\n父の行動記録、交友関係、生前のメール履歴——データの整理だった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "父の心象世界に、潜ろうと思う。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "律は設計図から目を離さずに言った。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ritsu", "text": "父は「言伝石」に呑まれた事件の被害者じゃない。\n普通に死んだ。病気で。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "ritsu", "text": "だから心象世界に澱は残っているはずだ。\n未言界の深いところに。", "emotion": "cold", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "律が設計図を畳んだ。\n初めて、こちらを正面から見た。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ritsu", "text": "……怖い。正直に言う。\nあの「サーバールーム」に行って、何があるか。\nそれが——俺には、父を失ったよりも怖い。", "emotion": "broken", "preSilence": 1.5 },
+    { "speakerId": "ritsu", "text": "でも、行かないと送信できない気がして。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "律は、ペンを机に置いた。\n小さな音が、静かな図書室に響いた。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "ritsu", "text": "……一緒に来てくれるか。\n「暴力だ」って言ったお前の力が、今は頼りになる。", "emotion": "neutral", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 9,
+      "options": [
+        { "text": "行こう。俺もそこにいる。", "requiredStat": "", "requiredRank": 0, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "怖くても言えた。それだけで十分だ。", "requiredStat": "Composure", "requiredRank": 5, "bondBonus": 40, "jumpToDialogueId": "" },
+        { "text": "……お前が怖いって言えたの、初めてだな。", "requiredStat": "Empathy", "requiredRank": 6, "bondBonus": 45, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

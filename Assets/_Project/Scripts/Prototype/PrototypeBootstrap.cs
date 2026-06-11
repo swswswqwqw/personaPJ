@@ -6,6 +6,7 @@ using Amane.UI;
 using Amane.UI.Effects;
 using Amane.Field;
 using Amane.Battle;
+using Amane.Echo;
 
 namespace Amane.Prototype
 {
@@ -19,11 +20,13 @@ namespace Amane.Prototype
         private GameObject _titlePanel;
         private GameObject _fieldPanel;
         private GameObject _battlePanel;
+        private GameObject _dungeonPanel;
 
         // Controllers
         private TitleScreenController _titleCtrl;
         private FieldController _fieldCtrl;
         private BattleController _battleCtrl;
+        private DungeonController _dungeonCtrl;
 
         // Effects (shared across panels)
         private TransitionEffect _transitionEffect;
@@ -50,9 +53,11 @@ namespace Amane.Prototype
             CreateTitlePanel();
             CreateFieldPanel();
             CreateBattlePanel();
+            CreateDungeonPanel();
             CreateEffectsOverlay();
             Create3DField();
             CreateAudioManager();
+            CreateDungeonSystems();
 
             _gm.Machine.OnStateChanged += OnStateChanged;
 
@@ -76,6 +81,11 @@ namespace Amane.Prototype
                 ShowOnly(_battlePanel);
                 _audioManager?.PlayBGM(BGMStyle.Battle);
             }
+            else if (to is DungeonState)
+            {
+                ShowOnly(_dungeonPanel);
+                _audioManager?.PlayBGM(BGMStyle.Battle); // TODO: ダンジョン専用BGM
+            }
         }
 
         private Camera _mainCam; // シーン既存のカメラ
@@ -85,6 +95,7 @@ namespace Amane.Prototype
             _titlePanel.SetActive(panel == _titlePanel);
             _fieldPanel.SetActive(panel == _fieldPanel);
             _battlePanel.SetActive(panel == _battlePanel);
+            _dungeonPanel.SetActive(panel == _dungeonPanel);
 
             bool showField = (panel == _fieldPanel);
 
@@ -820,6 +831,96 @@ namespace Amane.Prototype
             SetPrivateField(_battleCtrl, "_kotsugiSelect", kotsugiUI);
             SetPrivateField(_battleCtrl, "_resultUI", resultUI);
             SetPrivateField(_battleCtrl, "_actionCommand", actionCmd);
+        }
+
+        // =============================================
+        //  DUNGEON EXPLORATION
+        // =============================================
+        private void CreateDungeonPanel()
+        {
+            // 未言界の群青背景
+            _dungeonPanel = MakePanel("DungeonPanel", new Color(0.06f, 0.08f, 0.14f));
+
+            // フロア名（上部中央）
+            var floorText = MakeText(_dungeonPanel.transform, "未言界 B1F", 22, TextAnchor.MiddleCenter,
+                new Vector2(0, 200), new Vector2(500, 35));
+            floorText.color = new Color(1f, 0.243f, 0.541f);
+            floorText.fontStyle = FontStyle.Bold;
+
+            // 部屋の説明（中央上）
+            var descBg = MakeSubPanel(_dungeonPanel.transform, "DescBg", new Vector2(0, 80),
+                new Vector2(650, 100), new Color(0.08f, 0.10f, 0.18f, 0.9f));
+            var roomDescText = MakeText(descBg.transform, "……残響が漂う。", 15, TextAnchor.MiddleCenter,
+                Vector2.zero, new Vector2(620, 90));
+            roomDescText.color = new Color(0.88f, 0.88f, 0.88f);
+
+            // メッセージ（中央）
+            var msgBg = MakeSubPanel(_dungeonPanel.transform, "MsgBg", new Vector2(0, -30),
+                new Vector2(650, 55), new Color(0, 0, 0, 0.7f));
+            var messageText = MakeText(msgBg.transform, "", 14, TextAnchor.MiddleCenter,
+                Vector2.zero, new Vector2(620, 48));
+            messageText.color = new Color(1f, 0.9f, 0.3f);
+
+            // 移動ボタン（下部・最大4つ）
+            var moveButtons = new Button[4];
+            var moveLabels = new Text[4];
+            for (int i = 0; i < 4; i++)
+            {
+                float x = -220 + i * 150f;
+                moveButtons[i] = MakeButton(_dungeonPanel.transform, $"→ 部屋{i + 1}",
+                    new Vector2(x, -130), new Vector2(135, 45),
+                    new Color(0.15f, 0.20f, 0.35f));
+                moveLabels[i] = moveButtons[i].GetComponentInChildren<Text>();
+                moveLabels[i].fontSize = 12;
+                moveButtons[i].gameObject.SetActive(false);
+            }
+
+            // 階段ボタン（特殊）
+            var stairsBtn = MakeButton(_dungeonPanel.transform, "▼ 次の層へ",
+                new Vector2(0, -180), new Vector2(180, 42),
+                new Color(0.4f, 0.15f, 0.35f));
+            stairsBtn.GetComponentInChildren<Text>().color = new Color(1f, 0.243f, 0.541f);
+            stairsBtn.gameObject.SetActive(false);
+
+            // 撤退ボタン（右下）
+            var retreatBtn = MakeButton(_dungeonPanel.transform, "撤退する",
+                new Vector2(270, -210), new Vector2(130, 38),
+                new Color(0.35f, 0.15f, 0.15f));
+            retreatBtn.GetComponentInChildren<Text>().fontSize = 13;
+
+            // 操作説明
+            var helpText = MakeText(_dungeonPanel.transform, "ボタンで部屋へ移動　撤退でフィールドに戻る", 11,
+                TextAnchor.MiddleCenter, new Vector2(0, -240), new Vector2(500, 20));
+            helpText.color = new Color(0.4f, 0.4f, 0.4f);
+
+            // DungeonController
+            _dungeonCtrl = _dungeonPanel.AddComponent<DungeonController>();
+            SetPrivateField(_dungeonCtrl, "_floorText", floorText);
+            SetPrivateField(_dungeonCtrl, "_roomDescText", roomDescText);
+            SetPrivateField(_dungeonCtrl, "_messageText", messageText);
+            SetPrivateField(_dungeonCtrl, "_moveButtons", moveButtons);
+            SetPrivateField(_dungeonCtrl, "_moveLabels", moveLabels);
+            SetPrivateField(_dungeonCtrl, "_stairsButton", stairsBtn);
+            SetPrivateField(_dungeonCtrl, "_retreatButton", retreatBtn);
+
+            _dungeonPanel.SetActive(false);
+        }
+
+        private void CreateDungeonSystems()
+        {
+            // MigenkaiManager（DontDestroyOnLoad）
+            if (MigenkaiManager.Instance == null)
+            {
+                var mgr = new GameObject("MigenkaiManager");
+                mgr.AddComponent<MigenkaiManager>();
+            }
+
+            // DungeonExplorer（ローカル）
+            if (DungeonExplorer.Instance == null)
+            {
+                var exp = new GameObject("DungeonExplorer");
+                exp.AddComponent<DungeonExplorer>();
+            }
         }
 
         // =============================================

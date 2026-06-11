@@ -1,0 +1,29 @@
+{
+  "id": "akari_rank6",
+  "title": "永遠に鳴り続ける鐘",
+  "bondId": "akari",
+  "bondPointsOnComplete": 30,
+  "lines": [
+    { "speakerId": "narrator", "text": "——夜の学校。灯里が珍しく、遅くまで教室に残っていた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "黒板に、何かが書かれては消され、また書かれている。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "……ああ、びっくりした。何で来たの。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "黒板には「またね」という二文字だけ、残っていた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "akari", "text": "美月の心象世界に潜る前に、ここで練習してた。\n何度言ったら、うまく言えるか。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "変だよね。声に出してみると、どうしても……喉が締まる。", "emotion": "broken", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "あの子の教室に行く。あの子の「またね」が鳴り続けてる場所に。\n……怖いよ。怖くないって言ったら嘘になる。", "emotion": "broken", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "灯里は黒板消しで「またね」を消した。\nチョークの白い跡だけが、うっすら残った。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "akari", "text": "でも、行かなきゃ。美月に会いに。\n言えなかった言葉を……ちゃんと声にしに。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "あなたと一緒に行くから。\nひとりじゃなければ、きっと言える。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "チョークが一本、床に転がっていた。\n灯里はそれを拾って、ポケットに入れた。", "emotion": "neutral", "preSilence": 1.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 7,
+      "options": [
+        { "text": "俺も一緒に行く。", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "灯里ならきっと言える。", "requiredStat": "Empathy", "requiredRank": 5, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "……俺も、言えなかった言葉がある。", "requiredStat": "Composure", "requiredRank": 4, "bondBonus": 40, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

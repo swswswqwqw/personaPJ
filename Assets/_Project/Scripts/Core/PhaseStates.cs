@@ -59,4 +59,10 @@ namespace Amane.Core
         public DialogueState(GameManager game) : base(game) { }
         public override GamePhase Phase => GamePhase.Dialogue;
     }
+
+    public sealed class DungeonState : PhaseStateBase
+    {
+        public DungeonState(GameManager game) : base(game) { }
+        public override GamePhase Phase => GamePhase.Dungeon;
+    }
 }

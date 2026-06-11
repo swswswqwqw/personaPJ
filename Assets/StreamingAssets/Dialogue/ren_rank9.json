@@ -1,0 +1,30 @@
+{
+  "id": "ren_rank9",
+  "title": "形見",
+  "bondId": "ren",
+  "bondPointsOnComplete": 35,
+  "lines": [
+    { "speakerId": "narrator", "text": "——3日後。蓮から「話がある」と連絡が来た。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "水路沿いの遊歩道。いつもの場所に、蓮が立っていた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "……逝った。一昨日の朝。", "emotion": "cold", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "蓮は水路を見ていた。\n声は、いつもより低かった。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "ren", "text": "告別式、行ってきた。\nよく知らない親戚ばかりで、正直しんどかった。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "でも遺品の中に、手紙があった。\n俺宛の、ばあちゃんの手書きの手紙。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "蓮は胸ポケットから、折りたたまれた封筒を出した。\n何度も読み返したのか、端がよれていた。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ren", "text": "「蓮へ。手紙は書けないと思ってたが、書いた。\n蓮が来てくれた日から、毎日が楽しかった。\nずっと待ってたよ。来てくれてありがとう。」", "emotion": "neutral", "preSilence": 2.0 },
+    { "speakerId": "ren", "text": "「好きだよって言ってくれたね。\n私も好きだよ、蓮。」", "emotion": "neutral", "preSilence": 2.5 },
+    { "speakerId": "narrator", "text": "蓮は封筒をそっとしまった。\n水面が、小さく揺れた。", "emotion": "neutral", "preSilence": 2.0 },
+    { "speakerId": "ren", "text": "……届いてた。\nちゃんと届いてた。", "emotion": "warm", "preSilence": 1.2 },
+    { "speakerId": "ren", "text": "後悔は、まだある。でも——もう、「ボケるな」だけじゃない。\n「好きだよ」が、最後になった。", "emotion": "warm", "preSilence": 1.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 10,
+      "options": [
+        { "text": "……よかった、蓮。", "requiredStat": "", "requiredRank": 0, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "ばあちゃんも、言えてよかったと思う。", "requiredStat": "Empathy", "requiredRank": 6, "bondBonus": 40, "jumpToDialogueId": "" },
+        { "text": "最後の言葉が「好きだよ」だったのは、お前の強さだ。", "requiredStat": "Courage", "requiredRank": 7, "bondBonus": 45, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}
