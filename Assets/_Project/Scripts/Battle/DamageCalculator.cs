@@ -6,8 +6,9 @@ namespace Amane.Battle
     {
         private static readonly Random Rng = new();
 
+        // dualMultiplier: デュアルナレーター使用時の語り手間属性相性補正（通常は1.0f）
         public static HitResult Calculate(Combatant attacker, Combatant target, Skill skill,
-                                          float kotsugiBonus = 0f)
+                                          float kotsugiBonus = 0f, float dualMultiplier = 1.0f)
         {
             var affinity = target.Affinities.Get(skill.Element);
 
@@ -29,7 +30,7 @@ namespace Amane.Battle
 
             bool isCrit = !skill.IsPhysical ? false : Rng.NextDouble() < skill.CritRate;
 
-            float multiplier = 1f + kotsugiBonus;
+            float multiplier = (1f + kotsugiBonus) * dualMultiplier;
             if (affinity == Affinity.Weak) multiplier *= 1.5f;
             if (affinity == Affinity.Resist) multiplier *= 0.5f;
             if (isCrit) multiplier *= 1.5f;

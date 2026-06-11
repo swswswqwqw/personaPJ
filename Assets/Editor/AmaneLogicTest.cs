@@ -299,7 +299,87 @@ public static class AmaneLogicTest
         var day3again = scheduler.GetPendingEvents(new GameDate(3));
         Assert(day3again.Count(e => e.Id == "awakening") == 0, "トリガー済みは再発火しない");
 
-        // --- Summary ---
+        // --- デュアルナレーター（DESIGN.md 9-1）---
+        Debug.Log("\n[DualNarrator — DESIGN.md 9-1]");
+
+        // NarratorAffinityMatrix テスト
+        Assert(NarratorAffinityMatrix.GetDualBonus(Element.Light, Element.Light) > 1.0f, "同属性(光×光)シナジー x1.2");
+        Assert(NarratorAffinityMatrix.GetDualBonus(Element.Light, Element.Dark) < 1.0f, "対立(光×闇)干渉 x0.7");
+        Assert(NarratorAffinityMatrix.GetDualBonus(Element.Fire, Element.Ice) < 1.0f, "対立(焔×氷)干渉 x0.7");
+        Assert(NarratorAffinityMatrix.GetDualBonus(Element.Fire, Element.Wind) == 1.0f, "中立(焔×風) x1.0");
+        Assert(NarratorAffinityMatrix.GetDualBonus(Element.Thunder, Element.Wind) < 1.0f, "対立(雷×風)干渉 x0.7");
+
+        // Narrator 生成テスト
+        var lightNarrator = new Narrator("light_n", "赦しの語り手", Element.Light,
+            AffinityTable.Build(weak: new[] { Element.Dark }));
+        var darkNarrator = new Narrator("dark_n", "後悔の語り手", Element.Dark,
+            AffinityTable.Build(weak: new[] { Element.Light }));
+        Assert(lightNarrator.PrimaryElement == Element.Light, "語り手主属性: 光");
+        Assert(darkNarrator.PrimaryElement == Element.Dark, "語り手主属性: 闇");
+
+        // Combatant に語り手をセット
+        var dualHero = new Combatant("dual_hero", "天野詠", true, 200, 80, 20, 10, 20, 10, 20,
+            AffinityTable.AllNormal());
+        Assert(!dualHero.IsDualNarratorActive, "語り手未設定: デュアルモードOFF");
+        dualHero.SetNarrators(lightNarrator);
+        Assert(dualHero.ActiveNarrator == lightNarrator, "語り手単体セット");
+        Assert(!dualHero.IsDualNarratorActive, "1体のみ: デュアルモードOFF");
+        dualHero.SetNarrators(lightNarrator, darkNarrator);
+        Assert(dualHero.IsDualNarratorActive, "2体セット: デュアルモードON");
+        Assert(dualHero.SecondaryNarrator == darkNarrator, "サブ語り手確認");
+
+        // Affinities が語り手のものに切り替わること
+        Assert(dualHero.Affinities.Get(Element.Dark) == Affinity.Weak, "語り手のAffinitiesに切り替わった（光→闇弱点）");
+
+        // DualNarrator SkillsUnion（重複除去）
+        var lSkill = new Skill("l_skill", "赦しの言葉", Element.Light, 40, 6, TargetType.SingleEnemy);
+        var dSkill = new Skill("d_skill", "後悔の重圧", Element.Dark, 35, 5, TargetType.SingleEnemy);
+        var ln2 = new Narrator("ln2", "光のナレーター", Element.Light, null, new List<Skill> { lSkill });
+        var dn2 = new Narrator("dn2", "闇のナレーター", Element.Dark, null, new List<Skill> { dSkill });
+        dualHero.SetNarrators(ln2, dn2);
+        var dualSkills = dualHero.GetDualNarratorSkills();
+        Assert(dualSkills.Count == 2, "デュアルスキル一覧: 2種");
+        Assert(dualSkills.Exists(s => s.Id == "l_skill"), "主語り手スキル含む");
+        Assert(dualSkills.Exists(s => s.Id == "d_skill"), "副語り手スキル含む");
+
+        // BattleManager でデュアルナレーターアクションを実行
+        var dnBattle = new BattleManager(new EventChannel());
+        dnBattle.IsDualNarratorUnlocked = true;
+        bool dualFired = false;
+        dnBattle.OnDualNarratorActivated += (_, __, ___) => dualFired = true;
+
+        var dnHero = new Combatant("dn_hero", "天野詠", true, 300, 100, 25, 10, 25, 10, 20,
+            AffinityTable.AllNormal());
+        dnHero.SetNarrators(ln2, dn2);
+        var dnEnemy = new Combatant("dn_enemy", "無言のオリ", false, 500, 0, 10, 5, 10, 5, 8,
+            AffinityTable.AllNormal());
+        dnBattle.StartBattle(
+            new List<Combatant> { dnHero },
+            new List<Combatant> { dnEnemy }
+        );
+        int spBefore = dnHero.Sp;
+        var dualAction = BattleAction.DualNarratorAttack(dnHero, lSkill, dSkill,
+            new List<Combatant> { dnEnemy });
+        dnBattle.ExecuteAction(dualAction);
+        // SP は (lSkill.SpCost + dSkill.SpCost) * 1.5 = (6+5)*1.5 = 16.5 → 17 消費
+        int spExpected = spBefore - (int)System.Math.Ceiling((lSkill.SpCost + dSkill.SpCost) * 1.5f);
+        Assert(dnHero.Sp == spExpected, $"デュアルナレーターSP消費1.5倍（期待値: {spExpected}）");
+        Assert(dualFired, "OnDualNarratorActivated イベント発火");
+
+        // SP不足時のフォールバック（通常攻撃）
+        var poorHero = new Combatant("poor", "SP枯渇テスト", true, 200, 5, 20, 10, 20, 10, 15,
+            AffinityTable.AllNormal());
+        poorHero.SetNarrators(ln2, dn2);
+        var poorEnemy = new Combatant("pe", "ダミー敵", false, 500, 0, 5, 3, 5, 3, 5, AffinityTable.AllNormal());
+        var spoorBattle = new BattleManager(new EventChannel());
+        spoorBattle.IsDualNarratorUnlocked = true;
+        spoorBattle.StartBattle(new List<Combatant> { poorHero }, new List<Combatant> { poorEnemy });
+        var poorAction = BattleAction.DualNarratorAttack(poorHero, lSkill, dSkill,
+            new List<Combatant> { poorEnemy });
+        spoorBattle.ExecuteAction(poorAction);
+        Assert(poorHero.Sp == 5, "SP不足時フォールバック: SPは消費されない（通常攻撃に切替）");
+
+        // Summary ---
         Debug.Log($"\n===== 結果: {passed} passed / {failed} failed =====");
         if (failed == 0)
             Debug.Log("全テスト合格！ プロトタイプの準備完了です。");

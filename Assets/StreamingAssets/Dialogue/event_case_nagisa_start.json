@@ -1,0 +1,19 @@
+{
+  "id": "event_case_nagisa_start",
+  "title": "渚の失踪",
+  "bondId": "",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "——9月、霧が深い月曜日の朝。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "鵠沼渚が学校に来なくなって、3日が経った。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "classmate", "text": "渚ちゃん、配信も止まってる。何かあったのかな……", "emotion": "worried", "preSilence": 0.3 },
+    { "speakerId": "classmate", "text": "最後の配信、笑顔だったじゃん。突然すぎるよ。", "emotion": "worried", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "——〈未読〉が静かに震えた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "アプリを開くと、渚の残響が見えた。言いそびれた言葉が、霧の中で揺れている。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yomi", "text": "（渚が……澱に喰われた？ 言葉を奪われたのか。）", "emotion": "tense", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "「本当の自分を一度も配信で見せていない」——渚の心の奥で積み続けた後悔が、臨界に達したのだ。", "emotion": "neutral", "preSilence": 0.9 },
+    { "speakerId": "yomi", "text": "（潜らなければ。渚の心象世界に——言いそびれた言葉を、取り戻しに行く。）", "emotion": "determined", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "デッドライン。渚の「言伝の間」へ——期限まで、あなたには残り14日ある。", "emotion": "neutral", "preSilence": 0.5 }
+  ],
+  "choices": []
+}

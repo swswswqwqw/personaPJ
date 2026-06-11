@@ -1,0 +1,32 @@
+{
+  "id": "nagisa_intro",
+  "title": "渚との出会い",
+  "bondId": "nagisa",
+  "bondPointsOnComplete": 100,
+  "lines": [
+    { "speakerId": "narrator", "text": "——9月、学園祭の準備が始まる頃。教室の隅で、スマホを伏せている生徒がいた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "……なに。撮ってるの？", "emotion": "alert", "preSilence": 0.3 },
+    { "speakerId": "nagisa", "text": "ああ、ごめん。そういう顔してただけ。別に怒ってないけど。", "emotion": "flat", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "鵠沼渚。……知ってるよね。あの配信者の。", "emotion": "flat", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "確かに見たことがある。登録者数十万人の、いつも笑顔の配信者。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "——だが今の彼女は、画面の向こうの渚とまるで別人だった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "nagisa", "text": "学校ではこの顔。配信では別の顔。どっちが本物か、って？", "emotion": "flat", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "……どっちも本物。それでいいじゃん。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "——〈未読〉が震えた。渚の言葉の奥で、何かがひっそりと否定していた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "nagisa", "text": "……なんで、そんな目で見るの。", "emotion": "alert", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "別に。用がないなら行っていいよ。私、忙しいから。", "emotion": "flat", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "渚はスマホをポケットに押し込み、窓の外を向いた。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "「どっちも本物」という言葉が、どこか空洞に響いていた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "渚との絆「言伝」が始まった。", "emotion": "neutral", "preSilence": 0.5 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 7,
+      "options": [
+        { "text": "（黙って立ち去る）", "requiredStat": "", "requiredRank": 0, "bondBonus": 5, "jumpToDialogueId": "" },
+        { "text": "本物って、何？", "requiredStat": "Eloquence", "requiredRank": 2, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "どっちも、しんどそうだな", "requiredStat": "Empathy", "requiredRank": 2, "bondBonus": 15, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

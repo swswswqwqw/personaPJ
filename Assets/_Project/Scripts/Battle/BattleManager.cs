@@ -42,6 +42,12 @@ namespace Amane.Battle
         // DESIGN.md 9-1: 逆総告白 — 味方全員DOWN時に敵が連続行動
         public event Action<Combatant> OnReverseAllOutCalling;
 
+        // DESIGN.md 9-1: デュアルナレーター解放フラグ（第3幕=1月以降で true）
+        public bool IsDualNarratorUnlocked { get; set; }
+
+        // デュアルナレーター使用時イベント（演出フック用）
+        public event Action<Combatant, Narrator, Narrator> OnDualNarratorActivated;
+
         public BattleManager(EventChannel events)
         {
             _events = events ?? throw new ArgumentNullException(nameof(events));
@@ -82,6 +88,9 @@ namespace Amane.Battle
                 case ActionType.Flee:
                     SetPhase(BattlePhase.Fled);
                     return;
+                case ActionType.DualNarrator:
+                    ExecuteDualNarratorSkill(action);
+                    break;
             }
 
             if (CheckBattleEnd()) return;
@@ -161,6 +170,69 @@ namespace Amane.Battle
             // 逆総告白チェック: 敵の攻撃で味方全員がDOWNになったか
             if (!action.Actor.IsPlayer)
                 CheckReverseAllOutCalling(action.Actor);
+        }
+
+        // DESIGN.md 9-1: デュアルナレーター — 1ターンで主スキル＋副スキルを両方発動。
+        // SP消費は通常の1.5倍。語り手間の属性相性でダメージ補正。
+        // 第3幕（1月以降）で解放、呼び出し前に IsDualNarratorUnlocked を確認すること。
+        private void ExecuteDualNarratorSkill(BattleAction action)
+        {
+            var primarySkill = action.Skill ?? Skill.MeleeAttack;
+            var secondarySkill = action.SecondarySkill ?? Skill.MeleeAttack;
+
+            // SP消費 1.5倍（両スキルの合計x1.5）
+            int totalSpCost = (int)Math.Ceiling((primarySkill.SpCost + secondarySkill.SpCost) * 1.5f);
+            if (!action.Actor.SpendSp(totalSpCost))
+            {
+                // SP不足 → 通常攻撃にフォールバック
+                ExecuteSkill(BattleAction.UseSkill(action.Actor, Skill.MeleeAttack, action.Targets));
+                return;
+            }
+
+            // 語り手間の属性相性補正（デュアルボーナス）
+            float dualMultiplier = 1.0f;
+            if (action.Actor.IsDualNarratorActive)
+            {
+                dualMultiplier = NarratorAffinityMatrix.GetDualBonus(
+                    action.Actor.ActiveNarrator.PrimaryElement,
+                    action.Actor.SecondaryNarrator.PrimaryElement);
+                OnDualNarratorActivated?.Invoke(
+                    action.Actor, action.Actor.ActiveNarrator, action.Actor.SecondaryNarrator);
+            }
+
+            float baseBonus = GetTotalBonus();
+            bool anyOneMore = false;
+
+            // フェーズ1: 主スキル発動
+            foreach (var target in action.Targets)
+            {
+                if (!target.IsAlive) continue;
+                var result = DamageCalculator.Calculate(action.Actor, target, primarySkill,
+                                                        baseBonus, dualMultiplier);
+                OnHit?.Invoke(result);
+                if (result.TriggersOneMore) anyOneMore = true;
+            }
+
+            // フェーズ2: 副スキル発動（同ターン内で連続）
+            foreach (var target in action.Targets)
+            {
+                if (!target.IsAlive) continue;
+                var result = DamageCalculator.Calculate(action.Actor, target, secondarySkill,
+                                                        baseBonus, dualMultiplier);
+                OnHit?.Invoke(result);
+                if (result.TriggersOneMore) anyOneMore = true;
+            }
+
+            if (anyOneMore && action.Actor.IsPlayer && CanAllOutConfession()) return;
+            if (anyOneMore)
+                _turns.InsertOneMore(action.Actor);
+            else
+            {
+                KotsugiChain = 0;
+                _kotsugiChainParticipants.Clear();
+            }
+
+            if (!action.Actor.IsPlayer) CheckReverseAllOutCalling(action.Actor);
         }
 
         private void ExecuteKotsugi(BattleAction action)

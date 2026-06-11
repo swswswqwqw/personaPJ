@@ -69,6 +69,7 @@ namespace Amane.UI
             _battle.OnKotsugi += OnKotsugiTriggered;
             _battle.OnPerfectKotsugi += OnPerfectKotsugiTriggered;
             _battle.OnReverseAllOutCalling += OnReverseAllOutCallingTriggered;
+            _battle.OnDualNarratorActivated += OnDualNarratorActivatedTriggered;
 
             StartBattle();
         }
@@ -83,6 +84,7 @@ namespace Amane.UI
                 _battle.OnKotsugi -= OnKotsugiTriggered;
                 _battle.OnPerfectKotsugi -= OnPerfectKotsugiTriggered;
                 _battle.OnReverseAllOutCalling -= OnReverseAllOutCallingTriggered;
+                _battle.OnDualNarratorActivated -= OnDualNarratorActivatedTriggered;
             }
         }
 
@@ -190,6 +192,15 @@ namespace Amane.UI
         {
             _effects?.PlayReverseAllOutCalling(enemy.DisplayName);
             _hud?.Log($"── 逆総告白 ── {enemy.DisplayName}の連続攻撃！");
+            _hud?.RefreshAll();
+        }
+
+        private void OnDualNarratorActivatedTriggered(Combatant actor, Narrator primary, Narrator secondary)
+        {
+            bool isSynergy = NarratorAffinityMatrix.GetDualBonus(primary.PrimaryElement, secondary.PrimaryElement) > 1.0f;
+            _effects?.PlayDualNarratorActivated(primary.DisplayName, secondary.DisplayName, isSynergy);
+            string synText = isSynergy ? "共鳴 x1.2" : NarratorAffinityMatrix.GetDualBonus(primary.PrimaryElement, secondary.PrimaryElement) < 1.0f ? "干渉 x0.7" : "";
+            _hud?.Log($"── デュアルナレーター発動 ── {primary.DisplayName}×{secondary.DisplayName} {synText}");
             _hud?.RefreshAll();
         }
 

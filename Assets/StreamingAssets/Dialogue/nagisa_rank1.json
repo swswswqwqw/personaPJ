@@ -1,0 +1,32 @@
+{
+  "id": "nagisa_rank1",
+  "title": "演じることの疲れ",
+  "bondId": "nagisa",
+  "bondPointsOnComplete": 80,
+  "lines": [
+    { "speakerId": "narrator", "text": "翌日。渚は昨日と同じ窓際に座っていた。今日はイヤフォンをして、スマホを眺めている。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "……また来たの。", "emotion": "flat", "preSilence": 0.3 },
+    { "speakerId": "nagisa", "text": "ねえ、昨日の配信見た？ 三万人いたんだけど。みんな笑顔の渚が好きでしょ。", "emotion": "flat", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "三時間、ずっと笑ってた。喉、カラカラ。でも「楽しかった！」ってコメントが来るから。やめられない。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "——渚の声に、微かな疲労が滲んでいた。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "nagisa", "text": "疲れた顔とか、不機嫌な顔とか……一回でも配信に出したら、みんな引くから。", "emotion": "flat", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "だから出さない。それだけ。", "emotion": "flat", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "「それだけ」という言葉が、重く宙に浮かんだ。", "emotion": "neutral", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 7,
+      "options": [
+        { "text": "「それだけ」って言いながら、疲れてるじゃん", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "好きなことをしてるんじゃないの？", "requiredStat": "Eloquence", "requiredRank": 1, "bondBonus": 10, "jumpToDialogueId": "" },
+        { "text": "（何も言わない）", "requiredStat": "", "requiredRank": 0, "bondBonus": 5, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "nagisa", "text": "……うっさい。", "emotion": "flat", "preSilence": 0.3 },
+    { "speakerId": "nagisa", "text": "でも……なんで、そう思うの。", "emotion": "alert", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "渚はイヤフォンを外した。初めて、こちらをまともに見た。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "nagisa", "text": "……本当に疲れてる顔、見せてもいい相手って、いるのかな。", "emotion": "soft", "preSilence": 0.7 }
+  ]
+}

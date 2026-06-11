@@ -44,6 +44,11 @@ namespace Amane.UI.Effects
         [SerializeField] private Text _reverseAllOutText;
         [SerializeField] private Image _reverseFlash;
 
+        [Header("Dual Narrator — DESIGN.md 9-1")]
+        [SerializeField] private CanvasGroup _dualNarratorGroup;
+        [SerializeField] private Text _dualNarratorTitle;
+        [SerializeField] private Text _dualNarratorSubtext;
+
         [Header("Damage Pop")]
         [SerializeField] private Text _damagePopTemplate;
 
@@ -384,6 +389,54 @@ namespace Amane.UI.Effects
             {
                 Tweener.Fade(_reverseAllOutGroup, 1, 0, 0.3f, Easing.InQuad)
                     .SetOnComplete(() => _reverseAllOutGroup.gameObject.SetActive(false));
+            });
+        }
+
+        // ===== デュアルナレーター発動演出（DESIGN.md 9-1）=====
+        // 2体の語り手が同時に発動する瞬間の「声の重なり」演出。
+        // 属性シナジーなら蛍光ピンク×群青の波形重なり、対立なら紫×赤の干渉表現。
+        public void PlayDualNarratorActivated(string primaryName, string secondaryName, bool isSynergy)
+        {
+            Core.Audio.AudioManager.Instance?.PlayLevelUp();
+
+            // 画面フラッシュ（シナジー: ピンク、対立: 紫）
+            if (_screenFlash != null)
+            {
+                _screenFlash.gameObject.SetActive(true);
+                var flashColor = isSynergy
+                    ? new Color(1f, 0.243f, 0.541f, 0.6f)  // シナジー: 蛍光ピンク
+                    : new Color(0.6f, 0.1f, 0.8f, 0.6f);   // 対立: 紫（声が干渉する）
+                _screenFlash.color = flashColor;
+                Tweener.Color(_screenFlash, flashColor, new Color(flashColor.r, flashColor.g, flashColor.b, 0f),
+                    0.4f, Easing.OutQuad).SetOnComplete(() => _screenFlash.gameObject.SetActive(false));
+            }
+
+            if (_dualNarratorGroup == null) return;
+            _dualNarratorGroup.gameObject.SetActive(true);
+            _dualNarratorGroup.alpha = 0;
+
+            if (_dualNarratorTitle != null)
+            {
+                _dualNarratorTitle.text = "DUAL NARRATOR";
+                _dualNarratorTitle.color = isSynergy ? _pinkAccent : new Color(0.6f, 0.1f, 0.8f);
+            }
+            if (_dualNarratorSubtext != null)
+            {
+                var synText = isSynergy ? "——2つの声が、共鳴する。" : "——相反する声が、ぶつかり合う。";
+                _dualNarratorSubtext.text = $"{primaryName}  ×  {secondaryName}\n{synText}";
+                _dualNarratorSubtext.color = Color.white;
+            }
+
+            Tweener.Fade(_dualNarratorGroup, 0, 1, 0.2f, Easing.OutQuad).SetOnComplete(() =>
+            {
+                if (_dualNarratorTitle != null)
+                    Tweener.Scale(_dualNarratorTitle.rectTransform, Vector3.one * 0.6f, Vector3.one, 0.2f, Easing.OutBack);
+
+                Tweener.Float(0, 1, 1.2f, _ => { }, Easing.Linear).SetOnComplete(() =>
+                {
+                    Tweener.Fade(_dualNarratorGroup, 1, 0, 0.3f, Easing.InQuad)
+                        .SetOnComplete(() => _dualNarratorGroup.gameObject.SetActive(false));
+                });
             });
         }
 
