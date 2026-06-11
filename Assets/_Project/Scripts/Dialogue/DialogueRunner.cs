@@ -19,6 +19,9 @@ namespace Amane.Dialogue
         public bool IsWaitingForChoice => _waitingForChoice;
         public DialogueChoice PendingChoice { get; private set; }
 
+        // choice bondBonus を呼び出し側が適用できるよう現在のデータを公開する
+        public DialogueData CurrentData => _current;
+
         public event Action<DialogueLine> OnLineShown;
         public event Action<DialogueChoice> OnChoicePresented;
         public event Action<DialogueData> OnDialogueEnd;

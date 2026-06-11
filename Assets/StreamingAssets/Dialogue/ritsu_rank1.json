@@ -1,0 +1,27 @@
+{
+  "id": "ritsu_rank1",
+  "title": "図書室——「また来た」",
+  "bondId": "ritsu",
+  "bondPointsOnComplete": 20,
+  "lines": [
+    { "speakerId": "narrator", "text": "——翌日。図書室の最奥、同じ席。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "律はまた本を開いていた。今日はイヤホンをしていなかった。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ritsu", "text": "……また来た。", "emotion": "cold", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "追い払う言葉が出なかった。律は少し、本から目を上げた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu", "text": "お前は——「残響」とやらで、何が聞こえた。", "emotion": "cold", "preSilence": 0.5 },
+    { "speakerId": "ritsu", "text": "具体的に言え。", "emotion": "cold", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "命令口調だった。だが声の奥に、怖れのようなものがあった。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "知りたいのだ——何が聞こえたか。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "だがそれは、「聞かれたくない」という怖れと、ほとんど同じ顔をしていた。", "emotion": "neutral", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 5,
+      "options": [
+        { "text": "……誰かを待ってた、って聞こえた", "requiredStat": "Courage", "requiredRank": 2, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "言葉になる前のものが聞こえた", "requiredStat": "Composure", "requiredRank": 2, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "（黙ったまま向かいに座る）", "requiredStat": "", "requiredRank": 0, "bondBonus": 15, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

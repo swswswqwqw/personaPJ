@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Amane.Dialogue;
 using Amane.UI.Effects;
+using Amane.Core;
 
 namespace Amane.UI
 {
@@ -97,7 +98,14 @@ namespace Amane.UI
         private void SelectChoice(int index)
         {
             HideChoices();
-            _runner?.SelectOption(index);
+            if (_runner == null) return;
+
+            // bondBonus適用: SelectOption前にbondIdを取得（実行後はCurrentDataがnullになる場合がある）
+            string bondId = _runner.CurrentData?.bondId;
+            int bondBonus = _runner.SelectOption(index);
+
+            if (bondBonus > 0 && !string.IsNullOrEmpty(bondId))
+                GameManager.Instance?.Bonds.GivePoints(bondId, bondBonus);
         }
 
         private void HideChoices()

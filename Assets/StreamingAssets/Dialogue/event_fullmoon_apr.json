@@ -1,0 +1,23 @@
+{
+  "id": "event_fullmoon_apr",
+  "title": "満月——母の記憶①",
+  "bondId": "",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "——満月の夜。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "雨が止んでいた。雨音市では珍しいことだった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "月が、水路に映っている。揺れながら、ゆっくりと沈んでいく。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "——そのとき。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "記憶が、戻ってきた。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "mother", "text": "詠——今日、早く帰れそう？", "emotion": "gentle", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "あの日の声。母の声。病院のベッドの白さと、点滴の音。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "mother", "text": "ねえ、話したいことがあるんだけど——", "emotion": "gentle", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "——でも、あなたは。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "yomi", "text": "（……行かなかった。その日、行かなかった）", "emotion": "broken", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "翌朝、電話が来た。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "母はもう喋れなかった。「話したかったこと」は、届かなかった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yomi", "text": "（お母さん——何を、言おうとしてたんだろう）", "emotion": "broken", "preSilence": 1.2 },
+    { "speakerId": "narrator", "text": "月が、水路の底へ沈んだ。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "後悔は言葉にならないまま、この街の空気に溶けていく。", "emotion": "neutral", "preSilence": 1.0 }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "event_case_ritsu_start",
+  "title": "律の事件発生",
+  "bondId": "",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "——6月のある夜。アプリ「未読」が、また震えた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "名前が浮かぶ。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "　　久遠 律", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "yomi", "text": "（……律の「残響」が、溢れ始めている）", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ritsu_echo", "text": "興味ない。……そう言った。ちゃんと言った。", "emotion": "cold", "preSilence": 1.0 },
+    { "speakerId": "ritsu_echo", "text": "なのに——なんで今さら、下書きなんか残してたんだ。", "emotion": "broken", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "父への、送信されなかった言葉。律の内側で、それが澱になりかけている。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ritsu_echo", "text": "「律へ」——宛名だけで、本文は何もなかった。", "emotion": "broken", "preSilence": 1.2 },
+    { "speakerId": "yomi", "text": "（……受け取れなかった言葉が、両方向にある）", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "アプリに期限が浮かんだ。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "　　期限——6月30日。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "律のサーバールームへ、潜らなければならない。", "emotion": "neutral", "preSilence": 1.0 }
+  ]
+}

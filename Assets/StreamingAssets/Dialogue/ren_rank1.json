@@ -1,0 +1,27 @@
+{
+  "id": "ren_rank1",
+  "title": "校門前——「まだいたのか」",
+  "bondId": "ren",
+  "bondPointsOnComplete": 20,
+  "lines": [
+    { "speakerId": "narrator", "text": "——翌朝。校門前。蓮が壁に寄りかかって空を見上げていた。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "ren", "text": "……お前、まだいたんだ。転校生、すぐ帰るかと思ってた。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "悪意のない言葉だった。それが蓮のデフォルトなのだと、少しわかってきた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "昨日の件——変に気を回すなよ。俺はただ、あいつが心配で。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "ren", "text": "あの無気力な目、最近ちょくちょく見る。クラスの別の奴も、急に——", "emotion": "frustration", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "……なんなんだよ、この街。何かがおかしい。", "emotion": "frustration", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "蓮は気づいていた。この街の「変化」に。言葉はないが、感覚で。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren", "text": "……お前は、何か知ってんのか。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "蓮の目は、真っ直ぐだった。脅しではなく——本気で、答えを探していた。", "emotion": "neutral", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 7,
+      "options": [
+        { "text": "……言葉を奪う何かが、この街にいる", "requiredStat": "Courage", "requiredRank": 2, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "俺も調べてる。一緒に動けないか", "requiredStat": "Courage", "requiredRank": 3, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "（まだ話せない）——もう少し待ってくれ", "requiredStat": "", "requiredRank": 0, "bondBonus": 15, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "akari_rank1",
+  "title": "翌朝——「昨日のこと」",
+  "bondId": "akari",
+  "bondPointsOnComplete": 20,
+  "lines": [
+    { "speakerId": "narrator", "text": "——翌朝。登校の廊下で灯里と目が合った。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "akari", "text": "あっ……えと、昨日は——", "emotion": "broken", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "ごめん！ いきなり変なとこ見せて。あんなの、普通じゃないよね。", "emotion": "broken", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "灯里はぺこりと頭を下げた。笑顔を貼り直そうとして——でもうまくいかなかった。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "akari", "text": "……なんで、逃げなかったの。あの場面、普通はそっとしといてくれるじゃん。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "灯里は少し首をかしげて、あなたを見た。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "akari", "text": "……変な人、って思ってたけど。\nなんか——ちょっとだけ、安心した。", "emotion": "gentle", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "廊下に朝の光が差し込んでいた。\n灯里の笑顔は、昨日より少しだけ本物に近かった。", "emotion": "neutral", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 4,
+      "options": [
+        { "text": "泣いてるのを見て見ぬふりはできなかった", "requiredStat": "Empathy", "requiredRank": 1, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "あの場が、なんか気になって", "requiredStat": "", "requiredRank": 0, "bondBonus": 15, "jumpToDialogueId": "" },
+        { "text": "（黙って首を振る）", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

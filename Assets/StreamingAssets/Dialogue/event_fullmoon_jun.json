@@ -1,0 +1,22 @@
+{
+  "id": "event_fullmoon_jun",
+  "title": "満月——母の記憶②（歪み）",
+  "bondId": "",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "——また満月の夜。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "narrator", "text": "雨が降っていた。水路の月が揺れている。先月と、同じ夜のはずだった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "記憶が戻ってくる。あの日のベッドサイド。母の声——", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "mother", "text": "詠——今日、早く帰れそう？", "emotion": "gentle", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "同じ台詞。同じ声のはずなのに。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "——今回、母の顔が見えなかった。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "yomi", "text": "（……おかしい。先月は、ちゃんと見えたのに）", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "mother", "text": "ねえ、話したいことがあるんだけど——", "emotion": "gentle", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "声は同じ。でも輪郭が、滲んでいる。まるで——濡れた写真のように。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "yomi", "text": "（お母さん……？）", "emotion": "broken", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "記憶が、揺らいでいた。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "narrator", "text": "誰かが——この記憶に触れている？", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yomi", "text": "（……気のせいだ。ただの夢だ）", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "でも、水路に映る月は——また少し、歪んでいた。", "emotion": "neutral", "preSilence": 1.5 }
+  ]
+}

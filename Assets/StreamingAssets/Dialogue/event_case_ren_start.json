@@ -1,0 +1,19 @@
+{
+  "id": "event_case_ren_start",
+  "title": "蓮の事件発生",
+  "bondId": "",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "——7月。朝の教室。蓮が来ていなかった。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "放課後、アプリ「未読」が重く震えた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "　　朝霧 蓮", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "ren_echo", "text": "……ボケるな、って言ったんだよ。俺は。自分の名前も呼べなくなった人間に。", "emotion": "broken", "preSilence": 1.0 },
+    { "speakerId": "ren_echo", "text": "ばあちゃん、転んだのは俺のせいだ。怒鳴ったから——", "emotion": "broken", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "後悔が澱になって、蓮の心象世界を押しつぶそうとしている。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "ren_echo", "text": "「ありがとう」ひとつ、言えなかった。育ててもらったのに。", "emotion": "broken", "preSilence": 1.0 },
+    { "speakerId": "yomi", "text": "（……蓮は今、ひとりで全部背負ってる）", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "怒鳴り声がエコーし続ける回廊。\n蓮の祖母への後悔が、未言界に形を持ち始めている。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "　　期限——7月31日。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "蓮が「ありがとう」を言える前に——澱に飲まれてはいけない。", "emotion": "neutral", "preSilence": 1.0 }
+  ]
+}

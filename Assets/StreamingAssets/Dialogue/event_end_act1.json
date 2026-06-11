@@ -1,0 +1,23 @@
+{
+  "id": "event_end_act1",
+  "title": "終業式——第1幕の終わり",
+  "bondId": "",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "——終業式。校舎の廊下に夏の光が差し込んでいた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "akari", "text": "夏休み！ ねえ、みんなで花火行かない？ 雨音の港、夜はきれいなんだよ。", "emotion": "smile", "preSilence": 0.3 },
+    { "speakerId": "ritsu", "text": "……花火。騒がしいのは苦手だ。でも——まあ、検討する。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "ren", "text": "花火くらい付き合ってやる。お前ら、夏休みも訓練は続けるんだろ。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "3人の顔を見て、あなたは思った。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yomi", "text": "（……4月に比べれば、ずいぶん遠くまで来た）", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "美月の心象世界を抜けた。律の父の言葉を届けた。蓮は祖母に「好きだよ」と言えた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "でも——街の空気は、まだ重い。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "誰かが言葉を集めている。その理由は、まだわからない。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "yomi", "text": "（……夏が終わったら、次が来る）", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "akari", "text": "——ねえ、詠くん。夏休み、楽しんでいいんだよ。", "emotion": "smile", "preSilence": 0.3 },
+    { "speakerId": "akari", "text": "ちゃんと休まないと、大事な時に力が出ないから。", "emotion": "gentle", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "灯里の言葉は軽かったが、その目は——ちゃんと、あなたを見ていた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "——第1幕が、終わる。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "言えなかった言葉たちが、まだ街のどこかで揺れている。", "emotion": "neutral", "preSilence": 1.0 }
+  ]
+}

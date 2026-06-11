@@ -23,6 +23,8 @@ namespace Amane.UI
 
         private DialogueRunner _dialogueRunner;
         private IDisposable _bondRankUpSub;
+        private IDisposable _dayChangedSub;
+        private bool _isCalendarEventDialogue;
 
         private void OnEnable()
         {
@@ -53,10 +55,13 @@ namespace Amane.UI
             if (_actionSelect != null)
                 _actionSelect.OnActionSelected += OnAction;
 
-            // 絆ランクアップイベント
+            // 絆ランクアップ + 日付変更イベント
             var gm = GameManager.Instance;
             if (gm != null)
+            {
                 _bondRankUpSub = gm.Events.Subscribe<BondRankUpEvent>(OnBondRankUp);
+                _dayChangedSub = gm.Events.Subscribe<DayChangedEvent>(OnDayChanged);
+            }
 
             _calendar?.Refresh();
             CheckCalendarEvents(gm);
@@ -78,6 +83,8 @@ namespace Amane.UI
 
             _bondRankUpSub?.Dispose();
             _bondRankUpSub = null;
+            _dayChangedSub?.Dispose();
+            _dayChangedSub = null;
         }
 
         private void Update()
@@ -313,16 +320,36 @@ namespace Amane.UI
             return dungeon;
         }
 
+        private void OnDayChanged(DayChangedEvent evt)
+        {
+            _calendar?.Refresh();
+            CheckCalendarEvents(GameManager.Instance);
+        }
+
         private void CheckCalendarEvents(GameManager gm)
         {
             if (gm == null) return;
             var pending = gm.Calendar.GetPendingEvents(gm.Time.Today);
-            foreach (var evt in pending)
-            {
-                evt.MarkTriggered();
-                gm.Events.Publish(new CalendarEventTriggered(evt.Id, evt.DisplayName, evt.Type));
-                Debug.Log($"[Event] {evt.DisplayName} ({evt.Type})");
-            }
+            if (pending.Count == 0) return;
+
+            // 複数イベントがある場合は最初の1つだけ処理（残りは翌フレームに持ち越し）
+            var evt = pending[0];
+            evt.MarkTriggered();
+            gm.Events.Publish(new CalendarEventTriggered(evt.Id, evt.DisplayName, evt.Type));
+            Debug.Log($"[Event] {evt.DisplayName} ({evt.Type})");
+
+            // 対応するダイアログJSONがあれば自動起動
+            TryStartCalendarEventDialogue(evt.Id, evt.DisplayName);
+        }
+
+        private void TryStartCalendarEventDialogue(string eventId, string displayName)
+        {
+            var data = DialogueRunner.LoadFromStreamingAssets($"event_{eventId}.json");
+            if (data == null) return;
+
+            _isCalendarEventDialogue = true;
+            _dialogueUI?.Show();
+            _dialogueRunner.Start(data);
         }
 
         private void StartBondDialogue(string bondId)
@@ -352,6 +379,14 @@ namespace Amane.UI
             var gm = GameManager.Instance;
             if (gm != null && data.bondId != null && data.bondPointsOnComplete > 0)
                 gm.Bonds.GivePoints(data.bondId, data.bondPointsOnComplete);
+
+            // CalendarEventのダイアログは時間を進めない（日付変更後に発火するため）
+            if (_isCalendarEventDialogue)
+            {
+                _isCalendarEventDialogue = false;
+                _calendar?.Refresh();
+                return;
+            }
 
             AdvanceTimeWithTransition(gm);
         }

@@ -1,0 +1,22 @@
+{
+  "id": "event_case_mizuki_start",
+  "title": "美月の心象が開く",
+  "bondId": "",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "——夜。スマホが震えた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "アプリ「未読」。誰からのメッセージでもない。\n——「残響」だ。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "画面には、名前だけが浮かんでいた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "　　長峰 美月", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "灯里のクラスメート。半年前から、学校に来ていない子。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "mizuki_echo", "text": "……助けて、って言いたかった。でも言ったら——みんな困るから。", "emotion": "broken", "preSilence": 1.2 },
+    { "speakerId": "narrator", "text": "言葉が、溢れ出している。臨界だ。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "mizuki_echo", "text": "灯里ちゃん——ねえ、気づいてた？", "emotion": "broken", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "——あの時の灯里の泣き顔が重なった。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "yomi", "text": "（……美月の心象が、未言界に開いた）", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "yomi", "text": "（このまま放っておいたら——言葉ごと、飲み込まれる）", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "アプリの画面に、日付が浮かんだ。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "　　期限——5月31日。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "時間は、ない。", "emotion": "neutral", "preSilence": 1.0 }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "event_fullmoon_jul",
+  "title": "満月——母の記憶③（消えかける声）",
+  "bondId": "",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "——7月の満月。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "narrator", "text": "港まで来ていた。水が黒く広がっている。月は変わらず、そこにある。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "記憶が来る。今月も——母の声。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "mother", "text": "詠——", "emotion": "gentle", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "声が、遠い。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "mother", "text": "……今日、早く——", "emotion": "gentle", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "台詞が、途切れた。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "yomi", "text": "（お母さん？）", "emotion": "broken", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "5月は声だけだった。6月は顔が見えなかった。7月は——台詞が消えかけている。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yomi", "text": "（誰かが、この記憶を……消そうとしている？）", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "水面に波紋が広がった。何も投げていないのに。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "港の暗闇の奥——一瞬だけ、誰かの影が見えた気がした。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "……それはあなた自身の影と、ほとんど同じ輪郭をしていた。", "emotion": "neutral", "preSilence": 1.2 }
+  ]
+}

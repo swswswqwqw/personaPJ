@@ -1,0 +1,20 @@
+{
+  "id": "event_awakening",
+  "title": "残響同調の覚醒",
+  "bondId": "",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "——転校3日目。放課後の廊下。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "生徒たちが帰っていく喧騒の中で、あなたはひとつの「声」に足を止めた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "誰も、喋っていない。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "なのに——聞こえる。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "voice", "text": "……ねえ、気づいてた？ あの日、私はずっと待ってたんだよ。", "emotion": "broken", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "それは特定の誰かの声ではなかった。声というより——後悔の「形」。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "かつて誰かが飲み込んだ言葉が、時間をこえて滲み出てくるような感覚。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "yomi", "text": "（……これが、「残響」か）", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "幼い頃から時々あった。でも今は——もっとはっきりと。もっと遠くまで届く。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "この街は、言えなかった言葉に満ちている。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "yomi", "text": "（……聴いてしまったなら、責任がある）", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "それがどんな重さを持つかも、まだ知らないまま。\n——あなたの「残響同調」が、目覚めた。", "emotion": "neutral", "preSilence": 1.0 }
+  ]
+}

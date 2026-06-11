@@ -2,7 +2,7 @@
   "id": "ren_intro",
   "title": "蓮との出会い",
   "bondId": "ren",
-  "bondPointsOnComplete": 10,
+  "bondPointsOnComplete": 100,
   "lines": [
     { "speakerId": "narrator", "text": "——校門前。制服のボタンを外した長身の男が、誰かに怒鳴っていた。", "emotion": "neutral", "preSilence": 0.5 },
     { "speakerId": "ren", "text": "おい、しっかりしろ！ 聞いてんのか！？", "emotion": "anger", "preSilence": 0.3 },
