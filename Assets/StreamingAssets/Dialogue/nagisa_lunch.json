@@ -1,0 +1,13 @@
+{
+  "id": "nagisa_lunch",
+  "title": "昼休みの渚",
+  "bondId": "nagisa",
+  "bondPointsOnComplete": 20,
+  "lines": [
+    { "speakerId": "narrator", "text": "渚は廊下の窓際で、スマホを見ながらお弁当を食べていた。画面はコメント欄。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "nagisa", "text": "……あ。", "emotion": "flat", "preSilence": 0.2 },
+    { "speakerId": "nagisa", "text": "邪魔しないでよ、返信中なんだけど。", "emotion": "flat", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "でも、スマホを伏せた。少しだけ。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "……まあ、いいけど。隣で食べれば。", "emotion": "flat", "preSilence": 0.4 }
+  ]
+}

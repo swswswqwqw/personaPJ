@@ -471,32 +471,63 @@ namespace Amane.Prototype
             SetPrivateField(calUI, "_timeSlotText", slotText);
             SetPrivateField(calUI, "_apText", apText);
 
-            // ---- ActionSelectUI (深夜専用メニュー) ----
-            // 通常フィールド行動は3Dフィールドのインタラクトで処理。
-            // このパネルは深夜時間帯に表示される「眠る / 強行潜行」の選択肢専用。
+            // ---- ActionSelectUI (深夜 + 昼休み 兼用メニュー) ----
+            // スロットによって表示ボタンが切り替わる（ActionSelectUI.Show()で制御）
             var actionPanel = MakeSubPanel(_fieldPanel.transform, "ActionPanel", new Vector2(0, -80),
-                new Vector2(260, 130), new Color(0.04f, 0.02f, 0.08f, 0.95f));
+                new Vector2(260, 290), new Color(0.04f, 0.02f, 0.08f, 0.95f));
             actionPanel.SetActive(false);
 
+            // 深夜ラベル
             var lateNightLabel = MakeText(actionPanel.transform, "── 深夜 ──", 15, TextAnchor.MiddleCenter,
-                new Vector2(0, 45), new Vector2(240, 22));
+                new Vector2(0, 126), new Vector2(240, 22));
             lateNightLabel.color = new Color(0.5f, 0.4f, 0.8f);
 
             var sleepBtn = MakeButton(actionPanel.transform, "眠る（翌朝へ）",
-                new Vector2(0, 14), new Vector2(220, 40),
+                new Vector2(0, 95), new Vector2(220, 38),
                 new Color(0.106f, 0.165f, 0.29f));
 
-            // 強行潜行ボタン（静けさ4以上で有効化）
             var midnightDiveBtn = MakeButton(actionPanel.transform, "強行潜行（翌日AP消滅）",
-                new Vector2(0, -32), new Vector2(220, 40),
+                new Vector2(0, 50), new Vector2(220, 38),
                 new Color(0.25f, 0.04f, 0.12f));
             var midnightBtnText = midnightDiveBtn.GetComponentInChildren<Text>();
             if (midnightBtnText != null) midnightBtnText.color = new Color(1f, 0.6f, 0.6f);
+
+            // 昼休みラベル
+            var lunchLabel = MakeText(actionPanel.transform, "── 昼休み ──", 15, TextAnchor.MiddleCenter,
+                new Vector2(0, 5), new Vector2(240, 22));
+            lunchLabel.color = new Color(1f, 0.85f, 0.4f);
+
+            var lunchChatBtn = MakeButton(actionPanel.transform, "キャラと話す",
+                new Vector2(0, -28), new Vector2(220, 36),
+                new Color(0.106f, 0.165f, 0.29f));
+
+            var lunchLibBtn = MakeButton(actionPanel.transform, "図書室（知性+3）",
+                new Vector2(0, -70), new Vector2(220, 36),
+                new Color(0.106f, 0.165f, 0.29f));
+
+            var lunchCanteenBtn = MakeButton(actionPanel.transform, "購買（アイテム入手・度胸+1）",
+                new Vector2(0, -112), new Vector2(220, 36),
+                new Color(0.106f, 0.165f, 0.29f));
+
+            var lunchRooftopBtn = MakeButton(actionPanel.transform, "屋上（静けさ+5）",
+                new Vector2(0, -154), new Vector2(220, 36),
+                new Color(0.04f, 0.12f, 0.20f));
+            var rooftopText = lunchRooftopBtn.GetComponentInChildren<Text>();
+            if (rooftopText != null) rooftopText.color = new Color(0.7f, 0.95f, 1f);
+
+            var lunchSkipBtn = MakeButton(actionPanel.transform, "スキップ（放課後へ）",
+                new Vector2(0, -196), new Vector2(220, 36),
+                new Color(0.08f, 0.08f, 0.08f));
 
             var actionUI = actionPanel.AddComponent<ActionSelectUI>();
             SetPrivateField(actionUI, "_panel", actionPanel);
             SetPrivateField(actionUI, "_goHomeButton", sleepBtn);
             SetPrivateField(actionUI, "_midnightDiveButton", midnightDiveBtn);
+            SetPrivateField(actionUI, "_lunchChatButton", lunchChatBtn);
+            SetPrivateField(actionUI, "_lunchLibraryButton", lunchLibBtn);
+            SetPrivateField(actionUI, "_lunchCanteenButton", lunchCanteenBtn);
+            SetPrivateField(actionUI, "_lunchRooftopButton", lunchRooftopBtn);
+            SetPrivateField(actionUI, "_lunchSkipButton", lunchSkipBtn);
 
             // ---- Dialogue UI ----
             var dialoguePanel = MakeSubPanel(_fieldPanel.transform, "DialoguePanel", new Vector2(0, -160),

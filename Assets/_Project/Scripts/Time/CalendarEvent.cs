@@ -67,6 +67,7 @@ namespace Amane.Time
             Register(new CalendarEvent("case_mizuki_start", "美月の心象が開く", CalendarEventType.NewCase, new GameDate(31)));
             Register(new CalendarEvent("midterm_june", "中間テスト", CalendarEventType.ExamPeriod, new GameDate(70)));
             Register(new CalendarEvent("fullmoon_jun", "満月——母の記憶②", CalendarEventType.FullMoon, new GameDate(76)));
+            Register(new CalendarEvent("yakumo_opening", "古書店「言ノ葉」——八雲との出会い", CalendarEventType.StoryBeat, new GameDate(65)));
             Register(new CalendarEvent("case_ritsu_start", "律の事件発生", CalendarEventType.NewCase, new GameDate(62)));
             Register(new CalendarEvent("case_ren_start", "蓮の事件発生", CalendarEventType.NewCase, new GameDate(92)));
             Register(new CalendarEvent("fullmoon_jul", "満月——母の記憶③", CalendarEventType.FullMoon, new GameDate(107)));

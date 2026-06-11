@@ -1,0 +1,32 @@
+{
+  "id": "nagisa_rank3",
+  "title": "切れた電源",
+  "bondId": "nagisa",
+  "bondPointsOnComplete": 90,
+  "lines": [
+    { "speakerId": "narrator", "text": "珍しく、渚が配信を早めに終えた日。機材トラブルで突然切れたらしい。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "電源、落ちたの。配信中に。最悪でしょ。", "emotion": "flat", "preSilence": 0.3 },
+    { "speakerId": "nagisa", "text": "……でも。", "emotion": "flat", "preSilence": 0.8 },
+    { "speakerId": "nagisa", "text": "「よかった」って思った。一瞬だけ。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "渚は自分の言葉に少し驚いたようだった。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "nagisa", "text": "やばいよね。ファンに申し訳ないのに、なんで「よかった」なんだろ。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "疲れてるのかな。わかんない。", "emotion": "soft", "preSilence": 0.5 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 6,
+      "options": [
+        { "text": "今日は、休んでいいんじゃないかな", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "「よかった」って思うのは普通だよ", "requiredStat": "Empathy", "requiredRank": 2, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "ファンが心配してるんじゃない？", "requiredStat": "", "requiredRank": 0, "bondBonus": 5, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "nagisa", "text": "……休んでいい。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "誰かに言われたの、初めてかも。", "emotion": "soft", "preSilence": 0.7 },
+    { "speakerId": "narrator", "text": "渚は窓の外を見た。雨音市の空が、薄く霞んでいる。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "nagisa", "text": "……今日はいいや。配信。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "たまには。", "emotion": "soft", "preSilence": 0.6 }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "nagisa_rank4",
+  "title": "素顔の3分",
+  "bondId": "nagisa",
+  "bondPointsOnComplete": 100,
+  "lines": [
+    { "speakerId": "narrator", "text": "配信を終えた渚が機材を片付けていた。カメラの電源ランプは消えている。気づいていない。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "あー、疲れた。もう腹減ったし、肩痛いし……", "emotion": "flat", "preSilence": 0.3 },
+    { "speakerId": "nagisa", "text": "て、なんで笑ってんの私。全然おもしろくないのに。", "emotion": "flat", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "渚は机に頬杖をついて、窓の外を眺めている。笑顔じゃない。でも、暗くもない。ただ、疲れた17歳の顔。", "emotion": "neutral", "preSilence": 0.7 },
+    { "speakerId": "nagisa", "text": "……あ。", "emotion": "alert", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "渚がカメラのランプに気づいた。消えている。主人公を見る。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "……見てた？", "emotion": "alert", "preSilence": 0.4 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 6,
+      "options": [
+        { "text": "「その顔のほうが好きだ」", "requiredStat": "Courage", "requiredRank": 2, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "見てたけど、悪くなかったよ", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "（何も言わない）", "requiredStat": "", "requiredRank": 0, "bondBonus": 10, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "nagisa", "text": "……っ。うるさい。", "emotion": "flat", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "渚は顔を背けた。でも、さっきとは違う。耳が少し赤い。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "nagisa", "text": "……アーカイブ、消してないの。あの3分。", "emotion": "soft", "preSilence": 0.7 },
+    { "speakerId": "nagisa", "text": "限定公開。誰にも言ってない。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "でも、消せなかった。なんか。", "emotion": "soft", "preSilence": 0.6 }
+  ]
+}

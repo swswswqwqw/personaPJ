@@ -1,0 +1,34 @@
+{
+  "id": "nagisa_rank5",
+  "title": "言いたいこと",
+  "bondId": "nagisa",
+  "bondPointsOnComplete": 110,
+  "lines": [
+    { "speakerId": "narrator", "text": "渚が深刻な顔で座っていた。スマホも触っていない。珍しい。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "……ねえ。昨日、配信中にさ。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "「疲れた」って言いかけた。マイクの前で。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "〈未読〉が静かに震えた——渚の言葉が、ずっと喉に詰まっている。", "emotion": "neutral", "preSilence": 0.7 },
+    { "speakerId": "nagisa", "text": "言えなかった。「あ、えーと、でも楽しいよ！」ってごまかした。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "コメントが「今日も可愛い〜」って流れて。また笑った。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "……でも、言いたかった。", "emotion": "soft", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 6,
+      "options": [
+        { "text": "いつか言えると思う", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "ここで言ってみればいい", "requiredStat": "Expression", "requiredRank": 2, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "（ただ隣にいる）", "requiredStat": "", "requiredRank": 0, "bondBonus": 15, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "nagisa", "text": "……ここで？", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "渚は少し考えて、小さく息を吸った。", "emotion": "neutral", "preSilence": 0.7 },
+    { "speakerId": "nagisa", "text": "……疲れた。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "静かな声だった。配信の声とも、普段のトーンとも違う。ただ、本当のことを言った声。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "nagisa", "text": "……なんか、すっきりした。ちょっとだけ。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "いつか。配信でも言えるようになったら……見てて。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "渚が初めて、笑顔じゃない顔で笑った。少し照れたような、苦笑い。", "emotion": "neutral", "preSilence": 0.9 }
+  ]
+}

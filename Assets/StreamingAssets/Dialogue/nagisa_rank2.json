@@ -1,0 +1,31 @@
+{
+  "id": "nagisa_rank2",
+  "title": "数字の重力",
+  "bondId": "nagisa",
+  "bondPointsOnComplete": 80,
+  "lines": [
+    { "speakerId": "narrator", "text": "放課後。渚は窓際の席でスマホを眺めていた。いつもと少し違う。目が動いていない。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "……先週より三千人、減った。", "emotion": "flat", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "別に。ただの数字。", "emotion": "flat", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "声が少し低かった。「ただの数字」という言葉を、言い聞かせているように聞こえた。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "nagisa", "text": "今夜はもっと長く配信する。もっと笑う。それだけ。", "emotion": "flat", "preSilence": 0.3 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 4,
+      "options": [
+        { "text": "「笑う」って、今も笑いたくて笑ってるの？", "requiredStat": "Empathy", "requiredRank": 1, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "三千人、そんなに気になるの？", "requiredStat": "", "requiredRank": 0, "bondBonus": 10, "jumpToDialogueId": "" },
+        { "text": "（黙って座る）", "requiredStat": "", "requiredRank": 0, "bondBonus": 5, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "nagisa", "text": "……笑いたくて笑ってる。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "……そう思ってた。昔は。", "emotion": "flat", "preSilence": 0.7 },
+    { "speakerId": "narrator", "text": "渚はスマホの画面を伏せた。長い沈黙。", "emotion": "neutral", "preSilence": 0.9 },
+    { "speakerId": "nagisa", "text": "昔は、面白いことを見つけたら配信してた。好きだから。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "今は……数字が下がると怖いから配信してる。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "どっちが本物なんだろう。", "emotion": "soft", "preSilence": 0.8 }
+  ]
+}

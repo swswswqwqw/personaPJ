@@ -6,6 +6,7 @@ using Amane.Dialogue;
 using Amane.UI.Effects;
 using Amane.Field;
 using Amane.Echo;
+using Amane.Data;
 using System;
 using System.Collections.Generic;
 
@@ -325,6 +326,18 @@ namespace Amane.UI
                     // 昼休み: 何もしない（放課後へスキップ）
                     AdvanceTimeWithTransition(gm);
                     break;
+
+                case FieldAction.LunchCanteen:
+                    // 昼休み: 購買（消耗品入手 + 度胸+1）
+                    if (gm.Time.UseLunch())
+                        DoLunchCanteen(gm);
+                    break;
+
+                case FieldAction.LunchRooftop:
+                    // 昼休み: 屋上（静けさ+5 + 演出テキスト）
+                    if (gm.Time.UseLunch())
+                        DoLunchRooftop(gm);
+                    break;
             }
         }
 
@@ -343,6 +356,47 @@ namespace Amane.UI
                 AdvanceTimeWithTransition(gm);
                 return;
             }
+            _dialogueUI?.Show();
+            _dialogueRunner.Start(data);
+        }
+
+        private void DoLunchCanteen(GameManager gm)
+        {
+            // 購買アイテム: 薬草茶（HP30回復）を1個付与
+            var tea = ScriptableObject.CreateInstance<ItemData>();
+            tea.itemName = "薬草茶";
+            tea.description = "購買で売っている、体に良さそうなお茶。HP30回復。";
+            tea.category = ItemCategory.Consumable;
+            tea.effect = ItemEffect.HealHP;
+            tea.effectValue = 30;
+            tea.buyPrice = 150;
+            InventoryManager.Instance?.AddItem(tea, 1);
+
+            gm.Stats.Add(InnerStat.Courage, 1);
+            Debug.Log("[Lunch] 購買で薬草茶を買った。HP+30アイテム入手 / 度胸+1");
+            AdvanceTimeWithTransition(gm);
+        }
+
+        private void DoLunchRooftop(GameManager gm)
+        {
+            gm.Stats.Add(InnerStat.Composure, 5);
+
+            // 屋上の情景をダイアログ演出で表示
+            var data = new DialogueData
+            {
+                id = "lunch_rooftop",
+                title = "屋上",
+                bondId = "",
+                bondPointsOnComplete = 0,
+                lines = new List<DialogueLine>
+                {
+                    new() { speakerId = "narrator", text = "屋上。授業中はひとの来ない場所。", emotion = "neutral", preSilence = 0.3 },
+                    new() { speakerId = "narrator", text = "霧に滲む雨音市が眼下に広がる。水路が光の帯になって、街の中を流れている。", emotion = "neutral", preSilence = 0.6 },
+                    new() { speakerId = "narrator", text = "風の音だけがある。言葉は要らない。", emotion = "neutral", preSilence = 0.8 },
+                    new() { speakerId = "narrator", text = "——静けさが、少しだけ深くなった気がした。", emotion = "neutral", preSilence = 0.5 }
+                }
+            };
+            Debug.Log("[Lunch] 屋上でひとり過ごした。静けさ+5");
             _dialogueUI?.Show();
             _dialogueRunner.Start(data);
         }
@@ -457,11 +511,20 @@ namespace Amane.UI
         {
             _calendar?.Refresh();
 
-            // 深夜になったら「眠る / 強行潜行」メニューを表示（DESIGN.md 9-2）
-            if (evt.Slot != TimeSlot.LateNight) return;
-
             var gm = GameManager.Instance;
             if (gm == null) return;
+
+            // 昼休みになったら昼休みメニューを表示（DESIGN.md 9-2: 昼休み行動枠）
+            if (evt.Slot == TimeSlot.Lunch)
+            {
+                bool lunchUsed = gm.Time.LunchUsed;
+                _actionSelect?.Show(TimeSlot.Lunch, 0, lunchUsed, false);
+                Debug.Log($"[Lunch] 昼休みメニュー表示。使用済み: {lunchUsed}");
+                return;
+            }
+
+            // 深夜になったら「眠る / 強行潜行」メニューを表示（DESIGN.md 9-2）
+            if (evt.Slot != TimeSlot.LateNight) return;
 
             bool midnightUnlocked = gm.Stats.Meets(InnerStat.Composure, TimeManager.MidnightDiveComposureRank);
 

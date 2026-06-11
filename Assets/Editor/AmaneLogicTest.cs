@@ -6,6 +6,7 @@ using Amane.Battle;
 using Amane.Social;
 using Amane.Stat;
 using Amane.Dialogue;
+using Amane.UI;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -378,6 +379,24 @@ public static class AmaneLogicTest
             new List<Combatant> { poorEnemy });
         spoorBattle.ExecuteAction(poorAction);
         Assert(poorHero.Sp == 5, "SP不足時フォールバック: SPは消費されない（通常攻撃に切替）");
+
+        // --- 渚/八雲 JSON ロード確認 ---
+        Debug.Log("\n[NagisaYakumo JSON]");
+        var nagisaRank2 = DialogueRunner.LoadFromStreamingAssets("nagisa_rank2.json");
+        Assert(nagisaRank2 != null, "nagisa_rank2.json 読み込み成功");
+        Assert(nagisaRank2?.lines?.Count >= 5, "nagisa_rank2: linesが5件以上");
+        Assert(nagisaRank2?.choices?.Count > 0, "nagisa_rank2: choicesあり");
+        var nagisaRank5 = DialogueRunner.LoadFromStreamingAssets("nagisa_rank5.json");
+        Assert(nagisaRank5 != null, "nagisa_rank5.json 読み込み成功");
+        Assert(nagisaRank5?.postChoiceLines?.Count >= 5, "nagisa_rank5: postChoiceLines（素の笑顔まで）5件以上");
+        var yakumoIntro = DialogueRunner.LoadFromStreamingAssets("yakumo_intro.json");
+        Assert(yakumoIntro != null, "yakumo_intro.json 読み込み成功");
+        Assert(yakumoIntro?.bondId == "yakumo", "yakumo_intro: bondId=yakumo");
+
+        // --- 昼休み拡張アクション ---
+        Debug.Log("\n[Lunch拡張: LunchCanteen/LunchRooftop]");
+        Assert(System.Enum.IsDefined(typeof(Amane.UI.FieldAction), "LunchCanteen"), "FieldAction.LunchCanteen 定義あり");
+        Assert(System.Enum.IsDefined(typeof(Amane.UI.FieldAction), "LunchRooftop"), "FieldAction.LunchRooftop 定義あり");
 
         // Summary ---
         Debug.Log($"\n===== 結果: {passed} passed / {failed} failed =====");

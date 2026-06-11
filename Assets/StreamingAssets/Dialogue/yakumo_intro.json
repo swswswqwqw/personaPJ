@@ -1,0 +1,36 @@
+{
+  "id": "yakumo_intro",
+  "title": "言ノ葉の番人",
+  "bondId": "yakumo",
+  "bondPointsOnComplete": 70,
+  "lines": [
+    { "speakerId": "narrator", "text": "水路沿いの路地裏。古ぼけた暖簾に「言ノ葉」と書かれた書店。梅雨の雨粒が軒先で弾ける。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "背を曲げた老人が、高い棚の本を一冊一冊丁寧に並べ直している。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "yakumo", "text": "……いらっしゃい。", "emotion": "flat", "preSilence": 0.3 },
+    { "speakerId": "yakumo", "text": "ここに来る若いもんは少ないよ。何を探しとる？", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "老人は振り返らずに問う。棚と会話しているようにも見える。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "yakumo", "text": "……ほう。", "emotion": "flat", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "老人はやっとこちらを向いた。白い眉の下、細い目が主人公を静かに見定める。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "yakumo", "text": "語り手を扱える子か。久しぶりじゃ。", "emotion": "flat", "preSilence": 0.4 },
+    { "speakerId": "yakumo", "text": "わしは八雲という。ここで長いこと言葉の番をしておる。", "emotion": "neutral", "preSilence": 0.4 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 8,
+      "options": [
+        { "text": "「語り手を扱える」ってわかるんですか？", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "言葉の番？", "requiredStat": "Intellect", "requiredRank": 1, "bondBonus": 15, "jumpToDialogueId": "" },
+        { "text": "（聞いている）", "requiredStat": "", "requiredRank": 0, "bondBonus": 10, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "yakumo", "text": "においがする。言いそびれた言葉の重みというのは、そういうもんじゃ。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "yakumo", "text": "……お前さんは、随分と重いものを抱えておるな。", "emotion": "flat", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "八雲は棚から一冊の古い本を抜き出した。表紙に文字はない。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "yakumo", "text": "語り手というのはな。組み合わせると、新しい意味が生まれる。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "yakumo", "text": "一つの声では届かなかった言葉が、二つが重なることで、届くようになることがある。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "yakumo", "text": "焦らんでいい。言葉はここで待っておる。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "雨の音。本の紙の匂い。八雲は静かに棚へ戻っていった。", "emotion": "neutral", "preSilence": 0.8 }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "event_yakumo_opening",
+  "title": "古書店「言ノ葉」",
+  "bondId": "",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "6月。雨が続く季節。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "水路沿いの路地を歩いていると、ずっと閉まっていたはずの古書店の暖簾が、静かにかかっていた。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "「言ノ葉」——その文字が、雨に濡れて滲んでいる。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "〈未読〉が、かすかに反応した。この場所には、長い時間が積もっている。", "emotion": "neutral", "preSilence": 0.7 },
+    { "speakerId": "narrator", "text": "——古書店「言ノ葉」が解放された。語り手の融合はここで行える。", "emotion": "neutral", "preSilence": 0.5 }
+  ]
+}
