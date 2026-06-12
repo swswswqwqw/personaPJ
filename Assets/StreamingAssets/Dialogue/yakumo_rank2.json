@@ -1,0 +1,31 @@
+{
+  "id": "yakumo_rank2",
+  "title": "常連客",
+  "bondId": "yakumo",
+  "bondPointsOnComplete": 80,
+  "lines": [
+    { "speakerId": "narrator", "text": "水路沿いの路地裏。「言ノ葉」の暖簾をまた潜る。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "八雲老人が小さな鉄瓶でお茶を注いでいた。入ってきた主人公を一瞥して、黙ってもう一つ湯呑を出した。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "yakumo", "text": "……また来たか。", "emotion": "flat", "preSilence": 0.4 },
+    { "speakerId": "yakumo", "text": "ジンジャーを入れてある。体に良い。", "emotion": "flat", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "茶は驚くほど熱かった。ジンジャーの香りが、雨の匂いと混じる。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "yakumo", "text": "……妻が好きでなあ。よく入れとった。", "emotion": "flat", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "老人はそれだけ言って、また棚の整理を始めた。何気ない一言だった——でも、引っかかった。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "八雲は背を向けたまま、静かに本を並べていた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "……なんじゃ。言いたいことがあるなら言え。ここでは言葉を惜しむな。", "emotion": "flat", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "老人は振り返らずに言った。雨の音だけが続く。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "……そうか。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "yakumo", "text": "まあ、また来い。茶は毎日入れとる。", "emotion": "flat", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "老人は何も付け加えなかった。でも——拒まなかった。", "emotion": "neutral", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 7,
+      "options": [
+        { "text": "「お茶、美味しいです」", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "「奥さんの話、また聞かせてください」", "requiredStat": "Empathy", "requiredRank": 1, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "（黙ってお茶を飲む）", "requiredStat": "Composure", "requiredRank": 1, "bondBonus": 40, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

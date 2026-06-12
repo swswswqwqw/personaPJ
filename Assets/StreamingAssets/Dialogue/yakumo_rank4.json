@@ -1,0 +1,37 @@
+{
+  "id": "yakumo_rank4",
+  "title": "閉店後の灯り",
+  "bondId": "yakumo",
+  "bondPointsOnComplete": 90,
+  "lines": [
+    { "speakerId": "narrator", "text": "夜。水路沿いの道を歩いていると、閉まったはずの「言ノ葉」に灯りが見えた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "引き戸をそっと開けると——老人の声がした。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "yakumo", "text": "……今日も来た子がおった。幸代。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "yakumo", "text": "語り手を扱える子じゃ。お前さんが好きそうな顔をしとる。", "emotion": "flat", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "八雲は棚を向いたまま、誰かに話しかけていた。振り返らずに続ける。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "老人は初めからわかっていたようだった。引き戸が開いた気配を、ずっと感じていた。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "yakumo", "text": "はいってこい。", "emotion": "flat", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "振り返らずに、そう言った。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "yakumo", "text": "盗み聞きしたか。", "emotion": "flat", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "怒っていない。——むしろ、少し安堵しているように見えた。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "yakumo", "text": "……妻じゃ。幸代という。3年前に逝った。", "emotion": "flat", "preSilence": 1.2 },
+    { "speakerId": "yakumo", "text": "ここで50年、いっしょに本を並べた。今も、並べとる。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "老人はそっと棚の背表紙を一本、指先で撫でた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "話しかけるのが癖になってしもうてな。……おかしいじゃろ？", "emotion": "flat", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "雨の音だけがある。老人は答えを待っていた——おかしいと言ってほしいのか、そうでないのかは、わからなかった。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "yakumo", "text": "……そうじゃな。", "emotion": "flat", "preSilence": 1.0 },
+    { "speakerId": "yakumo", "text": "わしが言葉に不器用だから、幸代はいつも先に言うてくれた。\nわしは……ただ受け取るだけじゃった。", "emotion": "flat", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "老人は言いかけて、止まった。雨が、少し強くなった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "今夜は遅い。帰れ。", "emotion": "flat", "preSilence": 0.4 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 13,
+      "options": [
+        { "text": "「おかしくないです」", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "「……ここにいるんでしょう、奥さん」", "requiredStat": "Composure", "requiredRank": 3, "bondBonus": 42, "jumpToDialogueId": "" },
+        { "text": "「寂しいですね」", "requiredStat": "Empathy", "requiredRank": 2, "bondBonus": 30, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

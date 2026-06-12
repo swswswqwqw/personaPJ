@@ -81,6 +81,10 @@ namespace Amane.Field
                 new Color(0.3f, 0.4f, 0.7f)));
             result.NPCs.Add(CreateNPC(root.transform, "ren", "蓮", new Vector3(5, 0, -12),
                 new Color(0.8f, 0.25f, 0.25f)));
+            result.NPCs.Add(CreateNPC(root.transform, "yakumo", "八雲", new Vector3(22, 0, 13),
+                new Color(0.7f, 0.6f, 0.45f)));
+            result.NPCs.Add(CreateNPC(root.transform, "nagisa", "渚", new Vector3(-5, 0, -8),
+                new Color(0.6f, 0.4f, 0.8f)));
 
             // ---- プレイヤー ----
             result.Player = CreatePlayer(root.transform);
@@ -106,16 +110,16 @@ namespace Amane.Field
             var obj = GameObject.CreatePrimitive(PrimitiveType.Capsule);
             obj.name = "Player_Yomi";
             obj.transform.SetParent(parent);
-            obj.transform.position = new Vector3(0, 1, 0);
-            obj.transform.localScale = new Vector3(0.8f, 1f, 0.8f);
+            obj.transform.position = new Vector3(0, 0.9f, 0);
+            obj.transform.localScale = new Vector3(0.35f, 0.9f, 0.35f); // リアルな等身: 細身 (1.8m相当)
             SetColor(obj, Pink);
 
             // 頭部（球）
             var head = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             head.name = "Head";
             head.transform.SetParent(obj.transform);
-            head.transform.localPosition = new Vector3(0, 0.8f, 0);
-            head.transform.localScale = new Vector3(0.7f, 0.5f, 0.7f);
+            head.transform.localPosition = new Vector3(0, 0.95f, 0);
+            head.transform.localScale = new Vector3(0.75f, 0.35f, 0.75f); // 頭身比率の調整
             SetColor(head, new Color(0.95f, 0.85f, 0.75f)); // 肌色
             Object.Destroy(head.GetComponent<Collider>());
 
@@ -136,16 +140,16 @@ namespace Amane.Field
             var obj = GameObject.CreatePrimitive(PrimitiveType.Capsule);
             obj.name = $"NPC_{id}";
             obj.transform.SetParent(parent);
-            obj.transform.position = position + new Vector3(0, 1, 0);
-            obj.transform.localScale = new Vector3(0.7f, 0.9f, 0.7f);
+            obj.transform.position = position + new Vector3(0, 0.85f, 0);
+            obj.transform.localScale = new Vector3(0.35f, 0.85f, 0.35f);
             SetColor(obj, color);
 
             // 頭
             var head = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             head.name = "Head";
             head.transform.SetParent(obj.transform);
-            head.transform.localPosition = new Vector3(0, 0.8f, 0);
-            head.transform.localScale = new Vector3(0.65f, 0.5f, 0.65f);
+            head.transform.localPosition = new Vector3(0, 0.95f, 0);
+            head.transform.localScale = new Vector3(0.75f, 0.35f, 0.75f);
             SetColor(head, new Color(0.95f, 0.85f, 0.75f));
             Object.Destroy(head.GetComponent<Collider>());
 
@@ -157,8 +161,8 @@ namespace Amane.Field
 
             // NPCはゆっくり浮遊アニメーション
             var anim = obj.AddComponent<FloatAnimation>();
-            anim.Amplitude = 0.1f;
-            anim.Speed = 1.5f;
+            anim.Amplitude = 0.05f;
+            anim.Speed = 1.2f;
 
             return npc;
         }
@@ -318,29 +322,54 @@ namespace Amane.Field
         {
             if (_cachedShader != null) return _cachedShader;
 
-            // Unity 6 + URP で利用可能なシェーダーを優先順に探す
-            string[] candidates = new[]
-            {
-                "Universal Render Pipeline/Lit",
-                "Universal Render Pipeline/Simple Lit",
-                "Universal Render Pipeline/Unlit",
-                "Sprites/Default",    // URP互換の安全なフォールバック
-                "UI/Default",         // 最終フォールバック
-            };
+            // Unity 6: アクティブなレンダーパイプラインを確認
+            bool isURP = UnityEngine.Rendering.GraphicsSettings.defaultRenderPipeline != null;
 
-            foreach (var name in candidates)
+            if (isURP)
             {
-                var s = Shader.Find(name);
-                if (s != null)
+                string[] candidates = new[]
                 {
-                    Debug.Log($"[Field3D] Using shader: {name}");
-                    _cachedShader = s;
-                    return s;
+                    "Universal Render Pipeline/Lit",
+                    "Universal Render Pipeline/Simple Lit",
+                    "Universal Render Pipeline/Unlit",
+                    "Sprites/Default"
+                };
+
+                foreach (var name in candidates)
+                {
+                    var s = Shader.Find(name);
+                    if (s != null)
+                    {
+                        Debug.Log($"[Field3D] Using URP shader: {name}");
+                        _cachedShader = s;
+                        return s;
+                    }
+                }
+            }
+            else
+            {
+                // Built-in パイプライン用
+                string[] candidates = new[]
+                {
+                    "Standard",
+                    "Legacy Shaders/Diffuse",
+                    "Sprites/Default",
+                    "UI/Default"
+                };
+
+                foreach (var name in candidates)
+                {
+                    var s = Shader.Find(name);
+                    if (s != null)
+                    {
+                        Debug.Log($"[Field3D] Using Built-in shader: {name}");
+                        _cachedShader = s;
+                        return s;
+                    }
                 }
             }
 
-            // 最終手段: Standard（URPではピンクになるが、nullよりはマシ）
-            Debug.LogWarning("[Field3D] No URP shader found, falling back to Standard (may render pink)");
+            Debug.LogWarning("[Field3D] No suitable shader found, picking Standard");
             _cachedShader = Shader.Find("Standard");
             return _cachedShader;
         }
@@ -353,16 +382,15 @@ namespace Amane.Field
                 var shader = FindURPShader();
                 var mat = new Material(shader);
 
-                // URP Lit は _BaseColor, Simple Lit / Unlit も _BaseColor
-                // Sprites/Default は _Color
+                // URP Lit/Unlit と Standard の両方に対応
                 if (mat.HasProperty("_BaseColor"))
                     mat.SetColor("_BaseColor", color);
-                else
-                    mat.color = color;
+                else if (mat.HasProperty("_Color"))
+                    mat.SetColor("_Color", color);
 
                 if (color.a < 1f)
                 {
-                    // URP Lit の透過設定
+                    // URP の透過設定
                     if (mat.HasProperty("_Surface"))
                     {
                         mat.SetFloat("_Surface", 1); // Transparent
@@ -375,9 +403,16 @@ namespace Amane.Field
                         mat.EnableKeyword("_ALPHABLEND_ON");
                         mat.renderQueue = 3000;
                     }
-                    else
+                    else if (mat.shader.name == "Standard")
                     {
-                        // Sprites/Default等は自動で透過サポート
+                        // Standard Shader の透過設定
+                        mat.SetFloat("_Mode", 3); // Transparent
+                        mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+                        mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+                        mat.SetInt("_ZWrite", 0);
+                        mat.DisableKeyword("_ALPHATEST_ON");
+                        mat.EnableKeyword("_ALPHABLEND_ON");
+                        mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
                         mat.renderQueue = 3000;
                     }
                 }

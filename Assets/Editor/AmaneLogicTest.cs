@@ -393,10 +393,32 @@ public static class AmaneLogicTest
         Assert(yakumoIntro != null, "yakumo_intro.json 読み込み成功");
         Assert(yakumoIntro?.bondId == "yakumo", "yakumo_intro: bondId=yakumo");
 
+        // --- 八雲コープ JSON 読み込み確認 ---
+        Debug.Log("\n[YakumoKotodate JSON rank2-10]");
+        var yakumoRank2 = DialogueRunner.LoadFromStreamingAssets("yakumo_rank2.json");
+        Assert(yakumoRank2 != null, "yakumo_rank2.json 読み込み成功");
+        Assert(yakumoRank2?.bondId == "yakumo", "yakumo_rank2: bondId=yakumo");
+        Assert(yakumoRank2?.choices?.Count > 0, "yakumo_rank2: choicesあり");
+        var yakumoRank5 = DialogueRunner.LoadFromStreamingAssets("yakumo_rank5.json");
+        Assert(yakumoRank5 != null, "yakumo_rank5.json 読み込み成功");
+        Assert(yakumoRank5?.lines?.Count >= 10, "yakumo_rank5: lines 10件以上（傷の核心）");
+        var yakumoRank9 = DialogueRunner.LoadFromStreamingAssets("yakumo_rank9.json");
+        Assert(yakumoRank9 != null, "yakumo_rank9.json 読み込み成功");
+        var yakumoRank10 = DialogueRunner.LoadFromStreamingAssets("yakumo_rank10.json");
+        Assert(yakumoRank10 != null, "yakumo_rank10.json 読み込み成功");
+        Assert(yakumoRank10?.bondPointsOnComplete == 0, "yakumo_rank10: bondPointsOnComplete=0（感情体験優先）");
+        var yakumoRank1 = DialogueRunner.LoadFromStreamingAssets("yakumo_rank1.json");
+        Assert(yakumoRank1 != null, "yakumo_rank1.json 読み込み成功");
+        Assert(yakumoRank1?.lines?.Count >= 10, "yakumo_rank1: lines 10件以上（言葉の重さ講話）");
+        Assert(yakumoRank1?.choices?.Count > 0, "yakumo_rank1: choicesあり");
+        var yakumoLunch = DialogueRunner.LoadFromStreamingAssets("yakumo_lunch.json");
+        Assert(yakumoLunch != null, "yakumo_lunch.json 読み込み成功");
+
         // --- 昼休み拡張アクション ---
-        Debug.Log("\n[Lunch拡張: LunchCanteen/LunchRooftop]");
+        Debug.Log("\n[Lunch拡張: LunchCanteen/LunchRooftop/LunchHealthRoom]");
         Assert(System.Enum.IsDefined(typeof(Amane.UI.FieldAction), "LunchCanteen"), "FieldAction.LunchCanteen 定義あり");
         Assert(System.Enum.IsDefined(typeof(Amane.UI.FieldAction), "LunchRooftop"), "FieldAction.LunchRooftop 定義あり");
+        Assert(System.Enum.IsDefined(typeof(Amane.UI.FieldAction), "LunchHealthRoom"), "FieldAction.LunchHealthRoom 定義あり（保健室・佳乃導線）");
 
         // Summary ---
         Debug.Log($"\n===== 結果: {passed} passed / {failed} failed =====");

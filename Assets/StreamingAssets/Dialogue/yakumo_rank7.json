@@ -1,0 +1,33 @@
+{
+  "id": "yakumo_rank7",
+  "title": "日記を開く前に",
+  "bondId": "yakumo",
+  "bondPointsOnComplete": 110,
+  "lines": [
+    { "speakerId": "narrator", "text": "夕方。「言ノ葉」に入ると、八雲老人が珍しく店の真ん中に立っていた。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "手に、あの背向きの本を持っていた。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "yakumo", "text": "……ちょうど良かった。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "老人はそう言って、本を胸に抱えたまま立っていた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "yakumo", "text": "お前さんに、頼みがある。", "emotion": "flat", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "これを……読んでくれんか。", "emotion": "flat", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "老人は本を差し出した。薄い冊子——日記のようだった。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "yakumo", "text": "わしには……字が滲んで、読めない。", "emotion": "flat", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "八雲の目が、かすかに潤んでいた。老人はそれを隠すように、視線を落とした。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "3年、開けられんかった。", "emotion": "flat", "preSilence": 1.2 },
+    { "speakerId": "yakumo", "text": "今日、お前さんが来たから——今日じゃないと、また開けられんと思った。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "日記の表紙には、「八雲へ」という文字があった。幸代の筆跡だった。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "八雲は静かに待っていた。受け取ってもらえるかどうか——確信がないまま、待っていた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "yakumo", "text": "……嫌なら、構わん。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "老人の手が、かすかに震えていた。", "emotion": "neutral", "preSilence": 1.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 11,
+      "options": [
+        { "text": "（受け取る）", "requiredStat": "", "requiredRank": 0, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "「一緒に読みます」", "requiredStat": "Empathy", "requiredRank": 4, "bondBonus": 42, "jumpToDialogueId": "" },
+        { "text": "「開く準備ができたときに、呼んでください」", "requiredStat": "Composure", "requiredRank": 4, "bondBonus": 35, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

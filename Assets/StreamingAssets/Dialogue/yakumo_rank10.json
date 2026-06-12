@@ -1,0 +1,33 @@
+{
+  "id": "yakumo_rank10",
+  "title": "最後の言伝 — 八雲",
+  "bondId": "yakumo",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "「言ノ葉」。八雲老人が、珍しく入口の前に立って待っていた。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "yakumo", "text": "……来るとわかっとった。", "emotion": "flat", "preSilence": 0.4 },
+    { "speakerId": "yakumo", "text": "お前さんに、渡すものがある。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "老人は奥から、古い布に包んだ小さな仮面を取り出した。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "yakumo", "text": "わしが長い年月かけて、言葉の番をしてきた証じゃ。\nこれからは——お前さんが引き継いでくれ。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "語り手の仮面——語り手融合の費用が、半額になる力が宿っているという。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "yakumo", "text": "言葉は、組み合わせるほど遠くまで届く。\nわしが届かせられなかった分まで、お前さんが届かせてくれ。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "主人公は仮面を受け取った。重かった——50年分の、想いの重さがあった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "……最後に、一つだけ言っておく。", "emotion": "flat", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "老人が主人公の目を、まっすぐに見た。それは初めてのことだった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "言葉は墓には届かん。だが、生きとる者には、まだ届く。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "yakumo", "text": "早う言え。手遅れになる前に。", "emotion": "neutral", "preSilence": 2.0 },
+    { "speakerId": "narrator", "text": "雨の音。老人の白い眉の下、細い目が——初めて、笑っていた。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "yakumo", "text": "……まあ、また来い。茶は毎日入れとる。", "emotion": "flat", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "「言伝 — 八雲」が完成した。\n語り手融合の費用が、永久に半額になった。", "emotion": "neutral", "preSilence": 1.2 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 10,
+      "options": [
+        { "text": "「必ず届けます」", "requiredStat": "", "requiredRank": 0, "bondBonus": 0, "jumpToDialogueId": "" },
+        { "text": "「八雲さんの分も、言います」", "requiredStat": "Courage", "requiredRank": 5, "bondBonus": 0, "jumpToDialogueId": "" },
+        { "text": "（深く頷く）", "requiredStat": "Composure", "requiredRank": 5, "bondBonus": 0, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

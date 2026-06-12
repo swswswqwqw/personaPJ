@@ -1,0 +1,34 @@
+{
+  "id": "yakumo_rank9",
+  "title": "声に出す",
+  "bondId": "yakumo",
+  "bondPointsOnComplete": 120,
+  "lines": [
+    { "speakerId": "narrator", "text": "数日後。「言ノ葉」。八雲老人は棚の前に立っていた。いつもと違う——何かを決めたような、背中をしていた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "yakumo", "text": "……来てくれたか。", "emotion": "flat", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "老人は振り返らずに言った。雨が窓を叩いている。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "yakumo", "text": "幸代の日記を、一晩かけて読んだ。", "emotion": "flat", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "全部、書いてあった。わしが言えなかった分まで——全部、先に書いてくれとった。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "yakumo", "text": "……それで、気づいた。", "emotion": "flat", "preSilence": 1.0 },
+    { "speakerId": "yakumo", "text": "受け取るだけじゃ、足りんかった。わしも、声に出すべきじゃった。", "emotion": "neutral", "preSilence": 1.2 },
+    { "speakerId": "narrator", "text": "八雲は棚に向かったまま、しばらく沈黙した。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "yakumo", "text": "……愛しとった。", "emotion": "flat", "preSilence": 2.0 },
+    { "speakerId": "narrator", "text": "静かな声だった。棚に向かって——幸代に向かって、言った。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "yakumo", "text": "……声に出すと、こんなに、ほどけるんじゃな。", "emotion": "flat", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "老人がゆっくり振り返った。目が赤かった。隠そうとしていなかった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "言葉は墓には届かん。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "だが——声に出すと、心の奥で何かが届く。\n届かないと思っとった言葉が、自分の中で、ほどける。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "老人と目が合った。主人公は何も言えなかった。それで良かった。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "yakumo", "text": "お前さんにも、言いそびれとる相手がおる。\n……早う言え。", "emotion": "neutral", "preSilence": 1.5 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 10,
+      "options": [
+        { "text": "（黙って聞いている）", "requiredStat": "Composure", "requiredRank": 5, "bondBonus": 45, "jumpToDialogueId": "" },
+        { "text": "「……遅くないです。届いてます」", "requiredStat": "Empathy", "requiredRank": 6, "bondBonus": 50, "jumpToDialogueId": "" },
+        { "text": "「八雲さん」とだけ言う", "requiredStat": "", "requiredRank": 0, "bondBonus": 30, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

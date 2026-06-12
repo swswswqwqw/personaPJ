@@ -1,0 +1,35 @@
+{
+  "id": "yakumo_rank8",
+  "title": "幸代の言葉",
+  "bondId": "yakumo",
+  "bondPointsOnComplete": 110,
+  "lines": [
+    { "speakerId": "narrator", "text": "「言ノ葉」の奥。主人公と八雲老人が並んで、日記の前に立っていた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "yakumo", "text": "……開けてくれ。", "emotion": "flat", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "主人公は、静かに日記を開いた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "最初のページに、ただ一行だけ書いてあった。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "「あなたは言葉が不器用だから、私が先に書いておきます。」", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "「あなたのことが、好きです。ずっと。」", "emotion": "neutral", "preSilence": 2.0 },
+    { "speakerId": "narrator", "text": "雨の音だけが、鳴っていた。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "八雲老人は、何も言わなかった。長い沈黙だった。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "yakumo", "text": "……知っとったんじゃな。", "emotion": "flat", "preSilence": 1.2 },
+    { "speakerId": "yakumo", "text": "わしが言えないことを。先に書いてくれとった。", "emotion": "flat", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "老人の肩が、かすかに揺れた。声を、抑えていた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "yakumo", "text": "50年間——わしは受け取るだけじゃった。", "emotion": "flat", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "主人公は日記をそっと閉じた。八雲の手が伸びて、それを受け取った。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "……ありがとう。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "老人が「ありがとう」と言うのを、初めて聞いた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "八雲は日記を胸に抱えて、背を向けた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "……今夜は、帰れ。ひとりにさせてくれ。", "emotion": "flat", "preSilence": 0.5 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 10,
+      "options": [
+        { "text": "（黙って隣にいる）", "requiredStat": "Composure", "requiredRank": 5, "bondBonus": 45, "jumpToDialogueId": "" },
+        { "text": "「奥さんは、わかってたんですね」", "requiredStat": "Empathy", "requiredRank": 5, "bondBonus": 38, "jumpToDialogueId": "" },
+        { "text": "「受け取れた、それで良かった」", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

@@ -440,6 +440,10 @@ namespace Amane.Prototype
                 new Vector2(200, -100), new Vector2(28, 28), new Color(0.8f, 0.3f, 0.3f), "蓮");
             CreateLocation(fieldMap, mapArea.transform, "dungeon", "未言界の入口", LocationType.Dungeon,
                 new Vector2(0, 180), new Vector2(60, 40), new Color(0.5f, 0.1f, 0.3f, 0.9f), "潜");
+            CreateLocation(fieldMap, mapArea.transform, "yakumo", "八雲", LocationType.NPC,
+                new Vector2(-260, -60), new Vector2(28, 28), new Color(0.7f, 0.6f, 0.4f), "雲");
+            CreateLocation(fieldMap, mapArea.transform, "nagisa", "渚", LocationType.NPC,
+                new Vector2(-50, -120), new Vector2(28, 28), new Color(0.6f, 0.4f, 0.8f), "渚");
             CreateLocation(fieldMap, mapArea.transform, "shop", "古書堂「八雲」", LocationType.Shop,
                 new Vector2(-300, -80), new Vector2(60, 40), new Color(0.5f, 0.4f, 0.2f, 0.8f), "書");
             CreateLocation(fieldMap, mapArea.transform, "cafe", "喫茶バイト", LocationType.Job,
@@ -482,7 +486,7 @@ namespace Amane.Prototype
             // ---- ActionSelectUI (深夜 + 昼休み 兼用メニュー) ----
             // スロットによって表示ボタンが切り替わる（ActionSelectUI.Show()で制御）
             var actionPanel = MakeSubPanel(_fieldPanel.transform, "ActionPanel", new Vector2(0, -80),
-                new Vector2(260, 290), new Color(0.04f, 0.02f, 0.08f, 0.95f));
+                new Vector2(260, 330), new Color(0.04f, 0.02f, 0.08f, 0.95f));
             actionPanel.SetActive(false);
 
             // 深夜ラベル
@@ -523,8 +527,14 @@ namespace Amane.Prototype
             var rooftopText = lunchRooftopBtn.GetComponentInChildren<Text>();
             if (rooftopText != null) rooftopText.color = new Color(0.7f, 0.95f, 1f);
 
-            var lunchSkipBtn = MakeButton(actionPanel.transform, "スキップ（放課後へ）",
+            var lunchHealthRoomBtn = MakeButton(actionPanel.transform, "保健室（慈しみ+3・佳乃）",
                 new Vector2(0, -196), new Vector2(220, 36),
+                new Color(0.1f, 0.15f, 0.25f));
+            var healthRoomText = lunchHealthRoomBtn.GetComponentInChildren<Text>();
+            if (healthRoomText != null) healthRoomText.color = new Color(0.7f, 0.9f, 1f);
+
+            var lunchSkipBtn = MakeButton(actionPanel.transform, "スキップ（放課後へ）",
+                new Vector2(0, -238), new Vector2(220, 36),
                 new Color(0.08f, 0.08f, 0.08f));
 
             var actionUI = actionPanel.AddComponent<ActionSelectUI>();
@@ -535,6 +545,7 @@ namespace Amane.Prototype
             SetPrivateField(actionUI, "_lunchLibraryButton", lunchLibBtn);
             SetPrivateField(actionUI, "_lunchCanteenButton", lunchCanteenBtn);
             SetPrivateField(actionUI, "_lunchRooftopButton", lunchRooftopBtn);
+            SetPrivateField(actionUI, "_lunchHealthRoomButton", lunchHealthRoomBtn);
             SetPrivateField(actionUI, "_lunchSkipButton", lunchSkipBtn);
 
             // ---- Dialogue UI ----

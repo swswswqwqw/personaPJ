@@ -19,8 +19,9 @@ namespace Amane.UI
         LunchLibrary, // 昼休み: 図書室で読書
         LunchSkip,    // 昼休み: 次の時間まで待機
         MidnightDive,  // 深夜強行潜行（静けさ4以上で解放・翌日疲労デバフ）
-        LunchCanteen,  // 昼休み: 購買でアイテム入手（度胸+1）
-        LunchRooftop   // 昼休み: 屋上でひとり（静けさ+5・特別演出）
+        LunchCanteen,      // 昼休み: 購買でアイテム入手（度胸+1）
+        LunchRooftop,      // 昼休み: 屋上でひとり（静けさ+5・特別演出）
+        LunchHealthRoom    // 昼休み: 保健室（慈しみ+3・佳乃への導線）
     }
 
     public sealed class ActionSelectUI : MonoBehaviour
@@ -41,9 +42,10 @@ namespace Amane.UI
         // 深夜専用ボタン（DESIGN.md 9-2: 強行潜行）
         [SerializeField] private Button _midnightDiveButton;
 
-        // 昼休み拡張ボタン（購買・屋上）
+        // 昼休み拡張ボタン（購買・屋上・保健室）
         [SerializeField] private Button _lunchCanteenButton;
         [SerializeField] private Button _lunchRooftopButton;
+        [SerializeField] private Button _lunchHealthRoomButton;
 
         public event Action<FieldAction> OnActionSelected;
 
@@ -61,6 +63,7 @@ namespace Amane.UI
             Bind(_midnightDiveButton, FieldAction.MidnightDive);
             Bind(_lunchCanteenButton, FieldAction.LunchCanteen);
             Bind(_lunchRooftopButton, FieldAction.LunchRooftop);
+            Bind(_lunchHealthRoomButton, FieldAction.LunchHealthRoom);
         }
 
         public void Show(TimeSlot slot, int ap, bool lunchUsed = true, bool midnightDiveUnlocked = false)
@@ -95,11 +98,13 @@ namespace Amane.UI
             SetVisible(_lunchSkipButton, isLunch);
             SetVisible(_lunchCanteenButton, isLunch);
             SetVisible(_lunchRooftopButton, isLunch);
+            SetVisible(_lunchHealthRoomButton, isLunch);
 
             SetInteractable(_lunchChatButton, canLunch);
             SetInteractable(_lunchLibraryButton, canLunch);
             SetInteractable(_lunchCanteenButton, canLunch);
             SetInteractable(_lunchRooftopButton, canLunch);
+            SetInteractable(_lunchHealthRoomButton, canLunch);
             SetInteractable(_lunchSkipButton, true); // スキップは常に可能
 
             // 深夜強行潜行: LateNight かつ静けさ4以上で表示（DESIGN.md 9-2）

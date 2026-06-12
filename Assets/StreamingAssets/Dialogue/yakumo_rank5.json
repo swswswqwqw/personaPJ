@@ -1,0 +1,33 @@
+{
+  "id": "yakumo_rank5",
+  "title": "言えなかった一言",
+  "bondId": "yakumo",
+  "bondPointsOnComplete": 100,
+  "lines": [
+    { "speakerId": "narrator", "text": "放課後。「言ノ葉」。八雲老人が椅子に座って本を読んでいた。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "入ってきた主人公に気づいて、静かに本を閉じた。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "yakumo", "text": "……ちょうどよかった。聞いてくれるか。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "老人はそれだけ言って、しばらく黙った。言葉を、選んでいた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "48年、連れ添った。", "emotion": "flat", "preSilence": 1.0 },
+    { "speakerId": "yakumo", "text": "……それで、わしは一度も言えなかった。", "emotion": "flat", "preSilence": 1.2 },
+    { "speakerId": "yakumo", "text": "「愛しとる」という、たった一言が。", "emotion": "flat", "preSilence": 2.0 },
+    { "speakerId": "narrator", "text": "雨の音だけが鳴っている。八雲は窓の外を見たまま言った。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "yakumo", "text": "照れくさかった。どうせ伝わっとると思った。\n言わなくても、そういう年月を積み重ねたからな。", "emotion": "flat", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "……でも、たった一言が、言えんかった。", "emotion": "flat", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "老人の手が、ひざの上で静かに組まれた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "お前さんに言うのは——初めてじゃ。", "emotion": "flat", "preSilence": 1.0 },
+    { "speakerId": "yakumo", "text": "言わんでも伝わっとる、なんてな。", "emotion": "flat", "preSilence": 0.6 },
+    { "speakerId": "yakumo", "text": "……言葉にしないと、伝わらんことがある。\nわしが一番、よくわかっとる。", "emotion": "neutral", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "老人は本を棚に戻した。背中が、少しだけ小さく見えた。", "emotion": "neutral", "preSilence": 1.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 9,
+      "options": [
+        { "text": "「まだ間に合います」", "requiredStat": "Courage", "requiredRank": 2, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "「後悔してるんですね」", "requiredStat": "Empathy", "requiredRank": 3, "bondBonus": 32, "jumpToDialogueId": "" },
+        { "text": "（何も言わない）", "requiredStat": "Composure", "requiredRank": 3, "bondBonus": 45, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

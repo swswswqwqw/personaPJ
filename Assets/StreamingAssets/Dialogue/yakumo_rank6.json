@@ -1,0 +1,34 @@
+{
+  "id": "yakumo_rank6",
+  "title": "融合の意味",
+  "bondId": "yakumo",
+  "bondPointsOnComplete": 100,
+  "lines": [
+    { "speakerId": "narrator", "text": "放課後。八雲老人が融合の準備で棚を整えていた。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "yakumo", "text": "語り手の融合について、本当のことを話しておこうと思ってな。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "yakumo", "text": "声と声を重ねると——新しい意味が生まれる。それは知っとるじゃろ。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "老人は棚から一つの語り手の仮面を取り出し、両手でそっと持った。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "yakumo", "text": "これはな——「届かなかった言葉に、別の経路を作ること」じゃ。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "一つの声では届かんかった。でも、もう一つの声と重なれば——別の道が開くことがある。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "老人の目が、手の中の仮面を見ていた。主人公ではなく——遠くを見ていた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "……わしには、もう遅い。", "emotion": "flat", "preSilence": 1.2 },
+    { "speakerId": "narrator", "text": "老人はそっと仮面を棚に戻した。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "yakumo", "text": "だが——お前さんには、まだ間に合う。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "融合するたびに、問い直せ。\nその声は、誰に届けるためのものか。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "雨の音。老人の言葉が、静かに沈んでいった。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "……何か、言いたいか。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "八雲は振り返らずに、そう言った。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "yakumo", "text": "お前さんの声が届けたい相手は——まだ、この世におるか？", "emotion": "flat", "preSilence": 1.2 },
+    { "speakerId": "narrator", "text": "その問いに、すぐには答えられなかった。八雲は急がなかった。", "emotion": "neutral", "preSilence": 1.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 12,
+      "options": [
+        { "text": "「はい、まだいます」", "requiredStat": "Courage", "requiredRank": 3, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "「……わかりません」", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "（答えずに、老人を見る）", "requiredStat": "Composure", "requiredRank": 4, "bondBonus": 40, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

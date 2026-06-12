@@ -1,0 +1,32 @@
+{
+  "id": "yakumo_rank3",
+  "title": "背向きの本",
+  "bondId": "yakumo",
+  "bondPointsOnComplete": 90,
+  "lines": [
+    { "speakerId": "narrator", "text": "放課後。古書堂「言ノ葉」。八雲老人は奥の棚に向かって作業をしている。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "ふと、棚の一番奥——一冊だけ、背を壁に向けて置かれた本が目に入った。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "他の本とは明らかに違う扱いで、まるで隠すように置かれている。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "手が、自然と伸びた。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "……触るな。", "emotion": "flat", "preSilence": 0.2 },
+    { "speakerId": "narrator", "text": "老人の声が背後から来た。振り返ると、八雲が静かにこちらを見ていた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "怒ってはいない。——ただ、懸命に何かを押さえているような顔をしていた。", "emotion": "neutral", "preSilence": 0.7 },
+    { "speakerId": "yakumo", "text": "……それだけは、わしが守っておかないといけないものじゃ。", "emotion": "flat", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "妻の——字が、書いてある。", "emotion": "flat", "preSilence": 1.5 },
+    { "speakerId": "narrator", "text": "八雲は本の前に静かに立った。主人公と本の間に、体を入れるように。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "48年、一緒におった。それで、わしは……その本を、まだ一度も開けておらん。", "emotion": "flat", "preSilence": 1.2 },
+    { "speakerId": "narrator", "text": "老人の手が、棚の端を静かに握った。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "yakumo", "text": "お前さんは、言いそびれた言葉があるか？", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "答えられなかった。雨の音だけが、続いた。", "emotion": "neutral", "preSilence": 1.2 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 8,
+      "options": [
+        { "text": "「大切に扱います」", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "「読んだことは、ないんですか」", "requiredStat": "Intellect", "requiredRank": 2, "bondBonus": 28, "jumpToDialogueId": "" },
+        { "text": "（何も言わない）", "requiredStat": "Composure", "requiredRank": 2, "bondBonus": 38, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}

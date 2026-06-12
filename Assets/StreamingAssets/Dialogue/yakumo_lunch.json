@@ -1,0 +1,15 @@
+{
+  "id": "yakumo_lunch",
+  "title": "言ノ葉の午後",
+  "bondId": "yakumo",
+  "bondPointsOnComplete": 15,
+  "lines": [
+    { "speakerId": "narrator", "text": "昼休み——気づいたら、「言ノ葉」の前にいた。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "yakumo", "text": "……珍しい。こんな昼間に来るとは。", "emotion": "flat", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "八雲老人がすでに茶を二つ用意していた。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "yakumo", "text": "腹が減っとるじゃろ。早飯でも食えばよかったものを。", "emotion": "flat", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "おそらく叱っているのだと思うが——茶は温かかった。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "yakumo", "text": "今日は何も聞かなくていい。ただ、おれ。", "emotion": "flat", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "「言ノ葉」の午後。雨の匂いと、古い紙の匂い。\nこの場所には、言葉の要らない沈黙がある。", "emotion": "neutral", "preSilence": 1.0 }
+  ]
+}

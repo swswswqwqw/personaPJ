@@ -364,14 +364,23 @@ namespace Amane.UI
                     if (gm.Time.UseLunch())
                         DoLunchRooftop(gm);
                     break;
+
+                case FieldAction.LunchHealthRoom:
+                    // 昼休み: 保健室（慈しみ+3・佳乃への導線）
+                    if (gm.Time.UseLunch())
+                        DoLunchHealthRoom(gm);
+                    break;
             }
         }
 
-        // 昼休み会話: ランダムに灯里/律/蓮のうちひとりを選んで短い会話を始める
+        // 昼休み会話: ランダムに灯里/律/蓮/渚のうちひとりを選んで短い会話を始める
         private void StartLunchChat(GameManager gm)
         {
-            // 日数に応じてキャラを選択（循環）
-            string[] lunchChars = { "akari", "ritsu", "ren" };
+            // 日数に応じてキャラを選択（循環）。渚は9月解放想定のため絆rank1以上で追加。
+            bool nagisaMet = gm.Bonds.Get("nagisa")?.Rank >= 1;
+            string[] lunchChars = nagisaMet
+                ? new[] { "akari", "ritsu", "ren", "nagisa" }
+                : new[] { "akari", "ritsu", "ren" };
             string bondId = lunchChars[gm.Time.Today.DayIndex % lunchChars.Length];
 
             var data = DialogueRunner.LoadFromStreamingAssets($"{bondId}_lunch.json");
@@ -423,6 +432,39 @@ namespace Amane.UI
                 }
             };
             Debug.Log("[Lunch] 屋上でひとり過ごした。静けさ+5");
+            _dialogueUI?.Show();
+            _dialogueRunner.Start(data);
+        }
+
+        private void DoLunchHealthRoom(GameManager gm)
+        {
+            gm.Stats.Add(InnerStat.Empathy, 3);
+
+            // 保健室: 佳乃への初回接触（kano_introがあれば会話、なければ情景演出）
+            var kanoData = DialogueRunner.LoadFromStreamingAssets("kano_intro.json");
+            if (kanoData != null)
+            {
+                _dialogueUI?.Show();
+                _dialogueRunner.Start(kanoData);
+                return;
+            }
+
+            var data = new DialogueData
+            {
+                id = "lunch_healthroom",
+                title = "保健室",
+                bondId = "",
+                bondPointsOnComplete = 0,
+                lines = new List<DialogueLine>
+                {
+                    new() { speakerId = "narrator", text = "保健室。カーテンが静かに揺れている。", emotion = "neutral", preSilence = 0.3f },
+                    new() { speakerId = "narrator", text = "窓の外は雨。消毒液の匂いと、微かな薬草のお茶の香り。", emotion = "neutral", preSilence = 0.5f },
+                    new() { speakerId = "narrator", text = "ベッドのカーテン越しに、小さな声が聞こえる気がした。\n——気のせいかもしれない。", emotion = "neutral", preSilence = 0.6f },
+                    new() { speakerId = "narrator", text = "この場所には、言えない痛みが集まってくる。", emotion = "neutral", preSilence = 0.8f },
+                    new() { speakerId = "narrator", text = "——慈しみが、少しだけ深くなった気がした。", emotion = "neutral", preSilence = 0.5f }
+                }
+            };
+            Debug.Log("[Lunch] 保健室で過ごした。慈しみ+3");
             _dialogueUI?.Show();
             _dialogueRunner.Start(data);
         }

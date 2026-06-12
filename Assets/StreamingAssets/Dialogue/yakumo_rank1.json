@@ -1,0 +1,30 @@
+{
+  "id": "yakumo_rank1",
+  "title": "言葉の店番",
+  "bondId": "yakumo",
+  "bondPointsOnComplete": 80,
+  "lines": [
+    { "speakerId": "narrator", "text": "「言ノ葉」に再び立ち寄ると、八雲老人が帳面に何か書いていた。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "yakumo", "text": "……また来たか。", "emotion": "flat", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "老人は顔を上げず、そう言った。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "yakumo", "text": "語り手の扱いは、慣れてきたか？", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "答えようとすると、老人が続けた。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "yakumo", "text": "言葉というのはな、使えば使うほど重くなる。\n……逆だと思っとる者が多いが。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "軽い言葉を何百言っても、大切な一言は言えるようにならん。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "八雲はそこで帳面を閉じ、主人公を見た。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "yakumo", "text": "お前さんには、言えていない言葉があるじゃろ。\n……目に、そういう色がある。", "emotion": "flat", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "老人は答えを求めていなかった。ただ、確かめるように言った。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "yakumo", "text": "……まあ、焦るな。言葉は、逃げん。", "emotion": "flat", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "老人はまた帳面を開いた。会話は、それで終わりだった。", "emotion": "neutral", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 7,
+      "options": [
+        { "text": "「……あります」", "requiredStat": "Courage", "requiredRank": 1, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "「どうしたらいいですか」", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "（黙って頷く）", "requiredStat": "Composure", "requiredRank": 1, "bondBonus": 35, "jumpToDialogueId": "" }
+      ]
+    }
+  ]
+}
