@@ -1,0 +1,32 @@
+{
+  "id": "nagisa_rank9",
+  "title": "少し消えたい",
+  "bondId": "nagisa",
+  "bondPointsOnComplete": 160,
+  "lines": [
+    { "speakerId": "narrator", "text": "渚の目が少し遠い。いつもと違う。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "……本物でやろうとしたら、本物の自分がわからなくなってきた。", "emotion": "flat", "preSilence": 0.6 },
+    { "speakerId": "nagisa", "text": "笑ってた渚が偽物なのか。疲れてる渚が本物なのか。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "どっちも今の私なんだけど。どっちで行けばいいかわからなくて。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "渚が窓の外を見た。雨が、また降っている。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "nagisa", "text": "……少し、消えたい気分。配信じゃなくて、全部から。", "emotion": "flat", "preSilence": 0.9 },
+    { "speakerId": "narrator", "text": "〈未読〉が激しく揺れた——渚の言葉が、澱に触れている。", "emotion": "neutral", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 6,
+      "options": [
+        { "text": "そばにいる", "requiredStat": "", "requiredRank": 0, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "消えたら、探しに行く（度胸）", "requiredStat": "Courage", "requiredRank": 3, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "……（何も言えなかった）", "requiredStat": "", "requiredRank": 0, "bondBonus": 10, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "nagisa", "text": "……そうだね。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "渚は立ち上がった。いつもの渚に見えた。でも何かが違う気がした。", "emotion": "neutral", "preSilence": 0.7 },
+    { "speakerId": "nagisa", "text": "ちょっと休んだら、また戻れると思う。大丈夫。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "渚が言った「大丈夫」は、いつかと同じ声をしていた。", "emotion": "neutral", "preSilence": 0.9 },
+    { "speakerId": "narrator", "text": "翌朝、渚の連絡先は圏外になった。", "emotion": "neutral", "preSilence": 1.2 }
+  ]
+}

@@ -46,22 +46,38 @@ namespace Amane.Prototype
 
         private void Awake()
         {
+            CreateCanvas();
+            CreateAudioManager(); // GameManagerの前に作成してBGM再生に備える
+
+            // InventoryManager（アイテム・所持金管理）
+            if (InventoryManager.Instance == null)
+            {
+                var invObj = new GameObject("InventoryManager");
+                invObj.AddComponent<InventoryManager>();
+            }
+
             var gmObj = new GameObject("GameManager");
             _gm = gmObj.AddComponent<GameManager>();
+            _gm.Machine.OnStateChanged += OnStateChanged;
 
-            CreateCanvas();
-            CreateTitlePanel();
             CreateFieldPanel();
+            CreateTitlePanel();
             CreateBattlePanel();
             CreateDungeonPanel();
             CreateEffectsOverlay();
             Create3DField();
-            CreateAudioManager();
             CreateDungeonSystems();
 
-            _gm.Machine.OnStateChanged += OnStateChanged;
+            // 初期状態の同期（すでにTitleStateになっている可能性があるため）
+            SyncCurrentState();
+        }
 
-            ShowOnly(_titlePanel);
+        private void SyncCurrentState()
+        {
+            if (_gm != null && _gm.Machine != null)
+            {
+                OnStateChanged(null, _gm.Machine.Current);
+            }
         }
 
         private void OnStateChanged(IState from, IState to)
@@ -119,17 +135,9 @@ namespace Amane.Prototype
             var evtSys = new GameObject("EventSystem");
             evtSys.AddComponent<UnityEngine.EventSystems.EventSystem>();
 
-            // Unity 6: 新Input Systemがあればそちらを使用（旧StandaloneInputModuleはSubmit/Cancelエラーになる）
-            var inputSystemType = System.Type.GetType(
-                "UnityEngine.InputSystem.UI.InputSystemUIInputModule, Unity.InputSystem");
-            if (inputSystemType != null)
-            {
-                evtSys.AddComponent(inputSystemType);
-            }
-            else
-            {
-                evtSys.AddComponent<UnityEngine.EventSystems.StandaloneInputModule>();
-            }
+            // Unity 6 + Both Mode: StandaloneInputModule is generally safer for a prototype 
+            // unless a full InputActionAsset is assigned and configured.
+            evtSys.AddComponent<UnityEngine.EventSystems.StandaloneInputModule>();
         }
 
         // =============================================
@@ -610,6 +618,68 @@ namespace Amane.Prototype
             SetPrivateField(statusUI, "_composureText", composureText);
             SetPrivateField(statusUI, "_bondsText", bondsText);
 
+            // ---- FusionSelectUI（語り手融合: 古書店「言ノ葉」）----
+            var fusionPanel = MakeSubPanel(_fieldPanel.transform, "FusionPanel", new Vector2(0, 0),
+                new Vector2(380, 440), new Color(0.06f, 0.04f, 0.12f, 0.97f));
+            fusionPanel.SetActive(false);
+
+            // タイトル
+            var fusionTitle = MakeText(fusionPanel.transform, "── 語り手融合 ──", 20, TextAnchor.MiddleCenter,
+                new Vector2(0, 195), new Vector2(340, 28));
+            fusionTitle.color = new Color(1f, 0.243f, 0.541f);
+
+            // ステップラベル
+            var fusionStepLabel = MakeText(fusionPanel.transform, "", 14, TextAnchor.MiddleCenter,
+                new Vector2(0, 165), new Vector2(340, 22));
+            fusionStepLabel.color = new Color(0.9f, 0.9f, 0.85f);
+
+            // 費用テキスト
+            var fusionCostText = MakeText(fusionPanel.transform, "", 13, TextAnchor.MiddleCenter,
+                new Vector2(0, 142), new Vector2(340, 20));
+            fusionCostText.color = new Color(1f, 0.85f, 0.3f);
+
+            // 語り手ボタン（最大6）
+            var fusionNarratorBtns = new Button[6];
+            var fusionNarratorLabels = new Text[6];
+            for (int i = 0; i < 6; i++)
+            {
+                float y = 100 - i * 44;
+                fusionNarratorBtns[i] = MakeButton(fusionPanel.transform, "",
+                    new Vector2(0, y), new Vector2(340, 38),
+                    new Color(0.12f, 0.08f, 0.22f));
+                fusionNarratorLabels[i] = fusionNarratorBtns[i].GetComponentInChildren<Text>();
+                if (fusionNarratorLabels[i] != null)
+                    fusionNarratorLabels[i].color = new Color(0.9f, 0.85f, 1f);
+            }
+
+            // プレビューテキスト（確認ステップ）
+            var fusionPreviewText = MakeText(fusionPanel.transform, "", 14, TextAnchor.MiddleCenter,
+                new Vector2(0, -130), new Vector2(340, 50));
+            fusionPreviewText.color = Color.white;
+            fusionPreviewText.gameObject.SetActive(false);
+
+            // 確認ボタン
+            var fusionConfirmBtn = MakeButton(fusionPanel.transform, "融合する",
+                new Vector2(-70, -185), new Vector2(140, 40),
+                new Color(0.5f, 0.1f, 0.3f));
+            fusionConfirmBtn.GetComponentInChildren<Text>().color = new Color(1f, 0.6f, 0.8f);
+            fusionConfirmBtn.gameObject.SetActive(false);
+
+            // キャンセルボタン
+            var fusionCancelBtn = MakeButton(fusionPanel.transform, "戻る",
+                new Vector2(70, -185), new Vector2(140, 40),
+                new Color(0.25f, 0.25f, 0.3f));
+
+            var fusionUI = fusionPanel.AddComponent<FusionSelectUI>();
+            SetPrivateField(fusionUI, "_panel", fusionPanel);
+            SetPrivateField(fusionUI, "_stepLabel", fusionStepLabel);
+            SetPrivateField(fusionUI, "_previewText", fusionPreviewText);
+            SetPrivateField(fusionUI, "_costText", fusionCostText);
+            SetPrivateField(fusionUI, "_narratorButtons", fusionNarratorBtns);
+            SetPrivateField(fusionUI, "_narratorLabels", fusionNarratorLabels);
+            SetPrivateField(fusionUI, "_confirmButton", fusionConfirmBtn);
+            SetPrivateField(fusionUI, "_cancelButton", fusionCancelBtn);
+
             // ---- FieldController ----
             _fieldCtrl = _fieldPanel.AddComponent<FieldController>();
             SetPrivateField(_fieldCtrl, "_calendar", calUI);
@@ -617,6 +687,7 @@ namespace Amane.Prototype
             SetPrivateField(_fieldCtrl, "_dialogueUI", dialogueUI);
             SetPrivateField(_fieldCtrl, "_statusUI", statusUI);
             SetPrivateField(_fieldCtrl, "_fieldMap", fieldMap);
+            SetPrivateField(_fieldCtrl, "_fusionSelectUI", fusionUI);
         }
 
         private void CreateLocation(FieldMap2D map, Transform parent, string id, string name,
@@ -1064,6 +1135,8 @@ namespace Amane.Prototype
                 if (cam.gameObject.name != "FollowCamera")
                 {
                     _mainCam = cam;
+                    _mainCam.clearFlags = CameraClearFlags.SolidColor;
+                    _mainCam.backgroundColor = new Color(0.08f, 0.1f, 0.16f);
                     break;
                 }
             }

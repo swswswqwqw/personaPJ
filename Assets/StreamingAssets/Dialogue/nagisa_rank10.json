@@ -1,0 +1,36 @@
+{
+  "id": "nagisa_rank10",
+  "title": "最後の言伝 — 渚",
+  "bondId": "nagisa",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "渚が戻った翌週。配信スタジオの前で待っていると、渚が来た。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "少し痩せた気がしたが、目に力があった。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "……あの中で、わかった気がした。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "nagisa", "text": "私が言えなかった言葉が何か。", "emotion": "soft", "preSilence": 0.7 },
+    { "speakerId": "narrator", "text": "〈未読〉が、静かに光った。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "nagisa", "text": "本物の渚に「なりたい」じゃなくて。本物の渚で、言いたいことが、あった。", "emotion": "soft", "preSilence": 0.8 },
+    { "speakerId": "nagisa", "text": "さっき、配信した。「疲れることがある、でも続けたい」って。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "……いっぱいコメント来た。怖かった。でも嬉しかった。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "渚が、主人公を見た。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "お前がいてくれたから、言えた。", "emotion": "soft", "preSilence": 0.9 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 9,
+      "options": [
+        { "text": "これからも言い続けてほしい", "requiredStat": "", "requiredRank": 0, "bondBonus": 0, "jumpToDialogueId": "" },
+        { "text": "それが渚の言伝だと思う", "requiredStat": "", "requiredRank": 0, "bondBonus": 0, "jumpToDialogueId": "" },
+        { "text": "（うなずく）", "requiredStat": "", "requiredRank": 0, "bondBonus": 0, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "nagisa", "text": "……うん。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "渚が封筒を取り出した。手書きの文字が入っている。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "nagisa", "text": "渡せてなかった言葉、これで全部。受け取って。", "emotion": "soft", "preSilence": 0.7 },
+    { "speakerId": "narrator", "text": "封筒の中には一文あった。「ありがとう、聴いてくれて。」", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "言伝 — 渚との絆が完成した。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "渚が笑った。カメラの前でも、誰の前でもない、ただそこにある笑顔で。", "emotion": "neutral", "preSilence": 1.2 }
+  ]
+}

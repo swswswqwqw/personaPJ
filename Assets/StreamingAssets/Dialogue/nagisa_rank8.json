@@ -1,0 +1,33 @@
+{
+  "id": "nagisa_rank8",
+  "title": "DM",
+  "bondId": "nagisa",
+  "bondPointsOnComplete": 150,
+  "lines": [
+    { "speakerId": "narrator", "text": "渚がスマホの画面をこちらに向けた。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "nagisa", "text": "……DM、来てた。配信の後。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "画面には一行。「ずっと待ってました。そっちの渚が見たかった。」", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "nagisa", "text": "……既読、つけちゃった。でも返信できてない。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "なんて言えばいいかわからなくて。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "渚がスマホを裏返した。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "本物の自分のほうが好きって言われたら……逆に怖い。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "nagisa", "text": "もし嘘ついたら、がっかりさせちゃうかもって。そう思ったら、壊したくなくて。", "emotion": "soft", "preSilence": 0.7 },
+    { "speakerId": "narrator", "text": "〈未読〉が低く鳴った——渚の言葉には、もう一層ある。", "emotion": "neutral", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 8,
+      "options": [
+        { "text": "返信しなくていい。受け取るだけでいい", "requiredStat": "Empathy", "requiredRank": 3, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "そのまま伝えてみれば", "requiredStat": "Expression", "requiredRank": 3, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "……嬉しかった？", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "nagisa", "text": "……嬉しかった。すごく。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "だから怖い。嬉しいのが怖い。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "渚がスマホをカバンにしまった。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "……受け取っていいんかな。こういうの。", "emotion": "soft", "preSilence": 0.9 }
+  ]
+}

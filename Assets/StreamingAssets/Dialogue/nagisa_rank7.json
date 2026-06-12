@@ -1,0 +1,32 @@
+{
+  "id": "nagisa_rank7",
+  "title": "やった。",
+  "bondId": "nagisa",
+  "bondPointsOnComplete": 140,
+  "lines": [
+    { "speakerId": "narrator", "text": "翌日の放課後。廊下で渚が声をかけてきた。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "nagisa", "text": "……やった。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "それだけで、伝わった。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "終わった後、手が震えてた。画面消した後も10分くらい動けなくて。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "コメント欄、最初はみんな「え？」ってなってた。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "「渚ちゃんどうした」「大丈夫？」って。なんか、心配させちゃった。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "でも……誰も来なくなったりはしなかった。", "emotion": "soft", "preSilence": 0.7 },
+    { "speakerId": "narrator", "text": "渚が窓の外を見た。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "なんか、拍子抜けっていうか。怖いものって、もうちょっと怖いと思ってた。", "emotion": "soft", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 8,
+      "options": [
+        { "text": "第一歩だと思う", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "みんな渚のことが好きなんだよ", "requiredStat": "Expression", "requiredRank": 3, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "怖くなかった？", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "nagisa", "text": "怖かったよ。ずっと怖かった。でも……終わってみたら。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "「よかった」って思った。それだけ。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "渚が少し笑った。作った笑顔じゃない。照れたような、素直な笑い。", "emotion": "neutral", "preSilence": 0.9 }
+  ]
+}

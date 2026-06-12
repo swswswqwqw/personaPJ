@@ -25,6 +25,7 @@ namespace Amane.Core
         public ISaveSystem Save { get; private set; }
         public Amane.Time.CalendarEventScheduler Calendar { get; private set; }
         public ExperienceSystem Experience { get; private set; }
+        public NarratorInventory Narrators { get; private set; }
 
         public GamePhase CurrentPhase =>
             Machine?.Current is PhaseStateBase p ? p.Phase : GamePhase.Boot;
@@ -52,6 +53,7 @@ namespace Amane.Core
             Calendar = new Amane.Time.CalendarEventScheduler();
             Calendar.SeedStoryEvents();
             Experience = new ExperienceSystem();
+            Narrators = new NarratorInventory();
 
             // パーティメンバーをEXPシステムに登録
             Experience.Register("yomi", 1);

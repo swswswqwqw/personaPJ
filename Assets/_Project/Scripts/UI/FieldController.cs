@@ -7,6 +7,7 @@ using Amane.UI.Effects;
 using Amane.Field;
 using Amane.Echo;
 using Amane.Data;
+using Amane.Battle;
 using System;
 using System.Collections.Generic;
 
@@ -21,6 +22,7 @@ namespace Amane.UI
         [SerializeField] private StatusUI _statusUI;
         [SerializeField] private FieldMap2D _fieldMap;
         [SerializeField] private FieldManager3D _fieldManager3D;
+        [SerializeField] private FusionSelectUI _fusionSelectUI;
 
         private DialogueRunner _dialogueRunner;
         private IDisposable _bondRankUpSub;
@@ -57,6 +59,13 @@ namespace Amane.UI
             if (_actionSelect != null)
                 _actionSelect.OnActionSelected += OnAction;
 
+            // 語り手融合UIのコールバック設定
+            if (_fusionSelectUI != null)
+            {
+                _fusionSelectUI.OnFusionComplete += OnFusionComplete;
+                _fusionSelectUI.OnCancelled      += OnFusionCancelled;
+            }
+
             // 絆ランクアップ + 日付変更 + 時間帯変更イベント
             var gm = GameManager.Instance;
             if (gm != null)
@@ -72,6 +81,12 @@ namespace Amane.UI
 
         private void OnDisable()
         {
+            if (_fusionSelectUI != null)
+            {
+                _fusionSelectUI.OnFusionComplete -= OnFusionComplete;
+                _fusionSelectUI.OnCancelled      -= OnFusionCancelled;
+            }
+
             if (_actionSelect != null)
                 _actionSelect.OnActionSelected -= OnAction;
 
@@ -157,6 +172,12 @@ namespace Amane.UI
                     break;
                 case LocationType.Shop:
                     if (isLunch) return; // 昼休みはバイト不可
+                    // 古書堂「八雲」= 語り手融合UI
+                    if (_fusionSelectUI != null && gm.Narrators != null)
+                    {
+                        _fusionSelectUI.Show(gm.Narrators);
+                        return; // 融合完了コールバック(OnFusionComplete)でAdvanceTimeを呼ぶ
+                    }
                     gm.Time.SpendActionPoint();
                     gm.Stats.Add(InnerStat.Intellect, 3);
                     gm.Stats.Add(InnerStat.Empathy, 2);
@@ -231,7 +252,12 @@ namespace Amane.UI
                     break;
 
                 case LocationType.Shop:
-                    // 古書堂 — 知性＋慈しみ
+                    // 古書堂「八雲」= 語り手融合UI（2Dフォールバック）
+                    if (_fusionSelectUI != null && gm.Narrators != null)
+                    {
+                        _fusionSelectUI.Show(gm.Narrators);
+                        return;
+                    }
                     gm.Time.SpendActionPoint();
                     gm.Stats.Add(InnerStat.Intellect, 3);
                     gm.Stats.Add(InnerStat.Empathy, 2);
@@ -390,10 +416,10 @@ namespace Amane.UI
                 bondPointsOnComplete = 0,
                 lines = new List<DialogueLine>
                 {
-                    new() { speakerId = "narrator", text = "屋上。授業中はひとの来ない場所。", emotion = "neutral", preSilence = 0.3 },
-                    new() { speakerId = "narrator", text = "霧に滲む雨音市が眼下に広がる。水路が光の帯になって、街の中を流れている。", emotion = "neutral", preSilence = 0.6 },
-                    new() { speakerId = "narrator", text = "風の音だけがある。言葉は要らない。", emotion = "neutral", preSilence = 0.8 },
-                    new() { speakerId = "narrator", text = "——静けさが、少しだけ深くなった気がした。", emotion = "neutral", preSilence = 0.5 }
+                    new() { speakerId = "narrator", text = "屋上。授業中はひとの来ない場所。", emotion = "neutral", preSilence = 0.3f },
+                    new() { speakerId = "narrator", text = "霧に滲む雨音市が眼下に広がる。水路が光の帯になって、街の中を流れている。", emotion = "neutral", preSilence = 0.6f },
+                    new() { speakerId = "narrator", text = "風の音だけがある。言葉は要らない。", emotion = "neutral", preSilence = 0.8f },
+                    new() { speakerId = "narrator", text = "——静けさが、少しだけ深くなった気がした。", emotion = "neutral", preSilence = 0.5f }
                 }
             };
             Debug.Log("[Lunch] 屋上でひとり過ごした。静けさ+5");
@@ -624,6 +650,20 @@ namespace Amane.UI
                     new() { speakerId = "yomi", text = "（今日は少し話せた気がする）", emotion = "neutral", preSilence = 0 }
                 }
             };
+        }
+
+        // ===== 語り手融合コールバック =====
+        private void OnFusionComplete(Narrator result)
+        {
+            Debug.Log($"[Fusion] 語り手融合完了: {result.DisplayName} ({result.PrimaryElement})");
+            var gm = GameManager.Instance;
+            gm?.Time.SpendActionPoint();
+            AdvanceTimeWithTransition(gm);
+        }
+
+        private void OnFusionCancelled()
+        {
+            Debug.Log("[Fusion] 語り手融合キャンセル");
         }
     }
 }

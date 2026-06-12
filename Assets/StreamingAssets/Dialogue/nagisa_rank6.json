@@ -1,0 +1,32 @@
+{
+  "id": "nagisa_rank6",
+  "title": "明日、やってみる",
+  "bondId": "nagisa",
+  "bondPointsOnComplete": 130,
+  "lines": [
+    { "speakerId": "narrator", "text": "渚から「話がある」とメッセージが来た。珍しい。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "呼び出された場所は、人気のない中庭の隅だった。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "nagisa", "text": "……ねえ。前に「疲れた」って言えたじゃない。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "それ、今でも覚えてる。あの瞬間、なんか……次がある気がした。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "nagisa", "text": "だから。明日の配信、やってみようと思う。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "渚が一息おいた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "nagisa", "text": "笑わないで。作らないで。そのまま。", "emotion": "soft", "preSilence": 0.7 },
+    { "speakerId": "nagisa", "text": "……怖いけど。でも、言えたから。あの時。", "emotion": "soft", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 7,
+      "options": [
+        { "text": "見てる", "requiredStat": "", "requiredRank": 0, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "失敗してもいい", "requiredStat": "Empathy", "requiredRank": 2, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "（何も言わずにいる）", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "nagisa", "text": "……うん。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "それだけだった。でも渚の顔が、少しだけ落ち着いた気がした。", "emotion": "neutral", "preSilence": 0.7 },
+    { "speakerId": "nagisa", "text": "じゃあ、明日。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "渚は立ち上がって、振り返らずに去った。", "emotion": "neutral", "preSilence": 0.9 }
+  ]
+}
