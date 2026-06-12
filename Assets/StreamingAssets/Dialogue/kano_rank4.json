@@ -1,0 +1,34 @@
+{
+  "id": "kano_rank4",
+  "title": "あの子のこと",
+  "bondId": "kano",
+  "bondPointsOnComplete": 100,
+  "lines": [
+    { "speakerId": "narrator", "text": "保健室。今日は佳乃先生の方から「話せる？」と言った。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "聴こえたんでしょう。あの言葉。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "だったら、ちゃんと話してもいいかなって。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "佳乃先生は椅子を向かい合わせにした。薬草茶を2杯。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "10年前——決断した。産まない、と。", "emotion": "neutral", "preSilence": 0.7 },
+    { "speakerId": "kano", "text": "事情があって、それしかできなくて。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "でも……名前を、考えてたの。", "emotion": "soft", "preSilence": 0.7 },
+    { "speakerId": "narrator", "text": "佳乃先生はカップを両手で持った。主人公を見ているようで、遠くを見ている。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "kano", "text": "「明日（あした）」って、呼ぼうと思ってた。", "emotion": "soft", "preSilence": 0.8 },
+    { "speakerId": "kano", "text": "……馬鹿みたいでしょう。", "emotion": "flat", "preSilence": 0.6 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 9,
+      "options": [
+        { "text": "馬鹿じゃない", "requiredStat": "", "requiredRank": 0, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "明日——いい名前ですね", "requiredStat": "Empathy", "requiredRank": 2, "bondBonus": 40, "jumpToDialogueId": "" },
+        { "text": "（何も言えず、カップを持つ）", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "kano", "text": "……ありがとう。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "kano", "text": "誰かにそう言ってもらったの、初めて。", "emotion": "flat", "preSilence": 0.7 },
+    { "speakerId": "narrator", "text": "佳乃先生の目に、うっすら光が浮かんだ。でも泣かなかった。10年、泣かないでいたのかもしれない。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "kano", "text": "……「明日」に、まだ一度も謝れていないの。", "emotion": "soft", "preSilence": 0.7 }
+  ]
+}

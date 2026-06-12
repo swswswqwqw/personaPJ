@@ -1,0 +1,35 @@
+{
+  "id": "kano_intro",
+  "title": "薬草茶と静寂",
+  "bondId": "kano",
+  "bondPointsOnComplete": 60,
+  "lines": [
+    { "speakerId": "narrator", "text": "保健室のドアをノックすると、「どうぞ」という柔らかい声が返ってきた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "白いカーテン。消毒液の匂い。窓から雨の音。静かすぎる空間。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "kano", "text": "あら。どこか痛い？", "emotion": "soft", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "保健の先生——七尾 佳乃。三十代前半だろうか。穏やかな目で主人公を見ている。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "……痛くないの。でも、来た。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "佳乃先生は小さく笑って、カセットコンロで薬草茶を淹れはじめた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "そういう子、けっこういるの。どこも痛くないけど、ここに来る子。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "ここは、痛い場所でしょう。体の。……でも、安全な場所でもある。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "〈未読〉がかすかに反応した。この人の声には——何か、深いところに沈んだものがある。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "kano", "text": "どうぞ。カモミールに薄荷を少し混ぜてある。ちょっとだけ楽になるから。", "emotion": "soft", "preSilence": 0.4 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 9,
+      "options": [
+        { "text": "なんでこの仕事を？", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "静かですね、ここ", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "（お茶を受け取る）", "requiredStat": "", "requiredRank": 0, "bondBonus": 15, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "kano", "text": "……痛みを持ってくる場所だから、と思ったのかな。最初は。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "kano", "text": "今は——よくわからなくなったわ。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "佳乃先生はそれだけ言って、窓の雨を見た。それ以上は何も言わなかった。", "emotion": "neutral", "preSilence": 0.7 },
+    { "speakerId": "kano", "text": "また来て。ここはいつでも開いてるから。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "薬草茶のにおいが、雨の音に溶けていった。", "emotion": "neutral", "preSilence": 0.9 }
+  ]
+}

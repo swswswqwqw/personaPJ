@@ -1,0 +1,33 @@
+{
+  "id": "kano_rank8",
+  "title": "水底の声",
+  "bondId": "kano",
+  "bondPointsOnComplete": 110,
+  "lines": [
+    { "speakerId": "narrator", "text": "保健室。今日の主人公は「光」の語り手を纏っていた。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "「赦し」の属性——言えなかった言葉が届く「場」を作る、光の力。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "kano", "text": "……何か、変わった？ 今日のあなた、少し——光ってる。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "語り手って、そういうものなのね。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "……お願いがあるんだけど。", "emotion": "flat", "preSilence": 0.6 },
+    { "speakerId": "kano", "text": "「明日」に——届けてもらえる？", "emotion": "soft", "preSilence": 0.7 },
+    { "speakerId": "kano", "text": "言葉はまだ、まとまってないの。でも、あなたが「場」を作ってくれたら——言えるかな、って。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "〈未読〉が、静かに開いた。光が水面を透かすように——言えなかった言葉の層が、揺れた。", "emotion": "neutral", "preSilence": 0.9 },
+    { "speakerId": "kano", "text": "ごめんなさい。……「明日」。ごめんなさい。", "emotion": "soft", "preSilence": 1.0 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 8,
+      "options": [
+        { "text": "（光の語り手で「場」を作る）", "requiredStat": "", "requiredRank": 0, "bondBonus": 0, "jumpToDialogueId": "" },
+        { "text": "届いてると思う", "requiredStat": "Empathy", "requiredRank": 3, "bondBonus": 40, "jumpToDialogueId": "" },
+        { "text": "（静かに立ち会う）", "requiredStat": "", "requiredRank": 0, "bondBonus": 30, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "narrator", "text": "光が、保健室に薄く満ちた。何かが、届いた——確証はない。でも、そう信じていい気がした。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "kano", "text": "……ありがとう。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "泣けた。10年ぶりに。", "emotion": "flat", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "佳乃先生の涙は、声を上げない涙だった。ただ、流れた。それで十分だった。", "emotion": "neutral", "preSilence": 1.0 }
+  ]
+}

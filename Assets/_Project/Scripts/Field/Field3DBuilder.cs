@@ -85,6 +85,8 @@ namespace Amane.Field
                 new Color(0.7f, 0.6f, 0.45f)));
             result.NPCs.Add(CreateNPC(root.transform, "nagisa", "渚", new Vector3(-5, 0, -8),
                 new Color(0.6f, 0.4f, 0.8f)));
+            result.NPCs.Add(CreateNPC(root.transform, "kano", "佳乃先生", new Vector3(-18, 0, 14),
+                new Color(0.8f, 0.85f, 0.95f)));
 
             // ---- プレイヤー ----
             result.Player = CreatePlayer(root.transform);

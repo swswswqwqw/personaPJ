@@ -70,6 +70,7 @@ namespace Amane.Time
             Register(new CalendarEvent("yakumo_opening", "古書店「言ノ葉」——八雲との出会い", CalendarEventType.StoryBeat, new GameDate(65)));
             Register(new CalendarEvent("case_ritsu_start", "律の事件発生", CalendarEventType.NewCase, new GameDate(62)));
             Register(new CalendarEvent("case_ren_start", "蓮の事件発生", CalendarEventType.NewCase, new GameDate(92)));
+            Register(new CalendarEvent("kano_opening", "保健室——七尾佳乃との出会い", CalendarEventType.StoryBeat, new GameDate(98)));
             Register(new CalendarEvent("fullmoon_jul", "満月——母の記憶③", CalendarEventType.FullMoon, new GameDate(107)));
             Register(new CalendarEvent("end_act1", "終業式・第1幕クライマックス", CalendarEventType.StoryBeat, new GameDate(122)));
 

@@ -1,0 +1,33 @@
+{
+  "id": "kano_rank2",
+  "title": "白いカーテン",
+  "bondId": "kano",
+  "bondPointsOnComplete": 90,
+  "lines": [
+    { "speakerId": "narrator", "text": "保健室に着いたとき、先客がいた。小学生くらいに見える——いや、小柄な1年生か。膝を押さえている。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "大丈夫？ 転んだの？", "emotion": "soft", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "佳乃先生はしゃがんで、目線を合わせた。傷を確認する指が、丁寧で優しい。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "ちょっとだけ痛いよ、消毒。でも、すぐ終わるから。一緒に数えようか。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "1年生は黙ってうなずいた。佳乃先生の声で、泣きそうな顔がすこし緩んだ。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "処置が終わり、1年生が帰った後。佳乃先生は窓の外を見た。", "emotion": "neutral", "preSilence": 0.7 },
+    { "speakerId": "kano", "text": "……子どもを前にすると、どうしても——", "emotion": "flat", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "言葉が途切れた。佳乃先生は気づいたように振り返った。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "……なんでもない。ありがとう、いてくれて。", "emotion": "soft", "preSilence": 0.4 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 8,
+      "options": [
+        { "text": "何か、あったんですか", "requiredStat": "", "requiredRank": 0, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "先生、子どもが好きなんですね", "requiredStat": "Empathy", "requiredRank": 1, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "（何も言わずそばにいる）", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "kano", "text": "……聞かないで、今は。", "emotion": "flat", "preSilence": 0.6 },
+    { "speakerId": "kano", "text": "ただ——子どもって、泣きたい時に泣けるでしょう。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "大人になると、それが難しくなるから。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "佳乃先生はまた窓を向いた。その横顔を、主人公はただ見ていた。", "emotion": "neutral", "preSilence": 0.9 }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "kano_lunch",
+  "title": "白い午後",
+  "bondId": "kano",
+  "bondPointsOnComplete": 30,
+  "lines": [
+    { "speakerId": "narrator", "text": "昼休み。保健室のドアを開けると、佳乃先生がお弁当を広げていた。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "kano", "text": "あら、珍しい。お昼に来るの。", "emotion": "soft", "preSilence": 0.3 },
+    { "speakerId": "kano", "text": "今日は何か、痛いところある？", "emotion": "soft", "preSilence": 0.3 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 2,
+      "options": [
+        { "text": "……心とか", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" },
+        { "text": "特にないです", "requiredStat": "", "requiredRank": 0, "bondBonus": 10, "jumpToDialogueId": "" },
+        { "text": "（首を横に振る）", "requiredStat": "", "requiredRank": 0, "bondBonus": 10, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "kano", "text": "……そっか。まあ、おいで。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "佳乃先生は薬草茶を一杯余分に淹れた。お弁当の隣に置いた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "心の痛みは、少し休むのが薬だから。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "昼休みの保健室。白いカーテン。薬草茶の香り。静かな時間が流れた。", "emotion": "neutral", "preSilence": 0.8 }
+  ]
+}

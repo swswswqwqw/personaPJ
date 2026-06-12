@@ -1,0 +1,12 @@
+{
+  "id": "event_kano_opening",
+  "title": "保健室の灯り",
+  "bondId": "",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "7月。梅雨が明けた最初の週。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "narrator", "text": "学校の廊下を歩いていると、保健室のドアが少し開いていた。カモミールのにおいが漂ってくる。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "〈未読〉がかすかに反応した——この場所には、長い時間が積もっている。", "emotion": "neutral", "preSilence": 0.7 },
+    { "speakerId": "narrator", "text": "——保健室が解放された。昼休みに七尾 佳乃 先生と話せるようになった。", "emotion": "neutral", "preSilence": 0.5 }
+  ]
+}

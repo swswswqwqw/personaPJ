@@ -1,0 +1,33 @@
+{
+  "id": "kano_rank1",
+  "title": "消毒液の香り",
+  "bondId": "kano",
+  "bondPointsOnComplete": 80,
+  "lines": [
+    { "speakerId": "narrator", "text": "保健室。また来た。佳乃先生は包帯を畳んでいた。", "emotion": "neutral", "preSilence": 0.3 },
+    { "speakerId": "kano", "text": "また来てくれたの。", "emotion": "soft", "preSilence": 0.3 },
+    { "speakerId": "narrator", "text": "特別嬉しそうでも、驚いた様子でもない。ただ、受け入れた。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "今日ね、1年生の子が来て。消しゴムのカスが目に入ったって言うから処置したの。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "でも帰り際に、「先生、また来ていい？」って聞いてきて。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "もちろんって言ったら、なんか安心した顔して帰った。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "〈未読〉がかすかに揺れた。佳乃先生の声の奥に——「……ごめん」という断片が、静かに沈んでいる。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "でも佳乃先生は気づかない。主人公もまだ、触れない。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "……何でもない話ね。お茶、淹れる？", "emotion": "soft", "preSilence": 0.4 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 8,
+      "options": [
+        { "text": "その子、また来ましたか？", "requiredStat": "", "requiredRank": 0, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "先生はよくそういう子に来られる？", "requiredStat": "Empathy", "requiredRank": 1, "bondBonus": 25, "jumpToDialogueId": "" },
+        { "text": "お茶をください", "requiredStat": "", "requiredRank": 0, "bondBonus": 15, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "kano", "text": "来たわよ。次の日も、その次の日も。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "特に話すことがなくても、ここに座って、帰っていく。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "……それでいいと思ってる。ここはそういう場所だから。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "佳乃先生は薬草茶を渡してきた。その手が、一瞬だけ止まった。止まったことに、本人は気づいていない。", "emotion": "neutral", "preSilence": 0.8 }
+  ]
+}

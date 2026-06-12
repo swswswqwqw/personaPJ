@@ -444,6 +444,8 @@ namespace Amane.Prototype
                 new Vector2(-260, -60), new Vector2(28, 28), new Color(0.7f, 0.6f, 0.4f), "雲");
             CreateLocation(fieldMap, mapArea.transform, "nagisa", "渚", LocationType.NPC,
                 new Vector2(-50, -120), new Vector2(28, 28), new Color(0.6f, 0.4f, 0.8f), "渚");
+            CreateLocation(fieldMap, mapArea.transform, "kano", "保健室（佳乃）", LocationType.NPC,
+                new Vector2(160, 60), new Vector2(28, 28), new Color(0.8f, 0.85f, 0.95f), "保");
             CreateLocation(fieldMap, mapArea.transform, "shop", "古書堂「八雲」", LocationType.Shop,
                 new Vector2(-300, -80), new Vector2(60, 40), new Color(0.5f, 0.4f, 0.2f, 0.8f), "書");
             CreateLocation(fieldMap, mapArea.transform, "cafe", "喫茶バイト", LocationType.Job,

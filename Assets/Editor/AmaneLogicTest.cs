@@ -420,6 +420,38 @@ public static class AmaneLogicTest
         Assert(System.Enum.IsDefined(typeof(Amane.UI.FieldAction), "LunchRooftop"), "FieldAction.LunchRooftop 定義あり");
         Assert(System.Enum.IsDefined(typeof(Amane.UI.FieldAction), "LunchHealthRoom"), "FieldAction.LunchHealthRoom 定義あり（保健室・佳乃導線）");
 
+        // --- 佳乃（七尾佳乃）コープ JSON ---
+        Debug.Log("\n[佳乃コープ: kano_intro / rank1-10 / lunch]");
+        var kanoIntro = DialogueRunner.LoadFromStreamingAssets("kano_intro.json");
+        Assert(kanoIntro != null, "kano_intro.json 読み込み成功");
+        Assert(kanoIntro?.bondId == "kano", "kano_intro: bondId = kano");
+        Assert(kanoIntro?.lines?.Count >= 8, "kano_intro: lines 8件以上（初回会話）");
+        Assert(kanoIntro?.choices?.Count > 0, "kano_intro: choicesあり");
+        var kanoRank1 = DialogueRunner.LoadFromStreamingAssets("kano_rank1.json");
+        Assert(kanoRank1 != null, "kano_rank1.json 読み込み成功");
+        var kanoRank5 = DialogueRunner.LoadFromStreamingAssets("kano_rank5.json");
+        Assert(kanoRank5 != null, "kano_rank5.json 読み込み成功（自罰の名前・転換点）");
+        var kanoRank10 = DialogueRunner.LoadFromStreamingAssets("kano_rank10.json");
+        Assert(kanoRank10 != null, "kano_rank10.json 読み込み成功");
+        Assert(kanoRank10?.bondPointsOnComplete == 0, "kano_rank10: bondPointsOnComplete=0（感情体験優先）");
+        var kanoLunch = DialogueRunner.LoadFromStreamingAssets("kano_lunch.json");
+        Assert(kanoLunch != null, "kano_lunch.json 読み込み成功");
+        var kanoRank1To10Count = 0;
+        for (int r = 1; r <= 10; r++)
+        {
+            var d = DialogueRunner.LoadFromStreamingAssets($"kano_rank{r}.json");
+            if (d != null) kanoRank1To10Count++;
+        }
+        Assert(kanoRank1To10Count == 10, $"kano_rank1〜rank10 全10本揃い（現在: {kanoRank1To10Count}/10）");
+
+        // --- CalendarEvent kano_opening ---
+        Debug.Log("\n[CalendarEvent: kano_opening]");
+        var kanoScheduler = new Amane.Time.CalendarEventScheduler();
+        kanoScheduler.SeedStoryEvents();
+        var kanoEvt = kanoScheduler.AllEvents.FirstOrDefault(e => e.Id == "kano_opening");
+        Assert(kanoEvt != null, "kano_opening イベントが登録されている");
+        Assert(kanoEvt?.TriggerDate.DayIndex == 98, "kano_opening: DayIndex=98（7月7日・七夕）");
+
         // Summary ---
         Debug.Log($"\n===== 結果: {passed} passed / {failed} failed =====");
         if (failed == 0)

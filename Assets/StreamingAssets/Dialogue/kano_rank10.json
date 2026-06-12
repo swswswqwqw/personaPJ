@@ -1,0 +1,35 @@
+{
+  "id": "kano_rank10",
+  "title": "最後の言伝 — 佳乃",
+  "bondId": "kano",
+  "bondPointsOnComplete": 0,
+  "lines": [
+    { "speakerId": "narrator", "text": "保健室。佳乃先生が白い封筒を持っていた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "……来てくれて、ありがとう。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "あの子に言えなかった一言を——あなたに、預けてもいい？", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "佳乃先生は封筒を両手で持った。宛名は「明日へ」。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "——生きていてくれてありがとう。", "emotion": "soft", "preSilence": 1.0 },
+    { "speakerId": "narrator", "text": "誰に言っているのかわからなかった。あの子に？ 主人公に？ 自分に？", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "narrator", "text": "〈未読〉が、静かに既読になった。長い時間をかけて、届いた。", "emotion": "neutral", "preSilence": 1.0 },
+    { "speakerId": "kano", "text": "これを言えたら——また少し前に進める気がする。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "kano", "text": "あなたが来てくれなかったら、一生言えなかったと思う。", "emotion": "soft", "preSilence": 0.5 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 8,
+      "options": [
+        { "text": "先生と話せてよかった", "requiredStat": "", "requiredRank": 0, "bondBonus": 0, "jumpToDialogueId": "" },
+        { "text": "「明日」は、先生のこと愛してたと思う", "requiredStat": "", "requiredRank": 0, "bondBonus": 0, "jumpToDialogueId": "" },
+        { "text": "これからも、ここに来ていいですか", "requiredStat": "", "requiredRank": 0, "bondBonus": 0, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "kano", "text": "……もちろん。いつでもどうぞ。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "あなたに、お礼がしたいの。", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "ここに来たとき——休憩できるから。ちゃんと休んで、傷も治してあげる。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "言伝の絆 — 佳乃 ランク10に到達した。「佳乃の保健室」: 未言界から帰還した際、全回復と状態異常の治療を行える。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "また来て。あなたのこと、ちゃんと見守ってるから。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "白いカーテンが揺れた。保健室に、生きた光が差していた。", "emotion": "neutral", "preSilence": 0.9 }
+  ]
+}

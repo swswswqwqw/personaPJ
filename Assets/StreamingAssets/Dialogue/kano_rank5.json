@@ -1,0 +1,36 @@
+{
+  "id": "kano_rank5",
+  "title": "自罰の名前",
+  "bondId": "kano",
+  "bondPointsOnComplete": 110,
+  "lines": [
+    { "speakerId": "narrator", "text": "保健室。佳乃先生が窓を拭いている。雨は止んでいた。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "ねえ、聞いてもいい？", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "あなたは……後悔してることを、どうしてる？", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "佳乃先生は雑巾を持ったまま、主人公を見た。答えを急かしていない。本当に聞いている。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "kano", "text": "私はずっと、自分を責めることが「誠意」だと思ってた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "苦しむことが、「明日」への贖罪になるって。", "emotion": "flat", "preSilence": 0.6 },
+    { "speakerId": "kano", "text": "でも……10年、責め続けて気づいたんだけど。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "kano", "text": "私ってずっと、「明日」のことを考えてる。苦しみながら。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "……それって、あの子のためじゃなくて——私のため、なのかな。", "emotion": "neutral", "preSilence": 0.9 },
+    { "speakerId": "narrator", "text": "〈未読〉が静かに揺れた。佳乃先生が初めて、自分自身に問いかけた瞬間。", "emotion": "neutral", "preSilence": 0.8 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 9,
+      "options": [
+        { "text": "責めることと、向き合うことは違う", "requiredStat": "Composure", "requiredRank": 2, "bondBonus": 40, "jumpToDialogueId": "" },
+        { "text": "先生の苦しみは、本物だと思う", "requiredStat": "", "requiredRank": 0, "bondBonus": 30, "jumpToDialogueId": "" },
+        { "text": "（何も言えない）", "requiredStat": "", "requiredRank": 0, "bondBonus": 20, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "kano", "text": "……そうね。", "emotion": "soft", "preSilence": 0.7 },
+    { "speakerId": "kano", "text": "責め続けることに、名前をつけてみたの。「逃げ」って。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "向き合う代わりに、自分を傷つけてた。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "佳乃先生は窓を拭き終えて、雑巾を洗面台に掛けた。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "……「明日」に、ちゃんと向き合いたい。責めるんじゃなくて。", "emotion": "soft", "preSilence": 0.7 },
+    { "speakerId": "narrator", "text": "窓の外、雨上がりの光が差し込んでいた。保健室がはじめて、明るく見えた。", "emotion": "neutral", "preSilence": 0.9 }
+  ]
+}

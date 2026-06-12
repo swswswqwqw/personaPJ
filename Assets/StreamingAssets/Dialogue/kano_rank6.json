@@ -1,0 +1,34 @@
+{
+  "id": "kano_rank6",
+  "title": "空の揺籠",
+  "bondId": "kano",
+  "bondPointsOnComplete": 110,
+  "lines": [
+    { "speakerId": "narrator", "text": "7月。蒸し暑い。保健室のカーテンが、かすかに揺れた。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "今日ね……「明日」の話、してもいい？", "emotion": "soft", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "責めるんじゃなくて、ただ話す練習。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "佳乃先生は薬草茶を2杯淹れた。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "「明日」が生きていたら——今年で10歳。", "emotion": "soft", "preSilence": 0.7 },
+    { "speakerId": "kano", "text": "何が好きな子になってたかな。海が好きだったかな、山が好きだったかな。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "kano", "text": "夏休みに、虫捕りしてたかな。それとも読書ばかりする子かな。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "佳乃先生は目を細めた。痛みの顔ではない——想像する、柔らかい目。", "emotion": "neutral", "preSilence": 0.7 },
+    { "speakerId": "kano", "text": "……こんなこと、誰にも話したことなかった。", "emotion": "flat", "preSilence": 0.6 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 8,
+      "options": [
+        { "text": "読書好きな気がする", "requiredStat": "", "requiredRank": 0, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "先生に似て、海が好きそう", "requiredStat": "Empathy", "requiredRank": 2, "bondBonus": 40, "jumpToDialogueId": "" },
+        { "text": "（静かに聞いている）", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "kano", "text": "……そうかもね。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "先生に似て——海が好きな子。そっと波に触れる子。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "佳乃先生は空のカップを両手で持った。カップの中に、見えないものが満ちているようだった。", "emotion": "neutral", "preSilence": 0.7 },
+    { "speakerId": "kano", "text": "話してよかった。ありがとう、聞いてくれて。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "夏の光が、揺れるカーテンを透かして入ってきた。揺籠のように。", "emotion": "neutral", "preSilence": 0.9 }
+  ]
+}

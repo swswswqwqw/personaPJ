@@ -440,8 +440,12 @@ namespace Amane.UI
         {
             gm.Stats.Add(InnerStat.Empathy, 3);
 
-            // 保健室: 佳乃への初回接触（kano_introがあれば会話、なければ情景演出）
-            var kanoData = DialogueRunner.LoadFromStreamingAssets("kano_intro.json");
+            // 保健室: 佳乃のランク進行に基づく会話（rank0→intro、rank1以降→rank{n}.json）
+            int kanoRank = gm.Bonds.Get("kano")?.Rank ?? 0;
+            string kanoFile = kanoRank == 0 ? "kano_intro.json" : $"kano_rank{kanoRank}.json";
+            var kanoData = DialogueRunner.LoadFromStreamingAssets(kanoFile);
+            if (kanoData == null && kanoRank > 0)
+                kanoData = DialogueRunner.LoadFromStreamingAssets("kano_intro.json");
             if (kanoData != null)
             {
                 _dialogueUI?.Show();

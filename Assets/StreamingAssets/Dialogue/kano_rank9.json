@@ -1,0 +1,34 @@
+{
+  "id": "kano_rank9",
+  "title": "生を肯定する",
+  "bondId": "kano",
+  "bondPointsOnComplete": 110,
+  "lines": [
+    { "speakerId": "narrator", "text": "保健室。晴れた朝。佳乃先生がカーテンを開けた。光が差す。", "emotion": "neutral", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "ねえ、聞いてもいい？", "emotion": "soft", "preSilence": 0.3 },
+    { "speakerId": "kano", "text": "あなたは——生きてることを、罪だと思ったことある？", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "直接的な問いだった。佳乃先生が聞くのは珍しい。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "私はね、ずっとあったの。「明日」が生きていないのに、私が生きていていいのか、って。", "emotion": "flat", "preSilence": 0.6 },
+    { "speakerId": "kano", "text": "でも……あなたを見てたら、少し、変わった。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "あなた、すごく一生懸命に生きてるでしょう。言えなかった言葉と向き合いながら。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "それを見てたら——諦めなくていいって、思えた。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "〈未読〉が温かく揺れた。佳乃先生の「沈んだ言葉」が、すこしずつ浮上してきている。", "emotion": "neutral", "preSilence": 0.8 },
+    { "speakerId": "kano", "text": "生きていていい、って。少し——許せた気がして。", "emotion": "soft", "preSilence": 0.7 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 9,
+      "options": [
+        { "text": "生きてていいんです、先生", "requiredStat": "", "requiredRank": 0, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "「明日」も、そう思ってると思う", "requiredStat": "Empathy", "requiredRank": 3, "bondBonus": 40, "jumpToDialogueId": "" },
+        { "text": "（うなずく）", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "kano", "text": "……そうね。", "emotion": "soft", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "「明日」も、きっとそう思ってる。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "kano", "text": "ありがとう。あなたのおかげで、生きていいって思えるようになった。", "emotion": "soft", "preSilence": 0.7 },
+    { "speakerId": "narrator", "text": "佳乃先生は窓を全開にした。夏の匂いが、保健室に入ってきた。消毒液の匂いがすこし薄まった。", "emotion": "neutral", "preSilence": 0.9 }
+  ]
+}

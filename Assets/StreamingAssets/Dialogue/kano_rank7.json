@@ -1,0 +1,32 @@
+{
+  "id": "kano_rank7",
+  "title": "許してもらえるか",
+  "bondId": "kano",
+  "bondPointsOnComplete": 110,
+  "lines": [
+    { "speakerId": "narrator", "text": "保健室。佳乃先生が薬棚を整理していた。背中が、今日は少し重そう。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "ねえ——赦してもらえるって、思っていいのかな。", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "narrator", "text": "振り返らずに言った。独り言のような声。", "emotion": "neutral", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "赦してもらえるとは、思ってない。", "emotion": "flat", "preSilence": 0.4 },
+    { "speakerId": "kano", "text": "あの子は何も言えなかったから、怒ることも、許すことも——できなかった。", "emotion": "neutral", "preSilence": 0.6 },
+    { "speakerId": "kano", "text": "でも……謝りたい。届かなくても。", "emotion": "soft", "preSilence": 0.7 },
+    { "speakerId": "narrator", "text": "〈未読〉が深く揺れた。「言えなかった言葉」が層を成している。謝罪と愛情と、後悔が——渾然と。", "emotion": "neutral", "preSilence": 0.9 },
+    { "speakerId": "kano", "text": "……あなたには言える。なんでかな。", "emotion": "soft", "preSilence": 0.5 }
+  ],
+  "choices": [
+    {
+      "afterLineIndex": 7,
+      "options": [
+        { "text": "聴くから、言ってください", "requiredStat": "", "requiredRank": 0, "bondBonus": 35, "jumpToDialogueId": "" },
+        { "text": "先生の言葉は、届くと思う", "requiredStat": "Composure", "requiredRank": 3, "bondBonus": 40, "jumpToDialogueId": "" },
+        { "text": "（何も言わず、うなずく）", "requiredStat": "", "requiredRank": 0, "bondBonus": 25, "jumpToDialogueId": "" }
+      ]
+    }
+  ],
+  "postChoiceLines": [
+    { "speakerId": "kano", "text": "……届く？", "emotion": "flat", "preSilence": 0.5 },
+    { "speakerId": "kano", "text": "そう信じていいなら……もう少し、先に進めるかな。", "emotion": "soft", "preSilence": 0.7 },
+    { "speakerId": "kano", "text": "ありがとう。あなたみたいな子が来てくれて、よかった。", "emotion": "soft", "preSilence": 0.6 },
+    { "speakerId": "narrator", "text": "薬棚の整理が、静かに再開された。その手が、さっきより軽く動いていた。", "emotion": "neutral", "preSilence": 0.8 }
+  ]
+}
